@@ -11,7 +11,7 @@ export const Header = () => {
           목록으로
         </Link>
         <div className="flex items-center gap-2">
-          <span className="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">
+          <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
             2024.09 - 2025.01
           </span>
           <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">

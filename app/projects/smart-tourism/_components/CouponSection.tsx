@@ -4,19 +4,19 @@ export const CouponSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">쿠폰 시스템</h2>
 
       {/* 쿠폰 타입 분류 */}
-      <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-xl p-6 border border-amber-200 mb-6">
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center text-white text-sm">🎟️</span>
+          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🎟️</span>
           쿠폰 타입 분류
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {[
             { type: "앱 사용", badge: "1", color: "blue", desc: "앱 내 결제 할인" },
-            { type: "현장 정액", badge: "2", color: "green", desc: "현장에서 금액 할인" },
-            { type: "현장 비율", badge: "3", color: "purple", desc: "현장에서 % 할인" },
-            { type: "교환권", badge: "4", color: "orange", desc: "상품 교환" },
-            { type: "앱+현장", badge: "0", color: "pink", desc: "앱/현장 모두 사용" },
+            { type: "현장 정액", badge: "2", color: "blue", desc: "현장에서 금액 할인" },
+            { type: "현장 비율", badge: "3", color: "blue", desc: "현장에서 % 할인" },
+            { type: "교환권", badge: "4", color: "blue", desc: "상품 교환" },
+            { type: "앱+현장", badge: "0", color: "blue", desc: "앱/현장 모두 사용" },
           ].map((item) => (
             <div key={item.badge} className="bg-white rounded-lg p-3 border border-gray-200 text-center">
               <span className={`inline-block px-2 py-0.5 bg-${item.color}-100 text-${item.color}-700 text-xs font-bold rounded mb-2`}>
@@ -40,7 +40,7 @@ export const CouponSection = () => {
               { code: "0", label: "사용 가능", color: "green" },
               { code: "1", label: "사용 기간 전", color: "blue" },
               { code: "2", label: "기간 만료", color: "gray" },
-              { code: "3", label: "사용 완료", color: "purple" },
+              { code: "3", label: "사용 완료", color: "blue" },
             ].map((item) => (
               <div key={item.code} className="flex items-center gap-3">
                 <code className="text-xs bg-gray-100 px-2 py-1 rounded">&apos;{item.code}&apos;</code>
@@ -76,7 +76,7 @@ export const CouponSection = () => {
 
       {/* 데이터 변환 파이프라인 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-indigo-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🔄</span> 데이터 변환 파이프라인
           </h4>
@@ -92,7 +92,7 @@ export const CouponSection = () => {
               <div key={item.step} className="flex items-center gap-3 flex-1">
                 <div className="flex-1 bg-gray-50 rounded-lg p-4 text-center">
                   <p className="font-medium text-gray-900 text-sm">{item.step}</p>
-                  <code className="text-xs text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded mt-1 inline-block">
+                  <code className="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-1 inline-block">
                     {item.type}
                   </code>
                   <p className="text-xs text-gray-500 mt-2">{item.desc}</p>
@@ -110,7 +110,7 @@ export const CouponSection = () => {
 
       {/* 결제 시 쿠폰 적용 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-emerald-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>💰</span> 결제 시 쿠폰 적용 (paymentStore)
           </h4>

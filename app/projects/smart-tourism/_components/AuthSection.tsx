@@ -4,14 +4,14 @@ export const AuthSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">로그인 유지 시스템</h2>
 
       {/* 토큰 저장 전략 */}
-      <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200 mb-6">
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center text-white text-sm">🔑</span>
+          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🔑</span>
           토큰 저장 전략 (3단계 Fallback)
         </h3>
 
         <p className="text-sm text-gray-600 mb-4">
-          브라우저 환경에 따라 토큰 저장/복원이 실패할 수 있어, <strong className="text-purple-700">3단계 Fallback 전략</strong>을 적용했습니다.
+          브라우저 환경에 따라 토큰 저장/복원이 실패할 수 있어, <strong className="text-blue-700">3단계 Fallback 전략</strong>을 적용했습니다.
         </p>
 
         <div className="flex flex-col md:flex-row items-stretch gap-4">
@@ -36,7 +36,7 @@ export const AuthSection = () => {
               priority: "3순위",
               storage: "localStorage",
               icon: "💾",
-              color: "purple",
+              color: "blue",
               pros: "Safari ITP 대응",
               cons: "XSS 취약점 주의",
             },
@@ -65,11 +65,11 @@ export const AuthSection = () => {
       </div>
 
       {/* Safari ITP 대응 */}
-      <div className="bg-orange-50 border border-orange-200 rounded-xl p-4 mb-6">
-        <h4 className="font-bold text-orange-800 mb-2 flex items-center gap-2">
+      <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+        <h4 className="font-bold text-blue-800 mb-2 flex items-center gap-2">
           <span>🍎</span> Safari ITP (Intelligent Tracking Prevention) 대응
         </h4>
-        <p className="text-sm text-orange-900 mb-3">
+        <p className="text-sm text-blue-900 mb-3">
           Safari는 서드파티 쿠키를 7일 후 삭제합니다. 이를 대응하기 위해 localStorage에 토큰을 백업 저장합니다.
         </p>
         <div className="bg-white rounded-lg p-3">
@@ -124,7 +124,7 @@ export const AuthSection = () => {
       {/* 자동 로그인 & 토큰 갱신 */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-emerald-600 text-white px-4 py-3">
+          <div className="bg-blue-600 text-white px-4 py-3">
             <h4 className="font-bold flex items-center gap-2">
               <span>🔄</span> 자동 로그인 (AutoLogin)
             </h4>
@@ -179,8 +179,8 @@ export const AuthSection = () => {
       </div>
 
       {/* 탭 간 동기화 */}
-      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-4 mb-6">
-        <h4 className="font-bold text-indigo-800 mb-3 flex items-center gap-2">
+      <div className="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-6">
+        <h4 className="font-bold text-blue-800 mb-3 flex items-center gap-2">
           <span>🔗</span> 탭 간 인증 상태 동기화
         </h4>
         <div className="bg-white rounded-lg p-4">
@@ -199,7 +199,7 @@ export const AuthSection = () => {
             <div>{`}, [])`}</div>
           </div>
         </div>
-        <p className="text-xs text-indigo-700 mt-3">
+        <p className="text-xs text-blue-700 mt-3">
           다른 탭에서 로그아웃하면 현재 탭에서도 자동으로 로그아웃 상태가 반영됩니다.
         </p>
       </div>
@@ -214,7 +214,7 @@ export const AuthSection = () => {
             <p className="text-xs text-gray-400 mt-1">API 요청 인증용</p>
           </div>
           <div className="bg-white rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-purple-600">7일</p>
+            <p className="text-2xl font-bold text-blue-600">7일</p>
             <p className="text-sm text-gray-600">Refresh Token</p>
             <p className="text-xs text-gray-400 mt-1">Access Token 갱신용</p>
           </div>

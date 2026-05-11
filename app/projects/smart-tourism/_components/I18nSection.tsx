@@ -4,9 +4,9 @@ export const I18nSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">4개국어 지원 (i18n)</h2>
 
       {/* 지원 언어 */}
-      <div className="bg-gradient-to-r from-sky-50 to-blue-50 rounded-xl p-6 border border-sky-200 mb-6">
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-sky-600 rounded-lg flex items-center justify-center text-white text-sm">🌍</span>
+          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🌍</span>
           지원 언어
         </h3>
 
@@ -28,7 +28,7 @@ export const I18nSection = () => {
 
       {/* next-intl 구조 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-indigo-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>📦</span> next-intl 적용 구조
           </h4>
@@ -82,7 +82,7 @@ export const I18nSection = () => {
 
       {/* 번역 파일 구조 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-emerald-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>📄</span> 번역 파일 구조
           </h4>
@@ -132,7 +132,7 @@ export const I18nSection = () => {
 
       {/* 사용 방법 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-purple-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>💻</span> 컴포넌트에서 사용
           </h4>
@@ -157,8 +157,8 @@ export const I18nSection = () => {
       </div>
 
       {/* 언어 전환 */}
-      <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
-        <h4 className="font-bold text-amber-800 mb-3 flex items-center gap-2">
+      <div className="bg-blue-50 border border-blue-100 rounded-xl p-4">
+        <h4 className="font-bold text-blue-800 mb-3 flex items-center gap-2">
           <span>🔄</span> 언어 전환 처리
         </h4>
         <div className="grid md:grid-cols-2 gap-4">
