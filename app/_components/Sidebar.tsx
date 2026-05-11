@@ -32,10 +32,6 @@ export const Sidebar = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handlePrint = () => {
-    window.print();
-  };
-
   return (
     <aside className="no-print lg:sticky lg:top-0 lg:h-screen lg:w-[380px] lg:flex-shrink-0 bg-white border-b lg:border-b-0 lg:border-r border-gray-200">
       <div className="flex flex-col h-full px-8 py-10 lg:py-12">
@@ -100,8 +96,9 @@ export const Sidebar = () => {
         </div>
 
         <div className="mt-auto">
-          <button
-            onClick={handlePrint}
+          <a
+            href="/신희제_프론트엔드개발자_이력서.pdf"
+            download
             className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
           >
             <svg
@@ -118,7 +115,7 @@ export const Sidebar = () => {
               />
             </svg>
             이력서 PDF 다운로드
-          </button>
+          </a>
         </div>
       </div>
     </aside>
