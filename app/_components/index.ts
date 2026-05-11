@@ -1,0 +1,9 @@
+export { Sidebar } from "./Sidebar";
+export { IntroSection } from "./IntroSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { SkillsSection } from "./SkillsSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { EducationSection } from "./EducationSection";
+export { ContactSection } from "./ContactSection";
+export { Footer } from "./Footer";
+export { PrintHeader } from "./PrintHeader";
