@@ -7,7 +7,7 @@ export const Footer = () => {
         {/* 프로젝트 요약 */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+            <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <span className="text-white text-xl">🗺️</span>
             </div>
             <div>
@@ -24,7 +24,7 @@ export const Footer = () => {
 
         {/* 메인 링크 */}
         <div className="text-center">
-          <Link href="/" className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>

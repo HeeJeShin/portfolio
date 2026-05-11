@@ -4,7 +4,7 @@ export const KcpPaymentSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">KCP 결제 연동</h2>
 
       {/* 결제 흐름 다이어그램 */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200 mb-6">
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
           <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">💳</span>
           결제 처리 흐름
@@ -13,9 +13,9 @@ export const KcpPaymentSection = () => {
         <div className="flex flex-col md:flex-row items-stretch gap-2">
           {[
             { step: "1", title: "거래 등록", desc: "trade-register API", color: "blue" },
-            { step: "2", title: "결제창 호출", desc: "PC/Mobile 분기", color: "indigo" },
-            { step: "3", title: "결제 승인", desc: "KCP 서버 처리", color: "purple" },
-            { step: "4", title: "Callback", desc: "결과 수신 & 검증", color: "violet" },
+            { step: "2", title: "결제창 호출", desc: "PC/Mobile 분기", color: "blue" },
+            { step: "3", title: "결제 승인", desc: "KCP 서버 처리", color: "blue" },
+            { step: "4", title: "Callback", desc: "결과 수신 & 검증", color: "blue" },
             { step: "5", title: "완료 처리", desc: "주문 상태 업데이트", color: "green" },
           ].map((item, i) => (
             <div key={item.step} className="flex-1 flex items-center gap-2">
@@ -59,7 +59,7 @@ export const KcpPaymentSection = () => {
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-emerald-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+          <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
             <span>📱</span> Mobile 결제
           </div>
           <div className="p-4">
@@ -73,7 +73,7 @@ export const KcpPaymentSection = () => {
               <div>form.<span className="text-yellow-300">submit</span>()</div>
             </div>
             <div className="flex items-center gap-2 text-sm text-gray-600">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+              <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
               페이지 전환 방식 결제
             </div>
           </div>
@@ -126,7 +126,7 @@ export const KcpPaymentSection = () => {
 
       {/* Callback 처리 상세 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-violet-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🔄</span> Callback 처리 로직
           </h4>

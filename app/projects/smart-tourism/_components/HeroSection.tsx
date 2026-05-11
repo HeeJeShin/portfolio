@@ -4,7 +4,7 @@ export const HeroSection = () => {
   return (
     <section className="mb-12">
       <div className="flex items-center gap-4 mb-6">
-        <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+        <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
           <span className="text-white text-2xl">🗺️</span>
         </div>
         <div>
@@ -23,8 +23,8 @@ export const HeroSection = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {projectMetrics.map((metric) => (
-          <div key={metric.label} className="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl p-4 border border-emerald-100">
-            <p className="text-2xl font-bold text-emerald-700">{metric.value}</p>
+          <div key={metric.label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
+            <p className="text-2xl font-bold text-blue-700">{metric.value}</p>
             <p className="text-sm text-gray-600">{metric.label}</p>
           </div>
         ))}

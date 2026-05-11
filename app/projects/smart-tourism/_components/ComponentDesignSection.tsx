@@ -80,7 +80,7 @@ export const ComponentDesignSection = () => {
                 path: "/components/layout/",
                 desc: "페이지 구조 담당",
                 examples: ["Header", "Footer", "Navigation"],
-                color: "purple",
+                color: "blue",
               },
             ].map((item) => (
               <div key={item.title} className={`bg-${item.color}-50 rounded-lg p-4 border border-${item.color}-200`}>
@@ -102,7 +102,7 @@ export const ComponentDesignSection = () => {
 
       {/* 커스텀 훅 패턴 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-emerald-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🪝</span> 커스텀 훅 패턴
           </h4>
@@ -136,7 +136,7 @@ export const ComponentDesignSection = () => {
             ].map((item) => (
               <div key={item.hook} className="bg-gray-50 rounded-lg p-3">
                 <div className="flex items-center gap-2 mb-2">
-                  <code className="text-sm font-bold text-emerald-700">{item.hook}</code>
+                  <code className="text-sm font-bold text-blue-700">{item.hook}</code>
                 </div>
                 <p className="text-xs text-gray-600 mb-2">{item.desc}</p>
                 <div className="flex flex-wrap gap-1">
@@ -154,7 +154,7 @@ export const ComponentDesignSection = () => {
 
       {/* Zustand Store 설계 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-purple-600 text-white px-4 py-3">
+        <div className="bg-blue-600 text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🐻</span> Zustand Store 설계
           </h4>
@@ -179,9 +179,9 @@ export const ComponentDesignSection = () => {
               },
             ].map((item) => (
               <div key={item.store} className="bg-gray-50 rounded-lg p-4">
-                <code className="text-sm font-bold text-purple-700">{item.store}</code>
+                <code className="text-sm font-bold text-blue-700">{item.store}</code>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">
+                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded">
                     persist: {item.persist}
                   </span>
                 </div>
