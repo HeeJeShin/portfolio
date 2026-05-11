@@ -39,7 +39,7 @@ export const Sidebar = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-blue-600 font-medium">Frontend Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-            무언가를 만드는 것을 좋아하는 4년차 프론트엔드 개발자
+            도메인 이해를 중요하게 생각하고 AI를 적극 활용하는 4년차 프론트엔드 개발자
           </p>
         </div>
 
