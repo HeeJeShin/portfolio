@@ -29,7 +29,7 @@ const projects = [
     },
   },
   {
-    id: "smart-tour",
+    id: "smart-tourism",
     title: "스마트관광프로젝트",
     subtitle: "인제 / 용인 스마트 관광 플랫폼",
     period: "2025.06 - 2025.11",
