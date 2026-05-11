@@ -3,10 +3,10 @@ export const HeroSection = () => {
     <section className="mb-16">
       <div className="flex items-center gap-3 mb-4">
         <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-          2025.04
+          2026.01
         </span>
         <span className="text-gray-400">|</span>
-        <span className="text-gray-600 text-sm">1박2일 해커톤</span>
+        <span className="text-gray-600 text-sm">1박2일 해커톤 · 기획 1 + 프론트엔드 3</span>
         <div className="ml-auto flex gap-2">
           <a
             href="/doc/행사장수용인원자동계산_20260106_4J.pptx"
