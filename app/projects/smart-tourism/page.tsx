@@ -6,6 +6,7 @@ import {
   KcpPaymentSection,
   AuthSection,
   CouponSection,
+  CommunitySection,
   ComponentDesignSection,
   I18nSection,
   TechStackSection,
@@ -22,6 +23,7 @@ const SmartTourismProject = () => {
         <KcpPaymentSection />
         <AuthSection />
         <CouponSection />
+        <CommunitySection />
         <ComponentDesignSection />
         <I18nSection />
         <TechStackSection />

@@ -3,6 +3,7 @@ export { HeroSection } from "./HeroSection";
 export { KcpPaymentSection } from "./KcpPaymentSection";
 export { AuthSection } from "./AuthSection";
 export { CouponSection } from "./CouponSection";
+export { CommunitySection } from "./CommunitySection";
 export { ComponentDesignSection } from "./ComponentDesignSection";
 export { I18nSection } from "./I18nSection";
 export { TechStackSection } from "./TechStackSection";
