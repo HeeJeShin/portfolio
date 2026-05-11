@@ -6,9 +6,10 @@ const internalProjectIds = new Set(["4j", "exhibition", "smart-tourism"]);
 export const ProjectsSection = () => {
   return (
     <section id="projects" className="mb-16 scroll-mt-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
-        프로젝트
-      </h2>
+      <div className="flex items-center gap-3 mb-6 pb-2 border-b border-gray-200">
+        <h2 className="text-2xl font-bold text-gray-900">프로젝트</h2>
+        <span className="text-xs text-gray-500">클릭하여 상세 구현내용 확인</span>
+      </div>
       <div className="space-y-4">
         {projects.map((project) => {
           const hasDetail = internalProjectIds.has(project.id);
