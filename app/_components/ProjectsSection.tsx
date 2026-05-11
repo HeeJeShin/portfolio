@@ -72,7 +72,7 @@ export const ProjectsSection = () => {
           );
 
           return hasDetail ? (
-            <Link key={project.id} href={`/projects/${project.id}`} className="block">
+            <Link key={project.id} href={`/projects/${project.id}`} className="block cursor-pointer">
               {content}
             </Link>
           ) : (
