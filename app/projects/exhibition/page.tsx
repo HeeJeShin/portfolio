@@ -4,16 +4,22 @@ import { useState } from "react";
 import {
   Header,
   HeroSection,
-  ArchitectureSection,
-  DevelopmentApproachSection,
-  UnitTestSection,
-  SmsEmailSection,
-  InvoiceSection,
   MetricsSection,
+  DomainExpertiseSection,
+  ArchitectureSection,
+  TypeScriptSection,
+  TanStackQuerySection,
+  I18nSection,
   AdminStructureSection,
+  StickyHeaderSection,
   DataTableSection,
   DynamicFormSection,
+  InvoiceSection,
+  UnitTestSection,
   ClaudeCodeSection,
+  DevelopmentApproachSection,
+  CICDSection,
+  SmsEmailSection,
   TechStackSection,
   Footer,
 } from "./_components";
@@ -28,13 +34,14 @@ const ExhibitionProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
-        <ArchitectureSection />
-        <DevelopmentApproachSection />
-        <UnitTestSection />
-        <SmsEmailSection />
-        <InvoiceSection />
         <MetricsSection />
+        <DomainExpertiseSection />
+        <ArchitectureSection />
+        <TypeScriptSection />
+        <TanStackQuerySection />
+        <I18nSection />
         <AdminStructureSection />
+        <StickyHeaderSection />
         <DataTableSection
           viewMode={viewMode}
           setViewMode={setViewMode}
@@ -42,7 +49,12 @@ const ExhibitionProject = () => {
           setActiveTab={setActiveTab}
         />
         <DynamicFormSection />
+        <InvoiceSection />
+        <UnitTestSection />
         <ClaudeCodeSection />
+        <DevelopmentApproachSection />
+        <CICDSection />
+        <SmsEmailSection />
         <TechStackSection />
       </main>
 
