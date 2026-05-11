@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { projects } from "../_data/constants";
 
-const internalProjectIds = new Set(["4j", "exhibition", "smart-tourism"]);
+const internalProjectIds = new Set(["4j", "exhibition", "smart-tourism", "o2meet-migration", "pos-kiosk", "o2meet"]);
 
 export const ProjectsSection = () => {
   return (
