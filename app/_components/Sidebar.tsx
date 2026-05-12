@@ -38,8 +38,8 @@ export const Sidebar = () => {
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-blue-600 font-medium">Frontend Developer</p>
-          <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-            도메인 이해를 중요하게 생각하고 AI를 적극 활용하는 4년차 프론트엔드 개발자
+          <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
+            도메인에 대한 이해도를 중요하게 생각합니다. <br /> AI를 활용해 생산성을 높이는데 관심이 많습니다.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export const Sidebar = () => {
 
         <div className="mt-auto">
           <a
-            href="/신희제_프론트엔드개발자_이력서.pdf"
+            href="/신희제_프론트엔드개발자_이력서_public.pdf"
             download
             className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
           >
