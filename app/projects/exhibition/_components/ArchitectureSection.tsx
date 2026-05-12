@@ -35,14 +35,14 @@ export const ArchitectureSection = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-green-50 border-2 border-green-300 rounded-lg p-3">
-                  <div className="font-bold text-green-700 text-sm mb-2">packages/</div>
-                  <div className="bg-white rounded p-2 border border-green-200 text-center">
+                <div className="bg-gray-50 border-2 border-gray-300 rounded-lg p-3">
+                  <div className="font-bold text-blue-700 text-sm mb-2">packages/</div>
+                  <div className="bg-white rounded p-2 border border-gray-200 text-center">
                     <span className="text-sm font-medium">shared</span>
                     <p className="text-xs text-gray-500">공용 컴포넌트, 훅, 타입</p>
                     <div className="flex gap-1 mt-1 justify-center flex-wrap">
-                      <span className="text-[10px] bg-green-100 px-1.5 py-0.5 rounded">56개 컴포넌트</span>
-                      <span className="text-[10px] bg-green-100 px-1.5 py-0.5 rounded">23개 훅</span>
+                      <span className="text-[10px] bg-blue-100 px-1.5 py-0.5 rounded">56개 컴포넌트</span>
+                      <span className="text-[10px] bg-blue-100 px-1.5 py-0.5 rounded">23개 훅</span>
                     </div>
                   </div>
                 </div>
@@ -52,21 +52,21 @@ export const ArchitectureSection = () => {
             {/* Benefits */}
             <div className="flex-1 flex flex-col justify-center space-y-3">
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-green-600 text-lg">✓</span>
+                <span className="text-blue-600 text-lg">✓</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">중복 코드 37% 절감</p>
                   <p className="text-xs text-gray-500">공용 패키지로 양쪽 앱에서 import</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-green-600 text-lg">✓</span>
+                <span className="text-blue-600 text-lg">✓</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">1회 수정으로 양쪽 반영</p>
                   <p className="text-xs text-gray-500">버그 수정, 기능 개선 동시 적용</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-green-600 text-lg">✓</span>
+                <span className="text-blue-600 text-lg">✓</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">독립 배포 지원</p>
                   <p className="text-xs text-gray-500">user/admin 별도 빌드 & 배포</p>
@@ -85,10 +85,10 @@ export const ArchitectureSection = () => {
 
       {/* 공용 컴포넌트 활용 예시 */}
       <h3 className="text-lg font-bold text-gray-900 mb-4">공용 컴포넌트 활용</h3>
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200 mb-8">
+      <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
-            <span className="text-green-600 text-lg">♻️</span>
+          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+            <span className="text-blue-600 text-lg">♻️</span>
           </div>
           <div>
             <p className="font-bold text-gray-900">동일한 컴포넌트, 다른 페이지</p>
@@ -97,8 +97,8 @@ export const ArchitectureSection = () => {
         </div>
 
         {/* DynamicForm 공용 컴포넌트 예시 */}
-        <div className="bg-white rounded-lg border border-green-200 overflow-hidden">
-          <div className="grid md:grid-cols-2 divide-x divide-green-100">
+        <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+          <div className="grid md:grid-cols-2 divide-x divide-gray-100">
             {/* User Side */}
             <div>
               <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
@@ -108,7 +108,7 @@ export const ArchitectureSection = () => {
               <div className="p-4">
                 <div className="text-xs font-mono bg-gray-100 rounded p-3 mb-3">
                   <span className="text-purple-600">import</span> {`{ DynamicForm }`}<br/>
-                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-green-600">&apos;@shared/components&apos;</span>
+                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-blue-600">&apos;@shared/components&apos;</span>
                 </div>
                 {/* Mini Form Preview */}
                 <div className="border border-gray-200 rounded-lg p-3 space-y-2">
@@ -145,13 +145,13 @@ export const ArchitectureSection = () => {
               <div className="p-4">
                 <div className="text-xs font-mono bg-gray-100 rounded p-3 mb-3">
                   <span className="text-purple-600">import</span> {`{ DynamicForm }`}<br/>
-                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-green-600">&apos;@shared/components&apos;</span>
+                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-blue-600">&apos;@shared/components&apos;</span>
                 </div>
                 {/* Mini Form Preview - Admin View */}
                 <div className="border border-gray-200 rounded-lg p-3 space-y-2">
                   <div className="flex items-center justify-between border-b pb-1">
                     <p className="text-xs font-bold text-gray-700">회사 정보</p>
-                    <span className="px-1.5 py-0.5 bg-green-100 text-green-700 rounded text-[8px]">승인완료</span>
+                    <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[8px]">승인완료</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
@@ -194,29 +194,29 @@ export const ArchitectureSection = () => {
 
         {/* 다른 공용 컴포넌트 목록 */}
         <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-white rounded-lg p-3 border border-green-200 text-center">
+          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
             <p className="text-sm font-medium text-gray-900">BadgeForm</p>
             <p className="text-[10px] text-gray-500">출입증 신청 폼</p>
           </div>
-          <div className="bg-white rounded-lg p-3 border border-green-200 text-center">
+          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
             <p className="text-sm font-medium text-gray-900">DynamicForm</p>
             <p className="text-[10px] text-gray-500">동적 폼 렌더링</p>
           </div>
-          <div className="bg-white rounded-lg p-3 border border-green-200 text-center">
+          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
             <p className="text-sm font-medium text-gray-900">InvoiceContent</p>
             <p className="text-[10px] text-gray-500">인보이스 출력</p>
           </div>
-          <div className="bg-white rounded-lg p-3 border border-green-200 text-center">
+          <div className="bg-white rounded-lg p-3 border border-gray-200 text-center">
             <p className="text-sm font-medium text-gray-900">DataTable</p>
             <p className="text-[10px] text-gray-500">테이블 + 카드뷰</p>
           </div>
         </div>
 
-        <div className="mt-4 bg-green-100 border border-green-300 rounded-lg p-3">
-          <p className="text-sm text-green-800 text-center">
+        <div className="mt-4 bg-blue-100 border border-gray-300 rounded-lg p-3">
+          <p className="text-sm text-blue-800 text-center">
             <strong>56개 공용 컴포넌트</strong>를 유저/어드민이 공유 →
-            <strong className="text-green-700"> UI 일관성 100%</strong> +
-            <strong className="text-green-700"> 유지보수 비용 50% 절감</strong>
+            <strong className="text-blue-700"> UI 일관성 100%</strong> +
+            <strong className="text-blue-700"> 유지보수 비용 50% 절감</strong>
           </p>
         </div>
       </div>
@@ -239,7 +239,7 @@ const AdminPreview = () => {
       <div className="bg-gray-800 text-white px-4 py-2 flex items-center gap-2">
         <span className="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
         <span className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></span>
-        <span className="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+        <span className="w-2.5 h-2.5 bg-gray-500 rounded-full"></span>
         <span className="text-xs text-gray-400 ml-2">admin.exhibition.co.kr/user-list</span>
       </div>
       <div className="flex">
@@ -294,8 +294,8 @@ const AdminPreview = () => {
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
               <span className="text-[10px] text-gray-600">승인</span>
               <p className="text-xl font-bold text-gray-900 mt-1">11</p>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-green-600 text-[10px]">✓</span>
+              <div className="absolute top-3 right-3 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-blue-600 text-[10px]">✓</span>
               </div>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
@@ -347,7 +347,7 @@ const AdminPreview = () => {
                     <td className="py-2 px-2"><input type="checkbox" className="w-3 h-3 rounded" /></td>
                     <td className="py-2 px-1 text-center text-gray-500">1</td>
                     <td className="py-2 px-2 text-center">
-                      <span className="px-1.5 py-0.5 bg-green-100 text-green-700 rounded text-[8px]">승인 ▼</span>
+                      <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[8px]">승인 ▼</span>
                     </td>
                     <td className="py-2 px-2 text-blue-600">hong@email.com</td>
                     <td className="py-2 px-2">
@@ -426,7 +426,7 @@ const UserMyPagePreview = () => {
       <div className="bg-gray-800 text-white px-4 py-2 flex items-center gap-2">
         <span className="w-2.5 h-2.5 bg-red-500 rounded-full"></span>
         <span className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></span>
-        <span className="w-2.5 h-2.5 bg-green-500 rounded-full"></span>
+        <span className="w-2.5 h-2.5 bg-gray-500 rounded-full"></span>
         <span className="text-xs text-gray-400 ml-2">user.exhibition.co.kr/mypage</span>
       </div>
 

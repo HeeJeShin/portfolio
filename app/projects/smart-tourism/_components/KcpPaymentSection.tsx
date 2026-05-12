@@ -183,8 +183,8 @@ export const KcpPaymentSection = () => {
           </div>
           <div className="bg-white rounded-lg p-3">
             <p className="text-sm font-medium text-gray-900 mb-1">쿠키 설정</p>
-            <p className="text-xs text-gray-600">결제 정보 임시 저장 (1시간 만료)</p>
-            <code className="text-[10px] text-orange-600 mt-1 block">Secure, HttpOnly, SameSite=Lax</code>
+            <p className="text-xs text-gray-600">인증 토큰 저장 (1시간 만료)</p>
+            <code className="text-[10px] text-orange-600 mt-1 block">Secure, SameSite=Lax</code>
           </div>
         </div>
       </div>

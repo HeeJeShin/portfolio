@@ -7,4 +7,5 @@ export { CommunitySection } from "./CommunitySection";
 export { ComponentDesignSection } from "./ComponentDesignSection";
 export { I18nSection } from "./I18nSection";
 export { TechStackSection } from "./TechStackSection";
+export { ChallengesSection } from "./ChallengesSection";
 export { Footer } from "./Footer";

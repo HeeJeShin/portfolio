@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
 const techStack = ["JSP", "jQuery", "KCP", "async/await"];
 
@@ -38,18 +39,10 @@ const subProjects = [
 export default function O2MeetPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span className="font-medium">돌아가기</span>
-          </Link>
-          <span className="text-sm text-gray-400">프로젝트 상세</span>
-        </div>
-      </header>
+      <ProjectHeader
+        period="2022.05 - 현재"
+        techStack={["JSP", "jQuery", "KCP 결제"]}
+      />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero */}

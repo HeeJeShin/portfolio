@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
 const techStack = ["JavaScript", "jQuery", "JSP", "KCP 결제"];
 
@@ -55,18 +55,10 @@ const features = [
 export default function PosKioskPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            <span className="font-medium">돌아가기</span>
-          </Link>
-          <span className="text-sm text-gray-400">프로젝트 상세</span>
-        </div>
-      </header>
+      <ProjectHeader
+        period="2024.11 - 2025.02"
+        techStack={["JavaScript", "jQuery", "JSP", "KCP 결제"]}
+      />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero */}
@@ -290,6 +282,42 @@ export default function PosKioskPage() {
             <div className="flex items-start gap-2 text-sm text-gray-600 mt-1">
               <span className="text-blue-500 mt-0.5">•</span>
               <span>환경별 로깅 처리로 디버깅 효율성 향상</span>
+            </div>
+          </div>
+        </section>
+
+        {/* 어려움과 극복 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">진행 중 발생한 이슈와 해결</h2>
+          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">1</span>
+                  모듈 배포 시 오류 예측의 어려움
+                </h3>
+                <p className="text-gray-600 text-sm mb-3">
+                  POS/키오스크 기기에 모듈 형태로 배포할 때 어떤 오류가 발생할지 예측하기 어려웠습니다.
+                  개발 환경(PC 브라우저)과 실행 환경(POS/키오스크 기기)이 달라 디버깅이 까다로웠습니다.
+                </p>
+                <div className="bg-white rounded-lg p-4 border border-blue-100">
+                  <p className="text-sm font-medium text-blue-700 mb-2">해결 방법</p>
+                  <ul className="space-y-1 text-sm text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">•</span>
+                      <span><strong>커스텀 로그 시스템</strong>을 구현하여 기기에서 발생하는 오류를 추적 가능하게 함</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">•</span>
+                      <span><code className="bg-gray-100 px-1 rounded">window.CefSharp</code> 존재 여부로 환경 분기 처리</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-blue-500 mt-0.5">•</span>
+                      <span>로컬에서도 오류 없이 개발/테스트 가능한 구조로 설계</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
