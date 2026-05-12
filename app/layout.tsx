@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "tset | Frontend Ddddeveloper",
+  title: "신희제 | Frontend Developer",
   description: "프론트엔드 개발자 신희제의 포트폴리오입니다. React, Next.js, TypeScript 기반 웹 애플리케이션 개발을 담당합니다.",
 };
 
