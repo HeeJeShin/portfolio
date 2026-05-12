@@ -31,8 +31,8 @@ export const projects: Project[] = [
     subtitle: "2단계 어드민 시스템 개발",
     period: "2025.02 - 2025.04",
     description: "슈퍼어드민 + 프로젝트 어드민 구조의 전시회 참가신청 관리 시스템",
-    tags: ["Next.js", "TypeScript", "TanStack Query", "Turborepo"],
-    highlights: ["50% 기간 단축", "70% 개발 시간 절감", "216개 테스트 케이스"],
+    tags: ["Next.js", "TypeScript", "TanStack Query", "Turborepo", "Vitest"],
+    highlights: ["모노레포 기반 50% 기간 단축", "Vitest 단위테스트 자동화", "216개 테스트 케이스"],
     metrics: {
       period: "50%",
       dev: "70%",

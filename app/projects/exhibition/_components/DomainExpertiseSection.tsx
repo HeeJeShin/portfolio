@@ -62,6 +62,37 @@ export const DomainExpertiseSection = () => {
           </div>
         </div>
       </div>
+
+      {/* 어려움과 극복 */}
+      <div className="bg-white rounded-xl p-6 border border-gray-200">
+        <h3 className="font-bold text-gray-900 text-lg mb-4 flex items-center gap-2">
+          <span className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">!</span>
+          진행 중 발생한 이슈와 해결
+        </h3>
+        <div className="space-y-4">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-gray-900 mb-2">문제</p>
+            <p className="text-sm text-gray-600">
+              디자인 시안 없이 개발을 시작해야 하는 상황. 처음에는 화면 구성에 대한 막막함이 있었습니다.
+            </p>
+          </div>
+          <div className="bg-blue-50 rounded-lg p-4">
+            <p className="text-sm font-medium text-blue-700 mb-2">해결</p>
+            <p className="text-sm text-gray-600">
+              사업 담당 실무자와 <strong>유기적으로 소통</strong>하며 화면을 구성해 나갔습니다.
+              도메인에 대한 이해도가 있었기에 요구사항을 빠르게 파악하고 제안할 수 있었고,
+              그 과정에서 <strong className="text-blue-600">함께 만들어가는 즐거움</strong>을 느꼈습니다.
+            </p>
+          </div>
+          <div className="bg-amber-50 rounded-lg p-4 border border-amber-100">
+            <p className="text-sm font-medium text-amber-700 mb-2">아쉬운 점 & 교훈</p>
+            <p className="text-sm text-gray-600">
+              서류화된 화면 구성/로직 문서가 부족해 운영 배포 후 문서 작성에 어려움이 있었습니다.
+              이후 프로젝트에서는 <strong>개발과 문서화를 병행</strong>하는 습관을 들이게 되었습니다.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
