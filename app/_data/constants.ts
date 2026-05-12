@@ -38,6 +38,10 @@ export const projects: Project[] = [
       dev: "70%",
       tests: "216개",
     },
+    links: [
+      { label: "어드민", url: "https://ipsolution-admin.ezpmp.com/" },
+      { label: "유저", url: "https://ipsolution.ezpmp.com/GETEC/120006" },
+    ],
   },
   {
     id: "smart-tourism",
@@ -67,8 +71,8 @@ export const projects: Project[] = [
     subtitle: "디키디키 키즈카페",
     period: "2024.11 - 2025.02",
     description: "동대문역사문화공원역 어린이 키즈카페용 POS/Kiosk 시스템",
-    tags: ["JavaScript", "KCP 결제", "비콘"],
-    highlights: ["KCP 결제 연동", "영수증 출력", "비콘 대여/반납"],
+    tags: ["JavaScript", "jQuery", "JSP", "KCP 결제"],
+    highlights: ["키오스크 UI 전체 개발", "장바구니/옵션 시스템", "KCP 결제 연동"],
   },
   {
     id: "o2meet",
