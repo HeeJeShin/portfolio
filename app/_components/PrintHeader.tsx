@@ -8,6 +8,10 @@ export const PrintHeader = () => {
         <span>010-2390-2038</span>
         <span>github.com/HeeJeShin</span>
       </div>
+      <div className="mt-2 text-sm text-gray-700">
+        <span className="font-semibold text-gray-900">현재 연봉</span>{" "}
+        <span>50,000,000원</span>
+      </div>
     </header>
   );
 };
