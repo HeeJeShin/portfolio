@@ -4,6 +4,7 @@ import {
   ExperienceSection,
   Footer,
   IntroSection,
+  PersonalStatementSection,
   PrintHeader,
   ProjectsSection,
   Sidebar,
@@ -18,6 +19,7 @@ export default function Home() {
         <main className="flex-1 min-w-0 px-6 lg:px-12 py-10 lg:py-12">
           <PrintHeader />
           <IntroSection />
+          <PersonalStatementSection />
           <ExperienceSection />
           <SkillsSection />
           <ProjectsSection />
