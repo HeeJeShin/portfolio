@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신희제 | Frontend Developer - 올리브영 지원</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      font-size: 10pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: white;
+      padding: 40px 50px;
+      max-width: 210mm;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .portfolio-link {
+      font-size: 11pt;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-link a {
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact {
+      font-size: 10pt;
+      color: #444;
+      margin-bottom: 24px;
+    }
+
+    .contact a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #111;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #111;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #222;
+      margin-top: 14px;
+      margin-bottom: 6px;
+    }
+
+    h4 {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #333;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+
+    .meta {
+      font-size: 9pt;
+      color: #666;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 8px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .tech-tag {
+      font-size: 9pt;
+      color: #555;
+      font-style: italic;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e0e0e0;
+      margin: 16px 0;
+    }
+
+    .motivation-box {
+      background: #f0f7ff;
+      padding: 16px;
+      border-radius: 8px;
+      border-left: 4px solid #0066cc;
+      margin-bottom: 16px;
+    }
+
+    .about-box {
+      background: #f8f9fa;
+      padding: 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .experience-card {
+      background: #fafafa;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+
+    .experience-card h4 {
+      color: #0066cc;
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 10pt;
+    }
+
+    .experience-card ul {
+      margin-left: 16px;
+      margin-bottom: 0;
+    }
+
+    .experience-card li {
+      font-size: 9pt;
+    }
+
+    .problem-section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+
+    .problem-section h4 {
+      margin-top: 0;
+    }
+
+    .problem-label {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #666;
+      margin-top: 8px;
+      margin-bottom: 4px;
+    }
+
+    .links a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    @media print {
+      body {
+        padding: 20px 30px;
+      }
+
+      h2 {
+        page-break-after: avoid;
+      }
+
+      h3, h4 {
+        page-break-after: avoid;
+      }
+
+      .motivation-box, .about-box, .experience-card, .problem-section {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>신희제 | Frontend Developer</h1>
+<p class="portfolio-link"><a href="https://portfolio-eight-tau-20.vercel.app/">포트폴리오 사이트 바로가기</a></p>
+<p class="contact">
+  <strong>+82 10-2390-2038</strong> | <strong>heeheehee.hj@gmail.com</strong> | <a href="https://github.com/HeeJeShin">GitHub</a>
+</p>
+
+<p style="background: #e8f4fd; padding: 10px 16px; border-radius: 6px; font-size: 11pt; margin-bottom: 20px;">
+  <strong>희망 유닛:</strong> 1지망 <strong>커스터머플랫폼</strong> | 2지망 <strong>세틀먼트플랫폼</strong>
+</p>
+
+<h2>지원동기</h2>
+<div class="motivation-box">
+  <p><strong>올리브영의 코어플랫폼유닛에서 하는 일이 제가 해온 일과 맞닿아 있습니다.</strong></p>
+  <p>저는 4년간 <strong>상품 관리 시스템</strong>, <strong>회원/프로모션 시스템</strong>, <strong>정산/인보이스 시스템</strong>을 개발해왔습니다. 채용 공고의 카탈로그플랫폼, 커스터머플랫폼, 세틀먼트플랫폼 영역에서 제 경험이 도움이 될 수 있다고 생각합니다.</p>
+  <p>특히 <strong>"도메인 모델링 경험"</strong>이라는 자격요건이 와닿았습니다. 저는 TypeScript 타입 정의부터 선행한 뒤 개발을 진행하는 방식을 선호합니다. API 응답과 도메인 모델을 타입으로 먼저 설계하고, Zod 스키마로 런타임 검증까지 적용해왔습니다.</p>
+  <p>올리브영은 제가 실제로 자주 이용하는 서비스입니다. 앱에서 주문하고 매장에서 픽업하는 경험, 쿠폰 적용 과정 등을 사용자로서 겪어왔기에 <strong>상품, 회원, 프로모션 도메인이 어떻게 동작해야 하는지</strong> 감이 있습니다.</p>
+</div>
+
+<h2>About Me</h2>
+<div class="about-box">
+  <p><strong>4년간 복잡한 비즈니스 로직을 다루는 프론트엔드 시스템을 개발해온 개발자입니다.</strong></p>
+  <p>현재는 Next.js, React, TypeScript로 웹 애플리케이션을 개발하고 있습니다.</p>
+  <p><strong>모든 문제를 미리 아는 개발자는 아닙니다.</strong><br>
+  다만 문제가 발생하면 해결하고, 같은 문제가 다시 일어나지 않도록 정리합니다. 그 과정에서 AI를 적극 활용합니다. 트러블슈팅 과정을 문서화하거나, 해결 방법을 팀에 공유할 때 AI와 함께 작업하면 인간의 실수나 누락을 줄일 수 있기 때문입니다.</p>
+  <p><strong>사용자 관점에서 제안하는 개발자</strong>입니다.<br>
+  도메인을 이해해야 좋은 코드가 나온다고 생각합니다. 운영팀의 실제 업무 흐름을 파악하고, 요청이 오기 전에 불편사항을 먼저 발견해서 개선 방향을 제안해왔습니다. (예: 유저 리스트 가시성 개선, 상세 페이지 핵심 정보 상단 고정 등)</p>
+</div>
+
+<h2>올리브영 업무 연관 경험</h2>
+<div class="experience-grid">
+  <div class="experience-card">
+    <h4>카탈로그플랫폼 (상품)</h4>
+    <ul>
+      <li><strong>상품 카테고리/리스트</strong> 시스템 개발</li>
+      <li>상품별 옵션 선택, 수량 조절, 금액 자동 계산</li>
+      <li><strong>다국어 지원 (한/영/일)</strong>: useContext + i18n</li>
+    </ul>
+  </div>
+  <div class="experience-card">
+    <h4>커스터머플랫폼 (회원/프로모션)</h4>
+    <ul>
+      <li><strong>회원 인증</strong> - JWT, NICE, 소셜 로그인</li>
+      <li><strong>쿠폰/프로모션</strong> - 상품별 쿠폰 적용</li>
+      <li>회원 등급별 권한 관리</li>
+    </ul>
+  </div>
+  <div class="experience-card">
+    <h4>세틀먼트플랫폼 (정산)</h4>
+    <ul>
+      <li><strong>입금 관리</strong> - 유형별 금액 산정, 상태 추적</li>
+      <li><strong>인보이스 자동 발행</strong> 및 메일 발송</li>
+      <li>다양한 정산 조건에 <strong>유연하게 대응</strong></li>
+    </ul>
+  </div>
+  <div class="experience-card">
+    <h4>도메인 모델링</h4>
+    <ul>
+      <li><strong>TypeScript 타입 정의부터 선행</strong> 후 개발</li>
+      <li>도메인 엔티티 타입 설계 (신청, 인보이스 등)</li>
+      <li>Zod 스키마 기반 런타임 검증</li>
+    </ul>
+  </div>
+</div>
+
+<h2>문제 해결 경험</h2>
+
+<div class="problem-section">
+  <h4>Safari 브라우저 이슈 해결 및 팀 내 공유</h4>
+  <p class="problem-label">현상</p>
+  <p>Safari에서 NICE 본인인증 팝업이 차단되고, 로그인 토큰이 유실되는 문제 발생</p>
+  <p class="problem-label">해결</p>
+  <ul>
+    <li>NICE 인증을 팝업 → 페이지 리다이렉트 방식으로 전환</li>
+    <li>쿠키 + localStorage 이중 저장으로 토큰 유실 방지</li>
+    <li>회사에 Mac 장비 요청, iPhone으로 Safari 원격 디버깅 환경 구축</li>
+  </ul>
+  <p class="problem-label">이후 조치</p>
+  <p>Safari는 외부 API 연동 시 공통적으로 문제가 발생 → 해결 과정과 체크리스트를 <strong>문서화해서 팀에 공유</strong>. 문서화는 AI 활용해서 빠르게 작성.</p>
+</div>
+
+<div class="problem-section">
+  <h4>결제 데이터 정합성 문제 아키텍처 개선</h4>
+  <p class="problem-label">현상</p>
+  <p>"결제는 완료됐는데 주문 내역에 안 보여요" CS 인입</p>
+  <p class="problem-label">원인 분석</p>
+  <p>프론트에서 결제 완료 콜백 처리 → 모바일에서 네트워크 끊김 등으로 콜백 유실 → <strong>데이터 정합성 깨짐</strong></p>
+  <p class="problem-label">해결</p>
+  <p>백엔드 팀에 문제 상황 공유, <strong>결제 완료 처리를 백엔드 웹훅 방식으로 전환 제안</strong>. 백엔드 구현 후 프론트엔드 로직 수정.</p>
+</div>
+
+<h2>경력 4년</h2>
+<h3>이즈피엠피 (EZPMP)</h3>
+<p class="meta"><strong>2022.05 - 재직중 (4년)</strong> | 정규직 | 프론트엔드 | 선임연구원 | <strong>현재 연봉 5,000만원</strong></p>
+
+<h2>핵심 프로젝트</h2>
+
+<h3>1. 전시부스 신청 관리 어드민 시스템</h3>
+<p class="meta"><strong>2025.02 - 2025.04 (3개월)</strong> | 프론트엔드 | 팀 구성: 백엔드 1, 프론트엔드 1</p>
+<p>슈퍼어드민 + 프로젝트 어드민으로 구성된 <strong>2단계 어드민 시스템</strong></p>
+<p><strong>핵심 성과:</strong> 공용 컴포넌트 재사용으로 개발 속도 향상 | TypeScript + Zod로 런타임 에러 감소</p>
+<p><strong>주요 구현:</strong> 모노레포(Turborepo), TanStack Query, DynamicForm, DataTable, 다국어(한/영/일)</p>
+<p class="tech-tag">Next.js, TypeScript, TanStack Query, Zustand, Tailwind CSS, Zod, Vitest</p>
+
+<hr>
+
+<h3>2. 스마트관광 플랫폼 (인제 / 용인)</h3>
+<p class="meta"><strong>2025.06 - 2025.11</strong> | 프론트엔드 | 팀 구성: FE 3, BE 2, 기획 2</p>
+<p>숙박/체험 예약, 투어패스 판매, 결제, 커뮤니티 기능을 갖춘 스마트 관광 플랫폼</p>
+<p><strong>핵심 구현:</strong> KCP 결제 연동, JWT/NICE/소셜 인증, 보안 헤더(CSP/HSTS), Safari 이슈 해결</p>
+<p class="tech-tag">Next.js, TypeScript, Zustand, KCP</p>
+
+<hr>
+
+<h3>3. POS/Kiosk 시스템</h3>
+<p class="meta"><strong>2024.11 - 2025.02</strong> | 프론트엔드</p>
+<p>키즈카페용 POS/키오스크 시스템 UI 개발</p>
+<p><strong>핵심 구현:</strong> 상품/장바구니/결제 UI, POS 기기 연동(CefSharp), 비콘 모니터링 대시보드</p>
+<p class="tech-tag">JavaScript, jQuery, KCP</p>
+
+<h2>스킬</h2>
+<p><strong>Frontend:</strong> React, Next.js, TypeScript, JavaScript, jQuery</p>
+<p><strong>상태관리:</strong> TanStack Query, Zustand</p>
+<p><strong>CSS:</strong> Tailwind CSS</p>
+<p><strong>테스트:</strong> Vitest</p>
+<p><strong>빌드/DevOps:</strong> Turborepo, pnpm, Docker, GitLab CI/CD</p>
+
+<h2>학력</h2>
+<h3>서울사이버대</h3>
+<p class="meta"><strong>2025.03 - 재학 중 (2026.02 졸업예정)</strong> | 컴퓨터공학과 (편입 3학년)</p>
+
+</body>
+</html>
