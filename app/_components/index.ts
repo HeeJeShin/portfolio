@@ -1,5 +1,6 @@
 export { Sidebar } from "./Sidebar";
 export { IntroSection } from "./IntroSection";
+export { PersonalStatementSection } from "./PersonalStatementSection";
 export { ExperienceSection } from "./ExperienceSection";
 export { SkillsSection } from "./SkillsSection";
 export { ProjectsSection } from "./ProjectsSection";
