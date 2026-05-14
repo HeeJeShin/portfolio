@@ -159,11 +159,23 @@ text-gray-500    : 주석
 
 ## PDF 생성 방법 (RESUME.md → PDF)
 
-puppeteer를 사용하여 마크다운을 PDF로 변환합니다.
+puppeteer를 사용하여 HTML을 PDF로 변환합니다.
 
-### 1. HTML 생성
-```bash
-pandoc RESUME.md -o /tmp/resume.html --standalone -V pagetitle="신희제 이력서" --css=/dev/null
+### ⚠️ 중요: HTML 스타일링 필수!
+- **pandoc으로 바로 변환하지 말 것** - 못생긴 PDF가 나옴
+- 반드시 `resume_styled.html` 또는 `resume_oliveyoung.html` 같은 **스타일링된 HTML 파일**을 먼저 만들고 PDF 생성
+- 기존 스타일 HTML 파일 참고: `/Users/ezpmp/IdeaProjects/pro/resume_styled.html`
+
+### HTML 스타일 필수 요소
+```html
+<!-- 폰트 -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+
+<!-- 기본 스타일 -->
+body { font-family: 'Pretendard'; font-size: 10pt; padding: 40px 50px; max-width: 210mm; }
+h1 { font-size: 24pt; }
+h2 { font-size: 14pt; border-bottom: 2px solid #111; }
+h3 { font-size: 12pt; }
 ```
 
 ### 2. PDF 생성 스크립트 (`/tmp/generate-pdf.js`)
