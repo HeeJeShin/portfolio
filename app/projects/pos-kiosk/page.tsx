@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
 const techStack = ["JavaScript", "jQuery", "JSP", "KCP 결제"];
