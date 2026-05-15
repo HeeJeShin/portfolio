@@ -8,7 +8,7 @@ https://portfolio-eight-tau-20.vercel.app/
 
 ## Resume
 
-상세 이력서는 [RESUME.md](./RESUME.md)에서 확인할 수 있습니다.
+상세 이력서는 [PDF](./public/신희제_프론트엔드개발자_이력서_public.pdf)에서 확인할 수 있습니다.
 
 ## Tech Stack
 
