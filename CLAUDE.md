@@ -157,14 +157,13 @@ text-gray-500    : 주석
 
 ---
 
-## PDF 생성 방법 (RESUME.md → PDF)
+## PDF 생성 방법 (HTML → PDF)
 
 puppeteer를 사용하여 HTML을 PDF로 변환합니다.
 
-### ⚠️ 중요: HTML 스타일링 필수!
-- **pandoc으로 바로 변환하지 말 것** - 못생긴 PDF가 나옴
-- 반드시 `resume_styled.html` 또는 `resume_oliveyoung.html` 같은 **스타일링된 HTML 파일**을 먼저 만들고 PDF 생성
-- 기존 스타일 HTML 파일 참고: `/Users/ezpmp/IdeaProjects/pro/resume_styled.html`
+### 이력서 HTML 파일
+- `resume_styled.html` - 기본 이력서
+- `resume_oliveyoung.html` - 올리브영 지원용
 
 ### HTML 스타일 필수 요소
 ```html
@@ -178,16 +177,17 @@ h2 { font-size: 14pt; border-bottom: 2px solid #111; }
 h3 { font-size: 12pt; }
 ```
 
-### 2. PDF 생성 스크립트 (`/tmp/generate-pdf.js`)
+### PDF 생성 스크립트 (`/tmp/generate-pdf.js`)
 ```javascript
 const puppeteer = require('puppeteer');
 
 (async () => {
   const browser = await puppeteer.launch({ headless: 'new' });
   const page = await browser.newPage();
-  await page.goto('file:///tmp/resume.html', { waitUntil: 'networkidle0' });
+  // HTML 파일 경로를 첫 번째 인자로 전달
+  await page.goto(`file://${process.argv[2]}`, { waitUntil: 'networkidle0' });
   await page.pdf({
-    path: process.argv[2] || '신희제_프론트엔드개발자_이력서.pdf',
+    path: process.argv[3] || '신희제_프론트엔드개발자_이력서.pdf',
     format: 'A4',
     margin: { top: '20mm', right: '15mm', bottom: '20mm', left: '15mm' },
     printBackground: true
@@ -197,11 +197,11 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-### 3. 실행
+### 실행
 ```bash
 # puppeteer 설치 (최초 1회)
 cd /tmp && npm init -y && npm install puppeteer
 
-# PDF 생성
-node /tmp/generate-pdf.js "/Users/ezpmp/IdeaProjects/pro/신희제_프론트엔드개발자_이력서.pdf"
+# PDF 생성 (HTML 파일 경로, 출력 PDF 경로)
+node /tmp/generate-pdf.js "/Users/ezpmp/IdeaProjects/pro/resume_styled.html" "/Users/ezpmp/IdeaProjects/pro/public/신희제_프론트엔드개발자_이력서.pdf"
 ```
