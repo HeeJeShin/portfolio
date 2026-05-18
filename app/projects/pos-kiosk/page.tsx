@@ -57,6 +57,7 @@ export default function PosKioskPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
+        title="POS/키오스크 시스템"
         period="2024.11 - 2025.02"
         techStack={["JavaScript", "jQuery", "JSP", "KCP 결제"]}
       />

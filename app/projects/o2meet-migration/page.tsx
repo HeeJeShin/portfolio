@@ -28,6 +28,7 @@ export default function O2MeetMigrationPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
+        title="O2MEET Next.js 마이그레이션"
         period="2024.12 - 2025.02"
         techStack={["Next.js", "TypeScript", "React Query"]}
       />
