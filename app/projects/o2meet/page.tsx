@@ -40,6 +40,7 @@ export default function O2MeetPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
+        title="O2MEET 온라인 행사 플랫폼"
         period="2022.05 - 현재"
         techStack={["JSP", "jQuery", "KCP 결제"]}
       />

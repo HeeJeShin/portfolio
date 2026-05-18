@@ -92,7 +92,7 @@ export const PersonalStatementSection = () => {
 
       <div className="space-y-8">
         {sections.map((section) => (
-          <div key={section.title} className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+          <div key={section.title} className="rounded-xl p-6 border border-gray-200">
             <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
               {section.title}
