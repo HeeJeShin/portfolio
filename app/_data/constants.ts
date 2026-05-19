@@ -63,7 +63,7 @@ export const projects: Project[] = [
     period: "2024.12 - 2025.02",
     description: "JSP 기반 시스템을 Next.js로 마이그레이션하여 컴포넌트 기반 구조 도입",
     tags: ["Next.js", "TypeScript", "React Query", "MUI"],
-    highlights: ["SSR 최적화", "다이나믹 라우팅", "재사용성 향상"],
+    highlights: ["SSR 속도 개선", "컴포넌트 기반 구조", "재사용성 향상"],
   },
   {
     id: "pos-kiosk",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     description: "온라인 전시관, 컨퍼런스, 티켓 구매 등 행사 플랫폼 프론트엔드",
     tags: ["JSP", "jQuery", "KCP"],
     highlights: ["등록솔루션 2주→3-5일", "결제 시스템 구축", "공통화 작업"],
-    subProjects: ["북키즈콘 (2025.02-10)", "SPP (2024.04-10)"],
+    subProjects: ["북키즈콘 (2024~ 매년 9월)", "SPP (2024, 종료)"],
   },
 ];
 

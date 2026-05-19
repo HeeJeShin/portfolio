@@ -1,3 +1,4 @@
+export { HashScroll } from "./HashScroll";
 export { Sidebar } from "./Sidebar";
 export { IntroSection } from "./IntroSection";
 export { PersonalStatementSection } from "./PersonalStatementSection";

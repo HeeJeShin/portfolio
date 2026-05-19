@@ -3,24 +3,130 @@
 import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
-const techStack = ["Next.js", "TypeScript", "React Query", "Zustand", "Emotion", "Zod", "MUI"];
+const techStack = ["Next.js 14", "TypeScript", "Zustand", "MUI", "Zod"];
 
-const highlights = [
+const achievements = [
+  { label: "초기 로딩", value: "개선", desc: "SSR로 초기 렌더링 속도 향상" },
+  { label: "코드 재사용", value: "향상", desc: "컴포넌트 기반 구조로 전환" },
+  { label: "유지보수", value: "용이", desc: "JSP include → React 컴포넌트" },
+];
+
+const jspLimitations = [
   {
-    title: "JSP 기반 시스템의 한계 극복",
-    items: [
-      "include를 통한 전체 페이지 삽입 방식 → 코드 재사용 어려움",
-      "JavaScript로 동적 태그 생성 방식의 유지보수 문제",
-      "컨트롤러에서 상황에 따라 JSP 분리하는 복잡한 구조",
-    ],
+    issue: "include를 통한 전체 페이지 삽입",
+    detail: "공통 부분을 include로 삽입하면 전체 페이지가 들어가서 코드 재사용이 어려움",
   },
   {
-    title: "Next.js 도입 효과",
-    items: [
-      "컴포넌트 기반 구조로 재사용성 및 유지보수 용이성 향상",
-      "SSR을 통한 SEO 최적화 및 초기 로딩 성능 개선",
-      "다이나믹 라우팅: o2meet.io/{projectCd}/{siteId} 형태 구현",
-    ],
+    issue: "JavaScript로 동적 태그 생성",
+    detail: "HTML을 문자열로 조립하는 방식 → 유지보수 어려움, 오타 찾기 힘듦",
+  },
+  {
+    issue: "컨트롤러에서 상황별 JSP 분리",
+    detail: "조건에 따라 다른 JSP를 반환하는 복잡한 구조 → 소스코드 비대화",
+  },
+];
+
+const improvements = [
+  {
+    title: "컴포넌트 기반 구조",
+    before: `// JSP - 문자열로 HTML 조립
+let html = '';
+goodsList.forEach(goods => {
+  html += '<li>';
+  html += '<span class="name">' + goods.name + '</span>';
+  html += '</li>';
+});
+$('.list').html(html);`,
+    after: `// React - 컴포넌트로 분리
+const GoodsItem = ({ goods }) => (
+  <li>
+    <span className="name">{goods.name}</span>
+  </li>
+);
+
+const GoodsList = ({ goodsList }) => (
+  <ul className="list">
+    {goodsList.map(goods =>
+      <GoodsItem key={goods.id} goods={goods} />
+    )}
+  </ul>
+);`,
+    benefit: "재사용 가능, 수정 시 해당 컴포넌트만 변경",
+  },
+  {
+    title: "HOC로 권한 분리",
+    desc: "Auth, AdminAuth 컴포넌트로 권한별 접근 제어",
+    code: `const AdminAuth = ({ children }) => {
+  const { isAdmin } = useAuthStore();
+  if (!isAdmin) return <Redirect to="/login" />;
+  return children;
+};
+
+// 사용
+<AdminAuth>
+  <AdminDashboard />
+</AdminAuth>`,
+    benefit: "경로 기반 권한 분기 (/admin/* → 관리자만 접근)",
+  },
+  {
+    title: "Zustand 상태 관리",
+    desc: "sessionStorage + 전역 변수 → Zustand store로 상태 중앙화",
+    code: `const useAuthStore = create((set) => ({
+  isLoggedIn: false,
+  token: null,
+  userInfo: null,
+  login: (token, userInfo) =>
+    set({ isLoggedIn: true, token, userInfo }),
+  logout: () =>
+    set({ isLoggedIn: false, token: null, userInfo: null }),
+}));
+
+// 어느 컴포넌트에서든 동일하게 접근
+const { isLoggedIn, userInfo } = useAuthStore();`,
+    benefit: "여러 페이지에서 일관된 사용자 정보 접근",
+  },
+  {
+    title: "Zod 스키마 검증",
+    desc: "여러 폼에서 반복되는 검증(이메일, 사용자 ID 등)을 공통화",
+    code: `const userSchema = z.object({
+  email: z.string().email("올바른 이메일 형식이 아닙니다"),
+  userId: z.string().min(4, "4자 이상 입력해주세요"),
+  phone: z.string().regex(
+    /^01[0-9]-\\d{4}-\\d{4}$/,
+    "올바른 전화번호 형식이 아닙니다"
+  ),
+});
+
+// 타입 자동 추론
+type User = z.infer<typeof userSchema>;`,
+    benefit: "TypeScript와 강력한 통합, 런타임 타입 검증",
+  },
+];
+
+const muiAdoption = {
+  reason: "기존 스타일 없이 빠르게 UI 구현하기 위한 전략적 선택",
+  benefits: [
+    "미리 구성된 컴포넌트로 개발 속도 향상",
+    "프로퍼티 기반 스타일링으로 커스터마이징 용이",
+    "일관된 디자인 시스템 적용",
+  ],
+};
+
+const reflections = [
+  {
+    lesson: "컴포넌트 설계 먼저",
+    from: "JSP를 급하게 옮기다 보니 컴포넌트 분리가 어중간함",
+    applied: "전시부스신청에서는 페이지별 컴포넌트 구조를 먼저 설계",
+  },
+  {
+    lesson: "상태 관리 설계 선행",
+    from: "sessionStorage → Zustand 전환 시 누락된 부분 발생",
+    applied: "전시부스신청에서는 store 구조를 먼저 설계 후 개발",
+  },
+  {
+    lesson: "검증 로직 공통화",
+    from: "폼마다 비슷한 검증 코드 중복",
+    applied: "전시부스신청에서는 Zod 스키마로 검증 로직 재사용",
   },
 ];
 
@@ -30,7 +136,7 @@ export default function O2MeetMigrationPage() {
       <ProjectHeader
         title="O2MEET Next.js 마이그레이션"
         period="2024.12 - 2025.02"
-        techStack={["Next.js", "TypeScript", "React Query"]}
+        techStack={["Next.js", "TypeScript", "Zustand"]}
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
@@ -44,31 +150,134 @@ export default function O2MeetMigrationPage() {
             <span className="text-gray-600 text-sm">프론트엔드</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            O2MEET Next.js 마이그레이션
+            O2MEET JSP → Next.js 마이그레이션
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
-            다변화하는 요구사항을 효율적으로 수용하기 위해 <strong className="text-blue-600">JSP 기반 시스템을 Next.js로 마이그레이션</strong>하여
+            다변화하는 요구사항을 효율적으로 수용하기 위해
+            <strong className="text-blue-600"> JSP 기반 시스템을 Next.js로 마이그레이션</strong>하여
             컴포넌트 기반 구조를 도입했습니다.
           </p>
         </section>
 
-        {/* Highlights */}
+        {/* 성과 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 배경 및 효과</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {highlights.map((section) => (
-              <div key={section.title} className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-                <h3 className="font-bold text-gray-900 mb-4">{section.title}</h3>
-                <ul className="space-y-2">
-                  {section.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                      <span className="text-blue-500 mt-0.5">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 성과</h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            {achievements.map((item) => (
+              <div key={item.label} className="bg-blue-50 rounded-xl p-6 border border-blue-100 text-center">
+                <p className="text-sm text-gray-600 mb-1">{item.label}</p>
+                <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
+                <p className="text-xs text-gray-500">{item.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* JSP 한계 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 배경 - JSP의 한계</h2>
+          <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+            <div className="space-y-4">
+              {jspLimitations.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-gray-900">{item.issue}</p>
+                    <p className="text-sm text-gray-600">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 개선 사항 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Next.js 전환으로 개선된 점</h2>
+          <div className="space-y-6">
+            {improvements.map((item, idx) => (
+              <div key={item.title} className="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">
+                    {idx + 1}
+                  </span>
+                  {item.title}
+                </h3>
+                {item.desc && (
+                  <p className="text-sm text-gray-600 mb-3">{item.desc}</p>
+                )}
+                {item.before && item.after && (
+                  <div className="grid md:grid-cols-2 gap-4 mb-3">
+                    <div>
+                      <p className="text-xs font-medium text-red-600 mb-2">Before (JSP)</p>
+                      <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
+                        <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.before}</pre>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="text-xs font-medium text-blue-600 mb-2">After (Next.js)</p>
+                      <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
+                        <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.after}</pre>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {item.code && !item.before && (
+                  <div className="bg-gray-900 rounded-lg p-4 mb-3 overflow-x-auto">
+                    <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.code}</pre>
+                  </div>
+                )}
+                <div className="flex items-start gap-2 text-sm">
+                  <span className="text-blue-500 font-medium">효과:</span>
+                  <span className="text-gray-600">{item.benefit}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* MUI */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">MUI 도입</h2>
+          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+            <p className="text-gray-700 mb-4">{muiAdoption.reason}</p>
+            <ul className="space-y-2">
+              {muiAdoption.benefits.map((b, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <span className="text-blue-500">•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* 고찰 → 전시부스신청에 적용 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 고찰 → 전시부스신청에 적용</h2>
+          <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+            <p className="text-gray-700 mb-6">
+              마이그레이션 경험에서 배운 점을 바탕으로 <strong className="text-green-700">전시부스신청 프로젝트</strong>를 더 잘 설계했습니다.
+            </p>
+            <div className="space-y-4">
+              {reflections.map((r, i) => (
+                <div key={i} className="bg-white rounded-lg p-4 border border-green-100">
+                  <p className="font-medium text-gray-900 mb-2">{r.lesson}</p>
+                  <div className="grid md:grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-start gap-2">
+                      <span className="text-red-500">마이그레이션:</span>
+                      <span className="text-gray-600">{r.from}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span className="text-green-600">적용:</span>
+                      <span className="text-gray-600">{r.applied}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
