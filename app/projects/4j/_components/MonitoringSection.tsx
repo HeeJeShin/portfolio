@@ -2,6 +2,7 @@ export const MonitoringSection = () => {
   return (
     <section className="mb-16">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">실시간 혼잡도 모니터링</h2>
+      <p className="text-sm text-gray-500 mb-6">* 실시간 모니터링 시뮬레이션은 간이 데이터로 진행하였습니다.</p>
 
       <div className="grid md:grid-cols-2 gap-6">
         {/* 모니터링 기능 */}
