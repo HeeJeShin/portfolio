@@ -39,7 +39,7 @@ export const Sidebar = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-blue-600 font-medium">Frontend Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
-            도메인에 대한 이해도를 중요하게 생각합니다. <br /> AI를 활용해 생산성을 높이는데 관심이 많습니다.
+            비즈니스 도메인에 대한 통찰과 AI 활용 능력을 무기로,<br /> 빠르고 정확하게 실질적인 결과물을 만들어내는 개발자입니다.
           </p>
         </div>
 
