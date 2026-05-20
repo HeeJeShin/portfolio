@@ -2,7 +2,7 @@ export const InvoiceSection = () => {
   return (
     <section className="mb-16">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">인보이스 발행</h2>
-      <div className="bg-gray-50 rounded-xl p-6">
+      <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
         <p className="text-gray-600 mb-6">
           부스 신청, 공급품 구매 등 <strong className="text-gray-900">각 항목별 인보이스 발행 기능</strong>을 제공합니다.
           유저는 마이페이지에서, 어드민은 상세페이지에서 인보이스를 확인하고 메일로 배포할 수 있습니다.
@@ -11,17 +11,12 @@ export const InvoiceSection = () => {
         {/* 인보이스 발행 대상 */}
         <div className="grid md:grid-cols-3 gap-4 mb-6">
           {[
-            { icon: "🏢", color: "blue", title: "부스 참가비", items: ["조립부스 / 독립부스", "조기신청 할인 적용", "추가 공간 요금"] },
-            { icon: "🪑", color: "emerald", title: "가구/비품", items: ["테이블, 의자, 진열대", "조명, 전기 설비", "수량별 자동 계산"] },
-            { icon: "🎨", color: "purple", title: "커스텀 그래픽", items: ["파사드, 인포데스크", "사이즈별 단가 적용", "시안 파일 첨부"] },
+            { title: "부스 참가비", items: ["조립부스 / 독립부스", "조기신청 할인 적용", "추가 공간 요금"] },
+            { title: "가구/비품", items: ["테이블, 의자, 진열대", "조명, 전기 설비", "수량별 자동 계산"] },
+            { title: "커스텀 그래픽", items: ["파사드, 인포데스크", "사이즈별 단가 적용", "시안 파일 첨부"] },
           ].map((category, i) => (
             <div key={i} className="bg-white rounded-lg border border-gray-200 p-4">
-              <div className="flex items-center gap-2 mb-3">
-                <div className={`w-8 h-8 bg-${category.color}-100 rounded-lg flex items-center justify-center`}>
-                  <span className={`text-${category.color}-600`}>{category.icon}</span>
-                </div>
-                <span className="font-medium text-gray-900">{category.title}</span>
-              </div>
+              <p className="font-medium text-gray-900 mb-3">{category.title}</p>
               <ul className="text-sm text-gray-600 space-y-1">
                 {category.items.map((item, j) => (
                   <li key={j}>• {item}</li>
@@ -38,7 +33,7 @@ export const InvoiceSection = () => {
         <InvoiceWorkflow />
 
         {/* 기술 구현 */}
-        <div className="mt-4 bg-gradient-to-r from-gray-100 to-gray-50 rounded-lg p-4">
+        <div className="mt-4 bg-gray-100 rounded-lg p-4">
           <p className="text-xs font-medium text-gray-700 mb-2">구현 컴포넌트</p>
           <div className="flex flex-wrap gap-2">
             {["InvoiceContent", "InvoiceModal", "useSendInvoice", "MAIL_TEMPLATE_CODES.INVOICE"].map((comp) => (
@@ -132,10 +127,10 @@ const InvoicePreview = () => {
 
         {/* 어드민 버튼 */}
         <div className="mt-4 pt-3 border-t border-gray-200 flex justify-between items-center">
-          <button className="px-3 py-1.5 bg-blue-600 text-white text-xs rounded font-medium">인보이스 배포</button>
+          <button className="px-3 py-1.5 bg-gray-900 text-white text-xs rounded font-medium">인보이스 배포</button>
           <div className="flex gap-2">
             <button className="px-3 py-1.5 border border-gray-300 text-gray-600 text-xs rounded">닫기</button>
-            <button className="px-3 py-1.5 bg-gray-900 text-white text-xs rounded">인쇄하기</button>
+            <button className="px-3 py-1.5 bg-gray-700 text-white text-xs rounded">인쇄하기</button>
           </div>
         </div>
       </div>
@@ -146,33 +141,27 @@ const InvoicePreview = () => {
 const InvoiceWorkflow = () => {
   return (
     <div className="mt-6 grid md:grid-cols-2 gap-4">
-      <div className="bg-white rounded-lg border border-blue-200 p-4">
+      <div className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-blue-600 font-bold">👤</span>
-          <span className="font-medium text-gray-900">유저 (마이페이지)</span>
+          <span className="text-gray-700 font-bold">유저</span>
+          <span className="text-sm text-gray-500">(마이페이지)</span>
         </div>
-        <div className="space-y-2 text-sm">
+        <ul className="text-sm text-gray-600 space-y-2">
           {["체크리스트에서 \"인보이스\" 버튼 클릭", "인보이스 모달에서 내역 확인", "인쇄하기 버튼으로 출력"].map((step, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="w-5 h-5 bg-blue-100 rounded text-blue-600 text-xs flex items-center justify-center">{i + 1}</span>
-              <span className="text-gray-600">{step}</span>
-            </div>
+            <li key={i}>• {step}</li>
           ))}
-        </div>
+        </ul>
       </div>
-      <div className="bg-white rounded-lg border border-emerald-200 p-4">
+      <div className="bg-white rounded-lg border border-gray-200 p-4">
         <div className="flex items-center gap-2 mb-3">
-          <span className="text-emerald-600 font-bold">🔧</span>
-          <span className="font-medium text-gray-900">어드민 (상세페이지)</span>
+          <span className="text-gray-700 font-bold">어드민</span>
+          <span className="text-sm text-gray-500">(상세페이지)</span>
         </div>
-        <div className="space-y-2 text-sm">
+        <ul className="text-sm text-gray-600 space-y-2">
           {["각 탭(부스/가구/그래픽)에서 인보이스 확인", "\"인보이스 배포\" 클릭", "담당자 이메일로 인보이스 발송"].map((step, i) => (
-            <div key={i} className="flex items-center gap-2">
-              <span className="w-5 h-5 bg-emerald-100 rounded text-emerald-600 text-xs flex items-center justify-center">{i + 1}</span>
-              <span className="text-gray-600">{step}</span>
-            </div>
+            <li key={i}>• {step}</li>
           ))}
-        </div>
+        </ul>
       </div>
     </div>
   );

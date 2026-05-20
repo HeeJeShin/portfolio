@@ -4,45 +4,40 @@ export const ArchitectureSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 아키텍처</h2>
 
       {/* 모노레포 구조 */}
-      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100 mb-8">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <span className="text-white text-xl font-bold">T</span>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 text-lg">Turborepo + pnpm workspace</h3>
-            <p className="text-sm text-gray-600">모노레포 아키텍처로 코드 재사용 극대화</p>
-          </div>
+      <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 mb-8">
+        <div className="mb-6">
+          <h3 className="font-bold text-gray-900 text-lg">Turborepo + pnpm workspace</h3>
+          <p className="text-sm text-gray-600">모노레포 아키텍처로 코드 재사용 극대화</p>
         </div>
 
         {/* 패키지 구조 다이어그램 */}
-        <div className="bg-white rounded-lg p-4 border border-blue-200 mb-4">
+        <div className="bg-white rounded-lg p-4 border border-gray-200 mb-4">
           <div className="flex flex-col md:flex-row items-stretch gap-4">
             {/* Root */}
             <div className="flex-1">
               <div className="text-xs text-gray-400 mb-2">exhibition/</div>
               <div className="space-y-2">
-                <div className="bg-blue-50 border-2 border-blue-300 rounded-lg p-3">
-                  <div className="font-bold text-blue-700 text-sm mb-2">apps/</div>
+                <div className="bg-gray-50 border-2 border-gray-300 rounded-lg p-3">
+                  <div className="font-bold text-gray-700 text-sm mb-2">apps/</div>
                   <div className="grid grid-cols-2 gap-2">
-                    <div className="bg-white rounded p-2 border border-blue-200 text-center">
+                    <div className="bg-white rounded p-2 border border-gray-200 text-center">
                       <span className="text-sm font-medium">user</span>
                       <p className="text-xs text-gray-500">유저 앱</p>
                     </div>
-                    <div className="bg-white rounded p-2 border border-blue-200 text-center">
+                    <div className="bg-white rounded p-2 border border-gray-200 text-center">
                       <span className="text-sm font-medium">admin</span>
                       <p className="text-xs text-gray-500">어드민 앱</p>
                     </div>
                   </div>
                 </div>
                 <div className="bg-gray-50 border-2 border-gray-300 rounded-lg p-3">
-                  <div className="font-bold text-blue-700 text-sm mb-2">packages/</div>
+                  <div className="font-bold text-gray-700 text-sm mb-2">packages/</div>
                   <div className="bg-white rounded p-2 border border-gray-200 text-center">
                     <span className="text-sm font-medium">shared</span>
                     <p className="text-xs text-gray-500">공용 컴포넌트, 훅, 타입</p>
                     <div className="flex gap-1 mt-1 justify-center flex-wrap">
-                      <span className="text-[10px] bg-blue-100 px-1.5 py-0.5 rounded">56개 컴포넌트</span>
-                      <span className="text-[10px] bg-blue-100 px-1.5 py-0.5 rounded">23개 훅</span>
+                      <span className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded">56개 컴포넌트</span>
+                      <span className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded">23개 훅</span>
                     </div>
                   </div>
                 </div>
@@ -52,21 +47,21 @@ export const ArchitectureSection = () => {
             {/* Benefits */}
             <div className="flex-1 flex flex-col justify-center space-y-3">
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-blue-600 text-lg">✓</span>
+                <span className="text-gray-700 text-lg font-bold">01</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">중복 코드 37% 절감</p>
                   <p className="text-xs text-gray-500">공용 패키지로 양쪽 앱에서 import</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-blue-600 text-lg">✓</span>
+                <span className="text-gray-700 text-lg font-bold">02</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">1회 수정으로 양쪽 반영</p>
                   <p className="text-xs text-gray-500">버그 수정, 기능 개선 동시 적용</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
-                <span className="text-blue-600 text-lg">✓</span>
+                <span className="text-gray-700 text-lg font-bold">03</span>
                 <div>
                   <p className="font-medium text-gray-900 text-sm">독립 배포 지원</p>
                   <p className="text-xs text-gray-500">user/admin 별도 빌드 & 배포</p>
@@ -86,14 +81,9 @@ export const ArchitectureSection = () => {
       {/* 공용 컴포넌트 활용 예시 */}
       <h3 className="text-lg font-bold text-gray-900 mb-4">공용 컴포넌트 활용</h3>
       <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-            <span className="text-blue-600 text-lg">♻️</span>
-          </div>
-          <div>
-            <p className="font-bold text-gray-900">동일한 컴포넌트, 다른 페이지</p>
-            <p className="text-sm text-gray-600">유저/어드민이 같은 UI 컴포넌트를 공유하여 일관성 유지</p>
-          </div>
+        <div className="mb-4">
+          <p className="font-bold text-gray-900">동일한 컴포넌트, 다른 페이지</p>
+          <p className="text-sm text-gray-600">유저/어드민이 같은 UI 컴포넌트를 공유하여 일관성 유지</p>
         </div>
 
         {/* DynamicForm 공용 컴포넌트 예시 */}
@@ -101,7 +91,7 @@ export const ArchitectureSection = () => {
           <div className="grid md:grid-cols-2 divide-x divide-gray-100">
             {/* User Side */}
             <div>
-              <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+              <div className="bg-gray-700 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
                 <span className="w-2 h-2 bg-white/50 rounded-full"></span>
                 User: /booth/company-info
               </div>
@@ -138,7 +128,7 @@ export const ArchitectureSection = () => {
 
             {/* Admin Side */}
             <div>
-              <div className="bg-purple-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+              <div className="bg-gray-900 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
                 <span className="w-2 h-2 bg-white/50 rounded-full"></span>
                 Admin: /exhibition/[companyNo]/company
               </div>
@@ -151,25 +141,25 @@ export const ArchitectureSection = () => {
                 <div className="border border-gray-200 rounded-lg p-3 space-y-2">
                   <div className="flex items-center justify-between border-b pb-1">
                     <p className="text-xs font-bold text-gray-700">회사 정보</p>
-                    <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[8px]">승인완료</span>
+                    <span className="px-1.5 py-0.5 bg-gray-200 text-gray-700 rounded text-[8px]">승인완료</span>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
                     <div>
                       <label className="text-[9px] text-gray-500">회사명 (국문)</label>
-                      <div className="h-6 bg-purple-50 rounded border border-purple-200 text-[9px] flex items-center px-2">(주)이즈피엠피</div>
+                      <div className="h-6 bg-gray-100 rounded border border-gray-200 text-[9px] flex items-center px-2">(주)이즈피엠피</div>
                     </div>
                     <div>
                       <label className="text-[9px] text-gray-500">회사명 (영문)</label>
-                      <div className="h-6 bg-purple-50 rounded border border-purple-200 text-[9px] flex items-center px-2">EZPMP CO., LTD.</div>
+                      <div className="h-6 bg-gray-100 rounded border border-gray-200 text-[9px] flex items-center px-2">EZPMP CO., LTD.</div>
                     </div>
                   </div>
                   <div>
                     <label className="text-[9px] text-gray-500">사업자등록번호</label>
-                    <div className="h-6 bg-purple-50 rounded border border-purple-200 text-[9px] flex items-center px-2">220-88-93270</div>
+                    <div className="h-6 bg-gray-100 rounded border border-gray-200 text-[9px] flex items-center px-2">220-88-93270</div>
                   </div>
                   <div>
                     <label className="text-[9px] text-gray-500">주소</label>
-                    <div className="h-6 bg-purple-50 rounded border border-purple-200 text-[9px] flex items-center px-2">서울특별시 서초구 사임당로 26</div>
+                    <div className="h-6 bg-gray-100 rounded border border-gray-200 text-[9px] flex items-center px-2">서울특별시 서초구 사임당로 26</div>
                   </div>
                 </div>
                 <p className="text-[9px] text-gray-500 mt-2 text-center">어드민이 유저 정보 조회/수정</p>
@@ -212,11 +202,11 @@ export const ArchitectureSection = () => {
           </div>
         </div>
 
-        <div className="mt-4 bg-blue-100 border border-gray-300 rounded-lg p-3">
-          <p className="text-sm text-blue-800 text-center">
+        <div className="mt-4 bg-gray-100 border border-gray-300 rounded-lg p-3">
+          <p className="text-sm text-gray-700 text-center">
             <strong>56개 공용 컴포넌트</strong>를 유저/어드민이 공유 →
-            <strong className="text-blue-700"> UI 일관성 100%</strong> +
-            <strong className="text-blue-700"> 유지보수 비용 50% 절감</strong>
+            <strong className="text-gray-900"> UI 일관성 100%</strong> +
+            <strong className="text-gray-900"> 유지보수 비용 50% 절감</strong>
           </p>
         </div>
       </div>
@@ -280,29 +270,29 @@ const AdminPreview = () => {
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
               <span className="text-[10px] text-gray-600">전체</span>
               <p className="text-xl font-bold text-gray-900 mt-1">25</p>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 text-[10px]">👥</span>
+              <div className="absolute top-3 right-3 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-gray-600 text-[10px] font-bold">All</span>
               </div>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
               <span className="text-[10px] text-gray-600">승인대기</span>
               <p className="text-xl font-bold text-gray-900 mt-1">3</p>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
-                <span className="text-yellow-600 text-[10px]">⏰</span>
+              <div className="absolute top-3 right-3 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-gray-600 text-[10px] font-bold">W</span>
               </div>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
               <span className="text-[10px] text-gray-600">승인</span>
               <p className="text-xl font-bold text-gray-900 mt-1">11</p>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-blue-600 text-[10px]">✓</span>
+              <div className="absolute top-3 right-3 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-gray-600 text-[10px] font-bold">OK</span>
               </div>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-3 relative">
               <span className="text-[10px] text-gray-600">참가취소</span>
               <p className="text-xl font-bold text-gray-900 mt-1">11</p>
-              <div className="absolute top-3 right-3 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                <span className="text-red-600 text-[10px]">✕</span>
+              <div className="absolute top-3 right-3 w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                <span className="text-gray-600 text-[10px] font-bold">X</span>
               </div>
             </div>
           </div>
@@ -314,10 +304,10 @@ const AdminPreview = () => {
                 <option>전체 상태</option>
               </select>
               <div className="flex-1 max-w-xs relative">
-                <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-[10px]">🔍</span>
+                <span className="absolute left-2 top-1/2 -translate-y-1/2 text-gray-400 text-[10px]">Q</span>
                 <input className="w-full h-8 pl-7 pr-3 text-[10px] border border-gray-300 rounded-lg" placeholder="아이디, 업체명으로 검색..." />
               </div>
-              <button className="ml-auto h-8 px-3 text-[10px] border border-blue-600 text-blue-600 rounded-lg">
+              <button className="ml-auto h-8 px-3 text-[10px] border border-gray-600 text-gray-600 rounded-lg">
                 엑셀 다운로드 ▼
               </button>
             </div>
@@ -347,7 +337,7 @@ const AdminPreview = () => {
                     <td className="py-2 px-2"><input type="checkbox" className="w-3 h-3 rounded" /></td>
                     <td className="py-2 px-1 text-center text-gray-500">1</td>
                     <td className="py-2 px-2 text-center">
-                      <span className="px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded text-[8px]">승인 ▼</span>
+                      <span className="px-1.5 py-0.5 bg-gray-200 text-gray-700 rounded text-[8px]">승인 ▼</span>
                     </td>
                     <td className="py-2 px-2 text-blue-600">hong@email.com</td>
                     <td className="py-2 px-2">
@@ -377,7 +367,7 @@ const AdminPreview = () => {
                     <td className="py-2 px-2"><input type="checkbox" className="w-3 h-3 rounded" /></td>
                     <td className="py-2 px-1 text-center text-gray-500">2</td>
                     <td className="py-2 px-2 text-center">
-                      <span className="px-1.5 py-0.5 bg-yellow-100 text-yellow-700 rounded text-[8px]">대기 ▼</span>
+                      <span className="px-1.5 py-0.5 bg-gray-100 text-gray-700 rounded text-[8px]">대기 ▼</span>
                     </td>
                     <td className="py-2 px-2 text-blue-600">kim@company.kr</td>
                     <td className="py-2 px-2">
@@ -408,7 +398,7 @@ const AdminPreview = () => {
             <div className="px-3 py-2 border-t border-gray-100 flex items-center justify-between">
               <span className="text-[9px] text-gray-500">총 25개</span>
               <div className="flex gap-1">
-                <button className="px-2 py-0.5 text-[9px] bg-blue-600 text-white rounded">1</button>
+                <button className="px-2 py-0.5 text-[9px] bg-gray-700 text-white rounded">1</button>
                 <button className="px-2 py-0.5 text-[9px] border border-gray-300 rounded">2</button>
                 <button className="px-2 py-0.5 text-[9px] border border-gray-300 rounded">3</button>
               </div>

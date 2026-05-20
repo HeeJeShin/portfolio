@@ -99,7 +99,7 @@ export const skills: Record<string, string[]> = {
 
 export const navItems = [
   { id: "intro", label: "소개" },
-  { id: "personal-statement", label: "자기소개서" },
+  { id: "challenges", label: "도전과 성장" },
   { id: "experience", label: "경력" },
   { id: "skills", label: "기술" },
   { id: "projects", label: "프로젝트" },

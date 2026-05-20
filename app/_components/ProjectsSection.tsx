@@ -56,7 +56,7 @@ export const ProjectsSection = () => {
               {(project.demo || project.github || project.links) && (
                 <div className="flex gap-3 mt-3 pt-3 border-t border-gray-100 text-xs">
                   {project.demo && (
-                    <span className="text-blue-600">Demo ↗</span>
+                    <span className="text-blue-600">Site ↗</span>
                   )}
                   {project.github && (
                     <span className="text-gray-600">GitHub ↗</span>

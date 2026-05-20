@@ -3,9 +3,10 @@
 import {
   Header,
   HeroSection,
+  ApproachesSection,
   FeatureSection,
-  CalculationSection,
   AIAnalysisSection,
+  CalculationSection,
   MonitoringSection,
   TechStackSection,
   Footer,
@@ -19,9 +20,10 @@ const FourJProject = () => {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
         <FeatureSection />
-        <CalculationSection />
         <AIAnalysisSection />
+        <CalculationSection />
         <MonitoringSection />
+        <ApproachesSection />
         <TechStackSection />
       </main>
 

@@ -5,10 +5,12 @@ import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
 const techStack = ["Next.js 14", "TypeScript", "Zustand", "MUI", "Zod"];
 
-const achievements = [
-  { label: "초기 로딩", value: "개선", desc: "SSR로 초기 렌더링 속도 향상" },
-  { label: "코드 재사용", value: "향상", desc: "컴포넌트 기반 구조로 전환" },
-  { label: "유지보수", value: "용이", desc: "JSP include → React 컴포넌트" },
+const benefits = [
+  "SSR/SSG로 초기 로딩 속도 개선 (JSP 대비 체감 빨라짐)",
+  "컴포넌트 단위 개발로 프로젝트 구조 단순화",
+  "상태 관리 라이브러리(Zustand)로 데이터 흐름 명확화",
+  "TypeScript 도입으로 런타임 에러 사전 방지",
+  "Hot Reload로 개발 생산성 향상",
 ];
 
 const jspLimitations = [
@@ -103,14 +105,26 @@ type User = z.infer<typeof userSchema>;`,
   },
 ];
 
-const muiAdoption = {
-  reason: "기존 스타일 없이 빠르게 UI 구현하기 위한 전략적 선택",
-  benefits: [
-    "미리 구성된 컴포넌트로 개발 속도 향상",
-    "프로퍼티 기반 스타일링으로 커스터마이징 용이",
-    "일관된 디자인 시스템 적용",
-  ],
-};
+const migrationIssues = [
+  {
+    title: "Pages Router → App Router 전환",
+    problem: "처음엔 Pages Router로 개발 시작, 중간에 React 경력 개발자 입사 후 App Router 제안",
+    solution: "App Router로 전환 작업 진행",
+    reason: "App Router가 서버 컴포넌트 기본 지원, 레이아웃 중첩, 더 직관적인 라우팅 구조 제공",
+  },
+  {
+    title: "기존 CSS 파일 스타일 충돌",
+    problem: "JSP에서 쓰던 .css 파일을 그대로 가져오니 Next.js에서 스타일이 제대로 적용 안 됨",
+    solution: "CSS Modules 또는 MUI로 전환",
+    reason: "Next.js는 글로벌 CSS import 제한, CSS Modules 권장",
+  },
+  {
+    title: "MUI 컴포넌트 커스터마이징 어려움",
+    problem: "MUI 기본 컴포넌트 스타일을 프로젝트에 맞게 수정하기 번거로움",
+    solution: "sx prop, styled() 활용했으나 여전히 불편",
+    reason: "다음 프로젝트(전시부스신청)에서는 Tailwind CSS 선택",
+  },
+];
 
 const reflections = [
   {
@@ -135,15 +149,13 @@ export default function O2MeetMigrationPage() {
     <div className="min-h-screen bg-white">
       <ProjectHeader
         title="O2MEET Next.js 마이그레이션"
-        period="2024.12 - 2025.02"
-        techStack={["Next.js", "TypeScript", "Zustand"]}
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero */}
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
               2024.12 - 2025.02
             </span>
             <span className="text-gray-400">|</span>
@@ -161,26 +173,27 @@ export default function O2MeetMigrationPage() {
 
         {/* 성과 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 성과</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {achievements.map((item) => (
-              <div key={item.label} className="bg-blue-50 rounded-xl p-6 border border-blue-100 text-center">
-                <p className="text-sm text-gray-600 mb-1">{item.label}</p>
-                <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
-                <p className="text-xs text-gray-500">{item.desc}</p>
-              </div>
-            ))}
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Next.js 전환 효과</h2>
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
+            <ul className="space-y-3">
+              {benefits.map((b, i) => (
+                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
+                  <span className="text-blue-600 font-bold">•</span>
+                  {b}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* JSP 한계 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 배경 - JSP의 한계</h2>
-          <div className="bg-red-50 rounded-xl p-6 border border-red-100">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
             <div className="space-y-4">
               {jspLimitations.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <span className="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                  <span className="w-6 h-6 bg-gray-100 text-gray-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
                     {i + 1}
                   </span>
                   <div>
@@ -238,32 +251,42 @@ export default function O2MeetMigrationPage() {
           </div>
         </section>
 
-        {/* MUI */}
+        {/* 마이그레이션 중 겪은 이슈 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">MUI 도입</h2>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-            <p className="text-gray-700 mb-4">{muiAdoption.reason}</p>
-            <ul className="space-y-2">
-              {muiAdoption.benefits.map((b, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                  <span className="text-blue-500">•</span>
-                  {b}
-                </li>
-              ))}
-            </ul>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 중 겪은 이슈</h2>
+          <div className="space-y-4">
+            {migrationIssues.map((issue, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-200 p-5">
+                <h3 className="font-bold text-gray-900 mb-3">{issue.title}</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-xs font-medium text-gray-500 mb-2">문제</p>
+                    <p className="text-sm text-gray-700">{issue.problem}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-xs font-medium text-gray-500 mb-2">대응</p>
+                    <p className="text-sm text-gray-700">{issue.solution}</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-4">
+                    <p className="text-xs font-medium text-gray-500 mb-2">배운 점</p>
+                    <p className="text-sm font-medium text-blue-600">{issue.reason}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* 고찰 → 전시부스신청에 적용 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 고찰 → 전시부스신청에 적용</h2>
-          <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
             <p className="text-gray-700 mb-6">
-              마이그레이션 경험에서 배운 점을 바탕으로 <strong className="text-green-700">전시부스신청 프로젝트</strong>를 더 잘 설계했습니다.
+              마이그레이션 경험에서 배운 점을 바탕으로 <strong className="text-blue-600">전시부스신청 프로젝트</strong>를 더 잘 설계했습니다.
             </p>
             <div className="space-y-4">
               {reflections.map((r, i) => (
-                <div key={i} className="bg-white rounded-lg p-4 border border-green-100">
+                <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
                   <p className="font-medium text-gray-900 mb-2">{r.lesson}</p>
                   <div className="grid md:grid-cols-2 gap-3 text-sm">
                     <div className="flex items-start gap-2">
@@ -271,7 +294,7 @@ export default function O2MeetMigrationPage() {
                       <span className="text-gray-600">{r.from}</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span className="text-green-600">적용:</span>
+                      <span className="text-blue-600">적용:</span>
                       <span className="text-gray-600">{r.applied}</span>
                     </div>
                   </div>
@@ -288,7 +311,7 @@ export default function O2MeetMigrationPage() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
               >
                 {tech}
               </span>

@@ -16,7 +16,7 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
           <button
             onClick={() => setViewMode("desktop")}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-              viewMode === "desktop" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"
+              viewMode === "desktop" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600"
             }`}
           >
             데스크톱
@@ -24,7 +24,7 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
           <button
             onClick={() => setViewMode("mobile")}
             className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-              viewMode === "mobile" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600"
+              viewMode === "mobile" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600"
             }`}
           >
             모바일
@@ -37,7 +37,7 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
         <button
           onClick={() => setActiveTab("regular")}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            activeTab === "regular" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            activeTab === "regular" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
         >
           정규신청
@@ -45,14 +45,14 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
         <button
           onClick={() => setActiveTab("preliminary")}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-            activeTab === "preliminary" ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            activeTab === "preliminary" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"
           }`}
         >
           예비신청
         </button>
       </div>
 
-      <div className="bg-gray-50 rounded-xl p-4 overflow-hidden">
+      <div className="bg-gray-50 rounded-xl p-4 overflow-hidden border border-gray-200">
         {viewMode === "desktop" ? (
           /* Desktop Table View */
           <div className="overflow-x-auto">
@@ -81,9 +81,9 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
                     </td>
                     <td className="py-3 px-4">
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        row.status === "승인완료" ? "bg-green-100 text-green-700" :
-                        row.status === "입금대기" ? "bg-yellow-100 text-yellow-700" :
-                        row.status === "입금완료" ? "bg-blue-100 text-blue-700" :
+                        row.status === "승인완료" ? "bg-gray-200 text-gray-700" :
+                        row.status === "입금대기" ? "bg-gray-100 text-gray-600" :
+                        row.status === "입금완료" ? "bg-gray-200 text-gray-700" :
                         "bg-gray-100 text-gray-700"
                       }`}>
                         {row.status}
@@ -104,8 +104,8 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
                 <div className="flex items-center justify-between mb-3">
                   <span className="font-medium text-gray-900">{row.company}</span>
                   <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                    row.status === "승인완료" ? "bg-green-100 text-green-700" :
-                    row.status === "입금대기" ? "bg-yellow-100 text-yellow-700" :
+                    row.status === "승인완료" ? "bg-gray-200 text-gray-700" :
+                    row.status === "입금대기" ? "bg-gray-100 text-gray-600" :
                     "bg-gray-100 text-gray-700"
                   }`}>
                     {row.status}
@@ -127,10 +127,10 @@ export const DataTableSection = ({ viewMode, setViewMode, activeTab, setActiveTa
         )}
         {/* Features */}
         <div className="mt-4 pt-4 border-t border-gray-200 flex flex-wrap gap-2">
-          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">✓ Sticky 컬럼</span>
-          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">✓ 반응형 자동 전환</span>
-          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">✓ 행 선택</span>
-          <span className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded">✓ 페이지네이션</span>
+          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">Sticky 컬럼</span>
+          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">반응형 자동 전환</span>
+          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">행 선택</span>
+          <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">페이지네이션</span>
         </div>
       </div>
     </section>

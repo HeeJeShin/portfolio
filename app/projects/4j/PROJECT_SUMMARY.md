@@ -2,7 +2,7 @@
 
 > AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스
 >
-> **Demo:** https://4j-mgqp.vercel.app/
+> **Site:** https://4j-mgqp.vercel.app/
 > **GitHub:** https://github.com/HeeJeShin/4j
 
 ---

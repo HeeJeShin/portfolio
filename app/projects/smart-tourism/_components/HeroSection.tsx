@@ -10,23 +10,23 @@ export const HeroSection = () => {
           href="https://tour.inje.go.kr/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
         >
-          <span>인제 스마트관광</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
+          인제 스마트관광
         </Link>
         <Link
           href="https://itour.yongin.go.kr/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
         >
-          <span>용인 스마트관광</span>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
+          용인 스마트관광
         </Link>
       </div>
 
@@ -50,8 +50,8 @@ export const HeroSection = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {projectMetrics.map((metric) => (
-          <div key={metric.label} className="bg-blue-50 rounded-xl p-4 border border-blue-100">
-            <p className="text-2xl font-bold text-blue-700">{metric.value}</p>
+          <div key={metric.label} className="bg-white rounded-xl p-4 border border-gray-200">
+            <p className="text-2xl font-bold text-blue-600">{metric.value}</p>
             <p className="text-sm text-gray-600">{metric.label}</p>
           </div>
         ))}

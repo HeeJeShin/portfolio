@@ -117,15 +117,13 @@ export default function O2MeetPage() {
     <div className="min-h-screen bg-white">
       <ProjectHeader
         title="O2MEET 온라인 행사 플랫폼"
-        period="2022.05 - 현재"
-        techStack={["JSP", "jQuery", "KCP 결제"]}
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero */}
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
               2022.05 - 현재
             </span>
             <span className="text-gray-400">|</span>
@@ -146,7 +144,7 @@ export default function O2MeetPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">성과</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {achievements.map((item) => (
-              <div key={item.label} className="bg-blue-50 rounded-xl p-6 border border-blue-100 text-center">
+              <div key={item.label} className="bg-white rounded-xl p-6 border border-gray-200 text-center">
                 <p className="text-sm text-gray-600 mb-1">{item.label}</p>
                 <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
                 <p className="text-xs text-gray-500">{item.desc}</p>
@@ -222,7 +220,7 @@ export default function O2MeetPage() {
         {/* 비동기 패턴 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">{asyncPattern.title}</h2>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
             <div className="space-y-3 text-sm mb-4">
               <div>
                 <span className="font-medium text-gray-700">문제: </span>
@@ -233,7 +231,7 @@ export default function O2MeetPage() {
                 <span className="text-gray-600">{asyncPattern.solution}</span>
               </div>
             </div>
-            <div className="bg-white rounded-lg p-4 border border-blue-100">
+            <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
               <p className="font-medium text-gray-700 mb-3">동일 기능, 두 가지 패턴 제공:</p>
               <div className="space-y-2">
                 {asyncPattern.examples.map((ex, i) => (
@@ -250,7 +248,7 @@ export default function O2MeetPage() {
         {/* 등록 솔루션 공통화 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">{registrationCommonization.title}</h2>
-          <div className="bg-green-50 rounded-xl p-6 border border-green-100">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
             <div className="space-y-3 text-sm mb-4">
               <div>
                 <span className="font-medium text-gray-700">문제: </span>
@@ -262,11 +260,11 @@ export default function O2MeetPage() {
               </div>
               <div>
                 <span className="font-medium text-gray-700">효과: </span>
-                <span className="text-green-600 font-medium">{registrationCommonization.impact}</span>
+                <span className="text-blue-600 font-medium">{registrationCommonization.impact}</span>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg p-4 border border-green-100 mb-4">
+            <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-4">
               <p className="font-medium text-gray-700 mb-3">공통 모듈:</p>
               <div className="space-y-2">
                 {registrationCommonization.modules.map((m, i) => (
@@ -309,7 +307,7 @@ export default function O2MeetPage() {
                 <p className="text-gray-600 mb-3">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.features.map((f) => (
-                    <span key={f} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded">
+                    <span key={f} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
                       {f}
                     </span>
                   ))}
@@ -326,7 +324,7 @@ export default function O2MeetPage() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
               >
                 {tech}
               </span>

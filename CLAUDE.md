@@ -125,6 +125,60 @@ export const FeatureSection = () => {
 
 ---
 
+## 포트폴리오 페이지 구성 (필수)
+
+각 프로젝트 페이지는 아래 순서로 구성:
+
+```
+1. HeroSection      - 프로젝트 소개, 기간, 팀 구성, 링크
+2. MetricsSection   - 성과 (숫자는 text-blue-600으로 강조)
+3. ProblemSolvingSection - 문제 해결 방식 (협업/프로세스 문제)
+4. ApproachesSection     - 기술적 접근법 (내가 구현한 것)
+5. ArchitectureSection   - 프로젝트 아키텍처 (해당되는 경우)
+6. TechStackSection      - 기술 스택
+```
+
+### 문제 해결 카드 구조 (문제 → 해결 → 효과)
+```tsx
+<div className="bg-white rounded-xl border border-gray-200 p-5">
+  <h3 className="font-bold text-gray-900 mb-3">{title}</h3>
+  <div className="grid md:grid-cols-3 gap-4">
+    <div className="bg-gray-50 rounded-lg p-4">
+      <p className="text-xs font-medium text-gray-500 mb-2">문제</p>
+      <p className="text-sm text-gray-700">{problem}</p>
+    </div>
+    <div className="bg-gray-50 rounded-lg p-4">
+      <p className="text-xs font-medium text-gray-500 mb-2">해결</p>
+      <p className="text-sm text-gray-700">{solution}</p>
+    </div>
+    <div className="bg-gray-50 rounded-lg p-4">
+      <p className="text-xs font-medium text-gray-500 mb-2">효과</p>
+      <p className="text-sm font-medium text-blue-600">{effect}</p>
+    </div>
+  </div>
+</div>
+```
+
+### _data 폴더 구조
+```
+_data/
+├── constants.ts    # 기술스택 등 상수
+└── {project}.ts    # 면접용 상세 정보
+    ├── problemSolving[]   # 문제 해결 사례 (협업/프로세스)
+    ├── approaches[]       # 기술적 접근법
+    ├── techStackDetails   # 기술 스택 상세
+    └── interviewQA[]      # 면접 예상 Q&A
+```
+
+### 기술 스택 배지 스타일 (Header와 통일)
+```tsx
+<span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+  {tech}
+</span>
+```
+
+---
+
 ## 코드 블록 스타일
 
 ### 코드 미리보기

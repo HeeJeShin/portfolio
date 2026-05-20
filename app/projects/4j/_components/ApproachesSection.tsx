@@ -1,27 +1,27 @@
-export const ChallengesSection = () => {
-  const challenges = [
+export const ApproachesSection = () => {
+  const approaches = [
     {
-      id: "safari",
-      title: "Safari 브라우저 호환성 이슈 해결",
-      problem: "Safari 팝업 차단으로 NICE 본인인증 오류, ITP로 토큰 유실, 결제 모듈 보안 처리 문제",
-      solution: "페이지 리다이렉트 방식 인증, 쿠키+localStorage 이중 저장, CSP/CORS 화이트리스트 설정",
-      effect: "Safari 환경에서도 안정적인 인증/결제 가능",
+      id: "ai-analysis",
+      title: "AI 도면 분석 프롬프트 설계",
+      problem: "Gemini AI에 도면 이미지를 어떻게 분석시킬지, 도면이 아닌 이미지는 어떻게 처리할지",
+      solution: "도면 분석용 프롬프트 직접 작성 + 도면이 아닌 경우 \"OOO 관련 이미지네요~ 도면을 올려주세요\" 안내 처리",
+      effect: "도면 분석 + 비도면 이미지 예외처리까지 완료",
     },
     {
-      id: "payment",
-      title: "결제 로직 아키텍처 개선 제안",
-      problem: "모바일 네트워크 불안정으로 결제 완료 후 DB 업데이트 누락 발생",
-      solution: "프론트는 결제 요청만, 완료 처리는 백엔드에서 하도록 구조 변경 제안 및 설득",
-      effect: "결제 데이터 정합성 확보, 사용자 불편 해소",
+      id: "monitoring",
+      title: "혼잡도 모니터링 대시보드",
+      problem: "심사위원 중간평가: \"혼잡할 때 주최측이 알 수 있는 방법이 있나요?\"",
+      solution: "CCTV 인원 추정 등으로 데이터가 수집된다는 가정 하에, 혼잡도 시각화 대시보드 구현",
+      effect: "인원 데이터만 있으면 바로 사용 가능한 모니터링 서비스 제공",
     },
   ];
 
   return (
     <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">문제 해결 방식</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-8">기술적 접근법</h2>
 
       <div className="space-y-4">
-        {challenges.map((item) => (
+        {approaches.map((item) => (
           <div
             key={item.id}
             className="bg-white rounded-xl border border-gray-200 p-5"
