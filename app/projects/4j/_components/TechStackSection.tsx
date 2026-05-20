@@ -8,7 +8,7 @@ export const TechStackSection = () => {
         {techStack.map((tech) => (
           <span
             key={tech}
-            className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors"
+            className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
           >
             {tech}
           </span>

@@ -8,7 +8,7 @@ export const metrics = [
 
 // 기술 스택
 export const techStack = [
-  "Next.js 16",
+  "Next.js 15",
   "TypeScript",
   "TanStack Query",
   "Zustand",

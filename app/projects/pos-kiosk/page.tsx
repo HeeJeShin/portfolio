@@ -140,16 +140,14 @@ export default function PosKioskPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
-        title="POS/키오스크 시스템"
-        period="2024.11 - 2025.02"
-        techStack={["JavaScript", "jQuery", "CefSharp"]}
+        title="POS/Kiosk 프로젝트"
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* Hero */}
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+            <span className="px-3 py-1 border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
               2024.11 - 2025.02
             </span>
             <span className="text-gray-400">|</span>
@@ -169,7 +167,7 @@ export default function PosKioskPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">성과</h2>
           <div className="grid md:grid-cols-3 gap-4">
             {achievements.map((item) => (
-              <div key={item.label} className="bg-blue-50 rounded-xl p-6 border border-blue-100 text-center">
+              <div key={item.label} className="bg-white rounded-xl p-6 border border-gray-200 text-center">
                 <p className="text-sm text-gray-600 mb-1">{item.label}</p>
                 <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
                 <p className="text-xs text-gray-500">{item.desc}</p>
@@ -240,7 +238,7 @@ export default function PosKioskPage() {
                     <span className="text-gray-600">{impl.solution}</span>
                   </div>
                   {impl.benefits && (
-                    <div className="bg-blue-50 rounded-lg p-3 mt-2">
+                    <div className="bg-gray-50 rounded-lg p-3 mt-2">
                       <p className="font-medium text-gray-700 mb-2">효과:</p>
                       <ul className="space-y-1">
                         {impl.benefits.map((b, i) => (
@@ -303,10 +301,10 @@ export default function PosKioskPage() {
         {/* CefSharp 연동 */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">C# (CefSharp) 연동</h2>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
+          <div className="bg-white rounded-xl p-6 border border-gray-200">
             <p className="text-gray-600 mb-4">
               영수증 출력, 프린터 상태 체크, 세컨드 모니터 제어 등 하드웨어 기능은 C++ 개발자와 협업하여 연동.
-              <code className="bg-white px-1 rounded text-blue-600 mx-1">CefSharp.PostMessage</code>로
+              <code className="bg-gray-100 px-1 rounded text-blue-600 mx-1">CefSharp.PostMessage</code>로
               JS에서 POS 프로그램을 호출하고, 콜백으로 결과를 받는 구조입니다.
             </p>
             <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
@@ -340,7 +338,7 @@ if (window?.CefSharp === undefined) {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm font-medium hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
               >
                 {tech}
               </span>

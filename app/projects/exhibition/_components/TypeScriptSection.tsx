@@ -3,18 +3,13 @@ export const TypeScriptSection = () => {
     <section className="mb-16">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">TypeScript 타입 시스템 설계</h2>
 
-      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-        <div className="flex items-start gap-4 mb-6">
-          <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <span className="text-white font-bold">TS</span>
-          </div>
-          <div>
-            <h3 className="font-bold text-gray-900 text-lg mb-1">타입 정의 선행 개발</h3>
-            <p className="text-gray-600">
-              API 응답 및 도메인 모델 <strong className="text-blue-600">타입 정의부터 선행</strong> 후 개발을 진행하여
-              런타임 에러를 90% 감소시켰습니다.
-            </p>
-          </div>
+      <div className="bg-white rounded-xl p-6 border border-gray-200">
+        <div className="mb-6">
+          <h3 className="font-bold text-gray-900 text-lg mb-2">타입 정의 선행 개발</h3>
+          <p className="text-gray-600">
+            API 응답 및 도메인 모델 <strong className="text-gray-900">타입 정의부터 선행</strong> 후 개발을 진행하여
+            런타임 에러를 90% 감소시켰습니다.
+          </p>
         </div>
 
         {/* 코드 예시 */}
@@ -67,18 +62,18 @@ export const TypeScriptSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-4">
-          <div className="bg-white rounded-lg p-4 border border-blue-100 text-center">
-            <p className="text-2xl font-bold text-blue-600 mb-1">40개</p>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 text-center">
+            <p className="text-2xl font-bold text-gray-900 mb-1">40개</p>
             <p className="text-sm text-gray-600">타입 정의</p>
             <p className="text-xs text-gray-500 mt-1">API 연동 시 타입 에러 사전 차단</p>
           </div>
-          <div className="bg-white rounded-lg p-4 border border-blue-100 text-center">
-            <p className="text-2xl font-bold text-blue-600 mb-1">Zod</p>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 text-center">
+            <p className="text-2xl font-bold text-gray-900 mb-1">Zod</p>
             <p className="text-sm text-gray-600">런타임 유효성 검증</p>
             <p className="text-xs text-gray-500 mt-1">스키마 기반 데이터 검증</p>
           </div>
-          <div className="bg-white rounded-lg p-4 border border-blue-100 text-center">
-            <p className="text-2xl font-bold text-green-600 mb-1">90%↓</p>
+          <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 text-center">
+            <p className="text-2xl font-bold text-gray-900 mb-1">90%↓</p>
             <p className="text-sm text-gray-600">런타임 에러 감소</p>
             <p className="text-xs text-gray-500 mt-1">QA 피드백 기준</p>
           </div>

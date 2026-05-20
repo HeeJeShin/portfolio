@@ -7,9 +7,7 @@ export const Footer = () => {
         {/* 해커톤 안내 */}
         <div className="bg-white rounded-xl p-6 border border-gray-200 mb-8">
           <div className="flex items-start gap-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
-              <span className="text-white text-xl">🏆</span>
-            </div>
+
             <div>
               <h3 className="font-bold text-gray-900 mb-2">1박2일 해커톤 프로젝트</h3>
               <p className="text-sm text-gray-600 leading-relaxed">

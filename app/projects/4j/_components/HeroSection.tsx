@@ -2,7 +2,7 @@ export const HeroSection = () => {
   return (
     <section className="mb-16">
       <div className="flex items-center gap-3 mb-4">
-        <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+        <span className="px-3 py-1 border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
           2026.01
         </span>
         <span className="text-gray-400">|</span>
@@ -22,9 +22,12 @@ export const HeroSection = () => {
             href="https://4j-mgqp.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-500 transition-colors"
+            className="inline-flex items-center gap-1 px-3 py-1 bg-white border border-gray-200 text-gray-700 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors"
           >
-            Demo 보기 →
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            Site
           </a>
         </div>
       </div>
@@ -40,7 +43,7 @@ export const HeroSection = () => {
       {/* 해커톤 배경 */}
       <div className="mt-6 bg-gray-50 rounded-xl p-4 border border-gray-200">
         <div className="flex items-start gap-3">
-          <span className="text-xl">🏆</span>
+
           <div>
             <h3 className="font-bold text-gray-900 text-sm mb-1">해커톤 프로젝트</h3>
             <ul className="text-sm text-gray-600 space-y-1">
@@ -49,7 +52,7 @@ export const HeroSection = () => {
               <li>• <strong>제약사항:</strong> 백엔드 서버 없이 프론트엔드만으로 구현</li>
             </ul>
             <p className="text-xs text-gray-500 mt-2">
-              짧은 시간 내 AI API를 활용한 프로토타입 개발에 집중했습니다.
+              사내 AI 활용 빈도를 높여 업무 가중을 줄여보자는 취지의 챌린지였습니다.
             </p>
           </div>
         </div>

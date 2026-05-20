@@ -3,13 +3,8 @@
 import {
   Header,
   HeroSection,
-  KcpPaymentSection,
-  AuthSection,
-  CouponSection,
-  CommunitySection,
-  ComponentDesignSection,
-  I18nSection,
   ChallengesSection,
+  ApproachesSection,
   TechStackSection,
   Footer,
 } from "./_components";
@@ -22,12 +17,7 @@ const SmartTourismProject = () => {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
         <ChallengesSection />
-        <KcpPaymentSection />
-        <AuthSection />
-        <CouponSection />
-        <CommunitySection />
-        <ComponentDesignSection />
-        <I18nSection />
+        <ApproachesSection />
         <TechStackSection />
       </main>
 

@@ -2,15 +2,10 @@ export const ClaudeCodeSection = () => {
   return (
     <section className="mb-16">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">AI 활용 개발</h2>
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-6 text-white">
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-            <span className="text-xl">🤖</span>
-          </div>
-          <div>
-            <h3 className="font-bold">AI 페어 프로그래밍</h3>
-            <p className="text-sm text-gray-400">CLAUDE.md 기반 컨텍스트 공유로 일관된 코드 품질 유지</p>
-          </div>
+      <div className="bg-gray-900 rounded-xl p-6 text-white">
+        <div className="mb-4">
+          <h3 className="font-bold text-lg">AI 페어 프로그래밍</h3>
+          <p className="text-sm text-gray-400">CLAUDE.md 기반 컨텍스트 공유로 일관된 코드 품질 유지</p>
         </div>
 
         {/* AI 활용 방식 설명 */}

@@ -1,6 +1,13 @@
 export { Header } from "./Header";
 export { HeroSection } from "./HeroSection";
 export { MetricsSection } from "./MetricsSection";
+export { ProblemSolvingSection } from "./ProblemSolvingSection";
+export { ApproachesSection } from "./ApproachesSection";
+export { DevelopmentApproachSection } from "./DevelopmentApproachSection";
+export { TechStackSection } from "./TechStackSection";
+export { Footer } from "./Footer";
+
+// 기존 상세 섹션들 (필요시 사용)
 export { DomainExpertiseSection } from "./DomainExpertiseSection";
 export { ArchitectureSection } from "./ArchitectureSection";
 export { TypeScriptSection } from "./TypeScriptSection";
@@ -13,8 +20,5 @@ export { DynamicFormSection } from "./DynamicFormSection";
 export { InvoiceSection } from "./InvoiceSection";
 export { UnitTestSection } from "./UnitTestSection";
 export { ClaudeCodeSection } from "./ClaudeCodeSection";
-export { DevelopmentApproachSection } from "./DevelopmentApproachSection";
 export { CICDSection } from "./CICDSection";
 export { SmsEmailSection } from "./SmsEmailSection";
-export { TechStackSection } from "./TechStackSection";
-export { Footer } from "./Footer";
