@@ -43,7 +43,7 @@ export const IntroSection = () => {
       <div className="space-y-5">
         {items.map((item, i) => (
           <div key={item.title} className="flex items-start gap-4">
-            <span className="text-blue-600 font-bold text-lg shrink-0">
+            <span className="text-[#191979] font-bold text-lg shrink-0">
               0{i + 1}
             </span>
             <div>

@@ -134,7 +134,7 @@ export default function O2MeetPage() {
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
             온라인 전시관, 컨퍼런스, 티켓 구매 및 등록 서비스의
-            <strong className="text-blue-600"> 상품/결제 프론트엔드</strong>를 담당했습니다.
+            <strong className="text-[#191979]"> 상품/결제 프론트엔드</strong>를 담당했습니다.
             복잡한 결제 플로우와 API 연동, 마이페이지 구현을 포함합니다.
           </p>
         </section>
@@ -146,7 +146,7 @@ export default function O2MeetPage() {
             {achievements.map((item) => (
               <div key={item.label} className="bg-white rounded-xl p-6 border border-gray-200 text-center">
                 <p className="text-sm text-gray-600 mb-1">{item.label}</p>
-                <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
+                <p className="text-2xl font-bold text-[#191979] mb-1">{item.value}</p>
                 <p className="text-xs text-gray-500">{item.desc}</p>
               </div>
             ))}
@@ -160,7 +160,7 @@ export default function O2MeetPage() {
             {coreImplementations.map((impl, idx) => (
               <div key={impl.title} className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">
+                  <span className="w-6 h-6 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm">
                     {idx + 1}
                   </span>
                   {impl.title}
@@ -177,7 +177,7 @@ export default function O2MeetPage() {
                   {impl.impact && (
                     <div>
                       <span className="font-medium text-gray-700">효과: </span>
-                      <span className="text-blue-600">{impl.impact}</span>
+                      <span className="text-[#191979]">{impl.impact}</span>
                     </div>
                   )}
                   {impl.flow && (
@@ -237,7 +237,7 @@ export default function O2MeetPage() {
                 {asyncPattern.examples.map((ex, i) => (
                   <div key={i} className="grid md:grid-cols-2 gap-2 text-xs">
                     <code className="bg-gray-100 px-2 py-1 rounded text-gray-600">{ex.callback}</code>
-                    <code className="bg-blue-100 px-2 py-1 rounded text-blue-700">{ex.async}</code>
+                    <code className="bg-blue-100 px-2 py-1 rounded text-[#191979]">{ex.async}</code>
                   </div>
                 ))}
               </div>
@@ -260,7 +260,7 @@ export default function O2MeetPage() {
               </div>
               <div>
                 <span className="font-medium text-gray-700">효과: </span>
-                <span className="text-blue-600 font-medium">{registrationCommonization.impact}</span>
+                <span className="text-[#191979] font-medium">{registrationCommonization.impact}</span>
               </div>
             </div>
 
@@ -298,7 +298,7 @@ export default function O2MeetPage() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-3 py-1 bg-blue-600 text-white rounded-full text-sm font-medium hover:bg-blue-500 transition-colors"
+                      className="px-3 py-1 bg-[#191979] text-white rounded-full text-sm font-medium hover:bg-blue-500 transition-colors"
                     >
                       사이트 방문 →
                     </a>
@@ -307,7 +307,7 @@ export default function O2MeetPage() {
                 <p className="text-gray-600 mb-3">{project.desc}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.features.map((f) => (
-                    <span key={f} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                    <span key={f} className="px-2 py-1 bg-blue-100 text-[#191979] text-xs rounded-full font-medium">
                       {f}
                     </span>
                   ))}
@@ -324,7 +324,7 @@ export default function O2MeetPage() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
+                className="px-2 py-1 bg-blue-100 text-[#191979] text-xs rounded-full font-medium"
               >
                 {tech}
               </span>
@@ -336,7 +336,7 @@ export default function O2MeetPage() {
       {/* Footer */}
       <footer className="border-t border-gray-200 py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-[#191979] hover:text-[#191979] font-medium transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>

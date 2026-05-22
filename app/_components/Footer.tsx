@@ -13,7 +13,7 @@ export const Footer = () => {
           <div className="flex items-center gap-4">
             <a
               href="mailto:heeheehee.hj@gmail.com"
-              className="text-gray-500 hover:text-blue-600 transition-colors"
+              className="text-gray-500 hover:text-[#191979] transition-colors"
               aria-label="Email"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +24,7 @@ export const Footer = () => {
               href="https://github.com/HeeJeShin"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 hover:text-blue-600 transition-colors"
+              className="text-gray-500 hover:text-[#191979] transition-colors"
               aria-label="GitHub"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -40,9 +40,9 @@ export const Footer = () => {
             <p>&copy; {currentYear} 신희제. All rights reserved.</p>
             <p className="flex items-center gap-1">
               Built with
-              <span className="text-blue-600 font-medium">Next.js</span>
+              <span className="text-[#191979] font-medium">Next.js</span>
               &
-              <span className="text-blue-600 font-medium">Claude Code</span>
+              <span className="text-[#191979] font-medium">Claude Code</span>
             </p>
           </div>
         </div>

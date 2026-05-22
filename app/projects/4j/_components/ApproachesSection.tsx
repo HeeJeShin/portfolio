@@ -41,7 +41,7 @@ export const ApproachesSection = () => {
 
               <div className="bg-gray-50 rounded-lg p-4">
                 <p className="text-xs font-medium text-gray-500 mb-2">효과</p>
-                <p className="text-sm font-medium text-blue-600">{item.effect}</p>
+                <p className="text-sm font-medium text-[#191979]">{item.effect}</p>
               </div>
             </div>
           </div>

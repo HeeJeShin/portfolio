@@ -6,7 +6,7 @@ export const CommunitySection = () => {
       {/* 주요 기능 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">💬</span>
+          <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">💬</span>
           구현 기능
         </h3>
 
@@ -29,7 +29,7 @@ export const CommunitySection = () => {
 
       {/* 게시글 목록 구조 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>📋</span> 게시글 목록 구현
           </h4>
@@ -80,7 +80,7 @@ export const CommunitySection = () => {
 
       {/* 댓글 시스템 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>💬</span> 댓글 시스템
           </h4>
@@ -111,7 +111,7 @@ export const CommunitySection = () => {
                   <p className="font-medium text-gray-900 text-sm">{item.action}</p>
                   <p className="text-xs text-gray-500">{item.desc}</p>
                 </div>
-                <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded">
+                <span className="px-2 py-0.5 bg-blue-100 text-[#191979] text-[10px] font-bold rounded">
                   {item.method}
                 </span>
               </div>
@@ -122,7 +122,7 @@ export const CommunitySection = () => {
 
       {/* 신고 기능 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🚨</span> 신고 기능
           </h4>

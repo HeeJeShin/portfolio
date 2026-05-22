@@ -20,7 +20,7 @@ export const ContactSection = () => {
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="text-sm font-medium text-blue-600 hover:underline break-all"
+                  className="text-sm font-medium text-[#191979] hover:underline break-all"
                 >
                   {item.value}
                 </a>

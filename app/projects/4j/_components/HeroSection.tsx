@@ -35,7 +35,7 @@ export const HeroSection = () => {
         4J - 행사장 수용인원 자동계산
       </h1>
       <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
-        <strong className="text-blue-600">AI 기반</strong> 행사장 수용인원 자동 계산 및
+        <strong className="text-[#191979]">AI 기반</strong> 행사장 수용인원 자동 계산 및
         실시간 혼잡도 모니터링 서비스입니다.
         도면 이미지를 업로드하면 AI가 자동으로 면적과 출입구를 분석하여 정확한 수용인원을 계산합니다.
       </p>

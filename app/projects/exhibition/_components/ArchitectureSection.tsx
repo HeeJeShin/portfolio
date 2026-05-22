@@ -98,7 +98,7 @@ export const ArchitectureSection = () => {
               <div className="p-4">
                 <div className="text-xs font-mono bg-gray-100 rounded p-3 mb-3">
                   <span className="text-purple-600">import</span> {`{ DynamicForm }`}<br/>
-                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-blue-600">&apos;@shared/components&apos;</span>
+                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-[#191979]">&apos;@shared/components&apos;</span>
                 </div>
                 {/* Mini Form Preview */}
                 <div className="border border-gray-200 rounded-lg p-3 space-y-2">
@@ -135,7 +135,7 @@ export const ArchitectureSection = () => {
               <div className="p-4">
                 <div className="text-xs font-mono bg-gray-100 rounded p-3 mb-3">
                   <span className="text-purple-600">import</span> {`{ DynamicForm }`}<br/>
-                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-blue-600">&apos;@shared/components&apos;</span>
+                  <span className="text-gray-500">  </span><span className="text-purple-600">from</span> <span className="text-[#191979]">&apos;@shared/components&apos;</span>
                 </div>
                 {/* Mini Form Preview - Admin View */}
                 <div className="border border-gray-200 rounded-lg p-3 space-y-2">
@@ -237,7 +237,7 @@ const AdminPreview = () => {
         <div className="w-40 bg-white border-r border-gray-100 p-3 hidden md:block">
           <div className="mb-4">
             <span className="px-2 py-0.5 text-[10px] font-medium text-white rounded bg-lime-500">Ongoing</span>
-            <p className="text-sm font-bold text-blue-600 mt-2">GreenEnerTEC 2026</p>
+            <p className="text-sm font-bold text-[#191979] mt-2">GreenEnerTEC 2026</p>
           </div>
           <nav className="space-y-1 bg-gray-50 rounded-lg p-2">
             <div className="flex items-center gap-2 px-2 py-1.5 text-[10px] text-gray-600 rounded">
@@ -248,7 +248,7 @@ const AdminPreview = () => {
               <span className="w-3 h-3 bg-gray-300 rounded"></span>
               기본정보
             </div>
-            <div className="flex items-center gap-2 px-2 py-1.5 text-[10px] text-white bg-blue-600 rounded font-medium">
+            <div className="flex items-center gap-2 px-2 py-1.5 text-[10px] text-white bg-[#191979] rounded font-medium">
               <span className="w-3 h-3 bg-white/30 rounded"></span>
               참가신청
             </div>
@@ -262,7 +262,7 @@ const AdminPreview = () => {
           {/* Tabs */}
           <div className="flex gap-4 mb-4 border-b border-gray-200">
             <button className="pb-2 text-xs text-gray-500">참가신청(예비)</button>
-            <button className="pb-2 text-xs text-blue-600 font-medium border-b-2 border-blue-600">참가신청</button>
+            <button className="pb-2 text-xs text-[#191979] font-medium border-b-2 border-[#191979]">참가신청</button>
           </div>
 
           {/* Dashboard Cards */}
@@ -339,7 +339,7 @@ const AdminPreview = () => {
                     <td className="py-2 px-2 text-center">
                       <span className="px-1.5 py-0.5 bg-gray-200 text-gray-700 rounded text-[8px]">승인 ▼</span>
                     </td>
-                    <td className="py-2 px-2 text-blue-600">hong@email.com</td>
+                    <td className="py-2 px-2 text-[#191979]">hong@email.com</td>
                     <td className="py-2 px-2">
                       <div className="font-medium text-gray-900">(주)이즈피엠피</div>
                       <div className="text-gray-500">EZPMP</div>
@@ -369,7 +369,7 @@ const AdminPreview = () => {
                     <td className="py-2 px-2 text-center">
                       <span className="px-1.5 py-0.5 bg-gray-100 text-gray-700 rounded text-[8px]">대기 ▼</span>
                     </td>
-                    <td className="py-2 px-2 text-blue-600">kim@company.kr</td>
+                    <td className="py-2 px-2 text-[#191979]">kim@company.kr</td>
                     <td className="py-2 px-2">
                       <div className="font-medium text-gray-900">방송통신대학교</div>
                       <div className="text-gray-500">KNOU</div>
@@ -427,7 +427,7 @@ const UserMyPagePreview = () => {
         </div>
         {/* Navigation */}
         <nav className="flex justify-center gap-4 py-2 text-[10px] overflow-x-auto">
-          <span className="text-blue-600 font-bold border-b-2 border-blue-600 pb-1">마이페이지</span>
+          <span className="text-[#191979] font-bold border-b-2 border-[#191979] pb-1">마이페이지</span>
           <span className="text-gray-600">참가신청</span>
           <span className="text-gray-600">홍보자료 신청</span>
           <span className="text-gray-600">출입증 신청</span>
@@ -442,12 +442,12 @@ const UserMyPagePreview = () => {
         <div className="flex items-center justify-between mb-4">
           <div></div>
           <h1 className="text-lg font-bold text-gray-900">마이페이지</h1>
-          <button className="px-3 py-1 text-[10px] border border-blue-600 text-blue-600 rounded-lg">로그인 정보</button>
+          <button className="px-3 py-1 text-[10px] border border-[#191979] text-[#191979] rounded-lg">로그인 정보</button>
         </div>
 
         {/* 전시 부스신청 Section */}
         <section className="mb-6">
-          <h2 className="text-sm font-bold text-blue-600 mb-3">전시 부스신청</h2>
+          <h2 className="text-sm font-bold text-[#191979] mb-3">전시 부스신청</h2>
           <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
             <div className="grid grid-cols-4 divide-x divide-gray-100">
               <div className="p-3 text-center">
@@ -456,7 +456,7 @@ const UserMyPagePreview = () => {
               </div>
               <div className="p-3 text-center">
                 <p className="text-[10px] text-gray-500 mb-1">신청 현황</p>
-                <button className="px-3 py-1 text-[10px] bg-blue-600 text-white rounded-lg">확인하기</button>
+                <button className="px-3 py-1 text-[10px] bg-[#191979] text-white rounded-lg">확인하기</button>
               </div>
               <div className="p-3 text-center">
                 <p className="text-[10px] text-gray-500 mb-1">부스참가 신청</p>
@@ -464,7 +464,7 @@ const UserMyPagePreview = () => {
               </div>
               <div className="p-3 text-center">
                 <p className="text-[10px] text-gray-500 mb-1">인보이스</p>
-                <button className="px-3 py-1 text-[10px] border border-blue-600 text-blue-600 rounded-lg">Invoice</button>
+                <button className="px-3 py-1 text-[10px] border border-[#191979] text-[#191979] rounded-lg">Invoice</button>
               </div>
             </div>
           </div>
@@ -509,11 +509,11 @@ const UserMyPagePreview = () => {
                     <td className="py-2 px-1 text-center text-gray-600">{item.req2}</td>
                     <td className="py-2 px-2 text-center text-gray-500">2026. 7. 3.</td>
                     <td className="py-2 px-2 text-center">
-                      <button className="px-2 py-0.5 text-[8px] border border-blue-600 text-blue-600 rounded">제출하기</button>
+                      <button className="px-2 py-0.5 text-[8px] border border-[#191979] text-[#191979] rounded">제출하기</button>
                     </td>
                     <td className="py-2 px-2 text-center">
                       {item.hasInvoice ? (
-                        <button className="px-2 py-0.5 text-[8px] border border-blue-600 text-blue-600 rounded opacity-50">Invoice</button>
+                        <button className="px-2 py-0.5 text-[8px] border border-[#191979] text-[#191979] rounded opacity-50">Invoice</button>
                       ) : (
                         <span className="text-gray-300">-</span>
                       )}

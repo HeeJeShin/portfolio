@@ -19,7 +19,7 @@ export const SkillsSection = () => {
               {items.map((skill) => (
                 <span
                   key={skill}
-                  className="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs"
+                  className="px-2 py-1 bg-blue-50 text-[#191979] rounded text-xs"
                 >
                   {skill}
                 </span>

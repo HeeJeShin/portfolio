@@ -39,7 +39,7 @@ export default function ExhibitionPage() {
             </p>
             <div className="flex flex-wrap gap-2">
               {["Next.js 16", "React 19", "TypeScript", "Zustand", "TanStack Query", "Tailwind CSS 4", "Turborepo"].map((tech) => (
-                <span key={tech} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-md text-sm">
+                <span key={tech} className="px-3 py-1 bg-blue-50 text-[#191979] rounded-md text-sm">
                   {tech}
                 </span>
               ))}
@@ -94,7 +94,7 @@ export default function ExhibitionPage() {
                     <div className="w-40 bg-white p-3 border-r border-gray-200">
                       <div className="text-xs text-gray-500 mb-2">프로젝트 메뉴</div>
                       <div className="space-y-1">
-                        <div className="flex items-center gap-2 px-2 py-1.5 bg-blue-600 text-white rounded text-xs">
+                        <div className="flex items-center gap-2 px-2 py-1.5 bg-[#191979] text-white rounded text-xs">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                           </svg>
@@ -149,7 +149,7 @@ export default function ExhibitionPage() {
             </div>
             <div className="bg-gray-50 rounded-lg p-4">
               <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <span className="w-6 h-6 bg-blue-600 text-white rounded flex items-center justify-center text-xs">A</span>
+                <span className="w-6 h-6 bg-[#191979] text-white rounded flex items-center justify-center text-xs">A</span>
                 프로젝트 어드민 (AdminSidebar)
               </h3>
               <ul className="text-sm text-gray-600 space-y-2">
@@ -189,7 +189,7 @@ export default function ExhibitionPage() {
                 onClick={() => setActiveScreen(tab.id as Screen)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-colors ${
                   activeScreen === tab.id
-                    ? "bg-blue-600 text-white"
+                    ? "bg-[#191979] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -232,7 +232,7 @@ export default function ExhibitionPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-blue-50 border border-blue-200 rounded-xl p-5">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 bg-blue-600 text-white rounded-lg flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#191979] text-white rounded-lg flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
                   </svg>
@@ -241,15 +241,15 @@ export default function ExhibitionPage() {
               </div>
               <ul className="text-sm text-gray-700 space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-0.5">→</span>
+                  <span className="text-[#191979] mt-0.5">→</span>
                   좌우 스크롤 시에도 핵심 정보 확인 가능하도록 <strong>Sticky 컬럼</strong> 적용
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-0.5">→</span>
+                  <span className="text-[#191979] mt-0.5">→</span>
                   고정 컬럼 너비를 직접 정의하여 일관된 레이아웃 유지
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-blue-600 mt-0.5">→</span>
+                  <span className="text-[#191979] mt-0.5">→</span>
                   스크롤 위치에 따른 그림자 효과로 시각적 구분
                 </li>
               </ul>
@@ -371,28 +371,28 @@ export default function ExhibitionPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">구현 플로우</h2>
           <div className="space-y-4">
             <div className="flex gap-4 items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+              <div className="flex-shrink-0 w-8 h-8 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
               <div>
                 <h3 className="font-semibold text-gray-900">로그인</h3>
                 <p className="text-sm text-gray-600">JWT 토큰 발급 (Access + Refresh), 슈퍼어드민/어드민 권한 분기</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+              <div className="flex-shrink-0 w-8 h-8 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
               <div>
                 <h3 className="font-semibold text-gray-900">프로젝트 선택</h3>
                 <p className="text-sm text-gray-600">슈퍼어드민은 프로젝트 목록에서 선택, 일반 어드민은 할당된 프로젝트로 자동 이동</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+              <div className="flex-shrink-0 w-8 h-8 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
               <div>
                 <h3 className="font-semibold text-gray-900">참가신청 관리</h3>
                 <p className="text-sm text-gray-600">예비/정규 탭으로 신청 목록 조회, 검색/필터, 상세 페이지에서 상태 변경</p>
               </div>
             </div>
             <div className="flex gap-4 items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+              <div className="flex-shrink-0 w-8 h-8 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
               <div>
                 <h3 className="font-semibold text-gray-900">신청 상세</h3>
                 <p className="text-sm text-gray-600">업체정보, 부스, 출입증, 인보이스 등 탭별 상세 정보 관리</p>
@@ -458,12 +458,12 @@ function SuperAdminScreen() {
         {/* 설명 */}
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-start gap-3">
-            <svg className="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-[#191979] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
               <p className="text-sm font-medium text-blue-900">SystemSidebar 컴포넌트</p>
-              <p className="text-xs text-blue-700 mt-1">
+              <p className="text-xs text-[#191979] mt-1">
                 슈퍼어드민용 좁은 사이드바로, 프로젝트 관리/관리자 계정/시스템 설정 메뉴를 아이콘으로 표시합니다.
                 Tooltip으로 메뉴명을 표시합니다.
               </p>
@@ -500,7 +500,7 @@ function ProjectListScreen() {
               <p>{project.period}</p>
               <p>{project.location}</p>
             </div>
-            <button className="mt-4 w-full py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700">
+            <button className="mt-4 w-full py-2 bg-[#191979] text-white rounded-lg text-sm font-medium hover:bg-[#191979]">
               상세보기
             </button>
           </div>
@@ -523,18 +523,18 @@ function AdminSidebarScreen() {
             <div className="px-4 pt-4 pb-4">
               <div className="flex items-center justify-between mb-3">
                 <span className="px-2 py-0.5 text-xs font-medium text-white rounded bg-lime-500">Ongoing</span>
-                <button onClick={() => setIsCollapsed(true)} className="p-1.5 text-blue-600 hover:bg-gray-100 rounded-lg">
+                <button onClick={() => setIsCollapsed(true)} className="p-1.5 text-[#191979] hover:bg-gray-100 rounded-lg">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 19.5L8.25 12l7.5-7.5" />
                   </svg>
                 </button>
               </div>
-              <h2 className="text-lg font-bold text-blue-600">2024 국제 전시회</h2>
+              <h2 className="text-lg font-bold text-[#191979]">2024 국제 전시회</h2>
             </div>
             <nav className="flex-1 py-4 bg-gray-50">
               <ul className="space-y-1 px-2">
                 <li>
-                  <div className="flex items-center gap-3 px-3 py-2.5 bg-blue-600 text-white rounded-lg text-sm font-medium">
+                  <div className="flex items-center gap-3 px-3 py-2.5 bg-[#191979] text-white rounded-lg text-sm font-medium">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                     </svg>
@@ -542,7 +542,7 @@ function AdminSidebarScreen() {
                   </div>
                 </li>
                 <li>
-                  <div className="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-blue-600 hover:text-white rounded-lg text-sm font-medium transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-[#191979] hover:text-white rounded-lg text-sm font-medium transition-colors cursor-pointer">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281" />
                     </svg>
@@ -550,7 +550,7 @@ function AdminSidebarScreen() {
                   </div>
                 </li>
                 <li>
-                  <div className="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-blue-600 hover:text-white rounded-lg text-sm font-medium transition-colors cursor-pointer">
+                  <div className="flex items-center gap-3 px-3 py-2.5 text-gray-700 hover:bg-[#191979] hover:text-white rounded-lg text-sm font-medium transition-colors cursor-pointer">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192" />
                     </svg>
@@ -570,7 +570,7 @@ function AdminSidebarScreen() {
         ) : (
           <>
             <div className="flex items-center justify-center px-2 py-2">
-              <button onClick={() => setIsCollapsed(false)} className="p-2 text-blue-600 hover:bg-gray-100 rounded-lg">
+              <button onClick={() => setIsCollapsed(false)} className="p-2 text-[#191979] hover:bg-gray-100 rounded-lg">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
@@ -580,28 +580,28 @@ function AdminSidebarScreen() {
               <div className="flex justify-center mb-2">
                 <div className="w-2.5 h-2.5 rounded-full bg-lime-500"></div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-sm mx-auto text-white">
+              <div className="w-8 h-8 rounded-full bg-[#191979] flex items-center justify-center font-bold text-sm mx-auto text-white">
                 2
               </div>
             </div>
             <nav className="flex-1 py-4 bg-gray-50">
               <ul className="space-y-1 px-2">
                 <li>
-                  <div className="flex items-center justify-center p-2.5 bg-blue-600 text-white rounded-lg">
+                  <div className="flex items-center justify-center p-2.5 bg-[#191979] text-white rounded-lg">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0" />
                     </svg>
                   </div>
                 </li>
                 <li>
-                  <div className="flex items-center justify-center p-2.5 text-gray-700 hover:bg-blue-600 hover:text-white rounded-lg transition-colors cursor-pointer">
+                  <div className="flex items-center justify-center p-2.5 text-gray-700 hover:bg-[#191979] hover:text-white rounded-lg transition-colors cursor-pointer">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593" />
                     </svg>
                   </div>
                 </li>
                 <li>
-                  <div className="flex items-center justify-center p-2.5 text-gray-700 hover:bg-blue-600 hover:text-white rounded-lg transition-colors cursor-pointer">
+                  <div className="flex items-center justify-center p-2.5 text-gray-700 hover:bg-[#191979] hover:text-white rounded-lg transition-colors cursor-pointer">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h3.75M9 15h3.75" />
                     </svg>
@@ -617,16 +617,16 @@ function AdminSidebarScreen() {
       <div className="flex-1 p-6 bg-gray-50">
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
           <div className="flex items-start gap-3">
-            <svg className="w-5 h-5 text-blue-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-[#191979] mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
               <p className="text-sm font-medium text-blue-900">AdminSidebar 컴포넌트</p>
-              <p className="text-xs text-blue-700 mt-1">
+              <p className="text-xs text-[#191979] mt-1">
                 프로젝트별 어드민 사이드바입니다. 접기/펼치기, 프로젝트 상태 표시,
                 다국어 선택(KR/EN/JA), 로컬스토리지 상태 저장 기능이 있습니다.
               </p>
-              <p className="text-xs text-blue-700 mt-2">
+              <p className="text-xs text-[#191979] mt-2">
                 <strong>접기 버튼을 클릭</strong>해서 축소 상태를 확인해보세요.
               </p>
             </div>
@@ -646,7 +646,7 @@ function UserListScreen() {
       {/* Admin Sidebar (collapsed) */}
       <aside className="w-16 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
         <div className="flex items-center justify-center px-2 py-2">
-          <div className="p-2 text-blue-600">
+          <div className="p-2 text-[#191979]">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
@@ -656,7 +656,7 @@ function UserListScreen() {
           <div className="flex justify-center mb-2">
             <div className="w-2.5 h-2.5 rounded-full bg-lime-500"></div>
           </div>
-          <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs mx-auto text-white">
+          <div className="w-8 h-8 rounded-full bg-[#191979] flex items-center justify-center font-bold text-xs mx-auto text-white">
             2
           </div>
         </div>
@@ -677,7 +677,7 @@ function UserListScreen() {
               </div>
             </li>
             <li>
-              <div className="flex items-center justify-center p-2.5 bg-blue-600 text-white rounded-lg">
+              <div className="flex items-center justify-center p-2.5 bg-[#191979] text-white rounded-lg">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h3.75M9 15h3.75" />
                 </svg>
@@ -697,7 +697,7 @@ function UserListScreen() {
             onClick={() => setActiveTab("preliminary")}
             className={`pb-2 text-sm font-medium border-b-2 transition-colors ${
               activeTab === "preliminary"
-                ? "border-blue-600 text-blue-600"
+                ? "border-[#191979] text-[#191979]"
                 : "border-transparent text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -707,7 +707,7 @@ function UserListScreen() {
             onClick={() => setActiveTab("regular")}
             className={`pb-2 text-sm font-medium border-b-2 transition-colors ${
               activeTab === "regular"
-                ? "border-blue-600 text-blue-600"
+                ? "border-[#191979] text-[#191979]"
                 : "border-transparent text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -785,7 +785,7 @@ function UserDetailScreen() {
       {/* Admin Sidebar (collapsed) */}
       <aside className="w-16 bg-white border-r border-gray-200 flex flex-col flex-shrink-0">
         <div className="flex items-center justify-center px-2 py-2">
-          <div className="p-2 text-blue-600">
+          <div className="p-2 text-[#191979]">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
@@ -795,7 +795,7 @@ function UserDetailScreen() {
           <div className="flex justify-center mb-2">
             <div className="w-2.5 h-2.5 rounded-full bg-lime-500"></div>
           </div>
-          <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center font-bold text-xs mx-auto text-white">
+          <div className="w-8 h-8 rounded-full bg-[#191979] flex items-center justify-center font-bold text-xs mx-auto text-white">
             2
           </div>
         </div>
@@ -816,7 +816,7 @@ function UserDetailScreen() {
               </div>
             </li>
             <li>
-              <div className="flex items-center justify-center p-2.5 bg-blue-600 text-white rounded-lg">
+              <div className="flex items-center justify-center p-2.5 bg-[#191979] text-white rounded-lg">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h3.75M9 15h3.75" />
                 </svg>
@@ -874,7 +874,7 @@ function UserDetailScreen() {
               <button
                 key={tab}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap ${
-                  i === 0 ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-600"
+                  i === 0 ? "bg-[#191979] text-white" : "bg-gray-200 text-gray-600"
                 }`}
               >
                 {tab}
@@ -1046,12 +1046,12 @@ function DataTableScreen() {
       {/* 설명 */}
       <div className="mt-4 bg-blue-50 border border-blue-200 rounded-lg p-4">
         <div className="flex items-start gap-3">
-          <svg className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-[#191979] mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <div>
             <p className="text-sm font-medium text-blue-900">직접 설계한 UI 구조</p>
-            <ul className="text-xs text-blue-700 mt-2 space-y-1">
+            <ul className="text-xs text-[#191979] mt-2 space-y-1">
               <li>• <strong>번호 + 업체명 컬럼 고정</strong>: 좌우 스크롤해도 핵심 정보 확인 가능</li>
               <li>• <strong>고정 너비 지정</strong>: 일관된 레이아웃으로 데이터 비교 용이</li>
               <li>• <strong>그림자 효과</strong>: 고정 영역과 스크롤 영역 시각적 구분</li>

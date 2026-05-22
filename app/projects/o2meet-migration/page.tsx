@@ -93,14 +93,14 @@ export default function O2MeetMigrationPage() {
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mb-4">
             1차 마이그레이션 실패 경험을 바탕으로 2차에서 부족한 점을 개선하여
-            <strong className="text-blue-600"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
+            <strong className="text-[#191979]"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
           </p>
           {project.demo && (
             <a
               href={project.demo}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#191979] text-white rounded-lg hover:bg-[#191979] transition-colors text-sm font-medium"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -124,7 +124,7 @@ export default function O2MeetMigrationPage() {
                   <tr className="border-b border-blue-200">
                     <th className="text-left py-3 px-4 font-semibold text-gray-900">지표</th>
                     <th className="text-center py-3 px-4 font-semibold text-red-600">Before (JSP)</th>
-                    <th className="text-center py-3 px-4 font-semibold text-blue-600">After (Next.js)</th>
+                    <th className="text-center py-3 px-4 font-semibold text-[#191979]">After (Next.js)</th>
                     <th className="text-center py-3 px-4 font-semibold text-green-600">개선율</th>
                   </tr>
                 </thead>
@@ -133,7 +133,7 @@ export default function O2MeetMigrationPage() {
                     <tr key={i} className="border-b border-blue-100">
                       <td className="py-3 px-4 text-gray-700">{item.metric}</td>
                       <td className="py-3 px-4 text-center text-gray-600">{item.before}</td>
-                      <td className="py-3 px-4 text-center font-medium text-blue-600">{item.after}</td>
+                      <td className="py-3 px-4 text-center font-medium text-[#191979]">{item.after}</td>
                       <td className="py-3 px-4 text-center font-bold text-green-600">{item.improvement}</td>
                     </tr>
                   ))}
@@ -143,15 +143,15 @@ export default function O2MeetMigrationPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-blue-600 mb-1">60%</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">60%</p>
               <p className="text-sm text-gray-600">LCP 개선</p>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-blue-600 mb-1">99%</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">99%</p>
               <p className="text-sm text-gray-600">미사용 코드 감소</p>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-blue-600 mb-1">100%</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">100%</p>
               <p className="text-sm text-gray-600">CLS 개선</p>
             </div>
           </div>
@@ -244,7 +244,7 @@ export default function O2MeetMigrationPage() {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
+                className="px-2 py-1 bg-blue-100 text-[#191979] text-xs rounded-full font-medium"
               >
                 {tech}
               </span>
@@ -256,7 +256,7 @@ export default function O2MeetMigrationPage() {
       {/* Footer */}
       <footer className="border-t border-gray-200 py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-[#191979] hover:text-[#191979] font-medium transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>

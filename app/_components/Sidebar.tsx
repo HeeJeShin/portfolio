@@ -37,7 +37,7 @@ export const Sidebar = () => {
       <div className="flex flex-col h-full px-8 py-10 lg:py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
-          <p className="text-base text-blue-600 font-medium">Frontend Developer</p>
+          <p className="text-base text-[#191979] font-medium">Frontend Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
             비즈니스 도메인에 대한 통찰과 AI 활용 능력을 무기로,<br /> 빠르고 정확하게 실질적인 결과물을 만들어내는 개발자입니다.
           </p>
@@ -54,13 +54,13 @@ export const Sidebar = () => {
                     onClick={(e) => handleNavClick(e, id)}
                     className={`flex items-center gap-3 py-2 text-sm transition-colors ${
                       isActive
-                        ? "text-blue-600 font-semibold"
-                        : "text-gray-600 hover:text-blue-600"
+                        ? "text-[#191979] font-semibold"
+                        : "text-gray-600 hover:text-[#191979]"
                     }`}
                   >
                     <span
                       className={`h-px transition-all ${
-                        isActive ? "w-8 bg-blue-600" : "w-4 bg-gray-300"
+                        isActive ? "w-8 bg-[#191979]" : "w-4 bg-gray-300"
                       }`}
                     />
                     {label}
@@ -74,7 +74,7 @@ export const Sidebar = () => {
         <div className="mb-8 space-y-2 text-sm text-gray-600">
           <div className="flex items-center gap-2">
             <span className="font-semibold text-gray-900 w-12">Email</span>
-            <a href="mailto:heeheehee.hj@gmail.com" className="hover:text-blue-600 truncate">
+            <a href="mailto:heeheehee.hj@gmail.com" className="hover:text-[#191979] truncate">
               heeheehee.hj@gmail.com
             </a>
           </div>
@@ -88,7 +88,7 @@ export const Sidebar = () => {
               href="https://github.com/HeeJeShin"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 hover:underline"
+              className="text-[#191979] hover:underline"
             >
               HeeJeShin
             </a>
@@ -99,7 +99,7 @@ export const Sidebar = () => {
           <a
             href="/신희제_프론트엔드개발자_이력서_public.pdf"
             download
-            className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
+            className="w-full px-4 py-3 bg-[#191979] text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
           >
             <svg
               className="w-4 h-4"

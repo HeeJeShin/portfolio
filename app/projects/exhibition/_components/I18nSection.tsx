@@ -52,13 +52,13 @@ export const I18nSection = () => {
               <div className="text-gray-500">// locales/ko/auth.json</div>
               <div>{`{`}</div>
               <div className="pl-2">
-                <span className="text-blue-600">&quot;login&quot;</span>: {`{`}
+                <span className="text-[#191979]">&quot;login&quot;</span>: {`{`}
               </div>
               <div className="pl-4">
-                <span className="text-blue-600">&quot;title&quot;</span>: <span className="text-green-600">&quot;로그인&quot;</span>,
+                <span className="text-[#191979]">&quot;title&quot;</span>: <span className="text-green-600">&quot;로그인&quot;</span>,
               </div>
               <div className="pl-4">
-                <span className="text-blue-600">&quot;submit&quot;</span>: <span className="text-green-600">&quot;로그인&quot;</span>
+                <span className="text-[#191979]">&quot;submit&quot;</span>: <span className="text-green-600">&quot;로그인&quot;</span>
               </div>
               <div className="pl-2">{`}`}</div>
               <div>{`}`}</div>

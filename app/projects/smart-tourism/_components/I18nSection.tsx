@@ -6,7 +6,7 @@ export const I18nSection = () => {
       {/* 지원 언어 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🌍</span>
+          <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">🌍</span>
           지원 언어
         </h3>
 
@@ -28,7 +28,7 @@ export const I18nSection = () => {
 
       {/* next-intl 구조 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>📦</span> next-intl 적용 구조
           </h4>
@@ -43,10 +43,10 @@ export const I18nSection = () => {
                   <div className="pl-4 text-gray-600">request.ts</div>
                   <div className="pl-4 text-gray-600">routing.ts</div>
                   <div className="text-gray-900 font-bold mt-2">/messages</div>
-                  <div className="pl-4 text-blue-600">ko.json</div>
-                  <div className="pl-4 text-blue-600">en.json</div>
-                  <div className="pl-4 text-blue-600">ja.json</div>
-                  <div className="pl-4 text-blue-600">zh.json</div>
+                  <div className="pl-4 text-[#191979]">ko.json</div>
+                  <div className="pl-4 text-[#191979]">en.json</div>
+                  <div className="pl-4 text-[#191979]">ja.json</div>
+                  <div className="pl-4 text-[#191979]">zh.json</div>
                   <div className="text-gray-900 font-bold mt-2">/src/app/[locale]</div>
                   <div className="pl-4 text-gray-500">layout.tsx</div>
                   <div className="pl-4 text-gray-500">page.tsx</div>
@@ -82,7 +82,7 @@ export const I18nSection = () => {
 
       {/* 번역 파일 구조 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>📄</span> 번역 파일 구조
           </h4>
@@ -132,7 +132,7 @@ export const I18nSection = () => {
 
       {/* 사용 방법 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>💻</span> 컴포넌트에서 사용
           </h4>

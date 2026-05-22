@@ -157,7 +157,7 @@ export default function PosKioskPage() {
             POS/Kiosk 결제 시스템
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
-            동대문역사문화공원역 어린이 키즈카페 <strong className="text-blue-600">&apos;디키디키&apos;</strong>용 POS/Kiosk 시스템.
+            동대문역사문화공원역 어린이 키즈카페 <strong className="text-[#191979]">&apos;디키디키&apos;</strong>용 POS/Kiosk 시스템.
             초기 프론트엔드 개발자 부재로 <strong>화면 구성 및 초기 개발을 담당</strong>했습니다.
           </p>
         </section>
@@ -169,7 +169,7 @@ export default function PosKioskPage() {
             {achievements.map((item) => (
               <div key={item.label} className="bg-white rounded-xl p-6 border border-gray-200 text-center">
                 <p className="text-sm text-gray-600 mb-1">{item.label}</p>
-                <p className="text-2xl font-bold text-blue-600 mb-1">{item.value}</p>
+                <p className="text-2xl font-bold text-[#191979] mb-1">{item.value}</p>
                 <p className="text-xs text-gray-500">{item.desc}</p>
               </div>
             ))}
@@ -223,7 +223,7 @@ export default function PosKioskPage() {
             {coreImplementations.map((impl, idx) => (
               <div key={impl.title} className="bg-white rounded-xl border border-gray-200 p-6">
                 <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">
+                  <span className="w-6 h-6 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm">
                     {idx + 1}
                   </span>
                   {impl.title}
@@ -304,7 +304,7 @@ export default function PosKioskPage() {
           <div className="bg-white rounded-xl p-6 border border-gray-200">
             <p className="text-gray-600 mb-4">
               영수증 출력, 프린터 상태 체크, 세컨드 모니터 제어 등 하드웨어 기능은 C++ 개발자와 협업하여 연동.
-              <code className="bg-gray-100 px-1 rounded text-blue-600 mx-1">CefSharp.PostMessage</code>로
+              <code className="bg-gray-100 px-1 rounded text-[#191979] mx-1">CefSharp.PostMessage</code>로
               JS에서 POS 프로그램을 호출하고, 콜백으로 결과를 받는 구조입니다.
             </p>
             <div className="bg-gray-900 rounded-lg p-4 overflow-x-auto">
@@ -338,7 +338,7 @@ if (window?.CefSharp === undefined) {
             {techStack.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium"
+                className="px-2 py-1 bg-blue-100 text-[#191979] text-xs rounded-full font-medium"
               >
                 {tech}
               </span>
@@ -350,7 +350,7 @@ if (window?.CefSharp === undefined) {
       {/* Footer */}
       <footer className="border-t border-gray-200 py-12 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 text-center">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-[#191979] hover:text-[#191979] font-medium transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
