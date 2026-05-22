@@ -10,6 +10,10 @@ const items = [
     desc: "Claude Code 실무 활용, AI 협업으로 개발 생산성 향상. 설계 검토, 테스트 케이스 도출, 문서화까지 적용. [어드민시스템]",
   },
   {
+    title: "Claude Design 활용 (Design-to-Code)",
+    desc: "AI 디자인 툴로 인터랙티브 프로토타입 제작 → Claude Code로 프로덕션 구현. 새로운 AI 도구 빠른 적응. [HomeCare]",
+  },
+  {
     title: "모노레포 구조 설계",
     desc: "Turborepo + pnpm workspace로 개발 속도 50% 단축. [어드민시스템]",
   },
