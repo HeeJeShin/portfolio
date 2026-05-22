@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
+import { getProjectById } from "@/app/_data/constants";
+
+// 공통 데이터에서 프로젝트 정보 가져오기
+const project = getProjectById("o2meet-migration")!;
 
 const techStack = ["Next.js 14", "TypeScript", "Zustand", "Tailwind CSS", "Zod"];
 
@@ -79,7 +83,7 @@ export default function O2MeetMigrationPage() {
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
-              2026.01 - 2026.04
+              {project.period}
             </span>
             <span className="text-gray-400">|</span>
             <span className="text-gray-600 text-sm">프론트엔드</span>
@@ -91,17 +95,19 @@ export default function O2MeetMigrationPage() {
             1차 마이그레이션 실패 경험을 바탕으로 2차에서 부족한 점을 개선하여
             <strong className="text-blue-600"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
           </p>
-          <a
-            href="https://greenenertec.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            greenenertec.com 바로가기
-          </a>
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              {project.demo.replace("https://", "")} 바로가기
+            </a>
+          )}
         </section>
 
         {/* Lighthouse 성능 측정 결과 */}
@@ -109,7 +115,7 @@ export default function O2MeetMigrationPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Lighthouse 성능 측정 결과</h2>
           <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
             <p className="text-gray-700 mb-4">
-              JSP 기반 <strong>bookizcon.com</strong>과 Next.js로 마이그레이션한 <strong>greenenertec.com</strong>을
+              JSP 기반 <strong>bookizcon.com</strong>과 Next.js로 마이그레이션한 <strong>{project.demo?.replace("https://", "").replace("/", "")}</strong>을
               Lighthouse로 측정하여 성능을 비교했습니다.
             </p>
             <div className="overflow-x-auto">
@@ -153,7 +159,7 @@ export default function O2MeetMigrationPage() {
 
         {/* 1차 마이그레이션 실패 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">1차 마이그레이션 실패 (2024.12 - 2025.02)</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">1차 마이그레이션 실패 ({project.firstAttemptPeriod})</h2>
           <div className="bg-red-50 rounded-xl p-6 border border-red-100 mb-6">
             <p className="text-gray-700">
               첫 번째 마이그레이션 시도에서 <strong className="text-red-600">여러 기술적 문제점</strong>을 발견했습니다.
@@ -180,7 +186,7 @@ export default function O2MeetMigrationPage() {
 
         {/* 2차 마이그레이션 성공 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">2차 마이그레이션 성공 (2026.01 - 2026.04)</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">2차 마이그레이션 성공 ({project.period})</h2>
           <div className="bg-green-50 rounded-xl p-6 border border-green-100 mb-6">
             <p className="text-gray-700">
               1차 실패 경험을 바탕으로 <strong className="text-green-600">부족한 점을 개선</strong>하여

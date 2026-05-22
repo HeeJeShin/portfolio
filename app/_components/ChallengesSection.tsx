@@ -7,8 +7,8 @@ const challenges = [
     link: "/projects/exhibition#unit-test",
   },
   {
-    title: "1차 실패 → 2차 성공: Lighthouse 기반 성능 60% 개선",
-    desc: "1차 마이그레이션은 행사 미진행으로 중단되었지만, 2차에서 부족한 점을 개선하고 Lighthouse로 성능을 측정했습니다. LCP 50.1s→20.1s(60%↓), 미사용 코드 2,141KB→25KB(99%↓), CLS 0.248→0.000(100%↓)으로 개선했습니다.",
+    title: "1차 실패 → 2차 성공: 성능 60% 개선",
+    desc: "1차 마이그레이션 실패 경험을 바탕으로 2차에서 부족한 점을 개선하여 LCP 50.1s→20.1s(60%↓), 미사용 코드 2,141KB→25KB(99%↓), CLS 0.248→0.000(100%↓)으로 성능을 개선했습니다. (측정: Lighthouse)",
     link: "/projects/o2meet-migration",
   },
   {
