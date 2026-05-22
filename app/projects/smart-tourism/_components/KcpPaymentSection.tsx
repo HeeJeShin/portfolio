@@ -6,7 +6,7 @@ export const KcpPaymentSection = () => {
       {/* 결제 흐름 다이어그램 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">💳</span>
+          <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">💳</span>
           결제 처리 흐름
         </h3>
 
@@ -59,7 +59,7 @@ export const KcpPaymentSection = () => {
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-blue-600 text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
+          <div className="bg-[#191979] text-white px-4 py-2 text-sm font-medium flex items-center gap-2">
             <span>📱</span> Mobile 결제
           </div>
           <div className="p-4">
@@ -126,7 +126,7 @@ export const KcpPaymentSection = () => {
 
       {/* Callback 처리 상세 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🔄</span> Callback 처리 로직
           </h4>

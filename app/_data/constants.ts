@@ -33,7 +33,7 @@ export const projects: Project[] = [
   },
   {
     id: "exhibition",
-    title: "전시부스 신청 관리 어드민 시스템",
+    title: "어드민 시스템(행사부스 신청관리)",
     subtitle: "2단계 어드민 시스템 개발",
     period: "2025.02 - 2025.04",
     description: "슈퍼어드민 + 프로젝트 어드민 구조의 전시회 참가신청 관리 시스템",

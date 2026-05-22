@@ -36,7 +36,7 @@ export const MetricsSection = () => {
             className="bg-white border border-gray-200 rounded-xl p-5"
           >
             <div className="flex items-baseline gap-3 mb-2">
-              <p className="text-3xl font-bold text-blue-600">{metric.value}</p>
+              <p className="text-3xl font-bold text-[#191979]">{metric.value}</p>
               <p className="font-medium text-gray-900">{metric.label}</p>
             </div>
             <p className="text-sm text-gray-700 mb-2">{metric.desc}</p>

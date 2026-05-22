@@ -17,7 +17,7 @@ export const ProjectsSection = () => {
             <div className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-2">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#191979] transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-xs text-gray-500 mt-0.5">{project.subtitle}</p>
@@ -35,7 +35,7 @@ export const ProjectsSection = () => {
                 {project.highlights.map((highlight) => (
                   <span
                     key={highlight}
-                    className="text-xs text-blue-700 bg-blue-50 px-2 py-0.5 rounded"
+                    className="text-xs text-[#191979] bg-blue-50 px-2 py-0.5 rounded"
                   >
                     {highlight}
                   </span>
@@ -56,13 +56,13 @@ export const ProjectsSection = () => {
               {(project.demo || project.github || project.links) && (
                 <div className="flex gap-3 mt-3 pt-3 border-t border-gray-100 text-xs">
                   {project.demo && (
-                    <span className="text-blue-600">Site ↗</span>
+                    <span className="text-[#191979]">Site ↗</span>
                   )}
                   {project.github && (
                     <span className="text-gray-600">GitHub ↗</span>
                   )}
                   {project.links?.map((link) => (
-                    <span key={link.label} className="text-blue-600">
+                    <span key={link.label} className="text-[#191979]">
                       {link.label} ↗
                     </span>
                   ))}

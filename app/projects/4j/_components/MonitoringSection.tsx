@@ -14,7 +14,7 @@ export const MonitoringSection = () => {
         </h3>
         <div className="grid sm:grid-cols-3 gap-4">
           <div className="flex items-start gap-3">
-            <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+            <span className="w-6 h-6 bg-blue-100 text-[#191979] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
               1
             </span>
             <div>
@@ -23,7 +23,7 @@ export const MonitoringSection = () => {
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+            <span className="w-6 h-6 bg-blue-100 text-[#191979] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
               2
             </span>
             <div>
@@ -32,7 +32,7 @@ export const MonitoringSection = () => {
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+            <span className="w-6 h-6 bg-blue-100 text-[#191979] rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
               3
             </span>
             <div>
@@ -48,15 +48,15 @@ export const MonitoringSection = () => {
         <h3 className="font-bold text-gray-900 mb-3">갱신 주기 설정</h3>
         <div className="flex flex-wrap gap-3">
           <div className="px-4 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm">
-            <span className="font-medium text-blue-600">1분</span>
+            <span className="font-medium text-[#191979]">1분</span>
             <span className="text-gray-500 ml-2">고빈도 모니터링</span>
           </div>
           <div className="px-4 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm">
-            <span className="font-medium text-blue-600">10분</span>
+            <span className="font-medium text-[#191979]">10분</span>
             <span className="text-gray-500 ml-2">일반 모니터링</span>
           </div>
           <div className="px-4 py-2 bg-gray-50 rounded-lg border border-gray-200 text-sm">
-            <span className="font-medium text-blue-600">1시간</span>
+            <span className="font-medium text-[#191979]">1시간</span>
             <span className="text-gray-500 ml-2">저빈도 모니터링</span>
           </div>
         </div>

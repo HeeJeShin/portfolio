@@ -46,18 +46,18 @@ export const ProblemSolvingSection = () => {
                 <div
                   className={`rounded-lg p-4 transition-all duration-500 ${
                     isHighlighted
-                      ? "bg-blue-50 border-2 border-blue-600"
+                      ? "bg-blue-50 border-2 border-[#191979]"
                       : "bg-gray-50"
                   }`}
                 >
                   <p className="text-xs font-medium text-gray-500 mb-2">효과</p>
-                  <p className="text-sm font-medium text-blue-600">{item.effect}</p>
+                  <p className="text-sm font-medium text-[#191979]">{item.effect}</p>
                   {"link" in item && item.link && (
                     <a
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 mt-2 text-xs text-gray-500 hover:text-blue-600"
+                      className="inline-flex items-center gap-1 mt-2 text-xs text-gray-500 hover:text-[#191979]"
                     >
                       <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />

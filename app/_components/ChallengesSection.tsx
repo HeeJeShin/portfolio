@@ -38,10 +38,10 @@ export const ChallengesSection = () => {
         {challenges.map((item) => {
           const content = (
             <>
-              <h3 className="font-bold text-blue-600 mb-2">{item.title}</h3>
+              <h3 className="font-bold text-[#191979] mb-2">{item.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{item.desc}</p>
               {item.link && (
-                <p className="text-sm text-blue-600 underline mt-2">자세히 보기 →</p>
+                <p className="text-sm text-[#191979] underline mt-2">자세히 보기 →</p>
               )}
             </>
           );

@@ -20,7 +20,7 @@ export const venueTypes = [
 // 혼잡도 레벨 데이터
 export const congestionLevels = [
   { level: 1, label: "쾌적", ratio: "30%", color: "bg-green-500", textColor: "text-green-600" },
-  { level: 2, label: "여유", ratio: "50%", color: "bg-blue-500", textColor: "text-blue-600" },
+  { level: 2, label: "여유", ratio: "50%", color: "bg-blue-500", textColor: "text-[#191979]" },
   { level: 3, label: "혼잡", ratio: "70%", color: "bg-yellow-500", textColor: "text-yellow-600" },
   { level: 4, label: "매우혼잡", ratio: "90%", color: "bg-orange-500", textColor: "text-orange-600" },
   { level: 5, label: "위험", ratio: "110%", color: "bg-red-500", textColor: "text-red-600" },

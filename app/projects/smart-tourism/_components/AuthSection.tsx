@@ -6,12 +6,12 @@ export const AuthSection = () => {
       {/* 토큰 저장 전략 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🔑</span>
+          <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">🔑</span>
           토큰 저장 전략 (3단계 Fallback)
         </h3>
 
         <p className="text-sm text-gray-600 mb-4">
-          브라우저 환경에 따라 토큰 저장/복원이 실패할 수 있어, <strong className="text-blue-700">3단계 Fallback 전략</strong>을 적용했습니다.
+          브라우저 환경에 따라 토큰 저장/복원이 실패할 수 있어, <strong className="text-[#191979]">3단계 Fallback 전략</strong>을 적용했습니다.
         </p>
 
         <div className="flex flex-col md:flex-row items-stretch gap-4">
@@ -100,7 +100,7 @@ export const AuthSection = () => {
             ].map((item, i) => (
               <div key={item.step} className="flex items-center gap-3 flex-1">
                 <div className="bg-gray-50 rounded-lg p-4 flex-1 text-center">
-                  <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">
+                  <div className="w-8 h-8 bg-[#191979] text-white rounded-full flex items-center justify-center text-sm font-bold mx-auto mb-2">
                     {item.step}
                   </div>
                   <p className="font-medium text-gray-900 text-sm">{item.title}</p>
@@ -124,7 +124,7 @@ export const AuthSection = () => {
       {/* 자동 로그인 & 토큰 갱신 */}
       <div className="grid md:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-blue-600 text-white px-4 py-3">
+          <div className="bg-[#191979] text-white px-4 py-3">
             <h4 className="font-bold flex items-center gap-2">
               <span>🔄</span> 자동 로그인 (AutoLogin)
             </h4>
@@ -152,7 +152,7 @@ export const AuthSection = () => {
         </div>
 
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
-          <div className="bg-blue-600 text-white px-4 py-3">
+          <div className="bg-[#191979] text-white px-4 py-3">
             <h4 className="font-bold flex items-center gap-2">
               <span>🔃</span> 토큰 자동 갱신
             </h4>
@@ -199,7 +199,7 @@ export const AuthSection = () => {
             <div>{`}, [])`}</div>
           </div>
         </div>
-        <p className="text-xs text-blue-700 mt-3">
+        <p className="text-xs text-[#191979] mt-3">
           다른 탭에서 로그아웃하면 현재 탭에서도 자동으로 로그아웃 상태가 반영됩니다.
         </p>
       </div>
@@ -209,12 +209,12 @@ export const AuthSection = () => {
         <h4 className="font-bold text-gray-900 mb-3">토큰 만료 정책</h4>
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-blue-600">1시간</p>
+            <p className="text-2xl font-bold text-[#191979]">1시간</p>
             <p className="text-sm text-gray-600">Access Token</p>
             <p className="text-xs text-gray-400 mt-1">API 요청 인증용</p>
           </div>
           <div className="bg-white rounded-lg p-4 text-center">
-            <p className="text-2xl font-bold text-blue-600">7일</p>
+            <p className="text-2xl font-bold text-[#191979]">7일</p>
             <p className="text-sm text-gray-600">Refresh Token</p>
             <p className="text-xs text-gray-400 mt-1">Access Token 갱신용</p>
           </div>

@@ -6,7 +6,7 @@ export const Footer = () => {
       <div className="max-w-5xl mx-auto px-6">
         {/* 메인 링크 */}
         <div className="text-center">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition-colors">
+          <Link href="/" className="inline-flex items-center gap-2 text-[#191979] hover:text-[#191979] font-medium transition-colors">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>

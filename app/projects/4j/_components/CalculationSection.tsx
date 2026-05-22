@@ -6,7 +6,7 @@ export const CalculationSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6">수용인원 계산 방식</h2>
       <p className="text-sm text-gray-500 mb-6">
         * 법적 근거(소방법, 건축법 등) 기반으로 기획 담당이 조사한 기준입니다.
-        상세 내용은 <a href="/doc/행사장수용인원자동계산_20260106_4J.pptx" download className="text-blue-600 hover:underline">기획서</a>를 참고하세요.
+        상세 내용은 <a href="/doc/행사장수용인원자동계산_20260106_4J.pptx" download className="text-[#191979] hover:underline">기획서</a>를 참고하세요.
       </p>
 
       {/* 행사장 유형별 기준 */}
@@ -19,7 +19,7 @@ export const CalculationSection = () => {
           {venueTypes.map((venue, idx) => (
             <div key={idx} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
               <div className="font-bold text-gray-900 mb-1">{venue.type}</div>
-              <div className="text-blue-600 font-mono text-lg mb-1">{venue.area}</div>
+              <div className="text-[#191979] font-mono text-lg mb-1">{venue.area}</div>
               <div className="text-xs text-gray-500">{venue.desc}</div>
             </div>
           ))}

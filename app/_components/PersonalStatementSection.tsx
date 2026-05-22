@@ -88,7 +88,7 @@ export const PersonalStatementSection = () => {
         {sections.map((section) => (
           <div key={section.title} className="rounded-xl p-6 border border-gray-200">
             <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 bg-blue-600 rounded-full" />
+              <span className="w-1.5 h-1.5 bg-[#191979] rounded-full" />
               {section.title}
             </h3>
             <div className="space-y-3">
@@ -97,7 +97,7 @@ export const PersonalStatementSection = () => {
                   key={idx}
                   className={`text-sm leading-relaxed ${
                     item.highlight
-                      ? "font-semibold text-blue-700 bg-white/60 rounded-lg px-3 py-2"
+                      ? "font-semibold text-[#191979] bg-white/60 rounded-lg px-3 py-2"
                       : "text-gray-700"
                   }`}
                 >

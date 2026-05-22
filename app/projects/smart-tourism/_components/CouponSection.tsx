@@ -6,7 +6,7 @@ export const CouponSection = () => {
       {/* 쿠폰 타입 분류 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <span className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white text-sm">🎟️</span>
+          <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">🎟️</span>
           쿠폰 타입 분류
         </h3>
 
@@ -76,7 +76,7 @@ export const CouponSection = () => {
 
       {/* 데이터 변환 파이프라인 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>🔄</span> 데이터 변환 파이프라인
           </h4>
@@ -92,7 +92,7 @@ export const CouponSection = () => {
               <div key={item.step} className="flex items-center gap-3 flex-1">
                 <div className="flex-1 bg-gray-50 rounded-lg p-4 text-center">
                   <p className="font-medium text-gray-900 text-sm">{item.step}</p>
-                  <code className="text-xs text-blue-600 bg-blue-50 px-2 py-0.5 rounded mt-1 inline-block">
+                  <code className="text-xs text-[#191979] bg-blue-50 px-2 py-0.5 rounded mt-1 inline-block">
                     {item.type}
                   </code>
                   <p className="text-xs text-gray-500 mt-2">{item.desc}</p>
@@ -110,7 +110,7 @@ export const CouponSection = () => {
 
       {/* 결제 시 쿠폰 적용 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
-        <div className="bg-blue-600 text-white px-4 py-3">
+        <div className="bg-[#191979] text-white px-4 py-3">
           <h4 className="font-bold flex items-center gap-2">
             <span>💰</span> 결제 시 쿠폰 적용 (paymentStore)
           </h4>
@@ -154,7 +154,7 @@ export const CouponSection = () => {
             { path: "COUPON.PROM", desc: "프로모션 쿠폰 검증" },
           ].map((api) => (
             <div key={api.path} className="bg-white rounded-lg p-3 border border-gray-200 flex items-center justify-between">
-              <code className="text-xs text-blue-600">{api.path}</code>
+              <code className="text-xs text-[#191979]">{api.path}</code>
               <span className="text-xs text-gray-600">{api.desc}</span>
             </div>
           ))}

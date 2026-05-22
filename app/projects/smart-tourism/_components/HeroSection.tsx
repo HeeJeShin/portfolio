@@ -51,7 +51,7 @@ export const HeroSection = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {projectMetrics.map((metric) => (
           <div key={metric.label} className="bg-white rounded-xl p-4 border border-gray-200">
-            <p className="text-2xl font-bold text-blue-600">{metric.value}</p>
+            <p className="text-2xl font-bold text-[#191979]">{metric.value}</p>
             <p className="text-sm text-gray-600">{metric.label}</p>
           </div>
         ))}
