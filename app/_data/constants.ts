@@ -11,6 +11,12 @@ export type Project = {
   github?: string;
   links?: { label: string; url: string }[];
   subProjects?: string[];
+  firstAttemptPeriod?: string; // 1차 시도 기간 (실패 → 성공 스토리용)
+};
+
+// 프로젝트 ID로 프로젝트 찾기 헬퍼
+export const getProjectById = (id: string): Project | undefined => {
+  return projects.find((p) => p.id === id);
 };
 
 export const projects: Project[] = [
@@ -59,11 +65,13 @@ export const projects: Project[] = [
   {
     id: "o2meet-migration",
     title: "O2MEET Next.js 마이그레이션",
-    subtitle: "JSP → Next.js 전환",
-    period: "2024.12 - 2025.02",
-    description: "JSP 기반 시스템을 Next.js로 마이그레이션하여 컴포넌트 기반 구조 도입",
-    tags: ["Next.js", "TypeScript", "React Query", "MUI"],
-    highlights: ["SSR 속도 개선", "컴포넌트 기반 구조", "재사용성 향상"],
+    subtitle: "1차 실패 → 2차 성공",
+    period: "2026.01 - 2026.04",
+    description: "1차 실패 경험을 바탕으로 2차에서 TypeScript 타입 선행 정의, Tailwind CSS 통일 등 개선하여 LCP 60% 개선 달성",
+    tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
+    highlights: ["LCP 60% 개선", "미사용 코드 99% 감소", "CLS 100% 개선"],
+    firstAttemptPeriod: "2024.12 - 2025.02",
+    demo: "https://greenenertec.com/",
   },
   {
     id: "pos-kiosk",
