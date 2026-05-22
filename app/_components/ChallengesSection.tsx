@@ -2,26 +2,29 @@ import Link from "next/link";
 
 const challenges = [
   {
-    title: "어드민 프로젝트에서 UI 가이드 먼저 설계",
-    desc: "전시부스 신청 시스템은 어드민 특성상 디자이너 없이 진행했습니다. 도메인을 먼저 파악한 뒤 가이드 페이지를 만들어 기본 화면 구성 규칙을 정리했고, 이를 기반으로 사업부서와 회의하며 방향을 맞춰나갔습니다.",
-    link: "/projects/exhibition#documentation",
+    title: "AI 에이전트(Claude Code) 기반 개발 워크플로우 구축",
+    desc: "전시부스 신청 시스템(모노레포, 2개 앱 + 공유 패키지)에서 Claude Code를 활용해 설계 검토, 테스트 실행/분석, CSV 리포트 자동 갱신까지 AI 협업 워크플로우를 구축했습니다. CLAUDE.md로 프로젝트 컨벤션을 정의해 일관된 코드 품질을 유지했습니다.",
+    link: "/projects/exhibition#unit-test",
+  },
+  {
+    title: "1차 실패 → 2차 성공: Lighthouse 기반 성능 60% 개선",
+    desc: "1차 마이그레이션은 행사 미진행으로 중단되었지만, 2차에서 부족한 점을 개선하고 Lighthouse로 성능을 측정했습니다. LCP 50.1s→20.1s(60%↓), 미사용 코드 2,141KB→25KB(99%↓), CLS 0.248→0.000(100%↓)으로 개선했습니다.",
+    link: "/projects/o2meet-migration",
+  },
+  {
+    title: "대규모 모노레포 설계 및 테스트 자동화",
+    desc: "Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 설계했습니다. Vitest 기반 테스트 케이스 216개 작성, 자동 문서화로 수동 대비 80% 시간을 절감했습니다.",
+    link: "/projects/exhibition#monorepo",
   },
   {
     title: "브라우저 호환성 이슈 분석 및 해결",
     desc: "스마트관광 프로젝트에서 Safari ITP로 인한 토큰 유실 문제를 발견하고, 쿠키 + localStorage 이중 저장 방식으로 해결했습니다. 팝업 차단 이슈도 리다이렉트 방식으로 전환해 크로스 브라우저 안정성을 확보했습니다.",
+    link: "/projects/smart-tourism#browser-compatibility",
   },
   {
-    title: "아키텍처 개선 제안",
-    desc: "결제 로직이 프론트엔드에 집중되어 상태 관리가 복잡해지는 문제를 발견하고, 백엔드 분리를 제안해 아키텍처를 재설계했습니다.",
-  },
-  {
-    title: "레거시 시스템 마이그레이션",
-    desc: "JSP 기반 O2MEET 플랫폼을 Next.js로 전환하며 컴포넌트 기반 구조를 도입했습니다. 소스코드가 가벼워지고 유지보수가 용이해졌습니다.",
-  },
-  {
-    title: "테스트 문화 도입",
-    desc: "Vitest 기반 테스트 케이스 216개를 작성하고, TypeScript 타입 시스템을 도입해 런타임 에러를 사전에 방지했습니다. 단위테스트 결과물이 자동으로 문서화되도록 구현해 동료들도 쉽게 활용할 수 있도록 했습니다.",
-    link: "/projects/exhibition#unit-test",
+    title: "Google Gemini AI 프롬프트 설계",
+    desc: "사내 AI Boost Challenge에서 행사장 도면을 분석해 수용인원을 자동 계산하는 서비스를 개발했습니다. Gemini AI 연동, 도면 분석용 프롬프트 설계, 응답 파싱 로직을 구현했습니다.",
+    link: "/projects/4j",
   },
 ];
 
