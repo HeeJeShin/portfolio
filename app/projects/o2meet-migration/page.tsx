@@ -3,14 +3,52 @@
 import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
-const techStack = ["Next.js 14", "TypeScript", "Zustand", "MUI", "Zod"];
+const techStack = ["Next.js 14", "TypeScript", "Zustand", "Tailwind CSS", "Zod"];
 
-const benefits = [
-  "SSR/SSG로 초기 로딩 속도 개선 (JSP 대비 체감 빨라짐)",
-  "컴포넌트 단위 개발로 프로젝트 구조 단순화",
-  "상태 관리 라이브러리(Zustand)로 데이터 흐름 명확화",
-  "TypeScript 도입으로 런타임 에러 사전 방지",
-  "Hot Reload로 개발 생산성 향상",
+const lighthouseMetrics = [
+  { metric: "LCP (최대 콘텐츠 표시)", before: "50.1s", after: "20.1s", improvement: "60%↓" },
+  { metric: "TTI (인터랙티브 시간)", before: "50.1s", after: "20.4s", improvement: "59%↓" },
+  { metric: "CLS (레이아웃 안정성)", before: "0.248", after: "0.000", improvement: "100%↓" },
+  { metric: "미사용 JavaScript", before: "1,262KB", after: "25KB", improvement: "98%↓" },
+  { metric: "미사용 CSS", before: "879KB", after: "0KB", improvement: "100%↓" },
+];
+
+const firstAttemptIssues = [
+  {
+    issue: "어설픈 TypeScript 도입으로 버그 다발",
+    detail: "초기부터 타입을 정의하지 않고 중간에 수정하면서 진행 → 타입 불일치로 런타임 버그 다수 발생",
+  },
+  {
+    issue: "Pages Router → App Router 전환 혼란",
+    detail: "처음 Pages Router로 시작했다가 중간에 App Router로 전환하며 시간 소요",
+  },
+  {
+    issue: "MUI와 기존 CSS 파일 혼용으로 스타일 충돌",
+    detail: "JSP에서 사용하던 .css 파일과 MUI를 함께 사용하니 스타일 우선순위 충돌 발생",
+  },
+];
+
+const secondAttemptImprovements = [
+  {
+    title: "TypeScript 타입 선행 정의",
+    before: "중간에 타입 수정하면서 진행 → 타입 불일치로 런타임 버그 다발",
+    after: "API 응답 타입을 먼저 정의하고 개발 시작 → 컴파일 단계에서 에러 방지",
+  },
+  {
+    title: "Tailwind CSS로 스타일 통일",
+    before: "MUI + 기존 .css 파일 혼용 → 스타일 우선순위 충돌",
+    after: "Tailwind CSS로 통일 → 충돌 없이 일관된 스타일링",
+  },
+  {
+    title: "App Router 처음부터 적용",
+    before: "Pages Router → App Router 전환 작업 필요",
+    after: "App Router 기반으로 설계, 서버 컴포넌트 활용",
+  },
+  {
+    title: "컴포넌트/상태 관리 설계 선행",
+    before: "JSP를 급하게 옮기다 보니 컴포넌트 분리가 어중간함",
+    after: "페이지별 컴포넌트 구조와 store 구조를 먼저 설계 후 개발",
+  },
 ];
 
 const jspLimitations = [
@@ -28,121 +66,6 @@ const jspLimitations = [
   },
 ];
 
-const improvements = [
-  {
-    title: "컴포넌트 기반 구조",
-    before: `// JSP - 문자열로 HTML 조립
-let html = '';
-goodsList.forEach(goods => {
-  html += '<li>';
-  html += '<span class="name">' + goods.name + '</span>';
-  html += '</li>';
-});
-$('.list').html(html);`,
-    after: `// React - 컴포넌트로 분리
-const GoodsItem = ({ goods }) => (
-  <li>
-    <span className="name">{goods.name}</span>
-  </li>
-);
-
-const GoodsList = ({ goodsList }) => (
-  <ul className="list">
-    {goodsList.map(goods =>
-      <GoodsItem key={goods.id} goods={goods} />
-    )}
-  </ul>
-);`,
-    benefit: "재사용 가능, 수정 시 해당 컴포넌트만 변경",
-  },
-  {
-    title: "HOC로 권한 분리",
-    desc: "Auth, AdminAuth 컴포넌트로 권한별 접근 제어",
-    code: `const AdminAuth = ({ children }) => {
-  const { isAdmin } = useAuthStore();
-  if (!isAdmin) return <Redirect to="/login" />;
-  return children;
-};
-
-// 사용
-<AdminAuth>
-  <AdminDashboard />
-</AdminAuth>`,
-    benefit: "경로 기반 권한 분기 (/admin/* → 관리자만 접근)",
-  },
-  {
-    title: "Zustand 상태 관리",
-    desc: "sessionStorage + 전역 변수 → Zustand store로 상태 중앙화",
-    code: `const useAuthStore = create((set) => ({
-  isLoggedIn: false,
-  token: null,
-  userInfo: null,
-  login: (token, userInfo) =>
-    set({ isLoggedIn: true, token, userInfo }),
-  logout: () =>
-    set({ isLoggedIn: false, token: null, userInfo: null }),
-}));
-
-// 어느 컴포넌트에서든 동일하게 접근
-const { isLoggedIn, userInfo } = useAuthStore();`,
-    benefit: "여러 페이지에서 일관된 사용자 정보 접근",
-  },
-  {
-    title: "Zod 스키마 검증",
-    desc: "여러 폼에서 반복되는 검증(이메일, 사용자 ID 등)을 공통화",
-    code: `const userSchema = z.object({
-  email: z.string().email("올바른 이메일 형식이 아닙니다"),
-  userId: z.string().min(4, "4자 이상 입력해주세요"),
-  phone: z.string().regex(
-    /^01[0-9]-\\d{4}-\\d{4}$/,
-    "올바른 전화번호 형식이 아닙니다"
-  ),
-});
-
-// 타입 자동 추론
-type User = z.infer<typeof userSchema>;`,
-    benefit: "TypeScript와 강력한 통합, 런타임 타입 검증",
-  },
-];
-
-const migrationIssues = [
-  {
-    title: "Pages Router → App Router 전환",
-    problem: "처음엔 Pages Router로 개발 시작, 중간에 React 경력 개발자 입사 후 App Router 제안",
-    solution: "App Router로 전환 작업 진행",
-    reason: "App Router가 서버 컴포넌트 기본 지원, 레이아웃 중첩, 더 직관적인 라우팅 구조 제공",
-  },
-  {
-    title: "기존 CSS 파일 스타일 충돌",
-    problem: "JSP에서 쓰던 .css 파일을 그대로 가져오니 Next.js에서 스타일이 제대로 적용 안 됨",
-    solution: "CSS Modules 또는 MUI로 전환",
-    reason: "Next.js는 글로벌 CSS import 제한, CSS Modules 권장",
-  },
-  {
-    title: "MUI 컴포넌트 커스터마이징 어려움",
-    problem: "MUI 기본 컴포넌트 스타일을 프로젝트에 맞게 수정하기 번거로움",
-    solution: "sx prop, styled() 활용했으나 여전히 불편",
-    reason: "다음 프로젝트(전시부스신청)에서는 Tailwind CSS 선택",
-  },
-];
-
-const reflections = [
-  {
-    lesson: "컴포넌트 설계 먼저",
-    from: "JSP를 급하게 옮기다 보니 컴포넌트 분리가 어중간함",
-    applied: "전시부스신청에서는 페이지별 컴포넌트 구조를 먼저 설계",
-  },
-  {
-    lesson: "상태 관리 설계 선행",
-    from: "sessionStorage → Zustand 전환 시 누락된 부분 발생",
-    applied: "전시부스신청에서는 store 구조를 먼저 설계 후 개발",
-  },
-  {
-    lesson: "검증 로직 공통화",
-    from: "폼마다 비슷한 검증 코드 중복",
-    applied: "전시부스신청에서는 Zod 스키마로 검증 로직 재사용",
-  },
-];
 
 export default function O2MeetMigrationPage() {
   return (
@@ -156,7 +79,7 @@ export default function O2MeetMigrationPage() {
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
-              2024.12 - 2025.02
+              2026.01 - 2026.04
             </span>
             <span className="text-gray-400">|</span>
             <span className="text-gray-600 text-sm">프론트엔드</span>
@@ -164,25 +87,127 @@ export default function O2MeetMigrationPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             O2MEET JSP → Next.js 마이그레이션
           </h1>
-          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
-            다변화하는 요구사항을 효율적으로 수용하기 위해
-            <strong className="text-blue-600"> JSP 기반 시스템을 Next.js로 마이그레이션</strong>하여
-            컴포넌트 기반 구조를 도입했습니다.
+          <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mb-4">
+            1차 마이그레이션 실패 경험을 바탕으로 2차에서 부족한 점을 개선하여
+            <strong className="text-blue-600"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
           </p>
+          <a
+            href="https://greenenertec.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+            greenenertec.com 바로가기
+          </a>
         </section>
 
-        {/* 성과 */}
+        {/* Lighthouse 성능 측정 결과 */}
+        <section id="lighthouse" className="mb-12 scroll-mt-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Lighthouse 성능 측정 결과</h2>
+          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
+            <p className="text-gray-700 mb-4">
+              JSP 기반 <strong>bookizcon.com</strong>과 Next.js로 마이그레이션한 <strong>greenenertec.com</strong>을
+              Lighthouse로 측정하여 성능을 비교했습니다.
+            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-blue-200">
+                    <th className="text-left py-3 px-4 font-semibold text-gray-900">지표</th>
+                    <th className="text-center py-3 px-4 font-semibold text-red-600">Before (JSP)</th>
+                    <th className="text-center py-3 px-4 font-semibold text-blue-600">After (Next.js)</th>
+                    <th className="text-center py-3 px-4 font-semibold text-green-600">개선율</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {lighthouseMetrics.map((item, i) => (
+                    <tr key={i} className="border-b border-blue-100">
+                      <td className="py-3 px-4 text-gray-700">{item.metric}</td>
+                      <td className="py-3 px-4 text-center text-gray-600">{item.before}</td>
+                      <td className="py-3 px-4 text-center font-medium text-blue-600">{item.after}</td>
+                      <td className="py-3 px-4 text-center font-bold text-green-600">{item.improvement}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <p className="text-3xl font-bold text-blue-600 mb-1">60%</p>
+              <p className="text-sm text-gray-600">LCP 개선</p>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <p className="text-3xl font-bold text-blue-600 mb-1">99%</p>
+              <p className="text-sm text-gray-600">미사용 코드 감소</p>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
+              <p className="text-3xl font-bold text-blue-600 mb-1">100%</p>
+              <p className="text-sm text-gray-600">CLS 개선</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 1차 마이그레이션 실패 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Next.js 전환 효과</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">1차 마이그레이션 실패 (2024.12 - 2025.02)</h2>
+          <div className="bg-red-50 rounded-xl p-6 border border-red-100 mb-6">
+            <p className="text-gray-700">
+              첫 번째 마이그레이션 시도에서 <strong className="text-red-600">여러 기술적 문제점</strong>을 발견했습니다.
+              이 경험이 2차 마이그레이션 성공의 밑거름이 되었습니다.
+            </p>
+          </div>
           <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <ul className="space-y-3">
-              {benefits.map((b, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                  <span className="text-blue-600 font-bold">•</span>
-                  {b}
-                </li>
+            <h3 className="font-bold text-gray-900 mb-4">1차에서 발견한 문제점</h3>
+            <div className="space-y-4">
+              {firstAttemptIssues.map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <span className="w-6 h-6 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium text-gray-900">{item.issue}</p>
+                    <p className="text-sm text-gray-600">{item.detail}</p>
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* 2차 마이그레이션 성공 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">2차 마이그레이션 성공 (2026.01 - 2026.04)</h2>
+          <div className="bg-green-50 rounded-xl p-6 border border-green-100 mb-6">
+            <p className="text-gray-700">
+              1차 실패 경험을 바탕으로 <strong className="text-green-600">부족한 점을 개선</strong>하여
+              2차 마이그레이션을 성공적으로 완료했습니다.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {secondAttemptImprovements.map((item, i) => (
+              <div key={i} className="bg-white rounded-xl border border-gray-200 p-5">
+                <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  <span className="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-sm">
+                    {i + 1}
+                  </span>
+                  {item.title}
+                </h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-red-50 rounded-lg p-4">
+                    <p className="text-xs font-medium text-red-600 mb-2">1차 (문제)</p>
+                    <p className="text-sm text-gray-700">{item.before}</p>
+                  </div>
+                  <div className="bg-green-50 rounded-lg p-4">
+                    <p className="text-xs font-medium text-green-600 mb-2">2차 (개선)</p>
+                    <p className="text-sm text-gray-700">{item.after}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -199,104 +224,6 @@ export default function O2MeetMigrationPage() {
                   <div>
                     <p className="font-medium text-gray-900">{item.issue}</p>
                     <p className="text-sm text-gray-600">{item.detail}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 개선 사항 */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Next.js 전환으로 개선된 점</h2>
-          <div className="space-y-6">
-            {improvements.map((item, idx) => (
-              <div key={item.title} className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="font-bold text-gray-900 mb-3 flex items-center gap-2">
-                  <span className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm">
-                    {idx + 1}
-                  </span>
-                  {item.title}
-                </h3>
-                {item.desc && (
-                  <p className="text-sm text-gray-600 mb-3">{item.desc}</p>
-                )}
-                {item.before && item.after && (
-                  <div className="grid md:grid-cols-2 gap-4 mb-3">
-                    <div>
-                      <p className="text-xs font-medium text-red-600 mb-2">Before (JSP)</p>
-                      <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
-                        <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.before}</pre>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium text-blue-600 mb-2">After (Next.js)</p>
-                      <div className="bg-gray-900 rounded-lg p-3 overflow-x-auto">
-                        <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.after}</pre>
-                      </div>
-                    </div>
-                  </div>
-                )}
-                {item.code && !item.before && (
-                  <div className="bg-gray-900 rounded-lg p-4 mb-3 overflow-x-auto">
-                    <pre className="text-xs font-mono text-gray-100 whitespace-pre-wrap">{item.code}</pre>
-                  </div>
-                )}
-                <div className="flex items-start gap-2 text-sm">
-                  <span className="text-blue-500 font-medium">효과:</span>
-                  <span className="text-gray-600">{item.benefit}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 마이그레이션 중 겪은 이슈 */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">마이그레이션 중 겪은 이슈</h2>
-          <div className="space-y-4">
-            {migrationIssues.map((issue, i) => (
-              <div key={i} className="bg-white rounded-xl border border-gray-200 p-5">
-                <h3 className="font-bold text-gray-900 mb-3">{issue.title}</h3>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <p className="text-xs font-medium text-gray-500 mb-2">문제</p>
-                    <p className="text-sm text-gray-700">{issue.problem}</p>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <p className="text-xs font-medium text-gray-500 mb-2">대응</p>
-                    <p className="text-sm text-gray-700">{issue.solution}</p>
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <p className="text-xs font-medium text-gray-500 mb-2">배운 점</p>
-                    <p className="text-sm font-medium text-blue-600">{issue.reason}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* 고찰 → 전시부스신청에 적용 */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">프로젝트 고찰 → 전시부스신청에 적용</h2>
-          <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <p className="text-gray-700 mb-6">
-              마이그레이션 경험에서 배운 점을 바탕으로 <strong className="text-blue-600">전시부스신청 프로젝트</strong>를 더 잘 설계했습니다.
-            </p>
-            <div className="space-y-4">
-              {reflections.map((r, i) => (
-                <div key={i} className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <p className="font-medium text-gray-900 mb-2">{r.lesson}</p>
-                  <div className="grid md:grid-cols-2 gap-3 text-sm">
-                    <div className="flex items-start gap-2">
-                      <span className="text-red-500">마이그레이션:</span>
-                      <span className="text-gray-600">{r.from}</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <span className="text-blue-600">적용:</span>
-                      <span className="text-gray-600">{r.applied}</span>
-                    </div>
                   </div>
                 </div>
               ))}
