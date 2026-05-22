@@ -21,6 +21,17 @@ export const getProjectById = (id: string): Project | undefined => {
 
 export const projects: Project[] = [
   {
+    id: "home-care",
+    title: "HomeCare - 홈펌프 항암제 자가관리",
+    subtitle: "Claude Design + Claude Code AI 협업",
+    period: "2025.05 (2일)",
+    description: "퇴원 후 2박3일간 환자가 홈펌프를 안심하고 자가 점검할 수 있도록 돕는 모바일 웹앱. 병동 간호사인 친언니의 실제 니즈를 듣고 AI 협업으로 2일 만에 완성.",
+    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Claude Design", "Claude Code"],
+    highlights: ["실제 의료 현장 니즈", "AI 협업 개발", "2일 완성"],
+    demo: "https://home-care-blond.vercel.app/",
+    github: "https://github.com/HeeJeShin/home_care",
+  },
+  {
     id: "4j",
     title: "4J - 행사장 수용인원 자동계산",
     subtitle: "사내 AI Boost Challenge 해커톤",

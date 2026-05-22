@@ -218,6 +218,15 @@ puppeteer를 사용하여 HTML을 PDF로 변환합니다.
 - `resume_styled.html` - 기본 이력서
 - `resume_oliveyoung.html` - 올리브영 지원용
 
+### 연봉 정보 포함 여부 (필수 준수)
+| 프로젝트 | 경로 | 연봉 포함 | 비고 |
+|---------|------|----------|------|
+| `pro` | `/resume/pro/public/` | ❌ 제외 | 퍼블릭 포트폴리오 |
+| `private_resume` | `/resume/private_resume/resume/` | ✅ 포함 | 개인 보관용 |
+
+- **pro/public/** 에는 연봉 정보가 포함된 PDF/HTML을 절대 배포하지 않는다
+- PDF 생성 시 `resume_public.html` (연봉 제외 버전) 사용
+
 ### HTML 스타일 필수 요소
 ```html
 <!-- 폰트 -->
@@ -256,5 +265,9 @@ const puppeteer = require('puppeteer');
 cd /tmp && npm init -y && npm install puppeteer
 
 # PDF 생성 (HTML 파일 경로, 출력 PDF 경로)
-node /tmp/generate-pdf.js "/Users/ezpmp/IdeaProjects/pro/resume_styled.html" "/Users/ezpmp/IdeaProjects/pro/public/신희제_프론트엔드개발자_이력서.pdf"
+# pro (퍼블릭) - 연봉 제외 버전만
+node /tmp/generate-pdf.js "/Users/ezpmp/IdeaProjects/resume/pro/public/resume_public.html" "/Users/ezpmp/IdeaProjects/resume/pro/public/신희제_프론트엔드개발자_이력서_public.pdf"
+
+# private_resume (개인용) - 연봉 포함
+node /tmp/generate-pdf.js "/Users/ezpmp/IdeaProjects/resume/private_resume/resume/resume_styled.html" "/Users/ezpmp/IdeaProjects/resume/private_resume/resume/신희제_프론트엔드개발자_이력서.pdf"
 ```
