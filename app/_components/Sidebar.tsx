@@ -13,10 +13,10 @@ export const Sidebar = () => {
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (visible[0]) {
-          setActiveId(visible[0].target.id as NavId);
-        }
-      },
-      { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+            setActiveId(visible[0].target.id as NavId);
+          }
+        },
+        { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
 
     navItems.forEach(({ id }) => {

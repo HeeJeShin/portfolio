@@ -1,3 +1,5 @@
+import { projectInfo as homeCareInfo } from "../projects/home-care/_data/constants";
+
 export type Project = {
   id: string;
   title: string;
@@ -21,15 +23,15 @@ export const getProjectById = (id: string): Project | undefined => {
 
 export const projects: Project[] = [
   {
-    id: "home-care",
-    title: "HomeCare - 홈펌프 항암제 자가관리",
-    subtitle: "Claude Design + Claude Code AI 협업",
-    period: "2025.05 (2일)",
-    description: "퇴원 후 2박3일간 환자가 홈펌프를 안심하고 자가 점검할 수 있도록 돕는 모바일 웹앱. 병동 간호사인 친언니의 실제 니즈를 듣고 AI 협업으로 2일 만에 완성.",
-    tags: ["Next.js 16", "React 19", "TypeScript", "Tailwind v4", "Claude Design", "Claude Code"],
-    highlights: ["실제 의료 현장 니즈", "AI 협업 개발", "2일 완성"],
-    demo: "https://home-care-blond.vercel.app/",
-    github: "https://github.com/HeeJeShin/home_care",
+    id: homeCareInfo.id,
+    title: homeCareInfo.title,
+    subtitle: homeCareInfo.subtitle,
+    period: homeCareInfo.period,
+    description: homeCareInfo.description,
+    tags: homeCareInfo.tags,
+    highlights: homeCareInfo.highlights,
+    demo: homeCareInfo.demo,
+    github: homeCareInfo.github,
   },
   {
     id: "4j",
@@ -78,7 +80,7 @@ export const projects: Project[] = [
     title: "O2MEET Next.js 마이그레이션",
     subtitle: "1차 실패 → 2차 성공",
     period: "2026.01 - 2026.04",
-    description: "1차 실패 경험을 바탕으로 2차에서 TypeScript 타입 선행 정의, Tailwind CSS 통일 등 개선하여 LCP 60% 개선 달성",
+    description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
     highlights: ["LCP 60% 개선", "미사용 코드 99% 감소", "CLS 100% 개선"],
     firstAttemptPeriod: "2024.12 - 2025.02",

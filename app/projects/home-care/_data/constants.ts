@@ -1,25 +1,117 @@
+// ============================================
+// 프로젝트 기본 정보 (리스트 & 상세 공통)
+// ============================================
+export const projectInfo = {
+  id: "home-care",
+  title: "HomeCare - 홈펌프 항암제 자가관리",
+  subtitle: "의료 헬스케어 도메인 · 서울대학교병원 임상간호연구",
+  period: "2026.05 - 진행중",
+  description: "휴대용 항암 주입기(홈펌프) 사용 환자를 위한 자가관리 웹앱",
+  tags: [
+    "Next.js 16",
+    "React 19",
+    "TypeScript",
+    "Tailwind v4",
+    "PWA",
+    "Claude Design",
+    "Claude Code",
+  ],
+  highlights: ["의료 헬스케어 도메인", "의료진과 소통", "서버리스 PWA"],
+  demo: "https://home-care-blond.vercel.app/",
+  github: "https://github.com/HeeJeShin/home_care",
+  spec: "/docs/homecare-spec.html",
+  prototype: "https://home-care-blond.vercel.app/prototype",
+
+  // 연구 정보
+  research: {
+    team: "H.O.M.E. (Home infusion-Oncology-Monitoring-Empowerment)",
+    department: "내과간호과 112병동",
+    title:
+      "휴대용 항암 주입기를 이용하는 췌담도암 환자를 위한 프로토 타입 자가관리 모바일 앱 개발 및 효과 평가",
+  },
+};
+
+// ============================================
 // 성과 지표 데이터
+// ============================================
 export const metrics = [
-  { label: "디자인→코드 시간", value: "2일", desc: "HTML 핸드오프 기반" },
+  { label: "개발 기간", value: "2주", desc: "2026.05.18 - 05.31" },
   { label: "화면 구현", value: "8개", desc: "완전 인터랙티브" },
-  { label: "기획 반영 속도", value: "30분", desc: "부분 수정 가이드" },
+  { label: "오프라인", value: "100%", desc: "서버리스 PWA" },
   { label: "코드 품질", value: "100%", desc: "TypeScript 타입 안전" },
 ];
 
-// 기술 스택
+// ============================================
+// 기술 스택 (상세)
+// ============================================
 export const techStack = [
   "Next.js 16",
   "React 19",
   "TypeScript",
   "Tailwind CSS v4",
+  "PWA",
+  "qrcode.react",
+  "html2canvas",
+  "jsPDF",
   "Claude Design",
   "Claude Code",
-  "Web Notifications API",
-  "PWA",
-  "IndexedDB",
 ];
 
-// Claude Design 워크플로우 단계
+// ============================================
+// 기술적 접근법 (IMPLEMENTATION_NOTE.md 기반)
+// ============================================
+export const approaches = [
+  {
+    id: "qr-transfer",
+    title: "QR 기반 환자 데이터 전송",
+    problem: "서버/DB 없이 의료진 → 환자로 데이터 전달 필요",
+    solution:
+      "JSON → encodeURIComponent → Base64 인코딩으로 URL에 담아 QR 생성. 2KB 이내 유지.",
+    effect: "서버 없이 안전한 데이터 전송",
+  },
+  {
+    id: "safari-itp",
+    title: "Safari ITP 대응 이중 저장소",
+    problem: "Safari ITP가 7일 후 localStorage 삭제, PWA 설치 시 query string 제거",
+    solution:
+      "localStorage + Cookie 이중 저장. URL 파라미터 감지 즉시 저장 후 clean URL로 리다이렉트.",
+    effect: "치료 기간(44시간) 데이터 100% 유지",
+  },
+  {
+    id: "ios-viewport",
+    title: "iOS Safari 뷰포트 대응",
+    problem: "iPhone 노치/Dynamic Island 영역에 콘텐츠 가려짐",
+    solution: "viewport-fit: cover + CSS env(safe-area-inset-*) 패딩 적용",
+    effect: "모든 iOS 기기 호환",
+  },
+  {
+    id: "sent-history",
+    title: "관리자 QR 발송 이력 관리",
+    problem: "당일 발송한 환자 정보 재확인/재발송 필요",
+    solution:
+      "localStorage 기반 발송 이력 저장, 동일 MRN 업데이트, 당일 목록 필터링",
+    effect: "QR 재발송 즉시 가능",
+  },
+  {
+    id: "intro-flag",
+    title: "인트로 화면 중복 방지",
+    problem: "앱 새로고침 시 매번 인트로 표시되는 UX 문제",
+    solution: "인트로 완료 플래그를 localStorage + Cookie에 이중 저장",
+    effect: "환자 UX 개선",
+  },
+  {
+    id: "pwa-setup",
+    title: "PWA 최적화",
+    problem: "홈 화면 설치 시 앱처럼 동작해야 함",
+    solution:
+      "Next.js App Router 동적 아이콘 생성 + manifest.ts 설정 + standalone 모드",
+    effect: "네이티브 앱 수준 UX",
+  },
+];
+
+// ============================================
+// Claude Design 워크플로우
+// ============================================
 export const claudeDesignFlow = [
   {
     step: 1,
@@ -43,43 +135,13 @@ export const claudeDesignFlow = [
     step: 4,
     title: "Claude Code 구현",
     desc: "핸드오프 번들 기반 픽셀 퍼펙트 구현",
-    output: "Next.js 프로덕션 코드",
+    output: "Next.js 프로토타입 코드",
   },
 ];
 
-// 기술적 접근법 데이터
-export const approaches = [
-  {
-    id: "handoff",
-    title: "Claude Design 핸드오프 기반 개발",
-    problem: "디자이너 없이 의료 앱 수준의 UI/UX 구현 필요",
-    solution: "Claude Design에서 인터랙티브 HTML 프로토타입 생성 → Claude Code로 1:1 구현",
-    effect: "디자인-개발 사이클 2일 완료",
-  },
-  {
-    id: "incremental",
-    title: "점진적 기획 반영 시스템",
-    problem: "기획 변경마다 전체 재작업 위험",
-    solution: "UPDATE-GUIDE.md 기반 부분 수정 가이드라인 + 컴포넌트 단위 업데이트",
-    effect: "기획 변경 30분 내 반영",
-  },
-  {
-    id: "notification",
-    title: "크로스 브라우저 알림 시스템",
-    problem: "Safari/Chrome/PWA 환경별 알림 권한 처리 상이",
-    solution: "브라우저 자동 감지 + 권한 상태별 UI + 테스트 알림 기능",
-    effect: "의료진 현장 설정 오류 제로",
-  },
-  {
-    id: "type-safety",
-    title: "의료 데이터 타입 안전성",
-    problem: "점검 기록, 환자 정보 등 민감 데이터 런타임 에러 위험",
-    solution: "도메인 타입 분리 + 화살표 함수 + 명시적 타입 선언 컨벤션",
-    effect: "런타임 에러 0건 (컴파일 타임 검증)",
-  },
-];
-
+// ============================================
 // 화면 구성 데이터
+// ============================================
 export const screens = [
   { id: "setup", name: "의료진 설정", desc: "5단계 환자/처방/연락처 입력" },
   { id: "intro", name: "환자 인수", desc: "환자 전달 + 치료 정보 확인" },
