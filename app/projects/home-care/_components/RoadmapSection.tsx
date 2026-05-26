@@ -83,21 +83,6 @@ export const RoadmapSection = () => {
         </div>
       </div>
 
-      {/* 기술 명세서 링크 */}
-      <div className="mt-6 p-4 bg-gray-900 rounded-lg flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div>
-          <p className="text-white font-medium">📄 전체 기술 명세서 보기</p>
-          <p className="text-gray-400 text-sm">데이터 모델, API 설계, 화면별 상세 스펙</p>
-        </div>
-        <a
-          href="/docs/homecare-spec.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-white text-gray-900 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors text-center w-full md:w-auto"
-        >
-          명세서 열기 →
-        </a>
-      </div>
     </section>
   );
 };

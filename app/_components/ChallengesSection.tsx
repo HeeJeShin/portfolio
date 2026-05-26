@@ -2,6 +2,11 @@ import Link from "next/link";
 
 const challenges = [
   {
+    title: "신규 도메인(의료 헬스케어) 설계 및 개발",
+    desc: "처음 접하는 의료 헬스케어 도메인에 도전했습니다. 서울대학교병원 임상간호연구 프로젝트에서 의료진과 자주 소통하며 현장의 실제 니즈를 파악했고, 환자가 퇴원 후 44시간 동안 안심하고 사용할 수 있는 서버리스 PWA를 완성했습니다.",
+    link: "/projects/home-care",
+  },
+  {
     title: "AI 에이전트(Claude Code) 기반 개발 워크플로우 구축",
     desc: "전시부스 신청 시스템(모노레포, 2개 앱 + 공유 패키지)에서 Claude Code를 활용해 설계 검토, 테스트 실행/분석, CSV 리포트 자동 갱신까지 AI 협업 워크플로우를 구축했습니다. CLAUDE.md로 프로젝트 컨벤션을 정의해 일관된 코드 품질을 유지했습니다.",
     link: "/projects/exhibition#unit-test",
