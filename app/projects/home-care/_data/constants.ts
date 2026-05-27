@@ -16,7 +16,7 @@ export const projectInfo = {
     "Claude Design",
     "Claude Code",
   ],
-  highlights: ["의료 헬스케어 도메인", "의료진과 소통", "서버리스 PWA"],
+  highlights: ["의료 헬스케어 도메인", "AI 기획/기술명세서", "서버리스 PWA"],
   demo: "https://home-care-blond.vercel.app/",
   github: "https://github.com/HeeJeShin/home_care",
   spec: "/docs/homecare-spec.html",
@@ -30,16 +30,6 @@ export const projectInfo = {
       "휴대용 항암 주입기를 이용하는 췌담도암 환자를 위한 프로토 타입 자가관리 모바일 앱 개발 및 효과 평가",
   },
 };
-
-// ============================================
-// 성과 지표 데이터
-// ============================================
-export const metrics = [
-  { label: "개발 기간", value: "2주", desc: "2026.05.18 - 05.31" },
-  { label: "화면 구현", value: "8개", desc: "완전 인터랙티브" },
-  { label: "오프라인", value: "100%", desc: "서버리스 PWA" },
-  { label: "코드 품질", value: "100%", desc: "TypeScript 타입 안전" },
-];
 
 // ============================================
 // 기술 스택 (상세)

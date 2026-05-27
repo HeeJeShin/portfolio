@@ -3,7 +3,6 @@
 import {
   Header,
   HeroSection,
-  MetricsSection,
   ClaudeDesignSection,
   ApproachesSection,
   RoadmapSection,
@@ -18,7 +17,6 @@ const HomeCareProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
-        <MetricsSection />
         <ClaudeDesignSection />
         <ApproachesSection />
         <RoadmapSection />

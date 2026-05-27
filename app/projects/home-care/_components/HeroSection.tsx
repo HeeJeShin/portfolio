@@ -28,11 +28,7 @@ export const HeroSection = () => {
         </h3>
         <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
           <p>
-            병동 간호사인 언니가 진행하는 <strong className="text-gray-900">서울대학교병원 임상간호연구</strong>에 대해 듣고,
-            개발자로서 도움을 줄 수 있겠다고 생각해 참여하게 되었습니다.
-          </p>
-          <p>
-            처음 접하는 <strong className="text-gray-900">의료 헬스케어 도메인</strong>이었지만, 의료진과 자주 소통하며 현장의 실제 니즈를 파악했습니다.
+            <strong className="text-gray-900">서울대학교병원 임상간호연구</strong>에 개발자로 참여하게 되었습니다.
           </p>
           <p>
             <strong className="text-gray-900">팀명:</strong> {research.team}<br/>
@@ -40,17 +36,11 @@ export const HeroSection = () => {
             <strong className="text-gray-900">연구제목:</strong> {research.title}
           </p>
           <p>
-            기존에는 <strong className="text-gray-900">종이 교육자료</strong>로 환자에게 홈펌프 관리법을 안내했지만,
-            퇴원 후 환자들이 불안해하거나 체크 시간을 놓치는 경우가 많았습니다.
-            특히 항암 치료 중인 환자에게 44시간 동안 &quot;제대로 하고 있는 건지&quot; 확신을 주는 것이 중요했습니다.
+            퇴원 후 자가관리 시 환자가 불안해하는 문제를 해결하기 위한 <strong className="text-gray-900">임상간호연구</strong>에 개발자로 참여했습니다.
           </p>
           <p>
-            의료진과 자주 소통하며 요구사항을 명확히 하고, Claude Design으로 빠르게 프로토타입을 만들어 피드백을 받고,
-            Claude Code로 프로토타입을 개발했습니다. 현재 의료진 니즈에 맞춰 <strong className="text-gray-900">개발 진행중</strong>입니다.
-          </p>
-          <p>
-            <strong className="text-gray-900">서버리스 아키텍처</strong>를 선택한 이유는 임상연구 특성상 <strong className="text-gray-900">환자 정보보호</strong>가 가장 중요하기 때문입니다.
-            모든 데이터는 환자 기기에만 저장되며 외부 서버로 전송되지 않습니다.
+            <strong className="text-gray-900">Claude Design</strong>으로 요구사항을 정리하고 기획서를 작성한 뒤,
+            <strong className="text-gray-900">Claude Code</strong>로 기술명세서 기반 구현을 진행했습니다.
           </p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
@@ -65,23 +55,23 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* 핵심 기능 요약 */}
+      {/* AI 기반 개발 프로세스 */}
       <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
         <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">주요 기능</p>
-          <p className="text-sm font-medium text-gray-900">하루 3회 체크</p>
+          <p className="text-xs text-gray-500 mb-1">기획</p>
+          <p className="text-sm font-medium text-gray-900">Claude Design</p>
         </div>
         <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">알림</p>
-          <p className="text-sm font-medium text-gray-900">웹 푸시 알람</p>
+          <p className="text-xs text-gray-500 mb-1">명세</p>
+          <p className="text-sm font-medium text-gray-900">기술명세서 직접 정의</p>
         </div>
         <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">기록</p>
-          <p className="text-sm font-medium text-gray-900">PDF 내보내기</p>
+          <p className="text-xs text-gray-500 mb-1">구현</p>
+          <p className="text-sm font-medium text-gray-900">Claude Code</p>
         </div>
         <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">안전</p>
-          <p className="text-sm font-medium text-gray-900">응급 연락처</p>
+          <p className="text-xs text-gray-500 mb-1">아키텍처</p>
+          <p className="text-sm font-medium text-gray-900">서버리스 PWA</p>
         </div>
       </div>
 

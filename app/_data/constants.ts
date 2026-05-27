@@ -78,7 +78,7 @@ export const projects: Project[] = [
   {
     id: "o2meet-migration",
     title: "O2MEET Next.js 마이그레이션",
-    subtitle: "1차 실패 → 2차 성공",
+    subtitle: "1차 중단 → 2차 재도전",
     period: "2026.01 - 2026.04",
     description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
