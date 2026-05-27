@@ -92,7 +92,7 @@ export default function O2MeetMigrationPage() {
             O2MEET JSP → Next.js 마이그레이션
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mb-4">
-            1차 마이그레이션 실패 경험을 바탕으로 2차에서 부족한 점을 개선하여
+            1차 중단 후 회고를 바탕으로 2차에서 부족한 점을 개선하여
             <strong className="text-[#191979]"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
           </p>
           {project.demo && (
@@ -157,17 +157,17 @@ export default function O2MeetMigrationPage() {
           </div>
         </section>
 
-        {/* 1차 마이그레이션 실패 */}
+        {/* 1차 중단 후 회고 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">1차 마이그레이션 실패 ({project.firstAttemptPeriod})</h2>
-          <div className="bg-red-50 rounded-xl p-6 border border-red-100 mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">1차 중단 후 회고 ({project.firstAttemptPeriod})</h2>
+          <div className="bg-amber-50 rounded-xl p-6 border border-amber-100 mb-6">
             <p className="text-gray-700">
-              첫 번째 마이그레이션 시도에서 <strong className="text-red-600">여러 기술적 문제점</strong>을 발견했습니다.
+              행사 중단으로 프로젝트가 종료된 후, <strong className="text-amber-600">개선점을 회고</strong>했습니다.
               이 경험이 2차 마이그레이션 성공의 밑거름이 되었습니다.
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 border border-gray-200">
-            <h3 className="font-bold text-gray-900 mb-4">1차에서 발견한 문제점</h3>
+            <h3 className="font-bold text-gray-900 mb-4">회고에서 발견한 개선점</h3>
             <div className="space-y-4">
               {firstAttemptIssues.map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
@@ -184,12 +184,12 @@ export default function O2MeetMigrationPage() {
           </div>
         </section>
 
-        {/* 2차 마이그레이션 성공 */}
+        {/* 2차 마이그레이션 재도전 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">2차 마이그레이션 성공 ({project.period})</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">2차 마이그레이션 재도전 ({project.period})</h2>
           <div className="bg-green-50 rounded-xl p-6 border border-green-100 mb-6">
             <p className="text-gray-700">
-              1차 실패 경험을 바탕으로 <strong className="text-green-600">부족한 점을 개선</strong>하여
+              1차 회고를 바탕으로 <strong className="text-green-600">부족한 점을 개선</strong>하여
               2차 마이그레이션을 성공적으로 완료했습니다.
             </p>
           </div>

@@ -13,7 +13,7 @@ export const ExperienceSection = () => {
             </p>
           </div>
           <span className="text-xs text-[#191979] font-medium bg-white px-3 py-1 rounded-full whitespace-nowrap">
-            2022.05 - 재직중
+            2022.05 - 2026.05.31
           </span>
         </div>
       </div>
