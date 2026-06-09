@@ -413,7 +413,95 @@ Q16-5. PR vs 문서?
   },
 ];
 
-type Tab = "resume" | "assignment";
+// ── 스킬 숙련도 + 기술 선택 이유 ──────────────────────────────
+const SKILL_LEVELS: { group: string; tone: "core" | "mid" | "low"; items: { name: string; note: string }[] }[] = [
+  {
+    group: "주력 (자신 있게)",
+    tone: "core",
+    items: [
+      { name: "React / Next.js / TypeScript", note: "실무 전반 · 마이그레이션·SSR·상태설계까지 직접" },
+      { name: "Tailwind CSS", note: "최근 거의 다 Tailwind · 디자인 토큰 전환" },
+      { name: "Claude Code", note: "일상 워크플로 · 단 항상 검증해서 적용" },
+    ],
+  },
+  {
+    group: "써봤음 (근거 있게)",
+    tone: "mid",
+    items: [
+      { name: "TanStack Query / Zustand", note: "서버상태 vs 클라상태 역할 분리" },
+      { name: "Vitest", note: "단위 테스트 216개 · E2E는 다음 단계" },
+      { name: "Turborepo / pnpm", note: "어드민 모노레포 직접 구성 · 공유 패키지" },
+      { name: "Docker", note: "multi-stage·standalone·non-root Dockerfile 직접" },
+      { name: "GitLab CI/CD", note: ".gitlab-ci.yml · dev/prod 분리 배포" },
+      { name: "JavaScript", note: "비동기·이벤트루프 등 동작 원리 이해" },
+    ],
+  },
+  {
+    group: "얕게 인정 (깊은 척 X)",
+    tone: "low",
+    items: [
+      { name: "Styled Components", note: "예전에 써봄 · 최근엔 Tailwind 위주라 깊진 않다" },
+      { name: "ArgoCD", note: "Blue-Green·Kustomization 적용 · 깊은 운영은 아님" },
+      { name: "Google Gemini", note: "4J 해커톤 도면 분석 연동 1회 · 깊진 않다" },
+    ],
+  },
+];
+
+const WHY_NOTE = `솔직히 선택 동기엔 "검증된 최신 스택을 적용해보자"도 있었습니다. 다만 실제로 써보니 아래처럼 문제가 줄고 협업이 편해졌어요 — 그 부분을 말하면 됩니다.`;
+
+const WHY: QA[] = [
+  {
+    q: "왜 TanStack Query를 선택했나?",
+    points: [
+      "문제: 여러 화면이 같은 서버 데이터를 각자 fetch → 중복 요청 + 화면마다 로딩/에러 처리 중복 + 데이터가 서로 어긋남",
+      "해결: Query가 캐시를 공유하고 자동 refetch로 동기화 → 한 곳에서 관리, 중복 제거",
+      "선택 이유: 서버 데이터를 전역 store에 복사하면 동기화 버그가 남 → 서버상태=Query, 클라상태=Zustand로 역할을 명확히 나눔",
+      "협업: 데이터 패칭이 한 패턴으로 표준화돼 팀원이 새 화면 붙일 때 똑같이 따라옴",
+    ],
+  },
+  {
+    q: "왜 Zustand? (Redux 아니고)",
+    points: [
+      "문제: 전역으로 둘 게 테마·시계·폼언어 정도뿐인데 Redux는 보일러플레이트가 과함",
+      "해결: 프로바이더 없이 훅으로 구독 → 가볍게, 서버 컴포넌트와도 충돌 적음",
+      "역할: 서버 캐싱은 Query가 / Zustand는 순수 클라 값만 (서버데이터 복사 금지)",
+    ],
+  },
+  {
+    q: "왜 pnpm + Turborepo? (모노레포)",
+    points: [
+      "문제: user/admin 앱이 공통 컴포넌트·타입을 따로 들고 있어 똑같은 걸 두 번 고쳐야 했음",
+      "해결: packages/shared로 공통 코드 분리 → 한 곳만 고치면 양쪽 반영",
+      "pnpm: 패키지를 복사 대신 연결해서 디스크 절약 + 설치 빠름 / Turborepo: 캐시 빌드로 반복 빌드 빠름",
+      "협업: 새 팀원도 '공통은 shared' 한 규칙만 알면 됨",
+    ],
+  },
+  {
+    q: "왜 Vitest? (Jest 아니고)",
+    points: [
+      "문제: 손으로 검증하던 반복 작업에서 휴먼 에러가 남",
+      "해결: 비즈니스 로직에 단위 테스트 216개 → 회귀를 자동으로 잡고, 결과를 자동 문서화해 동료가 활용",
+      "Vitest 이유: TS·ESM(import/export) 코드를 설정 거의 없이 빠르게 테스트 + Jest와 문법 호환이라 러닝커브 낮음",
+      "※ 트랩 주의: Next 프로젝트인데 왜 Vitest? → Vitest는 '테스트 돌릴 때만' Vite 엔진을 쓰는 거고, 앱이 Vite일 필요는 없음. Next 코드도 그냥 테스트됨",
+    ],
+  },
+  {
+    q: "왜 Tailwind? (CSS-in-JS 아니고)",
+    points: [
+      "문제: 마이그레이션 때 MUI + 기존 css 혼용으로 스타일이 충돌",
+      "해결: Tailwind로 통일해 충돌 제거 + 디자인 토큰을 클래스로 표준화",
+      "장점: 런타임 비용 없음(빌드 타임), 팀이 같은 규칙으로 빠르게",
+    ],
+  },
+];
+
+const levelTone: Record<"core" | "mid" | "low", string> = {
+  core: "border-blue-200 bg-blue-50",
+  mid: "border-gray-200 bg-white",
+  low: "border-amber-200 bg-amber-50",
+};
+
+type Tab = "resume" | "assignment" | "skill";
 
 export default function LangDPage() {
   const [tab, setTab] = useState<Tab>("resume");
@@ -427,6 +515,7 @@ export default function LangDPage() {
           {([
             ["resume", "자기소개·이력서"],
             ["assignment", "과제 정리"],
+            ["skill", "스킬"],
           ] as [Tab, string][]).map(([key, label]) => (
             <button
               key={key}
@@ -444,7 +533,7 @@ export default function LangDPage() {
       </header>
 
       <main className="mx-auto w-full max-w-xl px-4 pb-20 pt-5">
-        {tab === "resume" ? (
+        {tab === "resume" && (
           <>
             <section className="mb-5 rounded-2xl border border-blue-200 bg-blue-50 p-4">
               <h2 className="mb-2 text-sm font-bold text-blue-700">🎤 짧은 자기소개 (약 40초)</h2>
@@ -501,7 +590,9 @@ export default function LangDPage() {
               막히면 → &quot;표시는 프론트 / 판단은 서버&quot;, &quot;AI는 쓰되 항상 검증&quot;
             </p>
           </>
-        ) : (
+        )}
+
+        {tab === "assignment" && (
           <>
             <section className="mb-4 rounded-2xl border border-amber-200 bg-amber-50 p-4">
               <h2 className="mb-2 text-sm font-bold text-amber-700">📝 랭디 프론트엔드 과제 — 면접 정리</h2>
@@ -522,6 +613,58 @@ export default function LangDPage() {
                   <div className="whitespace-pre-line border-t border-gray-100 px-5 py-4 text-[13.5px] leading-relaxed text-gray-700">
                     {s.body}
                   </div>
+                </details>
+              ))}
+            </div>
+          </>
+        )}
+
+        {tab === "skill" && (
+          <>
+            <section className="mb-4 rounded-2xl border border-blue-200 bg-blue-50 p-4">
+              <h2 className="mb-1 text-sm font-bold text-blue-700">🧰 스킬 — &quot;어느 정도 아세요?&quot; 대비</h2>
+              <p className="text-[13px] leading-relaxed text-gray-700">
+                주력/보조 먼저 구분 → 근거(숫자)로 → 모르는 건 솔직히 인정 + 학습의지. 부풀리면 꼬리질문에서 위험.
+              </p>
+            </section>
+
+            <div className="mb-5 space-y-3">
+              {SKILL_LEVELS.map((g, i) => (
+                <section key={i} className={`rounded-2xl border ${levelTone[g.tone]}`}>
+                  <h3 className="px-4 py-2.5 text-sm font-bold">{g.group}</h3>
+                  <div className="space-y-1.5 px-3 pb-3">
+                    {g.items.map((s, j) => (
+                      <div key={j} className="rounded-xl border border-gray-200 bg-white px-3 py-2">
+                        <p className="text-[14px] font-semibold">{s.name}</p>
+                        <p className="text-[13px] leading-relaxed text-gray-600">{s.note}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              ))}
+            </div>
+
+            <h2 className="mb-2 px-1 text-sm font-bold text-gray-900">❓ 왜 이 기술을 썼나요? (문제 → 해결 → 협업)</h2>
+            <p className="mb-3 rounded-xl border border-gray-200 bg-white px-3 py-2 text-[13px] leading-relaxed text-gray-600">
+              {WHY_NOTE}
+            </p>
+            <div className="space-y-2">
+              {WHY.map((qa, i) => (
+                <details key={i} className="group rounded-2xl border border-gray-200 bg-white">
+                  <summary className="flex cursor-pointer list-none items-start gap-2 px-4 py-3 text-[15px] font-semibold marker:hidden">
+                    <span className="mt-0.5 text-blue-600 transition-transform group-open:rotate-90">▶</span>
+                    <span>{qa.q}</span>
+                  </summary>
+                  <ul className="space-y-1.5 px-5 pb-4 pl-9">
+                    {qa.points.map((p, j) => (
+                      <li
+                        key={j}
+                        className="relative text-[14px] leading-relaxed text-gray-700 before:absolute before:-left-3.5 before:text-gray-400 before:content-['–']"
+                      >
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
                 </details>
               ))}
             </div>
