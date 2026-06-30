@@ -259,8 +259,10 @@ Q6-4. 404/에러 페이지?
   },
   {
     title: "7. 폼·예약 흐름 (UX 가산점)",
-    body: `Q7-1. 다단계 폼 상태?
-→ 언어만 Zustand(폼 바깥까지 영향), 나머지+제출은 RHF+zod. 언어 바뀌면 폼 리셋(선생님·주제가 언어 종속).
+    body: `Q7-1. 다단계 폼 상태? (언어 → 선생님 → 주제 → 날짜/시간 순서로 고름)
+→ 언어만 Zustand에: 언어는 폼 입력이면서 동시에 페이지 테마 색까지 바꿈(폼 바깥까지 영향) → 어디서든 읽게 전역에 둠
+→ 나머지(선생님·주제·날짜)와 제출 검증은 RHF+zod가 담당 (폼 안에서만 쓰는 값)
+→ 언어 바뀌면 폼 리셋: 선생님·주제가 언어에 종속(영어 선생님은 일본어 못 가르침)이라, 언어를 바꾸면 아래 선택이 다 무효 → 처음부터 다시
 
 Q7-2. 왜 스테퍼?
 → 선택이 순서대로 의존적(선생님 정해야 요일 나옴). 한 화면에 다 펼치면 헷갈림. 단, 주제 바꿔도 날짜·시간은 안 지움(선생님 종속이지 주제 무관).
@@ -420,7 +422,7 @@ const SKILL_LEVELS: { group: string; tone: "core" | "mid" | "low"; items: { name
     tone: "core",
     items: [
       { name: "React / Next.js / TypeScript", note: "실무 전반 · 마이그레이션·SSR·상태설계까지 직접" },
-      { name: "Tailwind CSS", note: "최근 거의 다 Tailwind · 디자인 토큰 전환" },
+      { name: "Tailwind CSS (테일윈드)", note: "최근 거의 다 Tailwind · 디자인 토큰 전환" },
       { name: "Claude Code", note: "일상 워크플로 · 단 항상 검증해서 적용" },
     ],
   },
@@ -428,10 +430,10 @@ const SKILL_LEVELS: { group: string; tone: "core" | "mid" | "low"; items: { name
     group: "써봤음 (근거 있게)",
     tone: "mid",
     items: [
-      { name: "TanStack Query / Zustand", note: "서버상태 vs 클라상태 역할 분리" },
-      { name: "Vitest", note: "단위 테스트 216개 · E2E는 다음 단계" },
-      { name: "Turborepo / pnpm", note: "어드민 모노레포 직접 구성 · 공유 패키지" },
-      { name: "Docker", note: "multi-stage·standalone·non-root Dockerfile 직접" },
+      { name: "TanStack Query (탠스택 쿼리) / Zustand (주스탄드)", note: "서버상태 vs 클라상태 역할 분리" },
+      { name: "Vitest (비테스트)", note: "단위 테스트 216개 · E2E는 다음 단계" },
+      { name: "Turborepo (터보레포) / pnpm (피엔피엠)", note: "어드민 모노레포 직접 구성 · 공유 패키지" },
+      { name: "Docker (도커)", note: "multi-stage(멀티 스테이지)·standalone(스탠드얼론)·non-root(논 루트) Dockerfile 직접" },
       { name: "GitLab CI/CD", note: ".gitlab-ci.yml · dev/prod 분리 배포" },
       { name: "JavaScript", note: "비동기·이벤트루프 등 동작 원리 이해" },
     ],
@@ -440,9 +442,9 @@ const SKILL_LEVELS: { group: string; tone: "core" | "mid" | "low"; items: { name
     group: "얕게 인정 (깊은 척 X)",
     tone: "low",
     items: [
-      { name: "Styled Components", note: "예전에 써봄 · 최근엔 Tailwind 위주라 깊진 않다" },
-      { name: "ArgoCD", note: "Blue-Green·Kustomization 적용 · 깊은 운영은 아님" },
-      { name: "Google Gemini", note: "4J 해커톤 도면 분석 연동 1회 · 깊진 않다" },
+      { name: "Styled Components (스타일드 컴포넌트)", note: "예전에 써봄 · 최근엔 Tailwind 위주라 깊진 않다" },
+      { name: "ArgoCD (아르고씨디)", note: "Blue-Green(블루그린)·Kustomization 적용 · 깊은 운영은 아님" },
+      { name: "Google Gemini (제미나이)", note: "4J 해커톤 도면 분석 연동 1회 · 깊진 않다" },
     ],
   },
 ];
@@ -451,7 +453,7 @@ const WHY_NOTE = `솔직히 선택 동기엔 "검증된 최신 스택을 적용�
 
 const WHY: QA[] = [
   {
-    q: "왜 TanStack Query를 선택했나?",
+    q: "왜 TanStack Query(탠스택 쿼리)를 선택했나?",
     points: [
       "문제: 여러 화면이 같은 서버 데이터를 각자 fetch → 중복 요청 + 화면마다 로딩/에러 처리 중복 + 데이터가 서로 어긋남",
       "해결: Query가 캐시를 공유하고 자동 refetch로 동기화 → 한 곳에서 관리, 중복 제거",
@@ -460,7 +462,7 @@ const WHY: QA[] = [
     ],
   },
   {
-    q: "왜 Zustand? (Redux 아니고)",
+    q: "왜 Zustand(주스탄드)? (Redux 아니고)",
     points: [
       "문제: 전역으로 둘 게 테마·시계·폼언어 정도뿐인데 Redux는 보일러플레이트가 과함",
       "해결: 프로바이더 없이 훅으로 구독 → 가볍게, 서버 컴포넌트와도 충돌 적음",
@@ -468,7 +470,7 @@ const WHY: QA[] = [
     ],
   },
   {
-    q: "왜 pnpm + Turborepo? (모노레포)",
+    q: "왜 pnpm(피엔피엠) + Turborepo(터보레포)? (모노레포)",
     points: [
       "문제: user/admin 앱이 공통 컴포넌트·타입을 따로 들고 있어 똑같은 걸 두 번 고쳐야 했음",
       "해결: packages/shared로 공통 코드 분리 → 한 곳만 고치면 양쪽 반영",
@@ -477,7 +479,7 @@ const WHY: QA[] = [
     ],
   },
   {
-    q: "왜 Vitest? (Jest 아니고)",
+    q: "왜 Vitest(비테스트)? (Jest 아니고)",
     points: [
       "문제: 손으로 검증하던 반복 작업에서 휴먼 에러가 남",
       "해결: 비즈니스 로직에 단위 테스트 216개 → 회귀를 자동으로 잡고, 결과를 자동 문서화해 동료가 활용",
@@ -486,7 +488,7 @@ const WHY: QA[] = [
     ],
   },
   {
-    q: "왜 Tailwind? (CSS-in-JS 아니고)",
+    q: "왜 Tailwind(테일윈드)? (CSS-in-JS 아니고)",
     points: [
       "문제: 마이그레이션 때 MUI + 기존 css 혼용으로 스타일이 충돌",
       "해결: Tailwind로 통일해 충돌 제거 + 디자인 토큰을 클래스로 표준화",
