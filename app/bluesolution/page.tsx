@@ -113,6 +113,14 @@ const GROUPS: Group[] = [
           "TS 타입 시스템으로 런타임 에러 90%↓",
         ],
       },
+      {
+        q: "컴포넌트 재사용/디자인시스템 개선 경험?",
+        points: [
+          "DynamicForm(동적 폼+Zod 검증)·DataTable을 packages/shared로 분리해 재사용",
+          "디자이너 없이 진행 → 도메인 분석 후 UI 가이드 페이지로 화면 규칙 표준화",
+          "이 가이드로 사업부서와 회의하며 방향 합의",
+        ],
+      },
     ],
   },
   {
@@ -218,6 +226,24 @@ const GROUPS: Group[] = [
           "LCP개선: SSR 즉시페인트 + 번들축소(메인스레드↓) + 렌더블로킹 CSS↓(CSSOM 전엔 페인트 안 함)",
         ],
       },
+      {
+        q: "웹푸시 크로스브라우저 분기는 왜? (모바일 근거)",
+        points: [
+          "웹푸시 = Service Worker(백그라운드) + Notification/Push API 조합",
+          "권한 요청(Notification.requestPermission)은 user gesture 안에서만",
+          "iOS Safari는 16.4+ & 홈스크린 PWA 추가 시에만 푸시 지원",
+          "→ 표준 API지만 지원·권한이 브라우저마다 달라 feature detection으로 분기",
+        ],
+      },
+      {
+        q: "모노레포(Turborepo+pnpm)는 왜? (어드민)",
+        points: [
+          "apps/user·apps/admin·packages/shared 3-tier — 타입·컴포넌트·로직 공유",
+          "pnpm workspace: 의존성 심볼릭 링크로 중복 설치 제거·디스크 절약",
+          "Turborepo: 변경된 패키지만 빌드/캐시(incremental) → CI 시간↓",
+          "→ PULE 웹+RN앱 코드 공유 구조와 직결되는 경험 (역질문 연결)",
+        ],
+      },
     ],
   },
   {
@@ -319,6 +345,30 @@ const GROUPS: Group[] = [
       },
     ],
   },
+  {
+    id: "H",
+    title: "H. 모바일·PWA (HomeCare — RN 대비 근거)",
+    tone: "core",
+    items: [
+      {
+        q: "모바일 환경 대응 경험? (RN 아니어도)",
+        points: [
+          "HomeCare: 홈펌프 항암제 자가관리 웹앱 (Next.js 16/React 19)",
+          "웹푸시(하루 3회 체크 알림), PWA, Safari/Chrome/PWA 환경별 알림 권한 처리",
+          "PDF 내보내기(의료진 제출용), 응급 연락처 즉시 연결",
+          "→ RN 실무는 없어도 '모바일 사용 환경 문제'는 직접 대응해봄",
+        ],
+      },
+      {
+        q: "AI(Claude) 활용 + 검증 방식? (JD 요건)",
+        points: [
+          "Claude Design으로 기획서 먼저 만들어 의료진과 화면으로 소통",
+          "생성 코드는 직접 읽고 → 테스트로 동작 검증 → 이해 못 하면 반영 안 함",
+          "CLAUDE.md로 팀 컨벤션 정의 → 결과물 일관성, 테스트/리포팅 자동화",
+        ],
+      },
+    ],
+  },
 ];
 
 const REVERSE: string[] = [
@@ -356,7 +406,9 @@ export default function BlueSolutionPage() {
     <div className="min-h-screen bg-gray-50 text-gray-900">
       <header className="sticky top-0 z-10 border-b border-gray-200 bg-white/90 px-5 pt-3 backdrop-blur">
         <h1 className="text-lg font-bold">블루솔루션(PULE) 면접 치트시트</h1>
-        <p className="text-xs text-gray-500">면접 가는 길에 폰으로 보는 용 · 신희제</p>
+        <p className="text-xs text-gray-500">
+          통합본(기술 위주) · 면접 가는 길에 폰으로 · 신희제
+        </p>
         <div className="mt-3 flex gap-1">
           {(
             [
