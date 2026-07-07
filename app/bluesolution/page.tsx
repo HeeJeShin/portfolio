@@ -507,10 +507,12 @@ const GROUPS: Group[] = [
         ],
       },
       {
-        q: "CORS란?",
+        q: "CORS란? (+CSP와 혼동 주의)",
         points: [
-          "브라우저 동일 출처 정책 때문에 다른 출처 요청이 막히는 것",
+          "브라우저 동일 출처 정책(Same-Origin) 때문에 다른 출처(도메인·포트·프로토콜) 요청 응답이 막힘",
           "서버가 Access-Control-Allow-Origin 헤더로 허용, 사전 요청(preflight OPTIONS)",
+          "★ CORS는 프론트가 아니라 서버가 해결(백엔드에 허용 출처 추가 요청) — 이게 정답 방향",
+          "⚠️ CSP와 다름: CORS=남이 내 API 접근 허용 / CSP=내 페이지가 불러올 리소스 출처 제한(XSS 방어). 섞지 말 것",
         ],
       },
       {
