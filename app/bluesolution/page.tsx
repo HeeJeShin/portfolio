@@ -393,6 +393,159 @@ const GROUPS: Group[] = [
       },
     ],
   },
+  {
+    id: "BASE1",
+    title: "기초 ① JS 핵심 (과제 없으면 말로 물어봄)",
+    tone: "risk",
+    items: [
+      {
+        q: "클로저(closure)란?",
+        points: [
+          "함수가 선언될 때의 렉시컬 스코프(외부 변수)를 기억해, 바깥에서 실행돼도 그 변수에 접근하는 것",
+          "활용: 데이터 은닉, 상태 유지 (useState 내부도 클로저 원리), 이벤트 핸들러",
+          "예: 카운터에서 count를 클로저로 계속 유지",
+        ],
+      },
+      {
+        q: "이벤트 루프 / 동기·비동기",
+        points: [
+          "JS는 싱글 스레드. 콜스택이 비면 이벤트 루프가 큐에서 콜백을 꺼내 실행",
+          "마이크로태스크(Promise.then)가 매크로태스크(setTimeout)보다 우선",
+        ],
+      },
+      {
+        q: "this 바인딩",
+        points: [
+          "호출 방식에 따라 결정 — 일반함수=전역/undefined, 메서드=객체, 화살표=상위 스코프 this 그대로",
+          "call/apply/bind로 명시 지정",
+        ],
+      },
+      {
+        q: "호이스팅 / var·let·const",
+        points: [
+          "호이스팅=선언이 스코프 최상단으로 끌어올려짐. var=undefined로 초기화, let/const=TDZ(선언 전 접근 불가)",
+          "var=함수스코프·재선언O / let·const=블록스코프 / const=재할당X(객체 내부는 변경 가능)",
+        ],
+      },
+      {
+        q: "==와 === 차이",
+        points: ["== 는 타입 변환 후 비교, === 는 타입까지 엄격 비교 → === 권장"],
+      },
+      {
+        q: "Promise / async-await",
+        points: [
+          "Promise=비동기 결과 객체(pending→fulfilled/rejected)",
+          "async-await=프로미스를 동기처럼 쓰는 문법, await로 resolve까지 대기, 에러는 try/catch",
+        ],
+      },
+      {
+        q: "얕은 복사 vs 깊은 복사",
+        points: [
+          "얕은=1depth만(스프레드·Object.assign), 중첩 객체는 참조 공유",
+          "깊은=중첩까지 완전 복사(structuredClone, JSON parse/stringify)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "BASE2",
+    title: "기초 ② React",
+    tone: "risk",
+    items: [
+      {
+        q: "리렌더링은 언제 일어나나?",
+        points: ["state 변경 / props 변경 / 부모 리렌더 / 구독한 context 값 변경"],
+      },
+      {
+        q: "key의 역할은?",
+        points: [
+          "리스트에서 각 요소를 식별해 diff 최적화",
+          "index를 key로 쓰면 순서 바뀔 때 버그 → 고유 id 사용",
+        ],
+      },
+      {
+        q: "useEffect / 의존성 / 클린업",
+        points: [
+          "렌더 후 실행되는 사이드이펙트. 의존성 배열로 실행 시점 제어([]=마운트 1회)",
+          "클린업 함수로 구독 해제·타이머 정리 (언마운트/재실행 전)",
+        ],
+      },
+      {
+        q: "useMemo / useCallback",
+        points: [
+          "useMemo=계산 결과 메모, useCallback=함수 메모 → 불필요한 재계산·자식 리렌더 방지",
+          "남용 주의 (메모 자체도 비용)",
+        ],
+      },
+      {
+        q: "Virtual DOM",
+        points: ["메모리상 가상 트리로 이전/이후를 diff → 실제 DOM은 바뀐 부분만 갱신"],
+      },
+    ],
+  },
+  {
+    id: "BASE3",
+    title: "기초 ③ 네트워크·CS (12월에 400에러 물어봄!)",
+    tone: "risk",
+    items: [
+      {
+        q: "HTTP 상태 코드 (400 계열 꼭!)",
+        points: [
+          "2xx 성공 / 3xx 리다이렉트",
+          "4xx 클라 오류: 400 잘못된 요청, 401 인증 필요, 403 권한 없음, 404 없음, 429 too many",
+          "5xx 서버 오류: 500 내부 오류, 502 게이트웨이, 503 unavailable",
+        ],
+      },
+      {
+        q: "REST / HTTP 메서드",
+        points: [
+          "자원=URL, 행위=메서드로 표현하는 설계 원칙",
+          "GET 조회 / POST 생성 / PUT 전체수정 / PATCH 부분수정 / DELETE 삭제",
+        ],
+      },
+      {
+        q: "CORS란?",
+        points: [
+          "브라우저 동일 출처 정책 때문에 다른 출처 요청이 막히는 것",
+          "서버가 Access-Control-Allow-Origin 헤더로 허용, 사전 요청(preflight OPTIONS)",
+        ],
+      },
+      {
+        q: "쿠키 vs 세션 vs 토큰(JWT)",
+        points: [
+          "쿠키=브라우저 저장·요청마다 자동 전송 / 세션=서버가 상태 저장",
+          "JWT=서명된 인증정보를 클라가 지님(무상태). (※ 내 Safari 이슈와 연결 가능)",
+        ],
+      },
+    ],
+  },
+  {
+    id: "BASE4",
+    title: "기초 ④ 브라우저 렌더링",
+    tone: "risk",
+    items: [
+      {
+        q: "브라우저 렌더링 과정 (CRP)",
+        points: [
+          "HTML→DOM, CSS→CSSOM, 합쳐 Render Tree → Layout(위치·크기) → Paint → Composite",
+        ],
+      },
+      {
+        q: "리플로우 vs 리페인트",
+        points: [
+          "리플로우=레이아웃 재계산(크기·위치 변경, 비쌈) / 리페인트=색 등 시각만 변경",
+          "리플로우 최소화가 성능 (→ 내 LCP·CLS 얘기와 연결)",
+        ],
+      },
+      {
+        q: "이벤트 버블링 / 캡처링 / 위임",
+        points: [
+          "버블링=자식→부모 전파, 캡처링=부모→자식. stopPropagation으로 중단",
+          "이벤트 위임=부모에서 한 번에 처리 (리스트 성능)",
+        ],
+      },
+    ],
+  },
 ];
 
 const REVERSE: string[] = [
