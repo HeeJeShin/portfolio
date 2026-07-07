@@ -162,6 +162,65 @@ const GROUPS: Group[] = [
     ],
   },
   {
+    id: "WHY",
+    title: "★★ 왜 그 기술? — 기술적 원리 (내 약점 정조준)",
+    tone: "risk",
+    items: [
+      {
+        q: "쿠키+localStorage 이중 저장은 왜?",
+        points: [
+          "쿠키: 요청마다 서버로 자동 전송(인증 편함), httpOnly면 XSS 방어. 단 Safari ITP가 스크립트 쿠키를 7일로 캡핑",
+          "localStorage: 만료 없음(지속성)but 서버 자동전송 X + XSS 노출",
+          "→ 쿠키(전송)+localStorage(지속) 장점만 합침. 로드 시 쿠키 없으면 localStorage서 복구",
+        ],
+      },
+      {
+        q: "팝업→리다이렉트는 왜?",
+        points: [
+          "window.open은 user activation(방금 클릭한 순간) 안에서만 팝업 허용",
+          "await fetch 뒤에 열면 activation 소멸 → '임의 팝업'으로 차단",
+          "→ 같은 탭 location.href 리다이렉트로 전환해 회피",
+        ],
+      },
+      {
+        q: "TS 타입 선행 + Zod는 왜?",
+        points: [
+          "TS는 컴파일 때만 검사, 런타임엔 type erasure로 사라짐",
+          "타입 선행=빌드 단계서 잘못된 접근 차단 (any로 넣으면 효과 0 → 1차 실패 원인)",
+          "Zod=런타임에 실제 응답 검증(계약위반 차단) + z.infer로 TS 타입 자동생성",
+          "→ 컴파일 안전(TS)+런타임 안전(Zod) 두 경계 다 막음",
+        ],
+      },
+      {
+        q: "Tailwind는 왜? (MUI 대신)",
+        points: [
+          "MUI(CSS-in-JS): 런타임에 JS로 스타일 계산·주입 → 런타임 비용+번들↑",
+          "기존 .css와 specificity(특이성)·주입순서 충돌 → 예측불가 오버라이드",
+          "Tailwind: 빌드타임 클래스 생성+미사용 purge → 런타임 비용 0, 번들 가벼움",
+          "→ 런타임 비용 감소가 LCP 개선에도 기여",
+        ],
+      },
+      {
+        q: "Query+Zustand 분리는 왜? (Redux 아님)",
+        points: [
+          "서버상태=비동기+stale → 캐싱·재검증·dedup·무효화 필요 → TanStack Query가 내장",
+          "Redux로 하면 로딩/에러/캐시/무효화 전부 수동 리듀서 → 보일러플레이트 폭증",
+          "Zustand: provider 없이 selector로 필요값만 구독→리렌더 방지 (클라 UI상태용)",
+          "Optimistic: 응답 전 캐시 먼저 갱신→실패시 onError서 rollback",
+        ],
+      },
+      {
+        q: "SSR/SSG/CSR + LCP 원리",
+        points: [
+          "CSR: JS 다운→파싱→실행 후 렌더 → LCP 늦고 크롤러 콘텐츠 못 봄",
+          "SSR: 완성 HTML 즉시 페인트(LCP↑)+이후 hydration. TTFB는 늘 수 있음",
+          "SSG: 빌드타임 HTML+CDN → TTFB 최소. 갱신은 재빌드/ISR",
+          "LCP개선: SSR 즉시페인트 + 번들축소(메인스레드↓) + 렌더블로킹 CSS↓(CSSOM 전엔 페인트 안 함)",
+        ],
+      },
+    ],
+  },
+  {
     id: "TS",
     title: "★ 트러블슈팅 (디버깅 '과정'을 보여주기)",
     tone: "core",
