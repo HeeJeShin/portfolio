@@ -714,6 +714,26 @@ export default function BlueSolutionPage() {
               </ul>
             </section>
 
+            <section className="mt-5 rounded-2xl border border-green-300 bg-green-50 p-4">
+              <h2 className="mb-2 text-sm font-bold text-green-800">
+                💰 처우협의 (물으면 답 / 이번이 마지막 면접)
+              </h2>
+              <p className="mb-2 rounded-lg border border-green-200 bg-white px-3 py-2 text-[14px] leading-relaxed text-gray-800">
+                &quot;현재는 5,000만원이고, 이직하면서 경력과 역할을 고려해 <b>5,500~6,000</b>{" "}
+                정도 생각하고 있습니다. 다만 회사 규정 안에서 충분히 협의 가능합니다.&quot;
+              </p>
+              <ul className="space-y-1.5 text-[13px] leading-relaxed text-gray-700">
+                <li>· 하한 5,500 = 마지노선 (바닥을 부르면 더 깎임)</li>
+                <li>
+                  · 근거: 4년차, 중개·결제·성능·검증 실무 → 입사 후 바로 기여 + 통상 인상 수준
+                </li>
+                <li>· 내가 먼저 꺼내지 말 것 → 물으면 답. 낮게 오면 &quot;검토 후 말씀&quot;(즉답 X)</li>
+                <li>
+                  · 처우 얘기 없이 끝나가면: &quot;처우협의는 어느 단계에서 진행되나요?&quot;
+                </li>
+              </ul>
+            </section>
+
             <p className="mt-6 text-center text-xs text-gray-400">
               📌 이력서에 적힌 내 프로젝트를 내 언어로 · 대안→기준→결론 · 내가 결정→내가 검증
             </p>
