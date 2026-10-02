@@ -3,7 +3,7 @@ export const HeroSection = () => {
     <section className="mb-16">
       <div className="flex items-center gap-3 mb-4">
         <span className="px-3 py-1 border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
-          2025.02 - 2025.04
+          2026.02 - 2026.04
         </span>
         <span className="text-gray-400">|</span>
         <span className="text-gray-600 text-sm">서비스기획자 2 + 백엔드 1 + 프론트엔드 1</span>
