@@ -124,7 +124,7 @@ export const skills: Record<string, string[]> = {
   스타일링: ["Tailwind CSS"],
   테스트: ["Vitest"],
   "빌드 도구": ["Turborepo", "pnpm workspace"],
-  DevOps: ["Docker", "GitLab CI/CD", "ArgoCD"],
+  DevOps: ["Docker", "GitLab CI/CD", "ArgoCD", "Vercel"],
   Tools: ["Claude Code", "IntelliJ IDEA", "Figma"],
 };
 
