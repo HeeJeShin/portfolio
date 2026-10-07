@@ -23,6 +23,16 @@ export const getProjectById = (id: string): Project | undefined => {
 
 export const projects: Project[] = [
   {
+    id: "booth-agent",
+    title: "Booth Agent - 전시 부스 신청 API + AI 에이전트",
+    subtitle: "사이드프로젝트 · 백엔드 + AI 에이전트",
+    period: "2026.10 - 진행중",
+    description: "전시회 부스 참가신청 REST API와, 그 API를 도구로 호출해 대화로 신청을 처리하는 Claude AI 에이전트",
+    tags: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "Claude API", "SSE"],
+    highlights: ["동시 신청 초과 판매 0건", "AI 에이전트 루프 직접 구현", "AI 입력 DTO 검증 + 사람 승인"],
+    github: "https://github.com/HeeJeShin/booth-agent",
+  },
+  {
     id: homeCareInfo.id,
     title: homeCareInfo.title,
     subtitle: homeCareInfo.subtitle,

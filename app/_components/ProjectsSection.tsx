@@ -75,6 +75,10 @@ export const ProjectsSection = () => {
             <Link key={project.id} href={`/projects/${project.id}`} className="block cursor-pointer">
               {content}
             </Link>
+          ) : project.github ? (
+            <a key={project.id} href={project.github} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
+              {content}
+            </a>
           ) : (
             <div key={project.id}>{content}</div>
           );
