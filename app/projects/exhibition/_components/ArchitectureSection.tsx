@@ -205,8 +205,7 @@ export const ArchitectureSection = () => {
         <div className="mt-4 bg-gray-100 border border-gray-300 rounded-lg p-3">
           <p className="text-sm text-gray-700 text-center">
             <strong>56개 공용 컴포넌트</strong>를 유저/어드민이 공유 →
-            <strong className="text-gray-900"> UI 일관성 100%</strong> +
-            <strong className="text-gray-900"> 유지보수 비용 50% 절감</strong>
+            <strong className="text-gray-900"> 두 앱의 UI를 한 곳에서 관리</strong>
           </p>
         </div>
       </div>

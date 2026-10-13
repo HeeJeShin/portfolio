@@ -56,6 +56,7 @@ export const projects: Project[] = [
     highlights: ["Google Gemini AI 연동", "프롬프트 설계", "실시간 모니터링"],
     demo: "https://4j-mgqp.vercel.app/",
     github: "https://github.com/HeeJeShin/4j",
+    side: true,
   },
   {
     id: "exhibition",
@@ -64,10 +65,9 @@ export const projects: Project[] = [
     period: "2026.02 - 2026.04",
     description: "슈퍼어드민 + 프로젝트 어드민 구조의 전시회 참가신청 관리 시스템",
     tags: ["Next.js", "TypeScript", "TanStack Query", "Turborepo", "Vitest"],
-    highlights: ["모노레포 기반 50% 기간 단축", "Vitest 단위테스트 자동화", "216개 테스트 케이스"],
+    highlights: ["모노레포로 약 50% 기간 단축(추정)", "Vitest 단위테스트 자동화", "216개 테스트 케이스"],
     metrics: {
       period: "50%",
-      dev: "70%",
       tests: "216개",
     },
     links: [
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     id: "o2meet",
     title: "O2MEET 온라인 행사 플랫폼",
     subtitle: "개발 및 유지보수",
-    period: "2022.05 - 현재",
+    period: "2022.05 - 2026.05",
     description: "온라인 전시관, 컨퍼런스, 티켓 구매 등 행사 플랫폼 프론트엔드",
     tags: ["JSP", "jQuery", "KCP"],
     highlights: ["등록솔루션 2주→3-5일", "결제 시스템 구축", "공통화 작업"],

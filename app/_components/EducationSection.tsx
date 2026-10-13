@@ -11,7 +11,7 @@ export const EducationSection = () => {
             <p className="text-sm text-gray-600 mt-1">컴퓨터공학과 (편입 3학년)</p>
           </div>
           <span className="text-xs text-gray-400 whitespace-nowrap">
-            2025.03 - 재학 중 (2026.02 졸업예정)
+            2025.03 - 재학 중 (2027.02 졸업예정)
           </span>
         </div>
       </div>
