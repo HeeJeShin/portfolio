@@ -5,7 +5,7 @@ export const projectInfo = {
   id: "home-care",
   title: "HomeCare - 홈펌프 항암제 자가관리",
   subtitle: "의료 헬스케어 도메인 · 서울대학교병원 임상간호연구",
-  period: "2026.05 - 진행중",
+  period: "2026.05 - 2026.10 (완료)",
   description: "휴대용 항암 주입기(홈펌프) 사용 환자를 위한 자가관리 웹앱",
   tags: [
     "Next.js 16",
