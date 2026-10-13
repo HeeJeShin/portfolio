@@ -17,8 +17,8 @@ const challenges = [
     link: "/projects/exhibition#decisions",
   },
   {
-    title: "1차 중단 → 2차 재도전: 성능 60% 개선",
-    desc: "1차 중단 후 회고를 바탕으로 2차에서 부족한 점을 개선하여 LCP 50.1s→20.1s(60%↓), 미사용 코드 2,141KB→25KB(99%↓), CLS 0.248→0.000(100%↓)으로 성능을 개선했습니다. (측정: Lighthouse)",
+    title: "1차 중단 → 2차 재도전: 성능 점수 45 → 99",
+    desc: "1차 중단 후 회고를 바탕으로 2차에서 부족한 점을 개선하여 Lighthouse 성능 점수 45→99, LCP 8.0s→0.8s, CLS 0.225→0으로 개선했습니다. (Lighthouse 데스크톱 기준, 같은 플랫폼의 JSP 사이트와 Next.js 사이트 비교)",
     link: "/projects/o2meet-migration",
   },
   {

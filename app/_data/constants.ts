@@ -106,7 +106,7 @@ export const projects: Project[] = [
     period: "2026.04 - 2026.05",
     description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
-    highlights: ["LCP 60% 개선", "미사용 코드 99% 감소", "CLS 100% 개선"],
+    highlights: ["성능 점수 45 → 99", "LCP 8.0s → 0.8s", "CLS 0.225 → 0"],
     firstAttemptPeriod: "2024.12 - 2025.02",
     demo: "https://greenenertec.com/",
   },

@@ -56,7 +56,7 @@ export const decisions: Record<string, Decision[]> = {
         "다시 전환해야 한다는 데는 모두 공감했고, '어떻게, 무엇을 우선할지'는 제가 정했습니다. 1차를 회고해 실패 원인을 두 가지로 좁혔습니다. 타입 정의 없이 시작해 런타임 버그가 많았던 것, 기존 CSS와 MUI가 섞여 스타일이 충돌한 것입니다.",
       action:
         "2차에서는 API 응답 타입을 먼저 설계한 뒤 화면을 만들고, 스타일은 Tailwind CSS로 통일했습니다. 개선 여부는 감이 아니라 Lighthouse 수치로 확인하기로 했습니다.",
-      result: "LCP 60%↓, 미사용 코드 99%↓, CLS 100%↓ (Lighthouse 기준).",
+      result: "Lighthouse 성능 점수 45 → 99, LCP 8.0초 → 0.8초, CLS 0.225 → 0 (데스크톱 기준, 같은 플랫폼의 JSP 사이트와 Next.js 사이트 비교).",
     },
   ],
   o2meet: [
