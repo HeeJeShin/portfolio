@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import {
   Header,
   HeroSection,
@@ -20,6 +21,7 @@ const ExhibitionProject = () => {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
         <MetricsSection />
+        <DecisionSection projectId="exhibition" />
         <ProblemSolvingSection />
         <ApproachesSection />
         <ArchitectureSection />

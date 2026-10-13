@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
 import { getProjectById } from "@/app/_data/constants";
@@ -109,6 +110,8 @@ export default function O2MeetMigrationPage() {
             </a>
           )}
         </section>
+
+        <DecisionSection projectId="o2meet-migration" />
 
         {/* Lighthouse 성능 측정 결과 */}
         <section id="lighthouse" className="mb-12 scroll-mt-8">
