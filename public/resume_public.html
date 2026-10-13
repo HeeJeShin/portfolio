@@ -180,7 +180,7 @@
 </p>
 
 <h2>소개</h2>
-<p>전시·행사 플랫폼을 4년간 개발·운영하며, 업무 흐름을 먼저 이해하고 화면으로 제안하는 방식으로 일해왔습니다. JSP 레거시를 Next.js로 전환해 Lighthouse 성능 점수를 45에서 99로 끌어올렸고, 모노레포·타입 선행 설계·Vitest 테스트(216개)로 어드민을 혼자 3개월 만에 구축했습니다. 2023년부터 AI를 업무에 써왔으며, AI가 만든 코드는 타입 체크와 테스트로 검증한 뒤에만 반영하도록 규칙을 세웠습니다. 현재는 토이 프로젝트로 NestJS 백엔드와 AI 에이전트를 학습하고 있습니다.</p>
+<p>전시·행사 플랫폼을 4년간 개발·운영하며, 업무 흐름을 먼저 이해하고 화면으로 제안하는 방식으로 일해왔습니다. JSP 레거시를 Next.js로 전환해 Lighthouse 성능 점수를 45에서 99로 끌어올렸고, 모노레포·타입 선행 설계·Vitest 테스트(216개)로 어드민을 혼자 3개월 만에 구축했습니다. 2023년부터 AI를 업무에 써왔으며, AI가 만든 코드는 타입 체크와 테스트로 검증한 뒤에만 반영하도록 규칙을 세웠습니다. 현재는 사이드 프로젝트로 NestJS 백엔드와 AI를 연동한 서비스를 만들며 풀스택 역량을 넓히고 있습니다.</p>
 
 <h2>경력</h2>
 <h3>이즈피엠피 (EZPMP) · 웹개발실 선임연구원</h3>
@@ -262,11 +262,12 @@
 
 <h2>사이드 프로젝트</h2>
 
-<h3>1. Booth Agent - 전시 부스 신청 API + AI 에이전트 (진행 중, 학습용)</h3>
-<p class="meta"><strong>2026.10 -</strong> | 1인 | <a href="https://github.com/HeeJeShin/booth-agent">github.com/HeeJeShin/booth-agent</a></p>
+<h3>1. 중구 - 중고차 구매 가이드 (진행 중)</h3>
+<p class="meta"><strong>2026.10 -</strong> | 1인 · 풀스택 | <a href="https://github.com/HeeJeShin/car-check">github.com/HeeJeShin/car-check</a></p>
 <ul>
-  <li>NestJS·Prisma·PostgreSQL로 신청 API를 만들며 트랜잭션과 행 잠금으로 동시 신청 50건에서 초과 판매 0건 확인</li>
-  <li>Claude가 API를 도구로 호출하는 에이전트 루프, AI 입력을 서버 DTO로 검증하고 쓰기 작업은 사람 승인 후 실행</li>
+  <li>차종·연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스 (NestJS·Prisma·PostgreSQL + Next.js)</li>
+  <li>돈이 걸린 사실 정보(고질병)는 사람이 검증한 DB로, 안내·추천은 Gemini로 역할을 나눠 AI 환각을 피함. 출처 URL이 없으면 '검증됨'으로 저장되지 않도록 서버 규칙으로 막음</li>
+  <li>AI 키가 없어도 핵심 기능이 동작하도록 설계 (AI 끔·모의 응답·실제 호출 3가지 모드)</li>
 </ul>
 
 <hr>
