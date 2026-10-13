@@ -1,7 +1,10 @@
 export const RoadmapSection = () => {
   return (
     <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">추후 고도화 방향 (v2)</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-2">정식 연구로 이어질 경우의 고도화 방향 (v2)</h2>
+      <p className="text-sm text-gray-600 mb-6">
+        이번 연구는 v1으로 마무리했습니다. 임상연구 이후 정식 연구로 결정되면, 그때 DB를 연동해 환자 데이터를 저장·관리하는 등 아래 방향으로 확장할 수 있습니다.
+      </p>
 
       {/* v1 vs v2 비교 */}
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
