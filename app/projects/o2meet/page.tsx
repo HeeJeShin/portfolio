@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import Link from "next/link";
 import { ProjectHeader } from "@/app/_components/ProjectHeader";
 
@@ -138,6 +139,8 @@ export default function O2MeetPage() {
             복잡한 결제 플로우와 API 연동, 마이페이지 구현을 포함합니다.
           </p>
         </section>
+
+        <DecisionSection projectId="o2meet" />
 
         {/* 성과 */}
         <section className="mb-12">

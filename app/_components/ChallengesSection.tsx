@@ -12,9 +12,9 @@ const challenges = [
     link: "/projects/home-care",
   },
   {
-    title: "AI 에이전트(Claude Code) 기반 개발 워크플로우 구축",
-    desc: "전시부스 신청 시스템(모노레포, 2개 앱 + 공유 패키지)에서 Claude Code를 활용해 설계 검토, 테스트 실행/분석, CSV 리포트 자동 갱신까지 AI 협업 워크플로우를 구축했습니다. CLAUDE.md로 프로젝트 컨벤션을 정의해 일관된 코드 품질을 유지했습니다.",
-    link: "/projects/exhibition#unit-test",
+    title: "AI를 쓰는 건 당연해졌다, 필요한 건 검증의 규격화",
+    desc: "2023년부터 AI를 업무에 써왔습니다. 회사도 AI 도입에 적극적이었고 개발자들은 각자 AI를 쓰고 있었지만, 검증 방식은 사람마다 달라 QA 팀 없이 문제가 생기면 그때마다 해당 개발자가 고치는 일이 반복됐습니다. 상황 탓을 하기보다, 제가 처음부터 구축하는 프로젝트에 검증을 미리 세팅하기로 했습니다. CLAUDE.md로 컨벤션과 검증 규칙을 정의하고, AI가 만든 코드는 타입 체크와 테스트 216개를 통과해야 반영되도록 규격화했습니다.",
+    link: "/projects/exhibition#decisions",
   },
   {
     title: "1차 중단 → 2차 재도전: 성능 60% 개선",

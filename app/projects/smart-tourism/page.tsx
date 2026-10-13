@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import {
   Header,
   HeroSection,
@@ -16,6 +17,7 @@ const SmartTourismProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
+        <DecisionSection projectId="smart-tourism" />
         <ChallengesSection />
         <ApproachesSection />
         <TechStackSection />

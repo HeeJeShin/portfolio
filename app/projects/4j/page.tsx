@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import {
   Header,
   HeroSection,
@@ -19,6 +20,7 @@ const FourJProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
+        <DecisionSection projectId="4j" />
         <FeatureSection />
         <AIAnalysisSection />
         <CalculationSection />
