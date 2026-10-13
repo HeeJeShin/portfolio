@@ -37,6 +37,8 @@ export const HeroSection = () => {
           </p>
           <p>
             퇴원 후 자가관리 시 환자가 불안해하는 문제를 해결하기 위한 <strong className="text-gray-900">임상간호연구</strong>에 개발자로 참여했습니다.
+            연구의 목적은 큰 시스템이 아니라, <strong className="text-gray-900">실제 현장에서 환자가 겪는 어려움을 간단한 개발로 바로 덜어주는 것</strong>이었습니다.
+            그래서 서버 없이 바로 쓸 수 있는 웹앱으로 만들고, 개발 문서와 결과물을 연구팀에 전달하며 마무리했습니다.
           </p>
           <p>
             <strong className="text-gray-900">Claude Design</strong>으로 요구사항을 정리하고 기획서를 작성한 뒤,
