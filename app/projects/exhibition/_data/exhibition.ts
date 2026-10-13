@@ -89,7 +89,7 @@ export const techStackDetails = {
   },
   language: {
     name: "TypeScript",
-    usage: "타입 정의 선행 개발, 런타임 에러 90% 감소",
+    usage: "타입 정의 선행 개발, 컴파일 단계에서 타입 오류 차단",
   },
   stateManagement: {
     server: { name: "TanStack Query", usage: "서버 상태 캐싱/동기화, Optimistic Updates" },
@@ -266,9 +266,7 @@ return <SystemSidebar />;`,
 // ==========================================
 export const metrics = {
   development: [
-    { label: "개발 기간", before: "6개월 예상", after: "3개월", change: "50% 단축" },
-    { label: "페이지 개발", before: "2주", after: "3-5일", change: "70% 단축" },
-    { label: "런타임 에러", before: "QA 다수 발견", after: "거의 없음", change: "90% 감소" },
+    { label: "개발 기간", before: "6개월 예상", after: "3개월", change: "약 50% 단축(추정)" },
   ],
   codeQuality: [
     { label: "공용 컴포넌트", value: 56, unit: "개" },

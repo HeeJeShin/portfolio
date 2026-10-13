@@ -22,8 +22,8 @@ const challenges = [
     link: "/projects/o2meet-migration",
   },
   {
-    title: "대규모 모노레포 설계 및 테스트 자동화",
-    desc: "저는 문제를 주도적으로 고민하는 편입니다. Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 설계했고, 품질을 위해 필요하다고 판단해 Vitest 기반 테스트 케이스 216개를 직접 작성하고 자동 문서화까지 구축해 수동 대비 80% 시간을 절감했습니다.",
+    title: "모노레포 설계 및 테스트 자동화",
+    desc: "Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 설계했고, 품질을 위해 필요하다고 판단해 Vitest 기반 테스트 케이스 216개를 직접 작성하고 결과가 CSV 리포트로 자동 정리되도록 구축했습니다.",
     link: "/projects/exhibition#monorepo",
   },
   {

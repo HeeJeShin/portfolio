@@ -20,7 +20,7 @@ export const decisions: Record<string, Decision[]> = {
       action:
         "CLAUDE.md에 컨벤션과 검증 규칙을 정의하고, AI가 만든 코드는 타입 체크와 Vitest 테스트를 통과해야 반영하도록 했습니다. 테스트 결과는 CSV 리포트로 자동 정리되게 해서 누구나 바로 확인할 수 있게 했습니다.",
       result:
-        "테스트 216개, 런타임 에러 90% 감소. 새로 합류하는 사람도 같은 기준으로 AI를 쓰고 검증할 수 있는 구조를 남겼습니다.",
+        "테스트 216개를 작성했고, 새로 합류하는 사람도 같은 기준으로 AI를 쓰고 검증할 수 있는 구조를 남겼습니다.",
     },
     {
       title: "왜 어드민을 Next.js + 모노레포로 했나 (회고 포함)",
@@ -31,7 +31,7 @@ export const decisions: Record<string, Decision[]> = {
       action:
         "Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 만들고, 공통 컴포넌트·타입·API 로직을 shared에 모았습니다.",
       result:
-        "공통 코드 공유로 개발 기간을 50% 줄였습니다. 회고: 어드민에선 Next.js의 서버 기능을 거의 쓰지 않았기 때문에, 다시 한다면 '어드민은 SPA + shared 패키지만 공유'하는 구조와 빌드·배포 비용을 비교해보고 정하겠습니다.",
+        "공통 코드를 공유해 두 앱을 3개월에 완성했습니다(두 앱을 각각 만들었다면 약 6개월로 추정). 회고: 어드민에선 Next.js의 서버 기능을 거의 쓰지 않았기 때문에, 다시 한다면 '어드민은 SPA + shared 패키지만 공유'하는 구조와 빌드·배포 비용을 비교해보고 정하겠습니다.",
     },
   ],
   "smart-tourism": [

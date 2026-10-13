@@ -37,7 +37,7 @@ export const Sidebar = () => {
       <div className="flex flex-col h-full px-8 py-10 lg:py-12">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
-          <p className="text-base text-[#191979] font-medium">Frontend Developer</p>
+          <p className="text-base text-[#191979] font-medium">Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
             비즈니스 도메인에 대한 통찰과 AI 활용 능력을 무기로,<br /> 빠르고 정확하게 실질적인 결과물을 만들어내는 개발자입니다.
           </p>
