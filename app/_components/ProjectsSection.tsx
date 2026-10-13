@@ -10,8 +10,14 @@ export const ProjectsSection = () => {
         <h2 className="text-2xl font-bold text-gray-900">프로젝트</h2>
         <span className="text-xs text-gray-500">클릭하여 상세 구현내용 확인</span>
       </div>
+      {[
+        { label: "실무 프로젝트", items: projects.filter((p) => !p.side) },
+        { label: "사이드 프로젝트", items: projects.filter((p) => p.side) },
+      ].map((group) => (
+      <div key={group.label} className="mb-10">
+      <h3 className="text-lg font-bold text-gray-900 mb-4">{group.label}</h3>
       <div className="space-y-4">
-        {projects.map((project) => {
+        {group.items.map((project) => {
           const hasDetail = internalProjectIds.has(project.id);
           const content = (
             <div className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
@@ -84,6 +90,8 @@ export const ProjectsSection = () => {
           );
         })}
       </div>
+      </div>
+      ))}
     </section>
   );
 };

@@ -14,6 +14,7 @@ export type Project = {
   links?: { label: string; url: string }[];
   subProjects?: string[];
   firstAttemptPeriod?: string; // 1차 시도 기간 (실패 → 성공 스토리용)
+  side?: boolean; // 사이드 프로젝트 (실무와 분리해서 표시)
 };
 
 // 프로젝트 ID로 프로젝트 찾기 헬퍼
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Tailwind CSS"],
     highlights: ["데이터는 사람이 검증, 안내는 AI", "출처 없으면 '검증됨' 저장 불가", "AI 없이도 핵심 기능 동작"],
     github: "https://github.com/HeeJeShin/car-check",
+    side: true,
   },
   {
     id: "booth-agent",
@@ -41,6 +43,7 @@ export const projects: Project[] = [
     tags: ["NestJS", "TypeScript", "Prisma", "PostgreSQL", "Claude API", "SSE"],
     highlights: ["동시 신청 초과 판매 0건", "AI 에이전트 루프 직접 구현", "AI 입력 DTO 검증 + 사람 승인"],
     github: "https://github.com/HeeJeShin/booth-agent",
+    side: true,
   },
   {
     id: homeCareInfo.id,
@@ -52,6 +55,7 @@ export const projects: Project[] = [
     highlights: homeCareInfo.highlights,
     demo: homeCareInfo.demo,
     github: homeCareInfo.github,
+    side: true,
   },
   {
     id: "4j",

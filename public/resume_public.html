@@ -207,76 +207,9 @@
 <h3>이즈피엠피 (EZPMP)</h3>
 <p class="meta"><strong>2022.05.23 - 2026.05.31 (4년)</strong> | 정규직 | 프론트엔드 | 선임연구원</p>
 
-<h2>프로젝트</h2>
+<h2>실무 프로젝트</h2>
 
-<h3>1. Booth Agent - 전시 부스 신청 API + AI 에이전트 (사이드프로젝트)</h3>
-<p class="meta"><strong>2026.10 - 진행중</strong> | 백엔드 · AI 에이전트 | 1인 개발</p>
-<p>전시회 부스 참가신청 REST API와, 그 API를 도구로 호출해 대화로 신청을 처리하는 Claude AI 에이전트</p>
-<p class="links"><strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/booth-agent">github.com/HeeJeShin/booth-agent</a></p>
-
-<p class="section-title">주요 구현</p>
-<ul>
-  <li><strong>NestJS + Prisma + PostgreSQL</strong>로 전시회·참가신청 API 설계, Swagger 문서 자동화</li>
-  <li><strong>트랜잭션 + 행 잠금(SELECT FOR UPDATE)</strong>으로 동시 신청 시 초과 판매 방지 — 50건 동시 요청에서 초과 판매 0건 검증</li>
-  <li>Claude가 API를 도구로 호출하는 <strong>에이전트 루프 직접 구현</strong>, SSE 스트리밍 응답</li>
-  <li><strong>AI 결과 검증</strong>: AI가 만든 입력을 REST와 같은 DTO로 검증, 데이터를 바꾸는 작업은 사람 승인 후 실행</li>
-  <li>Vitest로 에이전트 루프·입력 검증 규칙 테스트</li>
-</ul>
-<p class="tech-tag">관련기술: NestJS, TypeScript, Prisma, PostgreSQL, Anthropic Claude API, SSE, Vitest, Docker</p>
-
-<hr>
-
-<h3>2. 4J - 행사장 수용인원 자동계산 (사내 AI Boost Challenge)</h3>
-<p class="meta"><strong>2026.01</strong> | 1박 2일 사내 해커톤 | 팀 구성: 기획 1, 프론트엔드 3</p>
-<p>AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스</p>
-<p class="links"><strong>Demo:</strong> <a href="https://4j-mgqp.vercel.app/">https://4j-mgqp.vercel.app/</a> | <strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/4j">https://github.com/HeeJeShin/4j</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/4j">상세보기</a></p>
-
-<p class="section-title">담당 역할</p>
-<ul>
-  <li><strong>Google Gemini AI 연동</strong> 및 도면 분석용 프롬프트 설계</li>
-  <li>AI 응답 파싱 및 수용인원 계산 로직 구현</li>
-</ul>
-
-<p class="section-title">주요 기능</p>
-<ul>
-  <li>행사장 유형별 수용인원 계산 (스탠딩/연회형/극장형)</li>
-  <li>도면 이미지 AI 분석 (부스 개수, 출입구, 면적 추정)</li>
-  <li>혼잡도 레벨별 인원 예측 (Level 1~5) - 기획자가 법적 기준으로 산출한 공식 반영</li>
-  <li>비상구 처리량 고려한 안전 인원 산출</li>
-</ul>
-<p class="tech-tag">관련기술: Next.js, TypeScript, Tailwind CSS, Google Gemini AI</p>
-
-<hr>
-
-<h3>3. HomeCare - 홈펌프 항암제 자가관리 웹앱</h3>
-<p class="meta"><strong>2026.05 - 진행중</strong> | 의료 헬스케어 도메인 | Claude Design + Claude Code AI 협업</p>
-<p>휴대용 항암 주입기(홈펌프) 사용 환자를 위한 자가관리 웹앱</p>
-<p class="links"><strong>Site:</strong> <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> | <strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/home_care">github.com/HeeJeShin/home_care</a> | <strong>기획서:</strong> <a href="https://home-care-blond.vercel.app/prototype">프로토타입</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/home-care">상세보기</a></p>
-
-<p class="section-title">프로젝트 배경</p>
-<ul>
-  <li>서울대학교병원 임상간호연구에 개발자로 참여</li>
-  <li>퇴원 후 자가관리 시 환자가 불안해하는 문제를 해결하기 위한 임상간호연구에 개발자로 참여</li>
-</ul>
-
-<p class="section-title">AI 협업 워크플로우</p>
-<ul>
-  <li><strong>Claude Design</strong>: 요구사항 정의 → 인터랙티브 HTML 프로토타입 8개 화면 생성</li>
-  <li><strong>핸드오프 번들</strong>: 채팅 기록 + 프로토타입 + 기술 명세서 패키지</li>
-  <li><strong>Claude Code</strong>: 핸드오프 기반 픽셀 퍼펙트 Next.js 프로덕션 구현</li>
-</ul>
-
-<p class="section-title">주요 기능</p>
-<ul>
-  <li>하루 3회 체크 알림 (웹 푸시), 4단계 점검 플로우 (눈금/잠금/체온/완료)</li>
-  <li>크로스 브라우저 알림 권한 처리 (Safari/Chrome/PWA 환경별 대응)</li>
-  <li>PDF 내보내기 (의료진 제출용), 응급 연락처 즉시 연결</li>
-</ul>
-<p class="tech-tag">관련기술: Next.js 16, React 19, TypeScript, Tailwind v4, Claude Design, Claude Code, Web Notifications API</p>
-
-<hr>
-
-<h3>4. 어드민시스템</h3>
+<h3>1. 어드민시스템</h3>
 <p class="meta"><strong>2025.02 - 2025.04 (3개월)</strong> | 프론트엔드 | 선임 | 팀 구성: 백엔드 1, 프론트엔드 1</p>
 <p>여러 전시회/박람회 프로젝트를 통합 운영하는 <strong>슈퍼어드민</strong>과, 개별 전시회의 참가업체 부스 신청 접수부터 입금 확인, 인보이스 발행까지 전체 워크플로우를 관리하는 <strong>프로젝트 어드민</strong>으로 구성된 <strong>2단계 어드민 시스템</strong> 개발</p>
 <p class="links"><strong>어드민:</strong> <a href="https://ipsolution-admin.ezpmp.com/">ipsolution-admin.ezpmp.com</a> | <strong>유저:</strong> <a href="https://ipsolution.ezpmp.com/GETEC/120006">ipsolution.ezpmp.com</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/exhibition">상세보기</a></p>
@@ -302,7 +235,7 @@
 
 <hr>
 
-<h3>5. 스마트관광프로젝트 (인제 / 용인)</h3>
+<h3>2. 스마트관광프로젝트 (인제 / 용인)</h3>
 <p class="meta"><strong>2025.06 - 2025.11</strong> | 프론트엔드 | 선임 | 팀 구성: 프론트엔드 3, 백엔드 2, 기획 2</p>
 <p class="links"><strong>인제:</strong> <a href="https://tour.inje.go.kr/">tour.inje.go.kr</a> | <strong>용인:</strong> <a href="https://itour.yongin.go.kr/">itour.yongin.go.kr</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/smart-tourism">상세보기</a></p>
 <p>스마트 관광 플랫폼 개발 (숙박/체험 예약, 투어패스 판매, 커뮤니티 등)</p>
@@ -337,7 +270,7 @@
 
 <hr>
 
-<h3>6. O2MEET 플랫폼 Next.js 마이그레이션</h3>
+<h3>3. O2MEET 플랫폼 Next.js 마이그레이션</h3>
 <p class="meta"><strong>2024.12 - 2025.02</strong></p>
 <p>JSP → Next.js로 전환한 온라인 행사 플랫폼</p>
 <p class="links"><strong>Site:</strong> <a href="https://greenenertec.com/">greenenertec.com</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/o2meet-migration">상세보기</a></p>
@@ -351,7 +284,7 @@
 
 <hr>
 
-<h3>7. POS/Kiosk 프로젝트</h3>
+<h3>4. POS/Kiosk 프로젝트</h3>
 <p class="meta"><strong>2024.11 - 2025.02</strong> | 프론트엔드 | 선임</p>
 <p class="links"><strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/pos-kiosk">상세보기</a></p>
 <p>동대문역사문화공원역 어린이 키즈카페 '디키디키'용 POS/Kiosk 개발</p>
@@ -365,7 +298,7 @@
 
 <hr>
 
-<h3>8. O2MEET 온라인 행사 플랫폼 개발 및 유지보수</h3>
+<h3>5. O2MEET 온라인 행사 플랫폼 개발 및 유지보수</h3>
 <p class="meta">팀 구성: 프론트엔드 5, 백엔드 4, 기획 4</p>
 <p class="links"><strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/o2meet">상세보기</a></p>
 <ul>
@@ -388,6 +321,72 @@
   <li>만화, 숏폼 콘텐츠 스타트업 비즈니스 미팅 및 콘텐츠 홍보 전시회</li>
   <li>세분화된 관심 분야 선택 시스템 (카테고리 API 활용)</li>
 </ul>
+
+<hr>
+
+<h3>6. 4J - 행사장 수용인원 자동계산 (사내 AI Boost Challenge)</h3>
+<p class="meta"><strong>2026.01</strong> | 1박 2일 사내 해커톤 | 팀 구성: 기획 1, 프론트엔드 3</p>
+<p>AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스</p>
+<p class="links"><strong>Demo:</strong> <a href="https://4j-mgqp.vercel.app/">https://4j-mgqp.vercel.app/</a> | <strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/4j">https://github.com/HeeJeShin/4j</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/4j">상세보기</a></p>
+
+<p class="section-title">담당 역할</p>
+<ul>
+  <li><strong>Google Gemini AI 연동</strong> 및 도면 분석용 프롬프트 설계</li>
+  <li>AI 응답 파싱 및 수용인원 계산 로직 구현</li>
+</ul>
+
+<p class="section-title">주요 기능</p>
+<ul>
+  <li>행사장 유형별 수용인원 계산 (스탠딩/연회형/극장형)</li>
+  <li>도면 이미지 AI 분석 (부스 개수, 출입구, 면적 추정)</li>
+  <li>혼잡도 레벨별 인원 예측 (Level 1~5) - 기획자가 법적 기준으로 산출한 공식 반영</li>
+  <li>비상구 처리량 고려한 안전 인원 산출</li>
+</ul>
+<p class="tech-tag">관련기술: Next.js, TypeScript, Tailwind CSS, Google Gemini AI</p>
+
+<h2>사이드 프로젝트</h2>
+<h3>1. Booth Agent - 전시 부스 신청 API + AI 에이전트</h3>
+<p class="meta"><strong>2026.10 - 진행중</strong> | 백엔드 · AI 에이전트 | 1인 개발</p>
+<p>전시회 부스 참가신청 REST API와, 그 API를 도구로 호출해 대화로 신청을 처리하는 Claude AI 에이전트</p>
+<p class="links"><strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/booth-agent">github.com/HeeJeShin/booth-agent</a></p>
+
+<p class="section-title">주요 구현</p>
+<ul>
+  <li><strong>NestJS + Prisma + PostgreSQL</strong>로 전시회·참가신청 API 설계, Swagger 문서 자동화</li>
+  <li><strong>트랜잭션 + 행 잠금(SELECT FOR UPDATE)</strong>으로 동시 신청 시 초과 판매 방지 — 50건 동시 요청에서 초과 판매 0건 검증</li>
+  <li>Claude가 API를 도구로 호출하는 <strong>에이전트 루프 직접 구현</strong>, SSE 스트리밍 응답</li>
+  <li><strong>AI 결과 검증</strong>: AI가 만든 입력을 REST와 같은 DTO로 검증, 데이터를 바꾸는 작업은 사람 승인 후 실행</li>
+  <li>Vitest로 에이전트 루프·입력 검증 규칙 테스트</li>
+</ul>
+<p class="tech-tag">관련기술: NestJS, TypeScript, Prisma, PostgreSQL, Anthropic Claude API, SSE, Vitest, Docker</p>
+
+<hr>
+
+<h3>2. HomeCare - 홈펌프 항암제 자가관리 웹앱</h3>
+<p class="meta"><strong>2026.05 - 진행중</strong> | 의료 헬스케어 도메인 | Claude Design + Claude Code AI 협업</p>
+<p>휴대용 항암 주입기(홈펌프) 사용 환자를 위한 자가관리 웹앱</p>
+<p class="links"><strong>Site:</strong> <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> | <strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/home_care">github.com/HeeJeShin/home_care</a> | <strong>기획서:</strong> <a href="https://home-care-blond.vercel.app/prototype">프로토타입</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/home-care">상세보기</a></p>
+
+<p class="section-title">프로젝트 배경</p>
+<ul>
+  <li>서울대학교병원 임상간호연구에 개발자로 참여</li>
+  <li>퇴원 후 자가관리 시 환자가 불안해하는 문제를 해결하기 위한 임상간호연구에 개발자로 참여</li>
+</ul>
+
+<p class="section-title">AI 협업 워크플로우</p>
+<ul>
+  <li><strong>Claude Design</strong>: 요구사항 정의 → 인터랙티브 HTML 프로토타입 8개 화면 생성</li>
+  <li><strong>핸드오프 번들</strong>: 채팅 기록 + 프로토타입 + 기술 명세서 패키지</li>
+  <li><strong>Claude Code</strong>: 핸드오프 기반 픽셀 퍼펙트 Next.js 프로덕션 구현</li>
+</ul>
+
+<p class="section-title">주요 기능</p>
+<ul>
+  <li>하루 3회 체크 알림 (웹 푸시), 4단계 점검 플로우 (눈금/잠금/체온/완료)</li>
+  <li>크로스 브라우저 알림 권한 처리 (Safari/Chrome/PWA 환경별 대응)</li>
+  <li>PDF 내보내기 (의료진 제출용), 응급 연락처 즉시 연결</li>
+</ul>
+<p class="tech-tag">관련기술: Next.js 16, React 19, TypeScript, Tailwind v4, Claude Design, Claude Code, Web Notifications API</p>
 
 <h2>학력</h2>
 <h3>서울사이버대</h3>
