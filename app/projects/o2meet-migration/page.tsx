@@ -10,12 +10,15 @@ const project = getProjectById("o2meet-migration")!;
 
 const techStack = ["Next.js 14", "TypeScript", "Zustand", "Tailwind CSS", "Zod"];
 
+// 2026.10 재측정 (Lighthouse 12, 데스크톱 프리셋)
+// ⚠️ 같은 페이지의 전후 비교가 아니라, 같은 O2MEET 플랫폼의 JSP 행사 사이트(bookizcon)와
+//    Next.js로 전환한 행사 사이트(greenenertec)를 같은 조건으로 비교한 값
 const lighthouseMetrics = [
-  { metric: "LCP (최대 콘텐츠 표시)", before: "50.1s", after: "20.1s", improvement: "60%↓" },
-  { metric: "TTI (인터랙티브 시간)", before: "50.1s", after: "20.4s", improvement: "59%↓" },
-  { metric: "CLS (레이아웃 안정성)", before: "0.248", after: "0.000", improvement: "100%↓" },
-  { metric: "미사용 JavaScript", before: "1,262KB", after: "25KB", improvement: "98%↓" },
-  { metric: "미사용 CSS", before: "879KB", after: "0KB", improvement: "100%↓" },
+  { metric: "성능 점수", before: "45", after: "99", improvement: "+54점" },
+  { metric: "LCP (최대 콘텐츠 표시)", before: "8.0s", after: "0.8s", improvement: "90%↓" },
+  { metric: "CLS (레이아웃 안정성)", before: "0.225", after: "0", improvement: "0으로" },
+  { metric: "미사용 JavaScript", before: "1,291KB", after: "107KB", improvement: "92%↓" },
+  { metric: "미사용 CSS", before: "891KB", after: "0KB", improvement: "제거" },
 ];
 
 const firstAttemptIssues = [
@@ -94,7 +97,7 @@ export default function O2MeetMigrationPage() {
           </h1>
           <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mb-4">
             1차 중단 후 회고를 바탕으로 2차에서 부족한 점을 개선하여
-            <strong className="text-[#191979]"> LCP 60% 개선, 미사용 코드 99% 감소</strong>를 달성했습니다.
+            <strong className="text-[#191979]"> Lighthouse 성능 점수 45 → 99, LCP 8.0초 → 0.8초</strong>로 개선했습니다.
           </p>
           {project.demo && (
             <a
@@ -118,8 +121,8 @@ export default function O2MeetMigrationPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Lighthouse 성능 측정 결과</h2>
           <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
             <p className="text-gray-700 mb-4">
-              JSP 기반 <strong>bookizcon.com</strong>과 Next.js로 마이그레이션한 <strong>{project.demo?.replace("https://", "").replace("/", "")}</strong>을
-              Lighthouse로 측정하여 성능을 비교했습니다.
+              같은 O2MEET 플랫폼에서 JSP로 운영 중인 행사 사이트 <strong>bookizcon.com</strong>과 Next.js로 전환한 행사 사이트 <strong>{project.demo?.replace("https://", "").replace("/", "")}</strong>을
+              <strong>Lighthouse 데스크톱 기준</strong>으로 측정해 비교했습니다 (2026.10 측정). 같은 페이지의 전후 비교가 아니라 같은 플랫폼의 두 사이트 비교입니다.
             </p>
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
@@ -146,18 +149,21 @@ export default function O2MeetMigrationPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-[#191979] mb-1">60%</p>
-              <p className="text-sm text-gray-600">LCP 개선</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">45 → 99</p>
+              <p className="text-sm text-gray-600">성능 점수</p>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-[#191979] mb-1">99%</p>
-              <p className="text-sm text-gray-600">미사용 코드 감소</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">8.0s → 0.8s</p>
+              <p className="text-sm text-gray-600">LCP</p>
             </div>
             <div className="bg-white rounded-xl border border-gray-200 p-5 text-center">
-              <p className="text-3xl font-bold text-[#191979] mb-1">100%</p>
-              <p className="text-sm text-gray-600">CLS 개선</p>
+              <p className="text-3xl font-bold text-[#191979] mb-1">0.225 → 0</p>
+              <p className="text-sm text-gray-600">CLS</p>
             </div>
           </div>
+          <p className="text-sm text-gray-500 mt-4">
+            남은 과제: 모바일(저속 네트워크 시뮬레이션)에서는 LCP가 46.2초 → 21.2초로 줄었지만 여전히 느립니다. 메인 화면의 영상·이미지 배너가 LCP 요소라, 미디어 최적화가 다음 개선 대상입니다.
+          </p>
         </section>
 
         {/* 1차 중단 후 회고 */}
