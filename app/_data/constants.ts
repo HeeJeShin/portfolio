@@ -23,6 +23,16 @@ export const getProjectById = (id: string): Project | undefined => {
 
 export const projects: Project[] = [
   {
+    id: "car-check",
+    title: "중구 - 중고차 구매가이드",
+    subtitle: "사이드프로젝트 · 풀스택 + AI",
+    period: "2026.10 - 진행중",
+    description: "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
+    tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Tailwind CSS"],
+    highlights: ["데이터는 사람이 검증, 안내는 AI", "출처 없으면 '검증됨' 저장 불가", "AI 없이도 핵심 기능 동작"],
+    github: "https://github.com/HeeJeShin/car-check",
+  },
+  {
     id: "booth-agent",
     title: "Booth Agent - 전시 부스 신청 API + AI 에이전트",
     subtitle: "사이드프로젝트 · 백엔드 + AI 에이전트",
