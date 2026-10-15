@@ -97,7 +97,7 @@ export const Sidebar = () => {
 
         <div className="mt-auto">
           <a
-            href="/신희제_프론트엔드개발자_이력서_public.pdf"
+            href="/개발자_신희제_이력서.pdf"
             download
             className="w-full px-4 py-3 bg-[#191979] text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
           >
