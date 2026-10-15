@@ -184,6 +184,14 @@
 
 <p>요청이 들어오면 "요청한 내용"보다 "요청하는 이유"에 집중합니다. 디자이너가 없는 프로젝트에서는 UI 가이드를 먼저 만들어 사업부서와 화면 기준을 합의했고, 결제 구조를 백엔드로 옮기는 개선도 근거를 정리해 설득했습니다. 현재는 사이드 프로젝트로 NestJS와 AI를 연동한 서비스를 만들며 백엔드까지 경험을 넓히고 있습니다.</p>
 
+<h2>AI를 활용하는 방식</h2>
+<p>2023년부터 AI를 업무에 써왔습니다. 처음엔 결과를 반신반의해서 오타 찾기처럼 작은 일부터 맡겼고, 검증할 방법을 갖춘 만큼씩 범위를 넓혀왔습니다. 기능을 빨리 만드는 것보다 <strong>무엇을 AI에 맡기고, 어떻게 확인할지</strong>를 먼저 정합니다.</p>
+<ul>
+  <li><strong>AI가 만든 코드는 검증을 통과해야 반영합니다</strong> — 개발자마다 검증 방식이 달라 같은 문제가 반복되는 걸 보고, 어드민 프로젝트에 CLAUDE.md로 컨벤션과 검증 규칙을 먼저 정했습니다. AI가 만든 코드는 타입 체크와 Vitest 테스트(216개)를 통과해야 반영되고, 결과는 CSV 리포트로 남아 누구나 확인할 수 있습니다.</li>
+  <li><strong>정답이 필요한 일은 코드와 데이터에, 해석과 안내는 AI에 맡깁니다</strong> — AI는 그럴듯한 오답을 낼 수 있기 때문입니다. 행사장 수용인원 서비스(4J)에서는 AI가 도면에서 면적·출입구만 읽고 인원 계산은 코드가 하도록 나눴고, 중고차 가이드(중구)에서는 고질병 정보는 사람이 검증한 DB에서만 가져오고 AI는 "무엇부터 알아볼지" 안내에만 썼습니다.</li>
+  <li><strong>말보다 AI로 빠르게 만든 화면으로 합의합니다</strong> — 비개발자와 기술 용어로 이야기하면 방향을 맞추는 데 시간이 오래 걸립니다. 디자이너가 없던 어드민에서는 AI로 UI 가이드 화면을 먼저 만들어 사업부서와 기준을 정했고, 임상간호연구(HomeCare)에서는 Claude Design으로 만든 프로토타입을 보여주며 의료진과 요구사항을 정리했습니다.</li>
+</ul>
+
 <h2>경력</h2>
 <h3>이즈피엠피 (EZPMP) · ICT융합연구소 선임연구원</h3>
 <p class="meta"><strong>2022.05 - 2026.05 (4년)</strong> | 정규직 | 프론트엔드</p>
@@ -207,10 +215,10 @@
 <p class="links"><strong>어드민:</strong> <a href="https://ipsolution-admin.ezpmp.com/">ipsolution-admin.ezpmp.com</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/exhibition">상세보기</a></p>
 <ul>
   <li><strong>모노레포(Turborepo + pnpm)</strong>로 사용자·어드민 두 앱을 하나로 묶고 컴포넌트·타입을 공유 → <strong>3개월 만에 완료</strong> (두 앱을 각각 만들었다면 약 6개월이 걸렸을 것으로 추정, 약 50% 단축)</li>
-  <li><strong>DynamicForm</strong>: 백엔드 설정에 따라 신청 폼을 동적으로 생성해, 전시회가 추가돼도 프론트 코드 수정 없이 대응</li>
+  <li><strong>DynamicForm</strong>: 전시회마다 신청 항목이 달라 매번 프론트 수정이 필요한 구조였습니다. 폼을 백엔드 설정에 따라 생성되게 바꿔, 전시회가 추가돼도 프론트 수정 없이 대응하도록 했습니다.</li>
   <li><strong>검증 규격화</strong>: API 응답 타입 선행 정의 + Zod 런타임 검증, AI가 만든 코드는 타입 체크와 <strong>Vitest 테스트 216개</strong>를 통과해야 반영, 결과는 CSV 리포트로 자동 정리</li>
   <li><strong>UI 가이드 선제안</strong>: 디자이너 없이 가이드 페이지를 먼저 만들어 사업부서와 화면 기준을 합의</li>
-  <li>GitLab CI/CD + ArgoCD Blue-Green 배포, dev/prod 환경 분리</li>
+  <li><strong>배포 흐름</strong>: QA 팀 없이 배포 전 확인이 필요해 테스트·운영 환경을 나눴습니다. 사업부서가 테스트 서버에서 확인한 뒤 운영에 반영하는 흐름을 만들었습니다 (GitLab CI/CD, ArgoCD Blue-Green).</li>
 </ul>
 <p class="tech-tag">기술 스택: Next.js, TypeScript, TanStack Query, Zustand, Tailwind CSS, Zod, Vitest, Turborepo</p>
 
@@ -222,8 +230,7 @@
 <p class="links"><strong>인제:</strong> <a href="https://tour.inje.go.kr/">tour.inje.go.kr</a> | <strong>용인:</strong> <a href="https://itour.yongin.go.kr/">itour.yongin.go.kr</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/smart-tourism">상세보기</a></p>
 <ul>
   <li><strong>결제 구조 개선 제안</strong>: 프론트 방어 코드 대신 결제 완료 처리를 백엔드로 옮기자고 제안, 네트워크 단절 케이스를 정리해 백엔드 팀을 설득해 정합성 문제를 근본 해결</li>
-  <li><strong>Safari 대응</strong>: ITP로 인한 토큰 유실을 쿠키 + localStorage 이중 저장으로 해결, 본인인증 팝업 차단은 리다이렉트로 전환</li>
-  <li>JWT 인증, NICE 본인인증, 카카오·네이버 로그인, KCP 결제 연동, 한/영/일/중 다국어</li>
+  <li><strong>인증·결제 전담</strong>: 가입과 결제는 이탈이 생기기 쉬운 구간이라 브라우저별 실패 케이스부터 정리했습니다. Safari ITP로 토큰이 유실되는 문제는 쿠키 + localStorage 이중 저장으로, 본인인증 팝업 차단은 리다이렉트로 바꿔 해결했습니다. (JWT, NICE 본인인증, 카카오·네이버 로그인, KCP 결제, 4개 언어)</li>
 </ul>
 <p class="tech-tag">기술 스택: Next.js, TypeScript, Zustand, Tailwind CSS, KCP</p>
 
@@ -254,7 +261,7 @@
 <h3>5. POS/키오스크 (키즈카페 '디키디키')</h3>
 <p class="meta"><strong>2024.11 - 2025.02</strong> | 키오스크 화면·초기 개발 전담</p>
 <ul>
-  <li>키오스크 UI 전체(상품·장바구니·결제), KCP 결제, CefSharp로 C++ POS 모듈 연동(영수증 출력, 프린터 상태, 세컨드 모니터)</li>
+  <li>초기 프론트엔드 개발자가 없어 키오스크 화면 구성부터 맡았습니다. 웹 화면과 POS 프로그램(C++)을 잇는 부분이 핵심이라 CefSharp 메시지로 영수증 출력·프린터 상태·세컨드 모니터를 연동했고, 개발/POS 환경을 분기해 실제 기기 없이도 로컬에서 테스트할 수 있게 했습니다.</li>
 </ul>
 <p class="tech-tag">기술 스택: JavaScript, jQuery, JSP, KCP</p>
 
