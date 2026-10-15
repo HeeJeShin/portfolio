@@ -4,6 +4,7 @@ export const EducationSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
         학력
       </h2>
+      <div className="space-y-3">
       <div className="bg-white rounded-xl border border-gray-200 p-5">
         <div className="flex items-start justify-between gap-4">
           <div>
@@ -14,6 +15,16 @@ export const EducationSection = () => {
             2025.03 - 재학 중 (2027.02 졸업예정)
           </span>
         </div>
+      </div>
+      <div className="bg-white rounded-xl border border-gray-200 p-5">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-bold text-gray-900">경민대학</h3>
+            <p className="text-sm text-gray-600 mt-1">호텔조리학과</p>
+          </div>
+          <span className="text-xs text-gray-400 whitespace-nowrap">2010.03 - 2012.02 졸업</span>
+        </div>
+      </div>
       </div>
     </section>
   );

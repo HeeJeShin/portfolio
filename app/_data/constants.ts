@@ -25,7 +25,7 @@ export const getProjectById = (id: string): Project | undefined => {
 export const projects: Project[] = [
   {
     id: "car-check",
-    title: "중구 - 중고차 구매가이드",
+    title: "중구(중고차 구매 가이드)",
     subtitle: "사이드프로젝트 · 풀스택 + AI",
     period: "2026.10 - 진행중",
     description: "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     period: "2025.06 - 2025.11",
     description: "숙박/체험 예약, 투어패스 판매, 커뮤니티 등 스마트 관광 플랫폼",
     tags: ["Next.js", "TypeScript", "KCP 결제"],
-    highlights: ["NICE 본인인증", "KCP 결제 연동", "Safari 호환성"],
+    highlights: ["회원 1만+", "결제 구조 개선 제안", "Safari 호환성"],
     links: [
       { label: "인제", url: "https://tour.inje.go.kr/" },
       { label: "용인", url: "https://itour.yongin.go.kr/" },
