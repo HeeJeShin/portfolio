@@ -235,8 +235,8 @@
 <p>JSP 기반 온라인 행사 플랫폼을 Next.js·TypeScript로 전환</p>
 <p class="links"><strong>Site:</strong> <a href="https://greenenertec.com/">greenenertec.com</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/o2meet-migration">상세보기</a></p>
 <ul>
-  <li>1차 전환 중단 후 원인(타입 미정의, 스타일 혼용)을 회고해 2차 우선순위 설계: API 응답 타입 선행 정의, Tailwind CSS로 스타일 통일</li>
-  <li>쓰지 않는 기능을 걷어내고 첫 화면에 필요한 API만 호출하도록 정리 → <strong>성능 점수 45 → 99, LCP 8.0초 → 0.8초, CLS 0.225 → 0</strong> (Lighthouse 데스크톱, 같은 O2MEET 플랫폼의 JSP 사이트 대비 Next.js 사이트)</li>
+  <li>1차는 JSP 화면을 React로 옮기는 것 자체가 목표였고, 행사 일정으로 중단됐습니다.</li>
+  <li>2차에서는 세 가지를 우선했습니다. Next.js·TypeScript로 기술 스택을 바꾸고, 쓰지 않는 API 호출을 정리하고, 레거시 CSS를 Tailwind CSS로 전환했습니다. → <strong>성능 점수 45 → 99, LCP 8.0초 → 0.8초, CLS 0.225 → 0</strong> (Lighthouse 데스크톱, 같은 O2MEET 플랫폼의 JSP 사이트 대비 Next.js 사이트)</li>
 </ul>
 <p class="tech-tag">기술 스택: Next.js, TypeScript, Zustand, Tailwind CSS, Docker, ArgoCD</p>
 
