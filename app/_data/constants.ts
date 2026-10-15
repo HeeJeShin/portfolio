@@ -121,14 +121,16 @@ export const projects: Project[] = [
 ];
 
 export const skills: Record<string, string[]> = {
-  Frontend: ["React", "Next.js", "TypeScript", "JavaScript"],
+  Frontend: ["React", "Next.js", "TypeScript", "JavaScript", "PWA", "Web Push"],
+  Backend: ["NestJS", "Prisma", "PostgreSQL", "REST API", "Swagger"],
   "데이터 페칭": ["TanStack Query"],
   상태관리: ["Zustand"],
   스타일링: ["Tailwind CSS"],
   테스트: ["Vitest"],
   "빌드 도구": ["Turborepo", "pnpm workspace"],
   DevOps: ["Docker", "GitLab CI/CD", "ArgoCD", "Vercel"],
-  Tools: ["Claude Code", "IntelliJ IDEA", "Figma"],
+  AI: ["Claude Code", "Claude Design", "Claude API", "Google Gemini API"],
+  Tools: ["IntelliJ IDEA", "Figma", "Notion", "Slack"],
 };
 
 export const navItems = [
