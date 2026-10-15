@@ -13,18 +13,8 @@ const challenges = [
   },
   {
     title: "AI를 쓰는 건 당연해졌다, 필요한 건 검증의 규격화",
-    desc: "2023년부터 AI를 업무에 써왔습니다. 회사도 AI 도입에 적극적이었고 개발자들은 각자 AI를 쓰고 있었지만, 검증 방식은 사람마다 달라 QA 팀 없이 문제가 생기면 그때마다 해당 개발자가 고치는 일이 반복됐습니다. 상황 탓을 하기보다, 제가 처음부터 구축하는 프로젝트에 검증을 미리 세팅하기로 했습니다. CLAUDE.md로 컨벤션과 검증 규칙을 정의하고, AI가 만든 코드는 타입 체크와 테스트 216개를 통과해야 반영되도록 규격화했습니다.",
+    desc: "2023년부터 AI를 업무에 써왔습니다. 개발자마다 검증 방식이 달라 같은 문제가 반복되던 것을 보고, 제가 처음부터 구축하는 프로젝트에 검증을 미리 세팅하기로 했습니다. CLAUDE.md로 컨벤션과 검증 규칙을 정의하고, AI가 만든 코드는 타입 체크와 테스트 216개를 통과해야 반영되도록 규격화했습니다.",
     link: "/projects/exhibition#decisions",
-  },
-  {
-    title: "1차 중단 → 2차 재도전: 성능 점수 45 → 99",
-    desc: "1차 중단 후 회고를 바탕으로 2차에서 부족한 점을 개선하여 Lighthouse 성능 점수 45→99, LCP 8.0s→0.8s, CLS 0.225→0으로 개선했습니다. (Lighthouse 데스크톱 기준, 같은 플랫폼의 JSP 사이트와 Next.js 사이트 비교)",
-    link: "/projects/o2meet-migration",
-  },
-  {
-    title: "모노레포 설계 및 테스트 자동화",
-    desc: "Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 설계했고, 품질을 위해 필요하다고 판단해 Vitest 기반 테스트 케이스 216개를 직접 작성하고 결과가 CSV 리포트로 자동 정리되도록 구축했습니다.",
-    link: "/projects/exhibition#monorepo",
   },
   {
     title: "브라우저 호환성 이슈 분석 및 해결",

@@ -91,7 +91,7 @@ export const projects: Project[] = [
   {
     id: "o2meet-migration",
     title: "O2MEET Next.js 마이그레이션",
-    subtitle: "1차 중단 → 2차 재도전",
+    subtitle: "Lighthouse 성능 점수 45 → 99",
     period: "2026.04 - 2026.05",
     description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
@@ -129,7 +129,7 @@ export const skills: Record<string, string[]> = {
   테스트: ["Vitest"],
   "빌드 도구": ["Turborepo", "pnpm workspace"],
   DevOps: ["Docker", "GitLab CI/CD", "ArgoCD", "Vercel"],
-  AI: ["Claude Code", "Claude Design", "Claude API", "Google Gemini API"],
+  AI: ["Claude Code", "Claude Design", "Google Gemini API"],
   Tools: ["IntelliJ IDEA", "Figma", "Notion", "Slack"],
 };
 
