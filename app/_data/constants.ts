@@ -26,7 +26,7 @@ export const projects: Project[] = [
   {
     id: "car-check",
     title: "중구(중고차 구매 가이드)",
-    subtitle: "사이드프로젝트 · 풀스택 + AI",
+    subtitle: "사이드프로젝트 · NestJS + Next.js + AI",
     period: "2026.10 - 진행중",
     description: "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
     tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Tailwind CSS"],
