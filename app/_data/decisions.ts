@@ -29,7 +29,7 @@ export const decisions: Record<string, Decision[]> = {
       judgment:
         "어드민은 SEO가 필요 없어서 SSR이 목적은 아니었습니다. 대신 스택을 통일하면 혼자서도 두 앱을 같은 방식으로 유지보수할 수 있고, 폼 컴포넌트와 타입을 공유할 수 있다고 봤습니다. 대안이었던 '어드민만 별도 React SPA'는 같은 코드를 두 번 관리해야 했습니다.",
       action:
-        "Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 만들고, 공통 컴포넌트·타입·API 로직을 shared에 모았습니다.",
+        "이 구조를 직접 제안하고 설계한 뒤 작업을 진행했습니다. Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 만들고, 공통 컴포넌트·타입·API 로직을 shared에 모았습니다.",
       result:
         "공통 코드를 공유해 두 앱을 3개월에 완성했습니다(두 앱을 각각 만들었다면 약 6개월로 추정). 회고: 어드민에선 Next.js의 서버 기능을 거의 쓰지 않았기 때문에, 다시 한다면 '어드민은 SPA + shared 패키지만 공유'하는 구조와 빌드·배포 비용을 비교해보고 정하겠습니다.",
     },
