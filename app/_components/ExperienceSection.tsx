@@ -9,7 +9,7 @@ export const ExperienceSection = () => {
           <div>
             <h3 className="text-xl font-bold text-gray-900">이즈피엠피 (EZPMP)</h3>
             <p className="text-sm text-gray-600 mt-1">
-              정규직 · 프론트엔드 · 선임연구원
+              ICT융합연구소 · 정규직 · 프론트엔드 · 선임연구원
             </p>
           </div>
           <span className="text-xs text-[#191979] font-medium bg-white px-3 py-1 rounded-full whitespace-nowrap">
