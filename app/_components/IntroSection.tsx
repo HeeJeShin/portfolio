@@ -33,8 +33,11 @@ export const IntroSection = () => {
       <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">
         소개
       </h2>
-      <p className="text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+      <p className="text-lg text-gray-700 leading-relaxed mb-4 font-medium">
         {headline}
+      </p>
+      <p className="text-base text-gray-600 leading-relaxed mb-8">
+        요청이 들어오면 &quot;요청한 내용&quot;보다 &quot;요청하는 이유&quot;에 집중합니다. 디자이너가 없는 프로젝트에서는 UI 가이드를 먼저 만들어 사업부서와 화면 기준을 합의했고, 결제 구조를 백엔드로 옮기는 개선도 근거를 정리해 설득했습니다. 현재는 사이드 프로젝트로 NestJS와 AI를 연동한 서비스를 만들며 풀스택 역량을 넓히고 있습니다.
       </p>
       <div className="space-y-5">
         {items.map((item, i) => (
