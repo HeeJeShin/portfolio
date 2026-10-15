@@ -28,7 +28,7 @@ export const HeroSection = () => {
         </h3>
         <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
           <p>
-            <strong className="text-gray-900">서울대학교병원 임상간호연구</strong>에 개발자로 참여하게 되었습니다.
+            <strong className="text-gray-900">대학병원 임상간호연구</strong>에 개발자로 참여하게 되었습니다.
           </p>
           <p>
             <strong className="text-gray-900">팀명:</strong> {research.team}<br/>

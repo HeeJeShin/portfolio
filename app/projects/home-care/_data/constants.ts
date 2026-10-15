@@ -4,7 +4,7 @@
 export const projectInfo = {
   id: "home-care",
   title: "HomeCare - 홈펌프 항암제 자가관리",
-  subtitle: "의료 헬스케어 도메인 · 서울대학교병원 임상간호연구",
+  subtitle: "의료 헬스케어 도메인 · 대학병원 임상간호연구",
   period: "2026.05 - 2026.10 (완료)",
   description: "휴대용 항암 주입기(홈펌프) 사용 환자를 위한 자가관리 웹앱",
   tags: [
@@ -25,7 +25,7 @@ export const projectInfo = {
   // 연구 정보
   research: {
     team: "H.O.M.E. (Home infusion-Oncology-Monitoring-Empowerment)",
-    department: "내과간호과 112병동",
+    department: "내과간호과",
     title:
       "휴대용 항암 주입기를 이용하는 췌담도암 환자를 위한 프로토 타입 자가관리 모바일 앱 개발 및 효과 평가",
   },
