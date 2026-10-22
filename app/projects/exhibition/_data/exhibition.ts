@@ -266,7 +266,7 @@ return <SystemSidebar />;`,
 // ==========================================
 export const metrics = {
   development: [
-    { label: "개발 기간", before: "6개월 예상", after: "3개월", change: "약 50% 단축(추정)" },
+    { label: "개발 기간", before: "첫 행사 일정", after: "일정 내 오픈", change: "일정 준수" },
   ],
   codeQuality: [
     { label: "공용 컴포넌트", value: 56, unit: "개" },

@@ -31,7 +31,7 @@ export const decisions: Record<string, Decision[]> = {
       action:
         "이 구조를 직접 제안하고 설계한 뒤 작업을 진행했습니다. Turborepo + pnpm workspace로 apps/user, apps/admin, packages/shared 3-tier 구조를 만들고, 공통 컴포넌트·타입·API 로직을 shared에 모았습니다.",
       result:
-        "공통 코드를 공유해 두 앱을 3개월에 완성했습니다(두 앱을 각각 만들었다면 약 6개월로 추정). 회고: 어드민에선 Next.js의 서버 기능을 거의 쓰지 않았기 때문에, 다시 한다면 '어드민은 SPA + shared 패키지만 공유'하는 구조와 빌드·배포 비용을 비교해보고 정하겠습니다.",
+        "공통 코드를 공유해 두 앱을 첫 행사 일정 안에 맞춰 오픈했고, 이 시스템으로 참가 기업들의 접수가 실제로 진행됐습니다. 회고: 어드민에선 Next.js의 서버 기능을 거의 쓰지 않았기 때문에, 다시 한다면 '어드민은 SPA + shared 패키지만 공유'하는 구조와 빌드·배포 비용을 비교해보고 정하겠습니다.",
     },
   ],
   "smart-tourism": [

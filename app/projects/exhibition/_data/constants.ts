@@ -1,6 +1,6 @@
 // 성과 지표 데이터
 export const metrics = [
-  { label: "개발 기간 단축", value: "50%", desc: "6개월 → 3개월" },
+  { label: "개발 기간", value: "일정 내", desc: "첫 행사 일정 안에 오픈" },
   { label: "페이지 개발 시간", value: "70%", desc: "2주 → 3-5일" },
   { label: "테스트 케이스", value: "216개", desc: "자동 문서화" },
   { label: "런타임 에러", value: "90%↓", desc: "타입 시스템 도입" },

@@ -7,7 +7,7 @@ const items = [
   },
   {
     title: "모노레포 설계",
-    desc: "Turborepo + pnpm workspace로 사용자·어드민 두 앱이 컴포넌트·타입을 공유. 두 앱을 각각 만드는 방식 대비 기간 약 50% 단축(추정). [어드민시스템]",
+    desc: "Turborepo + pnpm workspace로 사용자·어드민 두 앱이 컴포넌트·타입을 공유. 첫 행사 일정 안에 맞춰 오픈. [어드민시스템]",
   },
   {
     title: "AI 협업과 검증 규격화 (Claude Code)",
