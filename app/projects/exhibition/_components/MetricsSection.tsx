@@ -2,8 +2,8 @@ export const MetricsSection = () => {
   const metricsWithReason = [
     {
       label: "개발 기간 단축",
-      value: "약 50%",
-      desc: "3개월 완료 (두 앱을 각각 만들면 약 6개월, 추정)",
+      value: "일정 내",
+      desc: "첫 행사 일정 안에 두 앱 오픈",
       reason: "공용 컴포넌트로 어드민/유저 화면 동시 개발, 백엔드와 API 응답 구조를 맞춰 API 엔드포인트만 변경하면 양쪽 적용 가능",
     },
     {

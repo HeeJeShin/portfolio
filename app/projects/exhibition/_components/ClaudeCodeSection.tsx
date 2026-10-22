@@ -22,7 +22,6 @@ export const ClaudeCodeSection = () => {
             { label: "복잡한 컴포넌트 구현", value: "3일 → 1일", desc: "DynamicForm, DataTable 등" },
             { label: "CRUD 페이지 생성", value: "75% 시간 절감", desc: "보일러플레이트 자동화" },
             { label: "테스트 케이스 작성", value: "90% 단축", desc: "Vitest + Testing Library" },
-            { label: "QA 커뮤니케이션", value: "50% 절감", desc: "테스트 문서 자동 생성" },
           ].map((item) => (
             <div key={item.label} className="bg-white/5 rounded-lg p-4">
               <p className="text-sm text-gray-300 mb-1">{item.label}</p>
