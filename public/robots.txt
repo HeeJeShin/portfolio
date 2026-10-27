@@ -1,2 +1,17 @@
+# 검색 로봇(구글·네이버·빙): 들어와도 됨. 모든 응답에 noindex 헤더가 있어 검색 결과에는 안 나옴 (next.config.ts)
+# 담당자가 링크를 AI에 붙여 넣었을 때 읽는 로봇(ChatGPT-User, Claude-User, Perplexity-User)도 여기에 해당 → 읽을 수 있음
 User-agent: *
+Allow: /
+
+# AI 학습·AI 검색용 로봇: 차단 (AI 검색에 이름을 물어봐도 나오지 않게)
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Bytespider
+User-agent: meta-externalagent
 Disallow: /
