@@ -5,10 +5,10 @@ export const ServicesSection = () => {
     <section className="mb-16">
       <div className="flex flex-wrap items-center gap-2 mb-2">
         <h2 className="text-2xl font-bold text-gray-900">서비스 구성</h2>
-        <span className="px-2 py-0.5 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium rounded">배포 설정 완료 · 공개 전</span>
+        <span className="px-2 py-0.5 bg-green-50 border border-green-200 text-green-700 text-xs font-medium rounded">배포 완료</span>
       </div>
       <p className="text-sm text-gray-600 mb-6">
-        배포 설정(render.yaml, 환경변수, 헬스체크, 에러 수집)까지 마쳤고, 서비스 계정을 연결해 공개할 예정입니다. DB·서버·배포·에러 수집을 각각 어디에 맡길지는 무료 등급으로 계속 운영할 수 있는 조합을 기준으로 골랐습니다.
+        화면은 Vercel, API는 Render, DB는 Neon에 올려 실제로 서비스하고 있습니다. DB·서버·배포·에러 수집을 각각 어디에 맡길지는 무료 등급으로 계속 운영할 수 있는 조합을 기준으로 골랐습니다.
       </p>
 
       {/* 요청 흐름 */}

@@ -10,6 +10,7 @@ export const projectInfo = {
     "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
   tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Playwright"],
   highlights: ["데이터는 사람이 검증, 안내는 AI", "심사 흐름 + 트랜잭션·동시성", "E2E·CI"],
+  demo: "https://car-check-fawn-zeta.vercel.app/",
   github: "https://github.com/HeeJeShin/car-check",
 };
 
@@ -235,7 +236,7 @@ export const retrospective = {
     "백엔드에서 요구되는 역량 중 실무에서 직접 해보지 못한 부분(서버·DB 설계, 인증, 테스트 자동화, 배포)을 기준으로, 이 서비스에 필요한 순서대로 만들었습니다.",
     "새로 맡은 서비스마다 '무엇을 하고, 어떤 값을 주고받는지'를 정리해 설정 파일에 남겼습니다.",
     "회사에서 인프라 팀이 맡던 일과 나란히 놓고, 무엇을 직접 판단해야 하는지 구분했습니다.",
-    "고른 이유를 문서에 남기고, 아직 안 한 것(공개 배포)은 하지 않았다고 썼습니다.",
+    "고른 이유를 문서에 남기고, 공개 배포 전에는 이력서에 '배포'를 쓰지 않았다가 실제로 올린 뒤에 반영했습니다.",
   ],
   learning: [
     "내가 실제로 쓸 서비스를 만들면서 익힙니다.",

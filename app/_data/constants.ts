@@ -32,6 +32,7 @@ export const projects: Project[] = [
     description: carCheckInfo.description,
     tags: carCheckInfo.tags,
     highlights: carCheckInfo.highlights,
+    demo: carCheckInfo.demo,
     github: carCheckInfo.github,
     side: true,
   },
