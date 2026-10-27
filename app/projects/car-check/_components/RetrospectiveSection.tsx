@@ -1,7 +1,7 @@
 import { retrospective } from "../_data/constants";
 
 export const RetrospectiveSection = () => {
-  const { decisions, envNote, approach, learning, next } = retrospective;
+  const { decisions, envNote, deployLessons, approach, learning, next } = retrospective;
 
   return (
     <section className="mb-16">
@@ -19,6 +19,19 @@ export const RetrospectiveSection = () => {
           ))}
         </div>
         <p className="mt-4 text-xs text-gray-500">{envNote}</p>
+      </div>
+
+      {/* 실제로 배포하며 확인한 것 */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+        <h3 className="font-bold text-gray-900 text-lg mb-4">실제로 배포하며 확인한 것 (2026.10.27)</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          {deployLessons.map((item) => (
+            <div key={item.title} className="bg-gray-50 rounded-lg p-4">
+              <p className="text-sm font-medium text-gray-900 mb-2">{item.title}</p>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
       {/* 접근 · 익히는 방식 */}
