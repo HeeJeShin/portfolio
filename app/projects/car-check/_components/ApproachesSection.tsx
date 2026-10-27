@@ -42,6 +42,29 @@ const ApproachCard = ({ approach }: ApproachCardProps) => {
           <p className="text-sm font-medium text-[#191979]">{approach.effect}</p>
         </div>
       </div>
+
+      {approach.code && <CodeBlock {...approach.code} />}
+    </div>
+  );
+};
+
+// 실제 코드 발췌. 주석(//) 줄은 회색으로
+const CodeBlock = ({ file, url, snippet }: { file: string; url: string; snippet: string }) => {
+  return (
+    <div className="mt-4">
+      <div className="flex items-center justify-between mb-1.5">
+        <p className="text-xs font-mono text-gray-500">{file}</p>
+        <a href={url} target="_blank" rel="noopener noreferrer" className="text-xs text-[#191979] hover:underline">
+          GitHub에서 보기 ↗
+        </a>
+      </div>
+      <pre className="text-xs font-mono bg-gray-900 text-gray-100 rounded p-3 overflow-x-auto leading-relaxed">
+        {snippet.split("\n").map((line, i) => (
+          <div key={i} className={line.trim().startsWith("//") ? "text-gray-500" : undefined}>
+            {line || " "}
+          </div>
+        ))}
+      </pre>
     </div>
   );
 };

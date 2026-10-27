@@ -1,4 +1,4 @@
-import { projectInfo } from "../_data/constants";
+import { projectInfo, dataScale, dataScaleNote } from "../_data/constants";
 
 export const HeroSection = () => {
   const { period, github, highlights } = projectInfo;
@@ -27,17 +27,27 @@ export const HeroSection = () => {
           프로젝트 배경
         </h3>
         <div className="space-y-3 text-sm text-gray-700 leading-relaxed">
-          <p>
-            중고차를 처음 사는 사람은 어떤 차에 어떤 고질병이 있는지, 매장에서 무엇을 봐야 하는지 알기 어렵습니다.
-            AI에게 물어보면 답은 나오지만, <strong className="text-gray-900">돈이 걸린 사실 정보를 그럴듯한 답에 맡길 수는 없다</strong>고 판단했습니다.
+          <p className="text-base text-gray-900">
+            <strong>직접 겪을 문제에서 출발했습니다.</strong> 면허를 따고 차를 사려던 참에, 중고차 고질병 정보가 유튜브·네이버 카페에 차주 경험담으로 흩어져 있다는 걸 알게 됐습니다.
           </p>
           <p>
-            그래서 고질병은 출처가 있어야만 <strong className="text-gray-900">&apos;검증됨&apos;</strong>이 되는 DB로 관리하고,
-            AI는 &quot;무엇부터 알아볼지&quot;처럼 정답이 하나가 아닌 안내만 맡겼습니다.
+            돈이 걸린 사실 정보라 AI의 그럴듯한 답에 맡기지 않고, 출처가 있어야만 <strong className="text-gray-900">&apos;검증됨&apos;</strong>이 되는 DB로 관리합니다.
+            AI는 &quot;무엇부터 알아볼지&quot;처럼 정답이 하나가 아닌 안내만 맡습니다.
           </p>
           <p>
-            실무에서는 인프라가 갖춰진 환경에서 개발했다면, 이 프로젝트에서는 <strong className="text-gray-900">권한·심사 흐름부터 테스트·CI·배포 구성까지</strong> 직접 고르고 연결했습니다.
+            실무 4년은 프론트엔드였고 서버·DB·배포는 다른 팀이 맡았습니다. 그 빈 곳을 <strong className="text-gray-900">이 서비스에 필요한 순서대로 직접 만들며</strong> 메우고 있습니다.
           </p>
+          <p>
+            최종 목표는 차주들이 경험을 나누는 <strong className="text-gray-900">커뮤니티</strong>, 그리고 매장에서 <strong className="text-gray-900">휴대폰 하나로 &quot;어디서 무엇을 확인해야 하지?&quot;</strong>를 바로 아는 것입니다.
+          </p>
+          <details className="group">
+            <summary className="cursor-pointer text-xs text-gray-500 hover:text-gray-700">주제를 정한 과정 더 보기</summary>
+            <p className="mt-2">
+              너무 어려운 주제보다 지금 당장 내가 가장 관심 있고 필요한 것을 하기로 했습니다.
+              &quot;지금 내가 무슨 고민을 하고 있지?&quot;, &quot;중고차를 사러 갈 때 가장 걱정되는 게 뭐지?&quot;에서 출발하니,
+              첫 과제가 흩어진 정보를 차종·연식별로 모아 한곳에서 보여주는 것이라는 게 분명해졌습니다.
+            </p>
+          </details>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
           {highlights.map((highlight) => (
@@ -51,25 +61,16 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* 역할 나누기 */}
-      <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">고질병·점검법</p>
-          <p className="text-sm font-medium text-gray-900">DB (사람이 검증)</p>
-        </div>
-        <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">무엇부터 알아볼지</p>
-          <p className="text-sm font-medium text-gray-900">AI 안내</p>
-        </div>
-        <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">용도·예산별 추천</p>
-          <p className="text-sm font-medium text-gray-900">AI → DB 연결</p>
-        </div>
-        <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-          <p className="text-xs text-gray-500 mb-1">AI 키가 없을 때</p>
-          <p className="text-sm font-medium text-gray-900">핵심 기능 정상 동작</p>
-        </div>
+      {/* 데이터 규모 */}
+      <div className="mt-6 grid grid-cols-2 md:grid-cols-5 gap-3">
+        {dataScale.map((item) => (
+          <div key={item.label} className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+            <p className="text-xs text-gray-500 mb-1">{item.label}</p>
+            <p className="text-lg font-bold text-gray-900">{item.value}</p>
+          </div>
+        ))}
       </div>
+      <p className="mt-2 text-xs text-gray-500">{dataScaleNote}</p>
 
       <div className="flex flex-wrap gap-3 mt-6">
         <a

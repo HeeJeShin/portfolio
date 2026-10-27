@@ -5,7 +5,8 @@ import {
   HeroSection,
   ApproachesSection,
   ServicesSection,
-  NextStepsSection,
+  TeamPlanSection,
+  RetrospectiveSection,
   TechStackSection,
   Footer,
 } from "./_components";
@@ -19,7 +20,8 @@ const CarCheckProject = () => {
         <HeroSection />
         <ApproachesSection />
         <ServicesSection />
-        <NextStepsSection />
+        <TeamPlanSection />
+        <RetrospectiveSection />
         <TechStackSection />
       </main>
 
