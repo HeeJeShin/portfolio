@@ -1,4 +1,5 @@
 import { projectInfo as homeCareInfo } from "../projects/home-care/_data/constants";
+import { projectInfo as carCheckInfo } from "../projects/car-check/_data/constants";
 
 export type Project = {
   id: string;
@@ -24,14 +25,14 @@ export const getProjectById = (id: string): Project | undefined => {
 
 export const projects: Project[] = [
   {
-    id: "car-check",
-    title: "중구(중고차 구매 가이드)",
-    subtitle: "사이드프로젝트 · NestJS + Next.js + AI",
-    period: "2026.10 - 진행중",
-    description: "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
-    tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Tailwind CSS"],
-    highlights: ["데이터는 사람이 검증, 안내는 AI", "출처 없으면 '검증됨' 저장 불가", "AI 없이도 핵심 기능 동작"],
-    github: "https://github.com/HeeJeShin/car-check",
+    id: carCheckInfo.id,
+    title: carCheckInfo.title,
+    subtitle: carCheckInfo.subtitle,
+    period: carCheckInfo.period,
+    description: carCheckInfo.description,
+    tags: carCheckInfo.tags,
+    highlights: carCheckInfo.highlights,
+    github: carCheckInfo.github,
     side: true,
   },
   {
@@ -44,18 +45,6 @@ export const projects: Project[] = [
     highlights: homeCareInfo.highlights,
     demo: homeCareInfo.demo,
     github: homeCareInfo.github,
-    side: true,
-  },
-  {
-    id: "4j",
-    title: "4J - 행사장 수용인원 자동계산",
-    subtitle: "사내 AI Boost Challenge 해커톤",
-    period: "2026.01",
-    description: "AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스",
-    tags: ["Next.js", "TypeScript", "Google Gemini AI"],
-    highlights: ["Google Gemini AI 연동", "프롬프트 설계", "실시간 모니터링"],
-    demo: "https://4j-mgqp.vercel.app/",
-    github: "https://github.com/HeeJeShin/4j",
     side: true,
   },
   {
@@ -73,6 +62,18 @@ export const projects: Project[] = [
       { label: "어드민", url: "https://ipsolution-admin.ezpmp.com/" },
       { label: "유저", url: "https://ipsolution.ezpmp.com/GETEC/120006" },
     ],
+  },
+  {
+    id: "4j",
+    title: "4J - 행사장 수용인원 자동계산",
+    subtitle: "사내 AI Boost Challenge 해커톤",
+    period: "2026.01",
+    description: "AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스",
+    tags: ["Next.js", "TypeScript", "Google Gemini AI"],
+    highlights: ["Google Gemini AI 연동", "프롬프트 설계", "실시간 모니터링"],
+    demo: "https://4j-mgqp.vercel.app/",
+    github: "https://github.com/HeeJeShin/4j",
+    side: true,
   },
   {
     id: "smart-tourism",

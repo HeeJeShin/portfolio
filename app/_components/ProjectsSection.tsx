@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { projects } from "../_data/constants";
 
-const internalProjectIds = new Set(["home-care", "4j", "exhibition", "smart-tourism", "o2meet-migration", "pos-kiosk", "o2meet"]);
+const internalProjectIds = new Set(["car-check", "home-care", "4j", "exhibition", "smart-tourism", "o2meet-migration", "pos-kiosk", "o2meet"]);
 
 export const ProjectsSection = () => {
   return (
@@ -10,22 +10,27 @@ export const ProjectsSection = () => {
         <h2 className="text-2xl font-bold text-gray-900">프로젝트</h2>
         <span className="text-xs text-gray-500">클릭하여 상세 구현내용 확인</span>
       </div>
-      {[
-        { label: "실무 프로젝트", items: projects.filter((p) => !p.side) },
-        { label: "사이드 프로젝트", items: projects.filter((p) => p.side) },
-      ].map((group) => (
-      <div key={group.label} className="mb-10">
-      <h3 className="text-lg font-bold text-gray-900 mb-4">{group.label}</h3>
       <div className="space-y-4">
-        {group.items.map((project) => {
+        {projects.map((project) => {
           const hasDetail = internalProjectIds.has(project.id);
           const content = (
             <div className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-2">
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#191979] transition-colors">
-                    {project.title}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className={
+                        project.side
+                          ? "shrink-0 text-xs font-medium px-2 py-0.5 rounded bg-blue-100 text-[#191979]"
+                          : "shrink-0 text-xs font-medium px-2 py-0.5 rounded bg-[#191979] text-white"
+                      }
+                    >
+                      {project.side ? "사이드" : "실무"}
+                    </span>
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#191979] transition-colors">
+                      {project.title}
+                    </h3>
+                  </div>
                   <p className="text-xs text-gray-500 mt-0.5">{project.subtitle}</p>
                 </div>
                 <span className="text-xs text-gray-400 whitespace-nowrap">
@@ -90,8 +95,6 @@ export const ProjectsSection = () => {
           );
         })}
       </div>
-      </div>
-      ))}
     </section>
   );
 };
