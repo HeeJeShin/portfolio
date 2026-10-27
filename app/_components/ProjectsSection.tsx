@@ -13,8 +13,16 @@ export const ProjectsSection = () => {
       <div className="space-y-4">
         {projects.map((project) => {
           const hasDetail = internalProjectIds.has(project.id);
-          const content = (
-            <div className="bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
+          // 카드 전체를 덮는 링크(상세 페이지)를 깔고, 아래 Site·GitHub 링크는 그 위(z-10)에 올려 따로 눌리게 합니다.
+          // (링크 안에 링크를 넣을 수 없어서 카드를 감싸지 않고 겹쳐 둠)
+          const cardHref = hasDetail ? `/projects/${project.id}` : project.github;
+          return (
+            <div key={project.id} className="relative bg-white rounded-xl border border-gray-200 p-5 hover:border-blue-300 hover:shadow-sm transition-all group">
+              {hasDetail ? (
+                <Link href={`/projects/${project.id}`} className="absolute inset-0 rounded-xl" aria-label={`${project.title} 상세 보기`} />
+              ) : cardHref ? (
+                <a href={cardHref} target="_blank" rel="noopener noreferrer" className="absolute inset-0 rounded-xl" aria-label={`${project.title} GitHub`} />
+              ) : null}
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-2">
                 <div>
                   <div className="flex items-center gap-2">
@@ -67,31 +75,23 @@ export const ProjectsSection = () => {
               {(project.demo || project.github || project.links) && (
                 <div className="flex gap-3 mt-3 pt-3 border-t border-gray-100 text-xs">
                   {project.demo && (
-                    <span className="text-[#191979]">Site ↗</span>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="relative z-10 text-[#191979] hover:underline">
+                      Site ↗
+                    </a>
                   )}
                   {project.github && (
-                    <span className="text-gray-600">GitHub ↗</span>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="relative z-10 text-gray-600 hover:underline">
+                      GitHub ↗
+                    </a>
                   )}
                   {project.links?.map((link) => (
-                    <span key={link.label} className="text-[#191979]">
+                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="relative z-10 text-[#191979] hover:underline">
                       {link.label} ↗
-                    </span>
+                    </a>
                   ))}
                 </div>
               )}
             </div>
-          );
-
-          return hasDetail ? (
-            <Link key={project.id} href={`/projects/${project.id}`} className="block cursor-pointer">
-              {content}
-            </Link>
-          ) : project.github ? (
-            <a key={project.id} href={project.github} target="_blank" rel="noopener noreferrer" className="block cursor-pointer">
-              {content}
-            </a>
-          ) : (
-            <div key={project.id}>{content}</div>
           );
         })}
       </div>
