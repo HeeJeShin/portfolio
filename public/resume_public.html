@@ -30,14 +30,18 @@
     }
 
     .portfolio-link {
-      font-size: 11pt;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .portfolio-link a {
-      color: #000;
-      text-decoration: underline;
+      display: inline-block;
+      font-size: 10pt;
       font-weight: 600;
+      color: #000;
+      text-decoration: none;
+      border: 1.5px solid #000;
+      border-radius: 6px;
+      padding: 3px 12px;
     }
 
     .contact {
@@ -164,6 +168,18 @@
       h3, h4 {
         page-break-after: avoid;
       }
+      /* 항목 하나가 페이지 사이에서 잘리지 않게 */
+      li, .meta, .links, .tech-tag {
+        page-break-inside: avoid;
+      }
+      /* 제목·날짜·링크 줄만 페이지 끝에 남지 않게 */
+      .meta, .links {
+        page-break-after: avoid;
+      }
+      p, li {
+        orphans: 3;
+        widows: 3;
+      }
 
       .statement-section {
         page-break-inside: avoid;
@@ -174,7 +190,7 @@
 <body>
 
 <h1>신희제 | 개발자</h1>
-<p class="portfolio-link">포트폴리오 포함 · 프로젝트별 <strong>상세보기</strong>를 누르면 포트폴리오로 연결됩니다 (<a href="https://portfolio-eight-tau-20.vercel.app/#projects">포트폴리오 사이트 바로가기</a>)</p>
+<p class="portfolio-link"><a href="https://portfolio-eight-tau-20.vercel.app/#projects">포트폴리오 바로가기 ↗</a></p>
 <p class="contact">
   <strong>+82 10-2390-2038</strong> | <strong>heeheehee.hj@gmail.com</strong> | <a href="https://github.com/HeeJeShin">GitHub</a>
 </p>
@@ -261,8 +277,7 @@
 <h2>사이드 프로젝트</h2>
 
 <h3>1. 중구(중고차 구매 가이드) (진행 중)</h3>
-<p class="meta"><strong>2026.10 -</strong> | 1인</p>
-<p class="links"><strong>GitHub:</strong> <a href="https://github.com/HeeJeShin/car-check">github.com/HeeJeShin/car-check</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/car-check">상세보기</a></p>
+<p class="meta"><strong>2026.10 -</strong> | 1인 | <a href="https://github.com/HeeJeShin/car-check">github.com/HeeJeShin/car-check</a> | <a href="https://portfolio-eight-tau-20.vercel.app/projects/car-check">Portfolio 상세보기</a></p>
 <ul>
   <li>차종·연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스를 만들었습니다 (NestJS·Prisma·PostgreSQL + Next.js).</li>
   <li>돈이 걸린 사실 정보(고질병)는 사람이 검증한 DB에서만 가져오고, 안내·추천만 Gemini에 맡겨 AI가 그럴듯한 오답을 내는 문제를 피했습니다. 출처 URL이 없으면 '검증됨'으로 저장되지 않도록 서버 규칙으로 막았습니다.</li>
@@ -272,8 +287,7 @@
 <hr>
 
 <h3>2. HomeCare - 홈펌프 항암제 자가관리 웹앱</h3>
-<p class="meta"><strong>2026.05 - 2026.10</strong> | 임상간호연구 개발 참여</p>
-<p class="links"><strong>Site:</strong> <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/home-care">상세보기</a></p>
+<p class="meta"><strong>2026.05 - 2026.10</strong> | 임상간호연구 개발 참여 | <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> | <a href="https://portfolio-eight-tau-20.vercel.app/projects/home-care">Portfolio 상세보기</a></p>
 <ul>
   <li>현장의 어려움을 빠르게 덜어주는 것이 목적이라 서버 없이 바로 쓰는 웹앱(PWA)으로 만들었습니다.</li>
   <li>노인 환자가 바로 판단할 수 있도록 수치 대신 그림과 "병원에 가야 해요" 같은 문장으로 설계했고, 의료진 요청은 응급 연락처와 PDF 리포트로 반영했습니다.</li>
