@@ -1,4 +1,19 @@
-const headline = "초기 서비스 구축부터 경험해 본 개발자입니다. 지자체 스마트관광 플랫폼(인제·용인), 전시 부스 신청 어드민, 키즈카페 키오스크를 처음부터 만들었고, 4년간 전시·행사 플랫폼을 개발·운영했습니다. 만드는 데서 그치지 않고 성능과 품질도 놓치지 않았습니다. JSP 레거시를 Next.js로 전환할 때는 무엇을 먼저 바꿔야 할지 직접 정해 불필요한 서비스와 API부터 정리했고, Lighthouse 성능 점수를 45에서 99로, LCP를 8.0초에서 0.8초로 개선했습니다. 또 모노레포·타입 선행 설계·Vitest 테스트(216개)로 유지보수하기 좋은 구조를 만들었습니다.";
+const headline = "문제를 먼저 알아차리고, 풀 수 있는 방법과 때를 찾아 함께 바꿔가는 4년차 프론트엔드 개발자입니다.";
+
+const principles = [
+  {
+    title: "시기를 보고 제안합니다",
+    desc: "지금 고치기 어려운 결제 API는 일정 안에서 공통 로직으로 오류부터 막고 근본 수정은 고도화로 넘겼습니다. 새로 시작한 어드민은 시작 단계에서 모노레포와 UI 가이드를 제안해 첫 행사 일정에 맞춰 오픈했습니다.",
+  },
+  {
+    title: "근거를 정리해 함께 풉니다",
+    desc: "결제 완료 처리를 서버로 옮기는 건 백엔드 팀에도 부담이 큰 변경이었습니다. 연결이 끊기는 케이스를 정리해 공유하며 함께 방법을 찾았고, 구조를 바꿔 결제 상태가 어긋나지 않게 했습니다.",
+  },
+  {
+    title: "결과가 있는 코드를 만듭니다",
+    desc: "깔끔한 코드만큼 결과로 이어지는 일을 중요하게 여깁니다. 아무리 좋은 코드도 서비스에서 쓰이지 않으면 코드 조각에 불과하다고 생각해, 좋은 코드에만 매달리지 않고 지금 무엇이 먼저인지를 놓치지 않습니다. 아토믹 디자인을 적용했다가 정리를 위한 정리에 시간이 들고 개발 속도가 느려졌던 경험 이후로 더 그렇게 일합니다.",
+  },
+];
 
 const items = [
   {
@@ -36,9 +51,15 @@ export const IntroSection = () => {
       <p className="text-lg text-gray-700 leading-relaxed mb-4 font-medium">
         {headline}
       </p>
-      <p className="text-base text-gray-600 leading-relaxed mb-8">
-        반복되는 일은 기준을 세워 공통화합니다. 사람마다 달랐던 AI 코드 검증도 규칙으로 정리했고, AI에는 해석과 안내를, 정답이 필요한 계산과 데이터는 코드에 맡깁니다. 행사장 수용인원 서비스에서도 AI는 도면에서 면적만 읽고, 인원 계산은 코드가 하도록 나눴습니다. 요청이 들어오면 &quot;요청한 내용&quot;보다 &quot;요청하는 이유&quot;에 집중하고, 디자이너가 없는 프로젝트에서는 UI 가이드를 먼저 만들어 사업부서와 기준을 합의했습니다. 현재는 사이드 프로젝트로 NestJS와 AI를 연동한 서비스를 만들며 백엔드까지 경험을 넓히고 있습니다.
-      </p>
+      <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-8 space-y-3">
+        {principles.map((p) => (
+          <p key={p.title} className="text-sm text-gray-700 leading-relaxed">
+            <span className="font-semibold text-[#191979]">{p.title}</span>
+            <span className="text-gray-400"> · </span>
+            {p.desc}
+          </p>
+        ))}
+      </div>
       <div className="space-y-5">
         {items.map((item, i) => (
           <div key={item.title} className="flex items-start gap-4">
