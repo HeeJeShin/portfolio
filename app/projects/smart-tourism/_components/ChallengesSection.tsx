@@ -1,12 +1,5 @@
-export const ChallengesSection = () => {
+export const ChallengesSection = ({ embedded = false }: { embedded?: boolean }) => {
   const challenges = [
-    {
-      id: "safari",
-      title: "Safari 브라우저 호환성 이슈 해결",
-      problem: "Safari 팝업 차단으로 NICE 본인인증 오류, ITP로 토큰 유실, 결제 모듈 보안 처리 문제",
-      solution: "페이지 리다이렉트 방식 인증, 쿠키+localStorage 이중 저장, CSP/CORS 화이트리스트 설정",
-      effect: "Safari 환경에서도 안정적인 인증/결제 가능",
-    },
     {
       id: "payment",
       title: "결제 로직 아키텍처 개선 제안",
@@ -17,8 +10,8 @@ export const ChallengesSection = () => {
   ];
 
   return (
-    <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">문제 해결 방식</h2>
+    <section className={embedded ? "" : "mb-16"}>
+      {!embedded && <h2 className="text-2xl font-bold text-gray-900 mb-8">문제 해결 방식</h2>}
 
       <div className="space-y-4">
         {challenges.map((item) => (

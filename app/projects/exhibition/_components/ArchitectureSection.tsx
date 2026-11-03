@@ -49,7 +49,7 @@ export const ArchitectureSection = () => {
               <div className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
                 <span className="text-gray-700 text-lg font-bold">01</span>
                 <div>
-                  <p className="font-medium text-gray-900 text-sm">중복 코드 37% 절감</p>
+                  <p className="font-medium text-gray-900 text-sm">중복 코드를 공용 패키지로 정리</p>
                   <p className="text-xs text-gray-500">공용 패키지로 양쪽 앱에서 import</p>
                 </div>
               </div>

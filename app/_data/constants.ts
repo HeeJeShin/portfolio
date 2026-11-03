@@ -16,6 +16,8 @@ export type Project = {
   subProjects?: string[];
   firstAttemptPeriod?: string; // 1차 시도 기간 (실패 → 성공 스토리용)
   side?: boolean; // 사이드 프로젝트 (실무와 분리해서 표시)
+  team?: string; // 팀 구성 (리스트 카드에 표시)
+  role?: string; // 실무 프로젝트에서 내가 맡은 부분 (리스트 카드에 하늘색 딱지로 표시)
 };
 
 // 프로젝트 ID로 프로젝트 찾기 헬퍼
@@ -29,6 +31,7 @@ export const projects: Project[] = [
     title: carCheckInfo.title,
     subtitle: carCheckInfo.subtitle,
     period: carCheckInfo.period,
+    team: "1인",
     description: carCheckInfo.description,
     tags: carCheckInfo.tags,
     highlights: carCheckInfo.highlights,
@@ -41,6 +44,7 @@ export const projects: Project[] = [
     title: homeCareInfo.title,
     subtitle: homeCareInfo.subtitle,
     period: homeCareInfo.period,
+    team: "1인 개발 · 연구자료 제공 1",
     description: homeCareInfo.description,
     tags: homeCareInfo.tags,
     highlights: homeCareInfo.highlights,
@@ -53,6 +57,8 @@ export const projects: Project[] = [
     title: "어드민 시스템(행사부스 신청관리)",
     subtitle: "2단계 어드민 시스템 개발",
     period: "2026.02 - 2026.04",
+    team: "기획 2 · 백엔드 1 · 프론트엔드 1",
+    role: "프론트엔드 단독 · 모노레포 설계",
     description: "슈퍼어드민 + 프로젝트 어드민 구조의 전시회 참가신청 관리 시스템",
     tags: ["Next.js", "TypeScript", "TanStack Query", "Turborepo", "Vitest"],
     highlights: ["첫 행사 일정 안에 오픈", "Vitest 단위테스트 자동화", "216개 테스트 케이스"],
@@ -69,6 +75,7 @@ export const projects: Project[] = [
     title: "4J - 행사장 수용인원 자동계산",
     subtitle: "사내 AI Boost Challenge 해커톤",
     period: "2026.01",
+    team: "기획 1 · 프론트엔드 3",
     description: "AI 기반 행사장 수용인원 자동 계산 및 실시간 혼잡도 모니터링 서비스",
     tags: ["Next.js", "TypeScript", "Google Gemini AI"],
     highlights: ["Google Gemini AI 연동", "프롬프트 설계", "실시간 모니터링"],
@@ -81,6 +88,8 @@ export const projects: Project[] = [
     title: "스마트관광프로젝트",
     subtitle: "인제 / 용인 스마트 관광 플랫폼",
     period: "2025.06 - 2025.11",
+    team: "기획 2 · 백엔드 2 · 프론트엔드 3",
+    role: "인증·결제 담당",
     description: "숙박/체험 예약, 투어패스 판매, 커뮤니티 등 스마트 관광 플랫폼",
     tags: ["Next.js", "TypeScript", "KCP 결제"],
     highlights: ["회원 1만+", "결제 구조 개선 제안", "Safari 호환성"],
@@ -94,6 +103,8 @@ export const projects: Project[] = [
     title: "O2MEET Next.js 마이그레이션",
     subtitle: "Lighthouse 성능 점수 45 → 99",
     period: "2026.04 - 2026.05",
+    team: "프론트엔드 3",
+    role: "사용자 페이지·회원가입 담당",
     description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
     highlights: ["성능 점수 45 → 99", "LCP 8.0s → 0.8s", "CLS 0.225 → 0"],
@@ -105,6 +116,8 @@ export const projects: Project[] = [
     title: "POS/Kiosk 프로젝트",
     subtitle: "디키디키 키즈카페",
     period: "2024.11 - 2025.02",
+    team: "기획 1 · 백엔드 2 · 프론트엔드 3 · C++ 1",
+    role: "키오스크 화면 담당",
     description: "동대문역사문화공원역 어린이 키즈카페용 POS/Kiosk 시스템",
     tags: ["JavaScript", "jQuery", "JSP", "KCP 결제"],
     highlights: ["키오스크 UI 전체 개발", "장바구니/옵션 시스템", "KCP 결제 연동"],
@@ -114,6 +127,8 @@ export const projects: Project[] = [
     title: "O2MEET 온라인 행사 플랫폼",
     subtitle: "개발 및 유지보수",
     period: "2022.05 - 2026.05",
+    team: "기획 4 · 백엔드 4 · 프론트엔드 5",
+    role: "상품·결제 화면 담당",
     description: "온라인 전시관, 컨퍼런스, 티켓 구매 등 행사 플랫폼 프론트엔드",
     tags: ["JSP", "jQuery", "KCP"],
     highlights: ["등록솔루션 2주→3-5일", "결제 시스템 구축", "공통화 작업"],

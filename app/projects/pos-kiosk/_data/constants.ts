@@ -12,7 +12,7 @@ export const techStack = [
 
 // 성과 지표
 export const metrics = [
-  { label: "디바이스 통합", value: "100%", desc: "키오스크/POS 단일 코드베이스" },
+  { label: "단일 코드베이스", value: "키오스크 · POS", desc: "결제 로직 1벌로 두 기기 지원" },
   { label: "영수증 출력", value: "3종", desc: "일반/입장권/주방주문서" },
   { label: "결제 방식", value: "동적 처리", desc: "어드민 설정값 기반 결제수단 선택" },
 ];

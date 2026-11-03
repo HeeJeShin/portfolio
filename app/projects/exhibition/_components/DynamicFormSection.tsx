@@ -317,7 +317,7 @@ const DynamicFormConclusion = () => (
       {[
         { value: "0줄", desc: "새 프로젝트 시 프론트 코드 수정" },
         { value: "10+", desc: "동일 컴포넌트로 처리하는 페이지 수" },
-        { value: "100%", desc: "프로젝트 간 UX 일관성" },
+        { value: "같은 화면 경험", desc: "프로젝트가 달라도 같은 컴포넌트로 일관된 UX" },
       ].map((item) => (
         <div key={item.value} className="bg-white/10 rounded-lg p-3">
           <p className="text-2xl font-bold text-white">{item.value}</p>

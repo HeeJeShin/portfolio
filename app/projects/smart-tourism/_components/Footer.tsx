@@ -14,7 +14,7 @@ export const Footer = () => {
               <h3 className="font-bold text-gray-900 mb-2">프로젝트 핵심</h3>
               <ul className="text-sm text-gray-600 space-y-1">
                 <li>• <strong className="text-gray-900">KCP PG 결제</strong> - PC/Mobile 분기 처리, Callback 처리</li>
-                <li>• <strong className="text-gray-900">토큰 기반 인증</strong> - 3단계 Fallback, Safari ITP 대응</li>
+                <li>• <strong className="text-gray-900">토큰 기반 인증</strong> - 쿠키·localStorage 저장, 메모리 → 쿠키 → localStorage 복구, Safari ITP 대응</li>
                 <li>• <strong className="text-gray-900">쿠폰 시스템</strong> - 타입 분류, 필터링, 결제 적용</li>
                 <li>• <strong className="text-gray-900">4개국어 지원</strong> - next-intl 기반 다국어 처리</li>
               </ul>

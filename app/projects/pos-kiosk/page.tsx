@@ -7,7 +7,7 @@ import { ProjectHeader } from "@/app/_components/ProjectHeader";
 const techStack = ["JavaScript", "jQuery", "JSP", "CefSharp", "KCP 결제"];
 
 const achievements = [
-  { label: "디바이스 통합", value: "100%", desc: "키오스크/POS 단일 코드베이스" },
+  { label: "단일 코드베이스", value: "키오스크 · POS", desc: "결제 로직 1벌로 두 기기 지원" },
   { label: "영수증 출력", value: "3종", desc: "일반/입장권/주방주문서" },
   { label: "결제 방식", value: "동적 처리", desc: "어드민 설정값 기반 결제수단 선택" },
 ];
@@ -151,7 +151,7 @@ export default function PosKioskPage() {
               2024.11 - 2025.02
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">프론트엔드 · 선임</span>
+            <span className="text-gray-600 text-sm">기획 1 + 백엔드 2 + 프론트엔드 3 + C++ 1 · 키오스크 화면 담당</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             POS/Kiosk 결제 시스템
@@ -326,6 +326,27 @@ if (window?.CefSharp === undefined) {
               <div className="flex items-start gap-2 text-gray-600">
                 <span className="text-blue-500">•</span>
                 환경별 로깅 처리로 디버깅 효율성 향상
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 현장 운영 */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">현장 운영을 위한 기능</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="font-bold text-gray-900 mb-3">POS에서 키오스크 원격 잠금</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><span className="text-xs font-medium text-gray-500 mr-2">문제</span>입장 인원이 넘치거나 다른 사정으로 키오스크 주문을 받으면 안 되는 순간이 있었습니다.</p>
+                <p><span className="text-xs font-medium text-gray-500 mr-2">해결</span>매장 실무진과 이야기하며, 직원이 키오스크 앞까지 가지 않고 POS에서 바로 잠그고 풀 수 있게 했습니다.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-xl border border-gray-200 p-5">
+              <h3 className="font-bold text-gray-900 mb-3">현장 디버깅 모드</h3>
+              <div className="space-y-2 text-sm text-gray-700">
+                <p><span className="text-xs font-medium text-gray-500 mr-2">문제</span>현장 기기는 개발자 PC가 아니라 오류가 나도 로그를 바로 볼 수 없었습니다.</p>
+                <p><span className="text-xs font-medium text-gray-500 mr-2">해결</span>C++ 개발자와 협의해 화면 상단을 다섯 번 누르면 오류 로그가 보이게 만들어, 현장에서 바로 원인을 확인할 수 있게 됐습니다.</p>
               </div>
             </div>
           </div>

@@ -10,7 +10,7 @@ export const HeroSection = () => {
           {period}
         </span>
         <span className="hidden md:inline text-gray-400">|</span>
-        <span className="text-gray-600 text-sm">의료 헬스케어 도메인 · Claude Design + Claude Code</span>
+        <span className="text-gray-600 text-sm">1인 개발 (연구자료 제공 1인) · 의료 헬스케어 도메인 · Claude Design + Claude Code</span>
       </div>
       <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
         홈펌프 항암제 자가관리 웹앱

@@ -7,38 +7,38 @@ export const AuthSection = () => {
       <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-6">
         <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
           <span className="w-8 h-8 bg-[#191979] rounded-lg flex items-center justify-center text-white text-sm">🔑</span>
-          토큰 저장 전략 (3단계 Fallback)
+          토큰 저장과 복구
         </h3>
 
         <p className="text-sm text-gray-600 mb-4">
-          브라우저 환경에 따라 토큰 저장/복원이 실패할 수 있어, <strong className="text-[#191979]">3단계 Fallback 전략</strong>을 적용했습니다.
+          토큰은 <strong className="text-[#191979]">쿠키(서버 전송용)와 localStorage(지속용)에 함께 저장</strong>하고, 새로고침되면 <strong className="text-[#191979]">메모리 → 쿠키 → localStorage 순서로 확인해 복구</strong>합니다. Safari ITP로 쿠키가 지워져도 localStorage에서 다시 살릴 수 있고, localStorage에 두는 위험은 액세스 토큰 만료를 짧게 두고 리프레시 토큰으로 재발급해 줄였습니다.
         </p>
 
         <div className="flex flex-col md:flex-row items-stretch gap-4">
           {[
             {
-              priority: "1순위",
+              priority: "복구 1",
               storage: "메모리",
               icon: "⚡",
               color: "green",
-              pros: "가장 빠른 접근 속도",
+              pros: "현재 페이지에서 바로 사용",
               cons: "새로고침 시 소멸",
             },
             {
-              priority: "2순위",
+              priority: "복구 2",
               storage: "쿠키",
               icon: "🍪",
               color: "blue",
-              pros: "새로고침 후 복원 가능",
-              cons: "Safari ITP 정책 영향",
+              pros: "저장 ① 서버 전송용",
+              cons: "Safari ITP로 지워질 수 있음",
             },
             {
-              priority: "3순위",
+              priority: "복구 3",
               storage: "localStorage",
               icon: "💾",
               color: "blue",
-              pros: "Safari ITP 대응",
-              cons: "XSS 취약점 주의",
+              pros: "저장 ② 지속용, 쿠키가 지워져도 복구",
+              cons: "XSS 주의 → 짧은 만료로 범위 제한",
             },
           ].map((item) => (
             <div key={item.priority} className="flex-1 bg-white rounded-lg border border-gray-200 overflow-hidden">
@@ -70,11 +70,11 @@ export const AuthSection = () => {
           <span>🍎</span> Safari ITP (Intelligent Tracking Prevention) 대응
         </h4>
         <p className="text-sm text-blue-900 mb-3">
-          Safari는 서드파티 쿠키를 7일 후 삭제합니다. 이를 대응하기 위해 localStorage에 토큰을 백업 저장합니다.
+          Safari ITP는 스크립트로 저장한 쿠키의 수명을 제한해, 쿠키만 쓰면 로그인이 풀렸습니다. 그래서 저장할 때부터 쿠키와 localStorage에 함께 넣고, 위의 순서로 복구합니다.
         </p>
         <div className="bg-white rounded-lg p-3">
           <div className="text-xs font-mono bg-gray-900 text-gray-100 rounded p-3">
-            <div className="text-gray-500">// tokenManager - Safari ITP 대응</div>
+            <div className="text-gray-500">// tokenManager - 저장: 쿠키(서버 전송) + localStorage(지속)</div>
             <div className="mt-1">
               <span className="text-purple-400">const</span> setTokens = (access, refresh) =&gt; {`{`}
             </div>
@@ -89,7 +89,7 @@ export const AuthSection = () => {
       {/* 토큰 복원 흐름 */}
       <div className="bg-white rounded-xl border border-gray-200 overflow-hidden mb-6">
         <div className="bg-gray-100 px-4 py-3 border-b border-gray-200">
-          <h4 className="font-bold text-gray-900">토큰 복원 흐름 (페이지 새로고침 시)</h4>
+          <h4 className="font-bold text-gray-900">토큰 복구 흐름 (페이지 새로고침 시)</h4>
         </div>
         <div className="p-4">
           <div className="flex flex-col md:flex-row items-center gap-4">
@@ -206,7 +206,8 @@ export const AuthSection = () => {
 
       {/* 토큰 만료 시간 */}
       <div className="bg-gray-100 rounded-xl p-4">
-        <h4 className="font-bold text-gray-900 mb-3">토큰 만료 정책</h4>
+        <h4 className="font-bold text-gray-900 mb-1">토큰 만료 정책</h4>
+        <p className="text-xs text-gray-600 mb-3">localStorage에 저장하는 대신 액세스 토큰 만료를 짧게 두고, 리프레시 토큰으로 재발급해 탈취 시 피해 범위를 줄였습니다.</p>
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-white rounded-lg p-4 text-center">
             <p className="text-2xl font-bold text-[#191979]">1시간</p>

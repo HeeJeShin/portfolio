@@ -10,7 +10,7 @@ export const HeroSection = () => {
           {period}
         </span>
         <span className="hidden md:inline text-gray-400">|</span>
-        <span className="text-gray-600 text-sm">사이드 프로젝트 · NestJS + Next.js + AI</span>
+        <span className="text-gray-600 text-sm">사이드 프로젝트 · 1인 · NestJS + Next.js + AI</span>
       </div>
       <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
         중고차 구매 가이드

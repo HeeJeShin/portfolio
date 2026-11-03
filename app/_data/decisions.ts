@@ -1,7 +1,8 @@
-// 프로젝트별 "판단과 근거" — 무엇을 했나보다 "왜 그렇게 판단했고 어떻게 실행·설득했나"
+// 프로젝트별 "문제 해결 방식" 카드 — 상황 → 판단 → 실행·설득 → 결과
 // 사실은 본인 답변(포트폴리오_왜_점검.md)과 면접 정리 문서를 근거로 작성
 
 export type Decision = {
+  id?: string; // 다른 섹션에서 앵커 링크로 연결할 때 사용
   title: string;
   situation: string; // 상황
   judgment: string; // 판단 (대안과 이유)
@@ -36,13 +37,14 @@ export const decisions: Record<string, Decision[]> = {
   ],
   "smart-tourism": [
     {
-      title: "Safari 토큰 유실: 왜 쿠키 + localStorage 이중 저장인가",
+      id: "safari",
+      title: "Safari 대응: 토큰 유실과 인증·결제 요청 차단",
       situation:
         "iOS Safari에서만 로그인이 풀리고 결제가 실패했습니다. Chrome과 안드로이드에서는 정상이었습니다.",
       judgment:
         "'특정 브라우저에서만' 생긴다는 점에서 스토리지 정책을 의심했고, Safari ITP가 스크립트로 심은 쿠키 수명을 제한하는 것이 원인이었습니다. 쿠키만 쓰면 ITP에 지워지고, localStorage만 쓰면 매 요청 수동 첨부에 XSS 노출 위험이 있어 둘 다 단독으로는 부족했습니다.",
       action:
-        "쿠키(서버 전송)와 localStorage(지속)를 함께 쓰고, 쿠키가 없으면 localStorage에서 복구하도록 했습니다. XSS 위험은 액세스 토큰 만료를 짧게 두고 리프레시로 재발급하는 구조로 피해 범위를 제한했습니다.",
+        "쿠키(서버 전송)와 localStorage(지속)에 함께 저장하고, 새로고침되면 메모리 → 쿠키 → localStorage 순서로 확인해 복구하도록 했습니다. XSS 위험은 액세스 토큰 만료를 짧게 두고 리프레시로 재발급하는 구조로 피해 범위를 제한했습니다. 함께 막히던 본인인증 팝업은 리다이렉트 방식으로 바꾸고, 차단되던 인증·결제 요청은 미들웨어를 수정하고 CORS 헤더를 조정해 통과시켰습니다.",
       result:
         "iOS 실기기에서 반복 재현으로 검증했고, 이후 Safari 크로스브라우저 확인을 배포 전 점검 항목에 넣었습니다.",
     },

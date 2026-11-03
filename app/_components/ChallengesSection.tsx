@@ -18,8 +18,8 @@ const challenges = [
   },
   {
     title: "브라우저 호환성 이슈 분석 및 해결",
-    desc: "스마트관광 프로젝트에서 Safari ITP로 인한 토큰 유실 문제를 발견하고, 쿠키 + localStorage 이중 저장 방식으로 해결했습니다. 팝업 차단 이슈도 리다이렉트 방식으로 전환해 크로스 브라우저 안정성을 확보했습니다.",
-    link: "/projects/smart-tourism#browser-compatibility",
+    desc: "스마트관광 프로젝트에서 Safari ITP로 인한 토큰 유실 문제를 발견하고, 쿠키와 localStorage에 함께 저장하고 메모리 → 쿠키 → localStorage 순서로 복구하는 방식으로 해결했습니다. 팝업 차단 이슈도 리다이렉트 방식으로 전환해 크로스 브라우저 안정성을 확보했습니다.",
+    link: "/projects/smart-tourism#safari",
   },
   {
     title: "Google Gemini AI 프롬프트 설계",

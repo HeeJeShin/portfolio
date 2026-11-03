@@ -68,7 +68,7 @@ export const approaches = [
     title: "모노레포로 코드 공유 극대화",
     problem: "User/Admin 앱 간 60+ 컴포넌트/훅 중복",
     solution: "Turborepo + pnpm workspace로 packages/shared 분리",
-    effect: "중복 코드 37% 절감, 한 번 수정으로 양쪽 반영",
+    effect: "중복 코드를 공용 패키지로 정리, 한 번 수정으로 양쪽 반영",
   },
   {
     id: "state-management",
@@ -275,8 +275,8 @@ export const metrics = {
     { label: "테스트 케이스", value: 216, unit: "개" },
   ],
   efficiency: [
-    { label: "중복 코드 절감", value: "37%" },
-    { label: "테스트 작성 시간", value: "90% 단축" },
+    { label: "중복 코드", value: "공용 패키지로 정리" },
+    { label: "테스트 작성", value: "피드백 주기 단축" },
     { label: "새 프로젝트 프론트 수정", value: "0%" },
   ],
 };
