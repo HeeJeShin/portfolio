@@ -148,8 +148,8 @@ export const UnitTestSection = () => {
             <p className="text-sm text-gray-600">테스트 파일</p>
           </div>
           <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
-            <p className="text-2xl font-bold text-gray-900">90%</p>
-            <p className="text-sm text-gray-600">작성 시간 단축</p>
+            <p className="text-2xl font-bold text-gray-900">빠른 피드백</p>
+            <p className="text-sm text-gray-600">테스트·확인 주기 단축</p>
           </div>
         </div>
 
@@ -159,7 +159,7 @@ export const UnitTestSection = () => {
         <div className="bg-gray-100 border border-gray-200 rounded-lg p-4">
           <p className="text-sm text-gray-700 text-center">
             <strong>AI 활용</strong>으로 테스트 케이스 문서 작성 → 테스트 코드 자동 생성 → 결과 문서화까지
-            <strong className="text-gray-900"> 5일 → 4시간 이내로 단축</strong>
+            <strong className="text-gray-900"> 한 흐름으로 묶어 피드백 주기를 줄였습니다</strong>
           </p>
         </div>
       </div>
@@ -258,62 +258,25 @@ const VitestSection = () => {
 
 const TimeComparisonChart = () => {
   const items = [
-    { label: "테스트 케이스 문서 작성 (216개)", manual: "3일 (24시간)", ai: "3시간", aiWidth: "12.5%", reduction: "87.5%" },
-    { label: "테스트 코드 구현 (10+ 파일)", manual: "2일 (16시간)", ai: "1시간", aiWidth: "6.25%", reduction: "93.7%" },
-    { label: "테스트 실행 & 결과 문서화", manual: "2시간", ai: "10분", aiWidth: "8.3%", reduction: "91.7%" },
+    { label: "테스트 케이스 문서 작성 (216개)", before: "케이스를 하나씩 직접 정리", after: "Claude Code로 초안을 만들고 검토만" },
+    { label: "테스트 코드 구현 (10+ 파일)", before: "케이스마다 코드를 직접 작성", after: "문서를 바탕으로 코드를 생성하고 규칙으로 검증" },
+    { label: "테스트 실행 & 결과 문서화", before: "결과를 따로 정리해 전달", after: "CSV 리포트로 자동 정리해 바로 공유" },
   ];
 
   return (
-    <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
-      <h4 className="font-bold text-gray-900 mb-4">테스트 작성 시간 비교</h4>
-
-      <div className="space-y-6">
-        {items.map((item, i) => (
-          <div key={i}>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-gray-700">{item.label}</span>
-              {i === 0 && <span className="text-xs text-gray-500">예상 vs 실제</span>}
-            </div>
-            <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <span className="text-xs text-gray-400 w-16">수동 작성</span>
-                <div className="flex-1 bg-gray-100 rounded-full h-6 relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 bg-gray-400 rounded-full" style={{ width: '100%' }}></div>
-                  <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-white">{item.manual}</span>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-xs text-gray-700 w-16">AI 협업</span>
-                <div className="flex-1 bg-gray-100 rounded-full h-6 relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 bg-gray-700 rounded-full" style={{ width: item.aiWidth }}></div>
-                  <span className="absolute left-2 inset-y-0 flex items-center text-xs font-medium text-white">{item.ai}</span>
-                </div>
-                <span className="text-xs font-bold text-gray-700 whitespace-nowrap">{item.reduction} ↓</span>
-              </div>
-            </div>
+    <div className="bg-white rounded-xl border border-gray-200 p-5 mb-6">
+      <h4 className="font-bold text-gray-900 mb-4">AI 협업 전후로 달라진 점</h4>
+      <div className="space-y-3">
+        {items.map((item) => (
+          <div key={item.label} className="grid md:grid-cols-3 gap-3 items-start">
+            <p className="text-sm font-medium text-gray-900">{item.label}</p>
+            <p className="text-sm text-gray-400"><span className="text-xs mr-1">이전</span>{item.before}</p>
+            <p className="text-sm text-gray-700"><span className="text-xs text-[#191979] font-medium mr-1">지금</span>{item.after}</p>
           </div>
         ))}
       </div>
-
-      {/* 총합 비교 */}
-      <div className="mt-6 pt-4 border-t-2 border-gray-200">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <div className="text-center">
-              <p className="text-xs text-gray-400">수동 작성 예상</p>
-              <p className="text-xl font-bold text-gray-400 line-through">~5일</p>
-            </div>
-            <div className="text-2xl text-gray-300">→</div>
-            <div className="text-center">
-              <p className="text-xs text-gray-700 font-medium">AI 협업 실제</p>
-              <p className="text-xl font-bold text-gray-900">~4시간</p>
-            </div>
-          </div>
-          <div className="bg-gray-900 text-white px-4 py-2 rounded-lg">
-            <p className="text-2xl font-bold">90%+</p>
-            <p className="text-xs opacity-90">시간 단축</p>
-          </div>
-        </div>
+      <div className="mt-5 pt-4 border-t border-gray-200 text-sm text-gray-700">
+        <strong className="text-gray-900">효과</strong> · 테스트 결과가 바로 공유되니 확인과 수정이 빨라지고, 사업부서·백엔드와 피드백을 주고받는 주기가 짧아졌습니다.
       </div>
     </div>
   );

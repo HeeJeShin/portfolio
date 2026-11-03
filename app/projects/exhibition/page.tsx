@@ -21,8 +21,9 @@ const ExhibitionProject = () => {
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
         <MetricsSection />
-        <DecisionSection projectId="exhibition" />
-        <ProblemSolvingSection />
+        <DecisionSection projectId="exhibition">
+          <ProblemSolvingSection embedded />
+        </DecisionSection>
         <ApproachesSection />
         <ArchitectureSection />
         <UnitTestSection />

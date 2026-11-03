@@ -5,15 +5,16 @@ export const techStack = [
   "Next.js 14",
   "TypeScript",
   "Zustand",
-  "MUI (Material-UI)",
+  "MUI (1차)",
+  "Tailwind CSS (2차)",
   "Zod",
 ];
 
 // 마이그레이션 성과
 export const metrics = [
-  { label: "초기 로딩", value: "개선", desc: "SSR로 초기 렌더링 속도 향상" },
-  { label: "코드 재사용", value: "향상", desc: "컴포넌트 기반 구조로 전환" },
-  { label: "유지보수", value: "용이", desc: "JSP include → React 컴포넌트" },
+  { label: "성능 점수", value: "45 → 99", desc: "Lighthouse 데스크톱, 같은 플랫폼 JSP 사이트 대비" },
+  { label: "LCP", value: "8.0초 → 0.8초", desc: "최대 콘텐츠 표시 시간" },
+  { label: "CLS", value: "0.225 → 0", desc: "레이아웃 흔들림 제거" },
 ];
 
 // ============================================

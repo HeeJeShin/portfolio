@@ -4,6 +4,13 @@ import { projectMetrics } from "../_data/constants";
 export const HeroSection = () => {
   return (
     <section className="mb-12">
+      <div className="flex items-center gap-3 mb-4">
+        <span className="px-3 py-1 border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
+          2025.06 - 2025.11
+        </span>
+        <span className="text-gray-400">|</span>
+        <span className="text-gray-600 text-sm">기획 2 + 백엔드 2 + 프론트엔드 3 · 인증·결제 담당</span>
+      </div>
       {/* 서비스 링크 */}
       <div className="mb-6 flex flex-wrap gap-3">
         <Link

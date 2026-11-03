@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { problemSolving } from "../_data/exhibition";
 
-export const ProblemSolvingSection = () => {
+export const ProblemSolvingSection = ({ embedded = false }: { embedded?: boolean }) => {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export const ProblemSolvingSection = () => {
   }, []);
 
   return (
-    <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-8">문제 해결 방식</h2>
+    <section className={embedded ? "" : "mb-16"}>
+      {!embedded && <h2 className="text-2xl font-bold text-gray-900 mb-8">문제 해결 방식</h2>}
 
       <div className="space-y-4">
         {problemSolving.map((item) => {

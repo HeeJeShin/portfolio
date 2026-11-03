@@ -174,7 +174,7 @@
 </head>
 <body>
 
-<h1>신희제 | 개발자</h1>
+<h1>신희제 | Developer</h1>
 <p class="portfolio-link"><a href="https://portfolio-eight-tau-20.vercel.app/#projects">포트폴리오 사이트 바로가기</a></p>
 <p class="contact">
   <strong>+82 10-2390-2038</strong> | <strong>heeheehee.hj@gmail.com</strong> | <a href="https://github.com/HeeJeShin">GitHub</a>
@@ -227,14 +227,14 @@
 <p class="links"><strong>인제:</strong> <a href="https://tour.inje.go.kr/">tour.inje.go.kr</a> | <strong>용인:</strong> <a href="https://itour.yongin.go.kr/">itour.yongin.go.kr</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/smart-tourism">상세보기</a></p>
 <ul>
   <li><strong>고질적인 결제 이슈부터 바로잡기</strong>: 결제 완료 처리를 프론트엔드가 맡고 있어, 결제 직후 연결이 끊기면 결제 상태가 어긋나는 문제가 반복되고 있었습니다. 프로젝트 초기에 이 문제부터 바로잡기로 하고, 프론트 방어 코드로 덮기보다 구조를 고치는 쪽을 택했습니다. 백엔드 팀에도 부담이 큰 변경이라 끊기는 케이스를 정리해 공유하며 함께 방법을 찾았고, 완료 처리를 서버로 옮겨 → <strong>연결이 끊겨도 결제 상태가 어긋나지 않게</strong> 됐습니다.</li>
-  <li><strong>인증·결제 전담</strong>: 가입과 결제는 이탈이 생기기 쉬운 구간이라 브라우저별 실패 케이스부터 정리했습니다. Safari ITP로 토큰이 유실되는 문제는 쿠키 + localStorage 이중 저장으로, 본인인증 팝업 차단은 리다이렉트로 바꿔 해결했습니다. → iOS에서도 로그인·결제가 정상 동작하게 됐고, Safari 확인을 배포 전 점검 항목에 넣었습니다. (JWT, NICE 본인인증, 카카오·네이버 로그인, KCP 결제, 4개 언어)</li>
+  <li><strong>인증·결제 전담</strong>: 가입과 결제는 이탈이 생기기 쉬운 구간이라 브라우저별 실패 케이스부터 정리했습니다. Safari ITP로 토큰이 유실되는 문제는 쿠키와 localStorage에 함께 저장하고 메모리 → 쿠키 → localStorage 순서로 복구하는 방식으로, 본인인증 팝업 차단은 리다이렉트로 바꿔 해결했습니다. → iOS에서도 로그인·결제가 정상 동작하게 됐고, Safari 확인을 배포 전 점검 항목에 넣었습니다. (JWT, NICE 본인인증, 카카오·네이버 로그인, KCP 결제, 4개 언어)</li>
 </ul>
 <p class="tech-tag">기술 스택: Next.js, TypeScript, Zustand, Tailwind CSS, KCP, Figma</p>
 
 <hr>
 
 <h3>3. O2MEET Next.js 마이그레이션</h3>
-<p class="meta"><strong>2024.12 - 2025.02, 2026.04 - 2026.05</strong> | 프론트엔드 · 2차 우선순위 설계 주도 <span class="badge">실무</span></p>
+<p class="meta"><strong>2024.12 - 2025.02, 2026.04 - 2026.05</strong> | 프로젝트 구조·사용자 페이지(전시 안내·신청, 회원가입) 담당, 2차 우선순위 설계 주도 | 팀 구성: 프론트엔드 3 <span class="badge">실무</span></p>
 <p>JSP 기반 온라인 행사 플랫폼을 Next.js·TypeScript로 전환</p>
 <p class="links"><strong>Site:</strong> <a href="https://greenenertec.com/">greenenertec.com</a> | <strong>Portfolio:</strong> <a href="https://portfolio-eight-tau-20.vercel.app/projects/o2meet-migration">상세보기</a></p>
 <ul>
@@ -257,7 +257,7 @@
 <hr>
 
 <h3>5. POS/키오스크 (키즈카페 '디키디키')</h3>
-<p class="meta"><strong>2024.11 - 2025.02</strong> | 키오스크 화면 프론트엔드 담당 | <a href="https://portfolio-eight-tau-20.vercel.app/projects/pos-kiosk">Portfolio 상세보기</a> <span class="badge">실무</span></p>
+<p class="meta"><strong>2024.11 - 2025.02</strong> | 키오스크 화면 프론트엔드 담당 | 팀 구성: 기획 1, 백엔드 2, 프론트엔드 3, C++ 1 | <a href="https://portfolio-eight-tau-20.vercel.app/projects/pos-kiosk">Portfolio 상세보기</a> <span class="badge">실무</span></p>
 <p>동대문역사문화공원역 어린이 키즈카페의 입장권·F&amp;B 주문/결제용 키오스크와 POS. 웹 화면을 CefSharp 브라우저에 올려 영수증 프린터·서명패드·세컨드 모니터와 연동</p>
 <ul>
   <li><strong>단일 코드베이스·기기 통신</strong>: 키오스크와 POS는 같은 결제 로직을 쓰지만 후처리(영수증·주방 주문서·서명패드)가 달라, 실행 환경만 분기하고 → <strong>결제 로직은 한 벌로 유지</strong>했습니다. CefSharp 메시지로 POS 프로그램과 연결해 영수증·입장권·주방 주문서 3종 출력과 프린터 상태를 연동했고, 연속 출력 시 프린터 버퍼가 충돌해 딜레이를 테스트하며 순차 출력으로 맞췄습니다.</li>
@@ -280,7 +280,7 @@
 <hr>
 
 <h3>7. HomeCare - 홈펌프 항암제 자가관리 웹앱</h3>
-<p class="meta"><strong>2026.05 - 2026.10</strong> | 임상간호연구 개발 참여 | <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> <span class="badge">사이드</span></p>
+<p class="meta"><strong>2026.05 - 2026.10</strong> | 임상간호연구 개발 참여 · 1인 개발 (연구자료 제공 1인) | <a href="https://home-care-blond.vercel.app/">home-care-blond.vercel.app</a> <span class="badge">사이드</span></p>
 <ul>
   <li>현장의 어려움을 빠르게 덜어주는 것이 목적이라 서버 없이 바로 쓰는 웹앱(PWA)으로 만들었습니다.</li>
   <li>노인 환자가 바로 판단할 수 있도록 수치 대신 그림과 "병원에 가야 해요" 같은 문장으로 설계했고, 의료진 요청은 응급 연락처와 PDF 리포트로 반영했습니다.</li>

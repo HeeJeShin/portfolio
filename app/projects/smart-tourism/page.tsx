@@ -17,8 +17,9 @@ const SmartTourismProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
-        <DecisionSection projectId="smart-tourism" />
-        <ChallengesSection />
+        <DecisionSection projectId="smart-tourism">
+          <ChallengesSection embedded />
+        </DecisionSection>
         <ApproachesSection />
         <TechStackSection />
       </main>

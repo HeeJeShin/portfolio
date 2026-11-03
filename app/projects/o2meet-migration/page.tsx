@@ -8,7 +8,7 @@ import { getProjectById } from "@/app/_data/constants";
 // 공통 데이터에서 프로젝트 정보 가져오기
 const project = getProjectById("o2meet-migration")!;
 
-const techStack = ["Next.js 14", "TypeScript", "Zustand", "Tailwind CSS", "Zod"];
+const techStack = ["Next.js 14", "TypeScript", "Zustand", "MUI (1차)", "Tailwind CSS (2차)", "Zod"];
 
 // 2026.10 재측정 (Lighthouse 12, 데스크톱 프리셋)
 // ⚠️ 같은 페이지의 전후 비교가 아니라, 같은 O2MEET 플랫폼의 JSP 행사 사이트(bookizcon)와
@@ -90,7 +90,7 @@ export default function O2MeetMigrationPage() {
               {project.period}
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">프론트엔드</span>
+            <span className="text-gray-600 text-sm">프론트엔드 3 · 프로젝트 구조·사용자 페이지(전시 안내·신청, 회원가입) 담당</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             O2MEET JSP → Next.js 마이그레이션

@@ -8,7 +8,7 @@ export const TypeScriptSection = () => {
           <h3 className="font-bold text-gray-900 text-lg mb-2">타입 정의 선행 개발</h3>
           <p className="text-gray-600">
             API 응답 및 도메인 모델 <strong className="text-gray-900">타입 정의부터 선행</strong> 후 개발을 진행하여
-            런타임 에러를 90% 감소시켰습니다.
+            API 연동에서 생길 타입 오류를 개발 단계에서 먼저 잡았습니다.
           </p>
         </div>
 
@@ -73,9 +73,9 @@ export const TypeScriptSection = () => {
             <p className="text-xs text-gray-500 mt-1">스키마 기반 데이터 검증</p>
           </div>
           <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 text-center">
-            <p className="text-2xl font-bold text-gray-900 mb-1">90%↓</p>
-            <p className="text-sm text-gray-600">런타임 에러 감소</p>
-            <p className="text-xs text-gray-500 mt-1">QA 피드백 기준</p>
+            <p className="text-2xl font-bold text-gray-900 mb-1">40개</p>
+            <p className="text-sm text-gray-600">공통 타입 정의</p>
+            <p className="text-xs text-gray-500 mt-1">두 앱이 같은 타입을 공유</p>
           </div>
         </div>
       </div>

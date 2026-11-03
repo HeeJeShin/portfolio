@@ -19,9 +19,9 @@ export const ClaudeCodeSection = () => {
 
         <div className="grid md:grid-cols-2 gap-4">
           {[
-            { label: "복잡한 컴포넌트 구현", value: "3일 → 1일", desc: "DynamicForm, DataTable 등" },
-            { label: "CRUD 페이지 생성", value: "75% 시간 절감", desc: "보일러플레이트 자동화" },
-            { label: "테스트 케이스 작성", value: "90% 단축", desc: "Vitest + Testing Library" },
+            { label: "복잡한 컴포넌트 구현", value: "구조를 먼저 잡고 빠르게", desc: "DynamicForm, DataTable 등" },
+            { label: "CRUD 페이지 생성", value: "반복 코드 자동화", desc: "같은 패턴은 규칙대로 생성" },
+            { label: "테스트 케이스 작성", value: "피드백 주기 단축", desc: "Vitest 결과를 CSV로 바로 공유" },
           ].map((item) => (
             <div key={item.label} className="bg-white/5 rounded-lg p-4">
               <p className="text-sm text-gray-300 mb-1">{item.label}</p>

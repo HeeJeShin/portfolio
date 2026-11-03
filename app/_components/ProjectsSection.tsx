@@ -40,10 +40,18 @@ export const ProjectsSection = () => {
                     </h3>
                   </div>
                   <p className="text-xs text-gray-500 mt-0.5">{project.subtitle}</p>
+                  {project.role && (
+                    <span className="inline-block mt-1.5 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">
+                      {project.role}
+                    </span>
+                  )}
                 </div>
-                <span className="text-xs text-gray-400 whitespace-nowrap">
-                  {project.period}
-                </span>
+                <div className="flex md:flex-col md:items-end gap-x-2 text-xs whitespace-nowrap">
+                  <span className="text-gray-400">{project.period}</span>
+                  {project.team && (
+                    <span className="text-gray-500">{project.team}</span>
+                  )}
+                </div>
               </div>
 
               <p className="text-sm text-gray-600 mb-3 leading-relaxed">

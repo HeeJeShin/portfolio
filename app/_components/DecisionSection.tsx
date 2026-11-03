@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { decisions } from "../_data/decisions";
 
 const steps = [
@@ -7,17 +8,17 @@ const steps = [
   { key: "result", label: "결과" },
 ] as const;
 
-export const DecisionSection = ({ projectId }: { projectId: string }) => {
+// 문제 해결 방식: 상황 → 판단 → 실행·설득 → 결과 카드. 프로젝트별 추가 카드는 children으로 이어 붙임
+export const DecisionSection = ({ projectId, children }: { projectId: string; children?: ReactNode }) => {
   const items = decisions[projectId];
   if (!items?.length) return null;
 
   return (
     <section id="decisions" className="mb-16 scroll-mt-8">
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">판단과 근거</h2>
-      <p className="text-sm text-gray-500 mb-6">무엇을 했는지보다, 왜 그렇게 판단했는지</p>
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">문제 해결 방식</h2>
       <div className="space-y-4">
         {items.map((item) => (
-          <div key={item.title} className="bg-white rounded-xl border border-gray-200 p-5">
+          <div key={item.title} id={item.id} className="bg-white rounded-xl border border-gray-200 p-5 scroll-mt-8">
             <h3 className="font-bold text-gray-900 mb-3">{item.title}</h3>
             <div className="grid md:grid-cols-2 gap-3">
               {steps.map((step) => (
@@ -34,6 +35,7 @@ export const DecisionSection = ({ projectId }: { projectId: string }) => {
             </div>
           </div>
         ))}
+        {children}
       </div>
     </section>
   );
