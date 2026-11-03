@@ -5,7 +5,17 @@ export const RetrospectiveSection = () => {
 
   return (
     <section className="mb-16">
-      <h2 className="text-2xl font-bold text-gray-900 mb-6">회고</h2>
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
+        <h2 className="text-2xl font-bold text-gray-900">회고</h2>
+        <a
+          href="https://github.com/HeeJeShin/car-check/blob/master/docs/retrospective.md"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white border border-gray-200 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
+        >
+          GitHub에서 전체 회고 보기 ↗
+        </a>
+      </div>
 
       {/* 직접 맡으며 판단한 것 */}
       <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
