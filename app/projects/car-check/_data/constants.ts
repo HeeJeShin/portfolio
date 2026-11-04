@@ -9,7 +9,7 @@ export const projectInfo = {
   description:
     "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
   tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Playwright"],
-  highlights: ["데이터는 사람이 검증, 안내는 AI", "심사 흐름 + 트랜잭션·동시성", "E2E·CI"],
+  highlights: ["데이터는 사람이 검증, 안내는 AI", "심사 흐름 + 트랜잭션·동시성", "제보·방문 통계·테스트 통과 후 배포"],
   demo: "https://car-check-fawn-zeta.vercel.app/",
   github: "https://github.com/HeeJeShin/car-check",
 };
@@ -140,7 +140,90 @@ if (!allowed.includes(user.role)) throw new ForbiddenException("이 작업은 �
       "사람이 브라우저로 직접 눌러보던 과정을 Playwright가 대신하게 함. '차종 검색 → 리포트', '에디터가 초안 작성 → 관리자 승인 → 사용자 화면에 바로 반영'을 실제 크롬으로 확인하고, GitHub에 코드를 올릴 때마다 자동으로 실행(GitHub Actions)",
     effect: "단위 테스트 46개 + E2E 4개",
   },
+  {
+    id: "reports",
+    title: "틀린 내용 제보 + 운영자 답변",
+    problem: "사람이 검증해도 혼자서는 모든 차종을 알 수 없음. 차주들은 틀린 정보를 보면 바로 고쳐 주고 싶어 함",
+    solution:
+      "고질병 카드마다 '틀린 내용 있어요' → 무엇이 틀렸는지 체크박스로 고르고 근거 링크를 남기게 함. 로그인 없이 받되 IP당 1시간 5건으로 막고, 운영자가 답변을 단 제보만 공개(답변 전에는 개수만)",
+    effect: "욕설·도배가 그대로 올라가지 않으면서, 제보가 고질병 데이터를 고치는 근거가 됨. 제보 → 답변 → 공개 흐름을 E2E로 확인",
+    code: {
+      file: "api/src/cars/cars.service.ts",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/api/src/cars/cars.service.ts",
+      snippet: `// 리포트 화면: 답변이 달린 제보만 공개, 전체 개수는 따로
+reports: {
+  where: { answer: { not: null } },
+  orderBy: { answeredAt: "desc" },
+  select: { id: true, reasons: true, comment: true, answer: true, answeredAt: true, createdAt: true },
+},
+_count: { select: { reports: true } },`,
+    },
+  },
+  {
+    id: "stats",
+    title: "방문 통계를 직접: IP 없이 방문자 세기",
+    problem: "어떤 차종을 많이 보는지 알아야 검증 우선순위를 정할 수 있음. 외부 분석 도구는 무료 보관 기간이 짧고 관리 화면에서 볼 수 없음",
+    solution:
+      "화면마다 API에 기록하되 IP는 저장하지 않고 '날짜+IP+브라우저+비밀값'의 해시만 남김(날이 바뀌면 값도 바뀜). 구글·네이버(Yeti)·다음 로봇과 관리 화면은 제외. 관리 화면에 일별 선 그래프·많이 본 차종 TOP 10·유입 경로",
+    effect: "개인을 추적하지 않고 하루 방문자를 셈. 해시에 IP가 남지 않는지·봇이 빠지는지 단위 테스트로 확인",
+    code: {
+      file: "api/src/stats/stats.ts",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/api/src/stats/stats.ts",
+      snippet: `// 그날 같은 사람인지만 알 수 있는 값. 원래 IP는 되살릴 수 없고, 날이 바뀌면 값도 바뀜
+export const visitorHash = (day: string, ip: string, userAgent: string, secret: string) =>
+  createHash("sha256").update(\`\${day}|\${ip}|\${userAgent}|\${secret}\`).digest("hex").slice(0, 16);
+
+// (네이버 Yeti·다음 Daumoa는 이름에 bot이 없어 따로 넣음)
+const BOT = /bot|crawl|spider|slurp|yeti|daumoa|facebookexternalhit|preview|monitor|curl|wget|python-requests|headlesschrome/i;`,
+    },
+  },
+  {
+    id: "deploy-gate",
+    title: "테스트를 통과해야 배포",
+    problem: "master에 올리면 바로 배포돼서, 테스트가 실패한 코드도 실제 사이트에 나갈 수 있었음",
+    solution:
+      "Render는 render.yaml에 'CI 통과 후 배포'를 설정하고, Vercel은 GitHub Actions 두 작업(타입·단위 테스트, E2E)을 필수 검사로 지정. 실무에서 쓰던 GitLab CI → ArgoCD 흐름을 같은 구조로 재현",
+    effect: "테스트가 실패하면 배포되지 않고 지금 사이트가 그대로 유지됨",
+    code: {
+      file: "render.yaml",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/render.yaml",
+      snippet: `# master에 푸시해도 바로 배포하지 않고, GitHub Actions(타입 체크·단위 테스트·E2E)가 모두 통과한 뒤에만 배포
+autoDeployTrigger: checksPass`,
+    },
+  },
+  {
+    id: "seo",
+    title: "검색에 걸리게: robots·sitemap·페이지 제목",
+    problem: "'더 뉴 그랜저 고질병'처럼 검색해서 들어와야 하는데, 검색엔진이 어떤 화면이 있는지 몰랐음",
+    solution:
+      "관리 화면만 막는 robots.txt, 차종·세대마다 리포트·점검 가이드 주소를 담은 sitemap.xml, 차 이름과 고질병 제목이 들어간 페이지 제목·설명",
+    effect: "세대 101개의 리포트·점검 가이드 주소(239개)를 검색엔진에 알림",
+    code: {
+      file: "web/src/app/robots.ts",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/web/src/app/robots.ts",
+      snippet: `rules: [{ userAgent: "*", allow: "/", disallow: "/admin" }],
+sitemap: \`\${SITE_URL}/sitemap.xml\`,`,
+    },
+  },
 ];
+
+// ============================================
+// 화면으로 보기 (실제 화면 캡처)
+// ============================================
+export const screens = [
+  { src: "/projects/car-check/report-form.jpg", width: 800, height: 1750, title: "틀린 내용 제보", desc: "고질병 카드에서 무엇이 틀렸는지 체크박스로 고르고 근거를 남겨요" },
+  { src: "/projects/car-check/report-answer.jpg", width: 800, height: 1094, title: "운영자 답변 공개", desc: "운영자가 답변을 달면 제보와 함께 카드 아래에 보여요" },
+  { src: "/projects/car-check/ev-checks.jpg", width: 800, height: 2453, title: "전기차 매장 점검", desc: "엔진 대신 리프트로 차 밑 배터리 팩, SOH 진단, 보증 승계를 먼저" },
+  { src: "/projects/car-check/tesla-fsd.jpg", width: 800, height: 1018, title: "구매 전 확인 (테슬라)", desc: "중국 생산 차는 국내 FSD 불가 — 차대번호 앞 3자리로 확인" },
+];
+export const adminScreen = {
+  src: "/projects/car-check/admin-stats.jpg",
+  width: 1800,
+  height: 1135,
+  title: "관리 화면 방문 통계 (PC)",
+  desc: "일별 방문자·페이지뷰, 많이 본 차종 TOP 10, 들어온 곳, 기기. 가리키면 그날 숫자가 보여요.",
+  note: "화면 예시: 테스트 환경의 샘플 데이터예요 (실제 방문 수 아님).",
+};
 
 // ============================================
 // 서비스 구성 (배포 준비)
