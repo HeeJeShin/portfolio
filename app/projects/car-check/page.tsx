@@ -3,6 +3,7 @@
 import {
   Header,
   HeroSection,
+  ScreensSection,
   ApproachesSection,
   ServicesSection,
   TeamPlanSection,
@@ -18,6 +19,7 @@ const CarCheckProject = () => {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         <HeroSection />
+        <ScreensSection />
         <ApproachesSection />
         <ServicesSection />
         <TeamPlanSection />

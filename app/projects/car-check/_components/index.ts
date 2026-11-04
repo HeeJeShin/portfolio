@@ -6,3 +6,4 @@ export { TeamPlanSection } from "./TeamPlanSection";
 export { TechStackSection } from "./TechStackSection";
 export { Footer } from "./Footer";
 export { RetrospectiveSection } from "./RetrospectiveSection";
+export { ScreensSection } from "./ScreensSection";
