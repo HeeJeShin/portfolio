@@ -125,10 +125,10 @@ export default function O2MeetPage() {
         <section className="mb-12">
           <div className="flex items-center gap-3 mb-4">
             <span className="px-3 py-1 bg-white border border-gray-300 text-gray-700 rounded-full text-sm font-medium">
-              2022.05 - 현재
+              2022.05 - 2026.05
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">프론트엔드 5, 백엔드 4, 기획 4</span>
+            <span className="text-gray-600 text-sm">프론트엔드 5, 백엔드 4, 기획 4 · 상품 구성·결제, 영상 재생, 가입, 마이페이지, 홍보 페이지 담당</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             O2MEET 티켓 구매/결제 시스템
