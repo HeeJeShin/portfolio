@@ -1,37 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
-import { navItems, type NavId } from "../_data/constants";
-
+// 사이드바: 이름·한 줄 소개·연락처·이력서 PDF. 연락처는 여기에만 둠 (본문 연락처 섹션은 중복이라 제거)
 export const Sidebar = () => {
-  const [activeId, setActiveId] = useState<NavId>("projects");
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) {
-            setActiveId(visible[0].target.id as NavId);
-          }
-        },
-        { rootMargin: "-30% 0px -60% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
-    );
-
-    navItems.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: NavId) => {
-    e.preventDefault();
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <aside className="no-print lg:sticky lg:top-0 lg:h-screen lg:w-[380px] lg:flex-shrink-0 bg-white border-b lg:border-b-0 lg:border-r border-gray-200">
       <div className="flex flex-col h-full px-8 py-10 lg:py-12">
@@ -43,33 +11,6 @@ export const Sidebar = () => {
           </p>
         </div>
 
-        <nav className="mb-8">
-          <ul className="space-y-1">
-            {navItems.map(({ id, label }) => {
-              const isActive = activeId === id;
-              return (
-                <li key={id}>
-                  <a
-                    href={`#${id}`}
-                    onClick={(e) => handleNavClick(e, id)}
-                    className={`flex items-center gap-3 py-2 text-sm transition-colors ${
-                      isActive
-                        ? "text-[#191979] font-semibold"
-                        : "text-gray-600 hover:text-[#191979]"
-                    }`}
-                  >
-                    <span
-                      className={`h-px transition-all ${
-                        isActive ? "w-8 bg-[#191979]" : "w-4 bg-gray-300"
-                      }`}
-                    />
-                    {label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
 
         <div className="mb-8 space-y-2 text-sm text-gray-600">
           <div className="flex items-center gap-2">

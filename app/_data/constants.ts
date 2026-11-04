@@ -149,9 +149,6 @@ export const skills: Record<string, string[]> = {
   Tools: ["IntelliJ IDEA", "Figma", "Notion", "Slack"],
 };
 
-export const navItems = [
-  { id: "projects", label: "프로젝트" },
-  { id: "contact", label: "연락처" },
-] as const;
+export const navItems = [{ id: "projects", label: "프로젝트" }] as const;
 
 export type NavId = (typeof navItems)[number]["id"];
