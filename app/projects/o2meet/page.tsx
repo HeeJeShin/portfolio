@@ -9,7 +9,7 @@ const techStack = ["JSP/JSTL", "jQuery", "JavaScript (ES6+)", "KCP 결제", "RES
 const achievements = [
   { label: "결제 방식", value: "동적 처리", desc: "어드민 설정값 기반 결제수단 선택" },
   { label: "API 연동", value: "15+", desc: "상품/주문/결제/사용자 API" },
-  { label: "개발 기간 단축", value: "2주 → 3-5일", desc: "등록솔루션 재사용" },
+  { label: "개발 기간 단축", value: "2주 → 3-5일", desc: "등록솔루션 재사용 · 매년 4~5개, 총 8개+ 행사" },
 ];
 
 const coreImplementations = [
@@ -70,7 +70,7 @@ const registrationCommonization = {
   title: "등록 솔루션 공통화",
   problem: "바이어/참관객/전시자 등 화면마다 요구사항이 다름 (필수입력, 카테고리, 검증 등)",
   solution: "공통 로직은 JS로 분리, 화면별 차이는 카테고리 코드로 추상화",
-  impact: "신규 행사 등록페이지 개발기간 2주 → 3-5일 단축",
+  impact: "신규 행사 등록페이지 개발기간 2주 → 3-5일 단축 (매년 4~5개, 총 8개 이상 행사에 적용)",
   modules: [
     { file: "register.js", desc: "등록폼 공통 (저장, 이메일검증, 약관)" },
     { file: "hub_common.js", desc: "카테고리/국가코드 동적 생성" },

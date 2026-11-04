@@ -90,7 +90,7 @@ export default function O2MeetMigrationPage() {
               {project.period}
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">프론트엔드 3 · 프로젝트 구조·사용자 페이지(전시 안내·신청, 회원가입) 담당</span>
+            <span className="text-gray-600 text-sm">프론트엔드 3 · 프로젝트 구조·사용자 페이지(전시 안내·신청, 회원가입) 담당 · 기여도 1차 약 50%, 2차 약 90%</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             O2MEET JSP → Next.js 마이그레이션

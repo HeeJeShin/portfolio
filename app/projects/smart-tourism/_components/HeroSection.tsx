@@ -9,7 +9,7 @@ export const HeroSection = () => {
           2025.06 - 2025.11
         </span>
         <span className="text-gray-400">|</span>
-        <span className="text-gray-600 text-sm">기획 2 + 백엔드 2 + 프론트엔드 3 · 인증·결제 담당</span>
+        <span className="text-gray-600 text-sm">기획 2 + 백엔드 2 + 프론트엔드 3 · 프론트엔드 리드 (구조 설계, 가입·인증·예약·결제·쿠폰·커뮤니티·마이페이지)</span>
       </div>
       {/* 서비스 링크 */}
       <div className="mb-6 flex flex-wrap gap-3">

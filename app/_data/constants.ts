@@ -89,7 +89,7 @@ export const projects: Project[] = [
     subtitle: "인제 / 용인 스마트 관광 플랫폼",
     period: "2025.06 - 2025.11",
     team: "기획 2 · 백엔드 2 · 프론트엔드 3",
-    role: "인증·결제 담당",
+    role: "프론트엔드 리드 · 예약·결제·인증 등 핵심 기능",
     description: "숙박/체험 예약, 투어패스 판매, 커뮤니티 등 스마트 관광 플랫폼",
     tags: ["Next.js", "TypeScript", "KCP 결제"],
     highlights: ["회원 1만+", "결제 구조 개선 제안", "Safari 호환성"],
@@ -150,12 +150,7 @@ export const skills: Record<string, string[]> = {
 };
 
 export const navItems = [
-  { id: "intro", label: "소개" },
-  { id: "challenges", label: "도전과 성장" },
-  { id: "experience", label: "경력" },
-  { id: "skills", label: "기술" },
   { id: "projects", label: "프로젝트" },
-  { id: "education", label: "학력" },
   { id: "contact", label: "연락처" },
 ] as const;
 

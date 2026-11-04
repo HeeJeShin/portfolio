@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { navItems, type NavId } from "../_data/constants";
 
 export const Sidebar = () => {
-  const [activeId, setActiveId] = useState<NavId>("intro");
+  const [activeId, setActiveId] = useState<NavId>("projects");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -39,7 +39,7 @@ export const Sidebar = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-[#191979] font-medium">Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
-            비즈니스 도메인에 대한 통찰과 AI 활용 능력을 무기로,<br /> 빠르고 정확하게 실질적인 결과물을 만들어내는 개발자입니다.
+            말보다 화면을 먼저 보여주며 맞춰가는 프론트엔드 개발자입니다. 자기소개·경력·기술은 아래 이력서 PDF에 정리했습니다.
           </p>
         </div>
 
@@ -98,7 +98,8 @@ export const Sidebar = () => {
         <div className="mt-auto">
           <a
             href="/개발자_신희제_이력서.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full px-4 py-3 bg-[#191979] text-white rounded-lg hover:bg-blue-500 transition-colors text-sm font-medium flex items-center justify-center gap-2"
           >
             <svg
@@ -114,7 +115,7 @@ export const Sidebar = () => {
                 d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4"
               />
             </svg>
-            이력서 PDF 다운로드
+            이력서 PDF 보기
           </a>
         </div>
       </div>
