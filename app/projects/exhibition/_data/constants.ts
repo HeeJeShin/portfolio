@@ -1,6 +1,6 @@
 // 성과 지표 데이터
 export const metrics = [
-  { label: "개발 기간", value: "일정 내", desc: "첫 행사 일정 안에 오픈" },
+  { label: "개발 기간", value: "일정 내", desc: "첫 행사 일정 안에 오픈 · 이후 참가기업 74개사 행사 접수에 사용" },
   { label: "공용 컴포넌트", value: "56개", desc: "어드민·사용자 앱이 함께 사용" },
   { label: "테스트 케이스", value: "216개", desc: "자동 문서화" },
   { label: "공용 훅", value: "23개", desc: "도메인별 쿼리 훅 등" },

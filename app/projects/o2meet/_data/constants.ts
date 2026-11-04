@@ -316,7 +316,7 @@ export const registrationCommonization = {
   title: "등록 솔루션 공통화",
   problem: "바이어/참관객/전시자 등 화면마다 요구사항이 다름 (필수입력, 카테고리, 검증 등)",
   solution: "공통 로직은 JS로 분리, 화면별 차이는 카테고리 코드로 추상화",
-  impact: "신규 행사 등록페이지 개발기간 2주 → 3-5일 단축",
+  impact: "신규 행사 등록페이지 개발기간 2주 → 3-5일 단축 (매년 4~5개, 총 8개 이상 행사에 적용)",
 
   commonModules: [
     {
