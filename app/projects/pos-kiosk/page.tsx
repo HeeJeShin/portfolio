@@ -151,7 +151,7 @@ export default function PosKioskPage() {
               2024.11 - 2025.02
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">기획 1 + 백엔드 2 + 프론트엔드 3 + C++ 1 · 키오스크 화면 담당</span>
+            <span className="text-gray-600 text-sm">기획 1 + 백엔드 2 + 프론트엔드 3 + C++ 1 · 키오스크·POS 화면 담당 (결제, 장바구니, NPC 대여 여부, 서브 모니터, C++ 연동 값 표시)</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             POS/Kiosk 결제 시스템
