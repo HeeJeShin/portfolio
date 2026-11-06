@@ -79,7 +79,7 @@ export default function O2MeetMigrationPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
-        title="O2MEET Next.js 마이그레이션"
+        title="O2MEET Next.js 마이그레이션 (온라인 전시 티켓 플랫폼)"
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
