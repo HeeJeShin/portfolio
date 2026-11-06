@@ -100,12 +100,12 @@ export const projects: Project[] = [
   },
   {
     id: "o2meet-migration",
-    title: "O2MEET Next.js 마이그레이션",
+    title: "O2MEET Next.js 마이그레이션 (온라인 전시 티켓 플랫폼)",
     subtitle: "Lighthouse 성능 점수 45 → 99",
     period: "2026.04 - 2026.05",
     team: "프론트엔드 3",
     role: "사용자 페이지·회원가입 담당",
-    description: "JSP → Next.js로 전환한 온라인 행사 플랫폼",
+    description: "JSP → Next.js로 전환한 온라인 전시 티켓 플랫폼",
     tags: ["Next.js", "TypeScript", "Zustand", "Tailwind CSS", "ArgoCD"],
     highlights: ["성능 점수 45 → 99", "LCP 8.0s → 0.8s", "CLS 0.225 → 0"],
     firstAttemptPeriod: "2024.12 - 2025.02",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
   },
   {
     id: "o2meet",
-    title: "O2MEET 온라인 행사 플랫폼",
+    title: "O2MEET 온라인 전시 티켓 플랫폼",
     subtitle: "개발 및 유지보수",
     period: "2022.05 - 2026.05",
     team: "기획 4 · 백엔드 4 · 프론트엔드 5",

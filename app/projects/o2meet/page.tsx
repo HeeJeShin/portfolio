@@ -117,7 +117,7 @@ export default function O2MeetPage() {
   return (
     <div className="min-h-screen bg-white">
       <ProjectHeader
-        title="O2MEET 온라인 행사 플랫폼"
+        title="O2MEET 온라인 전시 티켓 플랫폼"
       />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
