@@ -15,10 +15,10 @@ export const DevelopmentApproachSection = () => {
           <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-gray-700 font-bold">01</span>
-              <span className="font-medium text-gray-900">컨벤션 문서화</span>
+              <span className="font-medium text-gray-900">테스트 실행 방법 공유</span>
             </div>
             <p className="text-sm text-gray-600">
-              CLAUDE.md에 코드 스타일, API 패턴, 컴포넌트 사용법 등 <strong>모든 규칙을 문서화</strong>
+              팀원 모두 Claude Code를 쓰는 만큼, CLAUDE.md에 <strong>테스트 실행 방법과 결과 확인 방법</strong>을 정리해 공유
             </p>
           </div>
           <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
