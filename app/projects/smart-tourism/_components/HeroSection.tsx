@@ -40,7 +40,7 @@ export const HeroSection = () => {
       <div className="flex items-center gap-4 mb-6">
 
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">스마트관광 플랫폼</h1>
+          <h1 className="text-3xl font-bold text-gray-900">스마트관광 플랫폼 (숙박·체험 예약 플랫폼)</h1>
           <p className="text-gray-600 mt-1"> 스마트관광 정보 및 예약 서비스</p>
         </div>
       </div>

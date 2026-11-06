@@ -151,7 +151,7 @@ export default function PosKioskPage() {
               2024.11 - 2025.02
             </span>
             <span className="text-gray-400">|</span>
-            <span className="text-gray-600 text-sm">기획 1 + 백엔드 2 + 프론트엔드 3 + C++ 1 · 키오스크·POS 화면 담당 (결제, 장바구니, NPC 대여 여부, 서브 모니터, C++ 연동 값 표시)</span>
+            <span className="text-gray-600 text-sm">기획 1 + 백엔드 2 + 프론트엔드 3 + C# 1 · 키오스크·POS 화면 담당 (결제, 장바구니, NPC 대여 여부, 서브 모니터, C# 연동 값 표시)</span>
           </div>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             POS/Kiosk 결제 시스템
@@ -303,7 +303,7 @@ export default function PosKioskPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">C# (CefSharp) 연동</h2>
           <div className="bg-white rounded-xl p-6 border border-gray-200">
             <p className="text-gray-600 mb-4">
-              영수증 출력, 프린터 상태 체크, 세컨드 모니터 제어 등 하드웨어 기능은 C++ 개발자와 협업하여 연동.
+              영수증 출력, 프린터 상태 체크, 세컨드 모니터 제어 등 하드웨어 기능은 C# 개발자와 협업하여 연동.
               <code className="bg-gray-100 px-1 rounded text-[#191979] mx-1">CefSharp.PostMessage</code>로
               JS에서 POS 프로그램을 호출하고, 콜백으로 결과를 받는 구조입니다.
             </p>
@@ -346,7 +346,7 @@ if (window?.CefSharp === undefined) {
               <h3 className="font-bold text-gray-900 mb-3">현장 디버깅 모드</h3>
               <div className="space-y-2 text-sm text-gray-700">
                 <p><span className="text-xs font-medium text-gray-500 mr-2">문제</span>현장 기기는 개발자 PC가 아니라 오류가 나도 로그를 바로 볼 수 없었습니다.</p>
-                <p><span className="text-xs font-medium text-gray-500 mr-2">해결</span>C++ 개발자와 협의해 화면 상단을 다섯 번 누르면 오류 로그가 보이게 만들어, 현장에서 바로 원인을 확인할 수 있게 됐습니다.</p>
+                <p><span className="text-xs font-medium text-gray-500 mr-2">해결</span>C# 개발자와 협의해 화면 상단을 다섯 번 누르면 오류 로그가 보이게 만들어, 현장에서 바로 원인을 확인할 수 있게 됐습니다.</p>
               </div>
             </div>
           </div>

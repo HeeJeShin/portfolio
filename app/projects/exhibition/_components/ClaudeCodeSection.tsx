@@ -5,15 +5,15 @@ export const ClaudeCodeSection = () => {
       <div className="bg-gray-900 rounded-xl p-6 text-white">
         <div className="mb-4">
           <h3 className="font-bold text-lg">AI 페어 프로그래밍</h3>
-          <p className="text-sm text-gray-400">CLAUDE.md 기반 컨텍스트 공유로 일관된 코드 품질 유지</p>
+          <p className="text-sm text-gray-400">CLAUDE.md에 테스트 실행 방법을 공유해 같은 기준으로 검증</p>
         </div>
 
         {/* AI 활용 방식 설명 */}
         <div className="bg-white/5 rounded-lg p-4 mb-6">
           <p className="text-sm text-gray-300 leading-relaxed">
-            프로젝트 컨벤션, 코드 스타일, API 패턴을 <strong className="text-white">CLAUDE.md</strong>에 정의하여
-            AI가 프로젝트 맥락을 이해하고 일관된 코드를 생성하도록 구성했습니다.
-            단순 코드 생성이 아닌 <strong className="text-white">설계 의도를 반영한 구현</strong>이 가능합니다.
+            팀원 모두 Claude Code를 쓰기 때문에, 코드 규칙보다 <strong className="text-white">테스트를 어떻게 돌리고 결과를 어떻게 확인하는지</strong>를
+            <strong className="text-white">CLAUDE.md</strong>에 정리해 공유했습니다. 누가 AI로 코드를 만들든 같은 방식으로 테스트를 돌리고,
+            결과는 CSV 리포트로 확인합니다.
           </p>
         </div>
 

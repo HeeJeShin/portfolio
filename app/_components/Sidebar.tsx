@@ -7,7 +7,7 @@ export const Sidebar = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-[#191979] font-medium">Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
-            말보다 화면을 먼저 보여주며 맞춰가는 프론트엔드 개발자입니다. 자기소개·경력·기술은 아래 이력서 PDF에 정리했습니다.
+            주어진 상황에서 할 수 있는 방법을 찾아, 함께 일하는 사람과 맞춰가는 프론트엔드 개발자입니다. 자기소개·경력·기술은 아래 이력서와 경력기술서 PDF에 정리했습니다.
           </p>
         </div>
 
@@ -57,6 +57,14 @@ export const Sidebar = () => {
               />
             </svg>
             이력서 PDF 보기
+          </a>
+          <a
+            href="/경력기술서_신희제.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 w-full px-4 py-3 bg-white border border-[#191979] text-[#191979] rounded-lg hover:bg-blue-50 transition-colors text-sm font-medium flex items-center justify-center"
+          >
+            경력기술서 PDF 보기
           </a>
         </div>
       </div>
