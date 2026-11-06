@@ -86,7 +86,7 @@ export const projects: Project[] = [
   {
     id: "smart-tourism",
     title: "스마트관광 플랫폼 (숙박·체험 예약 플랫폼)",
-    subtitle: "인제 / 용인 지자체 관광 플랫폼",
+    subtitle: "인제 / 용인 지자체 숙박·체험 예약 플랫폼",
     period: "2025.06 - 2025.11",
     team: "기획 2 · 백엔드 2 · 프론트엔드 3",
     role: "프론트엔드 리드 · 예약·결제·인증 등 핵심 기능",
