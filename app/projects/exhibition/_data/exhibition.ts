@@ -133,11 +133,11 @@ exhibition/
 `,
   sharedStructure: `
 shared/src/
-├── components/         # 56개 공용 컴포넌트
+├── components/         # 공용 컴포넌트
 │   ├── common/         # Button, Input, Modal, Toast
 │   ├── layout/         # Header, Footer, PageWrapper
 │   └── forms/          # DynamicForm, UserInfoForm
-├── hooks/              # 23개 커스텀 훅
+├── hooks/              # 커스텀 훅
 │   ├── queries/        # React Query 훅 (도메인별)
 │   └── useApi.ts, useLocale.ts
 ├── stores/             # Zustand 스토어
@@ -269,8 +269,6 @@ export const metrics = {
     { label: "개발 기간", before: "첫 행사 일정", after: "일정 내 오픈", change: "일정 준수" },
   ],
   codeQuality: [
-    { label: "공용 컴포넌트", value: 56, unit: "개" },
-    { label: "공용 훅", value: 23, unit: "개" },
     { label: "타입 정의", value: 40, unit: "개" },
     { label: "테스트 케이스", value: 216, unit: "개" },
   ],

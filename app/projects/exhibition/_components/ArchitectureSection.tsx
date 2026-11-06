@@ -35,10 +35,6 @@ export const ArchitectureSection = () => {
                   <div className="bg-white rounded p-2 border border-gray-200 text-center">
                     <span className="text-sm font-medium">shared</span>
                     <p className="text-xs text-gray-500">공용 컴포넌트, 훅, 타입</p>
-                    <div className="flex gap-1 mt-1 justify-center flex-wrap">
-                      <span className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded">56개 컴포넌트</span>
-                      <span className="text-[10px] bg-gray-100 px-1.5 py-0.5 rounded">23개 훅</span>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -204,7 +200,7 @@ export const ArchitectureSection = () => {
 
         <div className="mt-4 bg-gray-100 border border-gray-300 rounded-lg p-3">
           <p className="text-sm text-gray-700 text-center">
-            <strong>56개 공용 컴포넌트</strong>를 유저/어드민이 공유 →
+            <strong>기본·폼·리스트로 세분화한 공용 컴포넌트</strong>를 유저/어드민이 공유 →
             <strong className="text-gray-900"> 두 앱의 UI를 한 곳에서 관리</strong>
           </p>
         </div>

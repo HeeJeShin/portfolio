@@ -27,7 +27,7 @@ export const DevelopmentApproachSection = () => {
               <span className="font-medium text-gray-900">공용 컴포넌트</span>
             </div>
             <p className="text-sm text-gray-600">
-              56개 공용 컴포넌트로 <strong>일관된 UI 패턴</strong> 유지, 새 개발자도 바로 활용 가능
+              기본·폼·리스트 등으로 세분화한 공용 컴포넌트로 <strong>일관된 UI 패턴</strong> 유지, 새 개발자도 바로 활용 가능
             </p>
           </div>
           <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">

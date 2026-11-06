@@ -13,9 +13,9 @@ export const MetricsSection = () => {
       reason: "Claude Code로 테스트 케이스 작성 자동화, CSV 기반 문서화로 QA 커뮤니케이션 효율화",
     },
     {
-      label: "공용 컴포넌트 · 훅",
-      value: "56개 · 23개",
-      desc: "shared 패키지에서 두 앱이 함께 사용",
+      label: "공용 컴포넌트",
+      value: "기본·폼·리스트",
+      desc: "세분화해 shared 패키지에서 두 앱이 함께 사용",
       reason: "DynamicForm·DataTable 같은 공통 컴포넌트와 도메인별 쿼리 훅을 모노레포 shared 패키지에 두고, 어드민과 사용자 앱이 같은 코드를 쓰게 했습니다",
     },
   ];
