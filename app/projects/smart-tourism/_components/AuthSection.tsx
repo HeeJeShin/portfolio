@@ -30,7 +30,7 @@ export const AuthSection = () => {
               icon: "🍪",
               color: "blue",
               pros: "저장 ① 서버 전송용",
-              cons: "Safari ITP로 지워질 수 있음",
+              cons: "스크립트로 만든 쿠키는 ITP가 최대 7일로 제한",
             },
             {
               priority: "복구 3",
@@ -38,7 +38,7 @@ export const AuthSection = () => {
               icon: "💾",
               color: "blue",
               pros: "저장 ② 지속용, 쿠키가 지워져도 복구",
-              cons: "XSS 주의 → 짧은 만료로 범위 제한",
+              cons: "XSS 주의 → 짧은 만료로 범위 제한, 7일간 방문 없으면 ITP가 삭제",
             },
           ].map((item) => (
             <div key={item.priority} className="flex-1 bg-white rounded-lg border border-gray-200 overflow-hidden">
@@ -70,7 +70,7 @@ export const AuthSection = () => {
           <span>🍎</span> Safari ITP (Intelligent Tracking Prevention) 대응
         </h4>
         <p className="text-sm text-blue-900 mb-3">
-          Safari ITP는 스크립트로 저장한 쿠키의 수명을 제한해, 쿠키만 쓰면 로그인이 풀렸습니다. 그래서 저장할 때부터 쿠키와 localStorage에 함께 넣고, 위의 순서로 복구합니다.
+          Safari ITP는 스크립트로 저장한 쿠키(<code>Cookies.set</code>)의 수명을 최대 7일로 제한해, 쿠키만 쓰면 로그인이 풀렸습니다. 서비스 시작 전 QA에서 iOS Safari에서만 생기는 것을 실기기로 재현해 원인을 찾았고, 저장할 때부터 쿠키와 localStorage에 함께 넣어 위의 순서로 복구하게 바꿨습니다.
         </p>
         <div className="bg-white rounded-lg p-3">
           <div className="text-xs font-mono bg-gray-900 text-gray-100 rounded p-3">
@@ -218,6 +218,25 @@ export const AuthSection = () => {
             <p className="text-2xl font-bold text-[#191979]">7일</p>
             <p className="text-sm text-gray-600">Refresh Token</p>
             <p className="text-xs text-gray-400 mt-1">Access Token 갱신용</p>
+          </div>
+        </div>
+      </div>
+
+      {/* 한계와 개선안 */}
+      <div className="bg-white rounded-xl border border-gray-200 p-5 mt-6">
+        <h4 className="font-bold text-gray-900 mb-3">돌아보면: 한계와 다시 한다면</h4>
+        <div className="grid md:grid-cols-2 gap-4">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-xs font-medium text-gray-500 mb-2">한계</p>
+            <p className="text-sm text-gray-700">
+              localStorage도 ITP 대상이라 그 사이트에 7일간 방문이 없으면 지워집니다. 자주 오는 사용자는 로그인이 유지됐지만 완전한 해결은 아니었고, XSS 위험은 줄였을 뿐 없어지지 않았습니다.
+            </p>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <p className="text-xs font-medium text-gray-500 mb-2">다시 한다면</p>
+            <p className="text-sm text-gray-700">
+              리프레시 토큰은 서버가 <code>Set-Cookie: HttpOnly; Secure; SameSite</code>로 내려주고, 액세스 토큰은 메모리에만 두겠습니다. 서버가 내려준 쿠키는 ITP 7일 제한을 받지 않고 스크립트로 읽을 수 없습니다. 인증 구조를 정할 때부터 백엔드와 함께 정해야 하는 일입니다.
+            </p>
           </div>
         </div>
       </div>
