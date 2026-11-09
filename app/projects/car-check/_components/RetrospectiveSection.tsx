@@ -1,7 +1,7 @@
 import { retrospective } from "../_data/constants";
 
 export const RetrospectiveSection = () => {
-  const { decisions, envNote, deployLessons, productionIntro, productionChoices, productionCriteria, approach, learning, next } = retrospective;
+  const { decisions, envNote, deployLessons, uiLessons, productionIntro, productionChoices, productionCriteria, approach, learning, next } = retrospective;
 
   return (
     <section className="mb-16">
@@ -36,6 +36,19 @@ export const RetrospectiveSection = () => {
         <h3 className="font-bold text-gray-900 text-lg mb-4">실제로 배포하며 확인한 것 (2026.10.27)</h3>
         <div className="grid md:grid-cols-3 gap-4">
           {deployLessons.map((item) => (
+            <div key={item.title} className="bg-gray-50 rounded-lg p-4">
+              <p className="text-sm font-medium text-gray-900 mb-2">{item.title}</p>
+              <p className="text-sm text-gray-600">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 사용자 입장에서 화면을 다시 정리한 것 */}
+      <div className="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+        <h3 className="font-bold text-gray-900 text-lg mb-4">사용자 입장에서 화면을 다시 정리한 것 (2026.11.09)</h3>
+        <div className="grid md:grid-cols-3 gap-4">
+          {uiLessons.map((item) => (
             <div key={item.title} className="bg-gray-50 rounded-lg p-4">
               <p className="text-sm font-medium text-gray-900 mb-2">{item.title}</p>
               <p className="text-sm text-gray-600">{item.desc}</p>
