@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { adminScreen, screens } from "../_data/constants";
+import { adminScreen, pcScreens, screens } from "../_data/constants";
 
 // 실제 화면 캡처: 사용자 화면(휴대폰)과 관리 화면(PC)
 export const ScreensSection = () => {
@@ -11,7 +11,21 @@ export const ScreensSection = () => {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
         {screens.map((s) => (
           <figure key={s.src} className="flex flex-col gap-2">
-            <div className="max-h-[520px] overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+            <div className="h-[360px] md:h-[520px] overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+              <Image src={s.src} alt={s.title} width={s.width} height={s.height} className="w-full h-auto" />
+            </div>
+            <figcaption>
+              <p className="text-sm font-bold text-gray-900">{s.title}</p>
+              <p className="text-xs text-gray-600 leading-relaxed">{s.desc}</p>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4 mb-6">
+        {pcScreens.map((s) => (
+          <figure key={s.src} className="flex flex-col gap-2">
+            <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
               <Image src={s.src} alt={s.title} width={s.width} height={s.height} className="w-full h-auto" />
             </div>
             <figcaption>
@@ -23,7 +37,7 @@ export const ScreensSection = () => {
       </div>
 
       <figure className="flex flex-col gap-2">
-        <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50">
+        <div className="overflow-hidden rounded-xl border border-gray-200 bg-gray-50 p-3 md:p-5">
           <Image src={adminScreen.src} alt={adminScreen.title} width={adminScreen.width} height={adminScreen.height} className="w-full h-auto" />
         </div>
         <figcaption>

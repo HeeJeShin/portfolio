@@ -138,7 +138,7 @@ if (!allowed.includes(user.role)) throw new ForbiddenException("이 작업은 �
     problem: "권한·심사 흐름은 화면과 서버가 함께 맞아야 해서, 함수 하나씩 검사하는 단위 테스트만으로는 실제로 되는지 알기 어려움",
     solution:
       "사람이 브라우저로 직접 눌러보던 과정을 Playwright가 대신하게 함. '차종 검색 → 리포트', '에디터가 초안 작성 → 관리자 승인 → 사용자 화면에 바로 반영'을 실제 크롬으로 확인하고, GitHub에 코드를 올릴 때마다 자동으로 실행(GitHub Actions)",
-    effect: "단위 테스트 46개 + E2E 4개",
+    effect: "단위 테스트 64개 + E2E 8개",
   },
   {
     id: "reports",
@@ -193,7 +193,7 @@ autoDeployTrigger: checksPass`,
   },
   {
     id: "seo",
-    title: "검색에 걸리게: robots·sitemap·페이지 제목",
+    title: "SEO: robots.txt·sitemap·동적 메타데이터",
     problem: "'더 뉴 그랜저 고질병'처럼 검색해서 들어와야 하는데, 검색엔진이 어떤 화면이 있는지 몰랐음",
     solution:
       "관리 화면만 막는 robots.txt, 차종·세대마다 리포트·점검 가이드 주소를 담은 sitemap.xml, 차 이름과 고질병 제목이 들어간 페이지 제목·설명",
@@ -205,16 +205,63 @@ autoDeployTrigger: checksPass`,
 sitemap: \`\${SITE_URL}/sitemap.xml\`,`,
     },
   },
+  {
+    id: "design-tokens",
+    title: "디자인 토큰: 색을 한 곳에서 관리",
+    problem: "색상값을 화면마다 직접 적어 둬서(45곳) 메인 색을 바꾸려면 파일을 일일이 찾아 고쳐야 했음. 호버 색도 버튼마다 있거나 없었음",
+    solution:
+      "Tailwind 4의 @theme에 메인·호버·상태 색을 변수로 모으고, 화면에는 bg-primary·hover:bg-primary-hover처럼 역할 이름만 씀. 메인 색을 빨강으로 바꾸자 '살 때 확인할 것' 안내가 위험 경고처럼 보여, 안내 상자는 회색으로 분리",
+    effect: "임의 색상 클래스 45곳 → 0곳(그림·차트의 데이터 색 제외). 메인 색은 변수 한 줄만 고치면 전체 화면에 반영. 변경 후 E2E로 기존 흐름 확인",
+    learning:
+      "색 이름을 '파랑'이 아닌 역할로 지어야 디자인이 바뀌어도 화면 코드를 고치지 않음. 메인 색이 경고색과 같은 계열이 되면 안내까지 경고로 읽힐 수 있어, 색을 바꾼 뒤에는 화면의 의미까지 다시 확인해야 함",
+    code: {
+      file: "web/src/app/globals.css",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/web/src/app/globals.css",
+      snippet: `@theme {
+  --color-primary: #d7141a;
+  --color-primary-hover: #a80f14;
+  --color-danger: var(--color-primary);
+  --text-shadow-logo: 0.05em 0.05em 0 var(--color-logo-shadow);
+}`,
+    },
+  },
+  {
+    id: "responsive-header",
+    title: "모바일 헤더를 JS 없이 전환 (CSS :has)",
+    problem: "모바일 안쪽 화면에서 공통 헤더 밑에 뒤로 가기 줄이 한 겹 더 쌓여 일반적인 모바일 구조와 달랐음. 화면 너비를 JS로 판별해 헤더를 바꾸면 서버가 만든 HTML과 첫 렌더가 달라져 헤더가 깜빡일 수 있음",
+    solution:
+      "공통 헤더는 루트 레이아웃의 서버 컴포넌트로 한 번만 두고, 모바일 안쪽 화면은 뒤로·제목·닫기 한 줄(PageBar)로 대체. 어떤 헤더를 보여줄지는 미디어 쿼리와 :has()로 브라우저가 CSS 단계에서 결정",
+    effect: "헤더 전환용 클라이언트 JS 없이 ISR 유지. 메인·차종·연식·리포트·점검 화면 CLS 0 (로컬 운영 빌드, 모바일 기준 측정)",
+    learning:
+      "화면 크기에 따른 표시 전환은 렌더링 단계에서 끝나는 CSS에 맡기는 편이 깜빡임이 없음. 다만 :has()는 구형 브라우저에서 동작하지 않아, 프로젝트의 지원 범위가 Tailwind 4 기준(Safari 16.4+, Chrome 111+, Firefox 128+) 안에 있는지 함께 확인",
+    code: {
+      file: "web/src/components/site-header.tsx",
+      url: "https://github.com/HeeJeShin/car-check/blob/master/web/src/components/site-header.tsx",
+      snippet: `// app/layout.tsx: 화면 전체를 group으로 지정
+<body className="group/site flex min-h-dvh flex-col antialiased">
+
+// components/site-header.tsx: 모바일에서 화면 안에 .page-bar가 있으면 공통 헤더를 숨김
+<header className="sticky top-0 z-30 border-b max-md:group-has-[.page-bar]/site:hidden ...">`,
+    },
+  },
 ];
 
 // ============================================
 // 화면으로 보기 (실제 화면 캡처)
 // ============================================
 export const screens = [
-  { src: "/projects/car-check/report-form.jpg", width: 800, height: 1750, title: "틀린 내용 제보", desc: "고질병 카드에서 무엇이 틀렸는지 체크박스로 고르고 근거를 남겨요" },
-  { src: "/projects/car-check/report-answer.jpg", width: 800, height: 1094, title: "운영자 답변 공개", desc: "운영자가 답변을 달면 제보와 함께 카드 아래에 보여요" },
-  { src: "/projects/car-check/ev-checks.jpg", width: 800, height: 2453, title: "전기차 매장 점검", desc: "엔진 대신 리프트로 차 밑 배터리 팩, SOH 진단, 보증 승계를 먼저" },
-  { src: "/projects/car-check/tesla-fsd.jpg", width: 800, height: 1018, title: "구매 전 확인 (테슬라)", desc: "중국 생산 차는 국내 FSD 불가 — 차대번호 앞 3자리로 확인" },
+  { src: "/projects/car-check/main-m.jpg", width: 780, height: 1688, title: "첫 화면", desc: "로고와 '내 차 고질병 확인하기'부터 바로 보여요" },
+  { src: "/projects/car-check/select-m.jpg", width: 780, height: 1688, title: "차종 선택", desc: "이름으로 찾거나 제조사와 차 종류로 좁혀요" },
+  { src: "/projects/car-check/generation-m.jpg", width: 780, height: 1688, title: "연식 선택", desc: "연식을 넣으면 그 해에 판매된 세대만 남아요" },
+  { src: "/projects/car-check/report-m.jpg", width: 780, height: 1688, title: "고질병 리포트", desc: "세대마다 다른 고질병과 확인 방법을 보여줘요" },
+  { src: "/projects/car-check/report-form.jpg", width: 800, height: 1628, title: "틀린 내용 제보", desc: "고질병 카드에서 무엇이 틀렸는지 체크박스로 고르고 근거를 남겨요" },
+  { src: "/projects/car-check/report-answer.jpg", width: 800, height: 1018, title: "운영자 답변 공개", desc: "운영자가 답변을 달면 제보와 함께 카드 아래에 보여요" },
+  { src: "/projects/car-check/ev-checks.jpg", width: 880, height: 2394, title: "전기차 매장 점검", desc: "엔진 대신 리프트로 차 밑 배터리 팩, SOH 진단, 보증 승계를 먼저" },
+  { src: "/projects/car-check/tesla-fsd.jpg", width: 800, height: 948, title: "구매 전 확인 (테슬라)", desc: "중국 생산 차는 국내 FSD 불가 — 차대번호 앞 3자리로 확인" },
+];
+export const pcScreens = [
+  { src: "/projects/car-check/main-pc.jpg", width: 1920, height: 1200, title: "메인 화면 (PC)", desc: "공통 헤더에서 고질병·매장 점검·AI 가이드·차종 찾기로 이동해요" },
+  { src: "/projects/car-check/select-pc.jpg", width: 1920, height: 1200, title: "차종 선택 (PC)", desc: "모바일과 같은 순서를 가운데 카드 하나에 담았어요" },
 ];
 export const adminScreen = {
   src: "/projects/car-check/admin-stats.jpg",
