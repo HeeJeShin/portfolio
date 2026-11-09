@@ -43,6 +43,13 @@ const ApproachCard = ({ approach }: ApproachCardProps) => {
         </div>
       </div>
 
+      {approach.learning && (
+        <div className="mt-4 bg-blue-50 rounded-lg p-4 border border-blue-100">
+          <p className="text-xs font-medium text-gray-500 mb-2">배운 점</p>
+          <p className="text-sm text-gray-700">{approach.learning}</p>
+        </div>
+      )}
+
       {approach.code && <CodeBlock {...approach.code} />}
     </div>
   );
