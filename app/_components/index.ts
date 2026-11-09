@@ -5,6 +5,7 @@ export { ChallengesSection } from "./ChallengesSection";
 export { PersonalStatementSection } from "./PersonalStatementSection";
 export { ExperienceSection } from "./ExperienceSection";
 export { SkillsSection } from "./SkillsSection";
+export { WorkStyleSection } from "./WorkStyleSection";
 export { ProjectsSection } from "./ProjectsSection";
 export { EducationSection } from "./EducationSection";
 export { ContactSection } from "./ContactSection";

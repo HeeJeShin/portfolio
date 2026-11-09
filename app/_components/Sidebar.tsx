@@ -7,7 +7,7 @@ export const Sidebar = () => {
           <h1 className="text-4xl font-bold text-gray-900 mb-2">신희제</h1>
           <p className="text-base text-[#191979] font-medium">Developer</p>
           <p className="mt-3 text-sm text-gray-600 leading-relaxed break-keep">
-            주어진 상황에서 할 수 있는 방법을 찾아, 함께 일하는 사람과 맞춰가는 프론트엔드 개발자입니다. 자기소개·경력·기술은 아래 이력서와 경력기술서 PDF에 정리했습니다.
+            주어진 상황에서 할 수 있는 방법을 찾아, 함께 일하는 사람과 맞춰가는 프론트엔드 개발자입니다. 경력·기술은 아래 이력서와 경력기술서 PDF에 정리했습니다.
           </p>
         </div>
 

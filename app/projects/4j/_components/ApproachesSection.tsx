@@ -14,6 +14,13 @@ export const ApproachesSection = () => {
       solution: "CCTV 인원 추정 등으로 데이터가 수집된다는 가정 하에, 혼잡도 시각화 대시보드 구현",
       effect: "인원 데이터만 있으면 바로 사용 가능한 모니터링 서비스 제공",
     },
+    {
+      id: "quota",
+      title: "Gemini 할당량 초과 대응",
+      problem: "할당량 초과로 도면 분석이 막힘",
+      solution: "모델을 변경하고 에러 메시지를 개선, 할당량 초과 모달과 Mock 데이터 모드 추가",
+      effect: "API 호출 없이도 분석 흐름을 테스트할 수 있게 됨",
+    },
   ];
 
   return (
