@@ -7,9 +7,9 @@ export const projectInfo = {
   subtitle: "사이드프로젝트 · NestJS + Next.js + AI",
   period: "2026.10 - 진행중",
   description:
-    "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 사실 정보는 사람이 검증한 DB로, 안내·추천은 AI로 역할을 나눴습니다.",
+    "차종과 연식을 넣으면 중고차를 살 때 확인할 고질병과 매장 점검 포인트를 알려주는 서비스. 고질병은 사람이 출처를 확인한 DB로 관리하고, AI에게는 조건에 맞는 차종·연식 추천만 맡겼습니다.",
   tags: ["NestJS", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "Gemini API", "Playwright"],
-  highlights: ["데이터는 사람이 검증, 안내는 AI", "심사 흐름 + 트랜잭션·동시성", "제보·방문 통계·테스트 통과 후 배포"],
+  highlights: ["고질병은 DB, AI는 차량 추천만", "심사 흐름 + 트랜잭션·동시성", "제보·방문 통계·테스트 통과 후 배포"],
   demo: "https://car-check-fawn-zeta.vercel.app/",
   github: "https://github.com/HeeJeShin/car-check",
 };
@@ -25,7 +25,7 @@ export const dataScale = [
   { label: "고질병 초안", value: "24건" },
 ];
 export const dataScaleNote =
-  "고질병 24건(세대 22개)은 모두 출처 확인 전 초안이라 사용자 화면에 '참고'로 표시됩니다. 출처를 확인하는 대로 심사 흐름을 거쳐 '검증됨'으로 올립니다.";
+  "고질병 24건(세대 22개)은 모두 출처 확인 전 초안이라 사용자 화면에 '참고'로 표시됩니다. 출처를 확인하는 대로 심사 흐름을 거쳐 '출처 있음'으로 올립니다.";
 
 // ============================================
 // 기술 스택 (상세)
@@ -52,10 +52,10 @@ export const techStack = [
 export const approaches = [
   {
     id: "human-vs-ai",
-    title: "데이터는 사람이 검증, 안내는 AI",
-    problem: "고질병은 돈이 걸린 사실 정보라, AI가 그럴듯하게 지어낸 답(환각)이 섞이면 안 됨",
+    title: "고질병은 DB, AI는 차량 추천만",
+    problem: "고질병은 돈이 걸린 정보라, 차주들의 경험에 AI가 그럴듯하게 지어낸 답(환각)이 섞이면 안 됨",
     solution:
-      "고질병·점검법은 DB에 초안으로 넣고 사람이 검증. AI는 '무엇부터 알아볼지' 같은 안내와 차종 추천만 맡고, 추천 결과에는 DB 고질병 링크를 붙임",
+      "고질병·점검법은 DB에 초안으로 넣고 사람이 출처를 확인. AI는 '유지비 적은 차'처럼 한 문장 조건을 받아 등록된 세대 안에서 차종·연식만 고르고, 서버가 세대 번호와 판매 연식을 DB와 다시 대조한 뒤 고질병 리포트로 연결",
     effect: "AI 키가 없어도 핵심 기능이 전부 동작 (AI 꺼짐 모드를 단위 테스트로 확인)",
   },
   {
@@ -63,8 +63,8 @@ export const approaches = [
     title: "고질병 심사 흐름 (상태 기반 로직)",
     problem: "고질병 정보는 돈이 걸린 사실이라, 누가 썼든 근거 없이 '확실한 정보'로 보여주면 안 됨",
     solution:
-      "관리 페이지(/admin)에서 에디터가 초안을 쓰고, 관리자가 출처를 확인해 승인하거나 사유를 적어 반려. 지금은 직접 넣은 데이터를 이 흐름으로 검증하고, 나중에 커뮤니티 제보와 AI로 모은 정보도 초안으로 들어와 같은 심사를 거침. 허용되는 상태 이동은 표 하나로 정의해, 그 밖의 이동(초안 → 검증됨 직행 등)은 서버가 거절",
-    effect: "승인 전 정보는 '참고', 출처를 확인한 정보만 '검증됨'. 표 밖의 이동과 출처 없는 승인이 거절되는지 단위 테스트로 확인",
+      "관리 페이지(/admin)에서 에디터가 초안을 쓰고, 관리자가 출처를 확인해 승인하거나 사유를 적어 반려. 지금은 직접 넣은 데이터를 이 흐름으로 검증하고, 나중에 커뮤니티 제보와 AI로 모은 정보도 초안으로 들어와 같은 심사를 거침. 허용되는 상태 이동은 표 하나로 정의해, 그 밖의 이동(초안 → 출처 있음 직행 등)은 서버가 거절",
+    effect: "승인 전 정보는 '참고', 출처를 확인한 정보만 '출처 있음'. 표 밖의 이동과 출처 없는 승인이 거절되는지 단위 테스트로 확인",
     code: {
       file: "api/src/issues/issue-workflow.ts",
       url: "https://github.com/HeeJeShin/car-check/blob/master/api/src/issues/issue-workflow.ts",
@@ -72,10 +72,10 @@ export const approaches = [
 export const TRANSITIONS: Transition[] = [
   { from: "DRAFT", to: "IN_REVIEW", label: "검토 요청", roles: ["ADMIN", "EDITOR"] },
   { from: "IN_REVIEW", to: "DRAFT", label: "검토 요청 취소", roles: ["ADMIN", "EDITOR"] },
-  { from: "IN_REVIEW", to: "VERIFIED", label: "승인 (검증됨)", roles: ["ADMIN"], needs: "sourceUrl" },
+  { from: "IN_REVIEW", to: "VERIFIED", label: "승인 (출처 있음)", roles: ["ADMIN"], needs: "sourceUrl" },
   { from: "IN_REVIEW", to: "REJECTED", label: "반려", roles: ["ADMIN"], needs: "reason" },
   { from: "REJECTED", to: "DRAFT", label: "다시 고치기", roles: ["ADMIN", "EDITOR"] },
-  { from: "VERIFIED", to: "DRAFT", label: "검증 취소", roles: ["ADMIN"], needs: "reason" },
+  { from: "VERIFIED", to: "DRAFT", label: "승인 취소", roles: ["ADMIN"], needs: "reason" },
 ];`,
     },
   },
@@ -143,7 +143,7 @@ if (!allowed.includes(user.role)) throw new ForbiddenException("이 작업은 �
   {
     id: "reports",
     title: "틀린 내용 제보 + 운영자 답변",
-    problem: "사람이 검증해도 혼자서는 모든 차종을 알 수 없음. 차주들은 틀린 정보를 보면 바로 고쳐 주고 싶어 함",
+    problem: "사람이 출처를 확인해도 혼자서는 모든 차종을 알 수 없음. 차주들은 틀린 정보를 보면 바로 고쳐 주고 싶어 함",
     solution:
       "고질병 카드마다 '틀린 내용 있어요' → 무엇이 틀렸는지 체크박스로 고르고 근거 링크를 남기게 함. 로그인 없이 받되 IP당 1시간 5건으로 막고, 운영자가 답변을 단 제보만 공개(답변 전에는 개수만)",
     effect: "욕설·도배가 그대로 올라가지 않으면서, 제보가 고질병 데이터를 고치는 근거가 됨. 제보 → 답변 → 공개 흐름을 E2E로 확인",
@@ -260,7 +260,7 @@ export const screens = [
   { src: "/projects/car-check/tesla-fsd.jpg", width: 800, height: 948, title: "구매 전 확인 (테슬라)", desc: "중국 생산 차는 국내 FSD 불가 — 차대번호 앞 3자리로 확인" },
 ];
 export const pcScreens = [
-  { src: "/projects/car-check/main-pc.jpg", width: 1920, height: 1200, title: "메인 화면 (PC)", desc: "공통 헤더에서 고질병·매장 점검·AI 가이드·차종 찾기로 이동해요" },
+  { src: "/projects/car-check/main-pc.jpg", width: 1920, height: 1200, title: "메인 화면 (PC)", desc: "공통 헤더에서 고질병·매장 점검·AI 차량 추천·차종 찾기로 이동해요" },
   { src: "/projects/car-check/select-pc.jpg", width: 1920, height: 1200, title: "차종 선택 (PC)", desc: "모바일과 같은 순서를 가운데 카드 하나에 담았어요" },
 ];
 export const adminScreen = {
@@ -358,7 +358,7 @@ export const retrospective = {
     },
     {
       title: "캐시를 즉시 지우는 이유",
-      desc: "조회 화면은 1시간 동안 저장해 두지만, 관리자가 승인한 '검증됨'이 1시간 늦게 보이면 안 됩니다. 관리 화면에서 고치는 순간 해당 저장본을 무효화하도록 했고, 이 흐름을 E2E로 확인합니다.",
+      desc: "조회 화면은 1시간 동안 저장해 두지만, 관리자가 승인한 '출처 있음'이 1시간 늦게 보이면 안 됩니다. 관리 화면에서 고치는 순간 해당 저장본을 무효화하도록 했고, 이 흐름을 E2E로 확인합니다.",
     },
   ],
   envNote: "그 밖에 Node 버전에 따른 pnpm 설치 오류 같은 환경 문제는 설치 방법을 바꾸고 README에 남겼습니다.",
@@ -373,7 +373,7 @@ export const retrospective = {
     },
     {
       title: "마지막 연결은 CORS",
-      desc: "화면 주소는 올려야 생기므로, 그 주소를 API의 WEB_ORIGIN에 다시 알려줘야 브라우저에서 부르는 기능(AI 가이드, 관리 화면)이 열립니다. 로컬용·배포용 환경변수 파일도 폴더마다 나란히 두어 헷갈리지 않게 했습니다.",
+      desc: "화면 주소는 올려야 생기므로, 그 주소를 API의 WEB_ORIGIN에 다시 알려줘야 브라우저에서 부르는 기능(AI 차량 추천, 관리 화면)이 열립니다. 로컬용·배포용 환경변수 파일도 폴더마다 나란히 두어 헷갈리지 않게 했습니다.",
     },
   ],
   uiLessons: [

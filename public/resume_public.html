@@ -192,7 +192,7 @@
 <p class="desc">중고차 매장에서 확인할 고질병과 점검 포인트를 휴대폰 한 손으로 보고 싶다는 생각에서 시작한 서비스</p>
 <p class="share"><strong>기여도</strong> 기획·API·화면·배포 전부(1인)</p>
 <table class="frame">
-  <tr><th>한 일</th><td>NestJS·Prisma·PostgreSQL + Next.js. 사실 정보는 검증된 DB에서만, AI(Gemini)는 안내만 맡김. 구글 로그인·ADMIN/EDITOR 권한, 초안 → 검토 → 승인/반려 심사 흐름(상태 변경과 이력을 한 트랜잭션, 동시 승인 시 409), Playwright E2E + GitHub Actions(CI 통과 후에만 배포), Vercel·Render·Neon 배포, Sentry</td></tr>
+  <tr><th>한 일</th><td>NestJS·Prisma·PostgreSQL + Next.js. 고질병은 차주들의 경험 데이터라 정확·부정확 대신 출처 유무로 구분해 DB로 제공, AI(Gemini)는 차종·연식 추천만 맡김. 구글 로그인·ADMIN/EDITOR 권한, 초안 → 검토 → 승인/반려 심사 흐름(상태 변경과 이력을 한 트랜잭션, 동시 승인 시 409), Playwright E2E + GitHub Actions(CI 통과 후에만 배포), Vercel·Render·Neon 배포, Sentry</td></tr>
   <tr><th>결과</th><td>제조사 6곳·차종 40개·세대 98개·엔진/미션 조합 224개 데이터와 고질병 초안 18건으로 2026.10.27 배포</td></tr>
   <tr><th>다음 단계</th><td>혼자 검증해도 "이게 정말 맞나?"를 완전히 지울 수 없어서, 사용자가 틀린 정보를 바로 짚어 "이거 틀린데요?"라고 제보할 수 있는 커뮤니티를 다음 단계로 기획했습니다. 제보는 고질병 초안으로 넘어가 같은 심사 흐름을 거칩니다. 또 지금 쓰는 도구가 실무 규모에서도 맞는지 계속 점검하고 있습니다. 사용자가 늘면 서버 메모리에 둔 AI 답변 캐시와 요청 제한은 Redis로 옮기고, 15분 쉬면 잠드는 무료 서버(Render)는 상시 서버로 바꿔야 합니다.</td></tr>
   <tr><th>URL</th><td><a href="https://car-check-fawn-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">car-check-fawn-zeta.vercel.app</a> · <a href="https://github.com/HeeJeShin/car-check" target="_blank" rel="noopener noreferrer">GitHub</a></td></tr>
