@@ -18,7 +18,7 @@ export const HeroSection = () => {
       <p className="text-lg text-gray-600 leading-relaxed max-w-3xl">
         차종과 연식을 넣으면 <strong className="text-gray-900">중고차를 살 때 확인할 고질병과 매장 점검 포인트</strong>를 알려주는 서비스.
         <br />
-        사실 정보는 <strong className="text-gray-900">사람이 검증한 DB</strong>로, 안내·추천은 <strong className="text-gray-900">AI</strong>로 역할을 나눴습니다.
+        고질병은 <strong className="text-gray-900">사람이 출처를 확인한 DB</strong>로 관리하고, <strong className="text-gray-900">AI</strong>에게는 차량 추천만 맡겼습니다.
       </p>
 
       <div className="flex flex-wrap gap-3 mt-6">
@@ -57,8 +57,8 @@ export const HeroSection = () => {
             <strong>직접 겪을 문제에서 출발했습니다.</strong> 면허를 따고 차를 사려던 참에, 중고차 고질병 정보가 유튜브·네이버 카페에 차주 경험담으로 흩어져 있다는 걸 알게 됐습니다.
           </p>
           <p>
-            돈이 걸린 사실 정보라 AI의 그럴듯한 답에 맡기지 않고, 출처가 있어야만 <strong className="text-gray-900">&apos;검증됨&apos;</strong>이 되는 DB로 관리합니다.
-            AI는 &quot;무엇부터 알아볼지&quot;처럼 정답이 하나가 아닌 안내만 맡습니다.
+            돈이 걸린 정보라 AI의 그럴듯한 답에 맡기지 않고, 출처가 있어야만 <strong className="text-gray-900">&apos;출처 있음&apos;</strong>이 되는 DB로 관리합니다.
+            AI는 &quot;유지비 적은 차&quot;처럼 정답이 하나가 아닌 조건을 받아 등록된 차 안에서 차종과 연식을 추천하는 일만 맡습니다.
           </p>
           <p>
             실무 4년은 프론트엔드였고 서버·DB·배포는 다른 팀이 맡았습니다. 그 빈 곳을 <strong className="text-gray-900">이 서비스에 필요한 순서대로 직접 만들며</strong> 메우고 있습니다.

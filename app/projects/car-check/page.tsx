@@ -1,5 +1,6 @@
 "use client";
 
+import { DecisionSection } from "@/app/_components/DecisionSection";
 import {
   Header,
   HeroSection,
@@ -21,6 +22,7 @@ const CarCheckProject = () => {
         <HeroSection />
         <ScreensSection />
         <ApproachesSection />
+        <DecisionSection projectId="car-check" />
         <ServicesSection />
         <TeamPlanSection />
         <RetrospectiveSection />
